@@ -1,0 +1,73 @@
+\section{精确对称类型与渐近行为}\label{sec:types}
+
+\begin{theorem}[精确稳定子分类]\label{thm:stabilizers}
+对三行、$2n$ 列棋盘，各精确稳定子的铺法数和轨道数见表 \ref{tab:stabilizers}。
+该表对所有 $n\ge0$ 成立。
+\end{theorem}
+\begin{table}[htbp]
+\centering
+\caption{三行铺法的全部精确稳定子类型。}\label{tab:stabilizers}
+\begin{tabular}{cccc}
+\toprule
+精确稳定子 & 铺法数 & 轨道大小 & 轨道数\\
+\midrule
+$G$ & $1$ & $1$ & $1$\\
+$\{e,h\}$ & $0$ & $2$ & $0$\\
+$\{e,v\}$ & $v_n-1$ & $2$ & $(v_n-1)/2$\\
+$\{e,\rho\}$ & $r_n-1$ & $2$ & $(r_n-1)/2$\\
+$\{e\}$ & $d_n-v_n-r_n+1$ & $4$ & $(d_n-v_n-r_n+1)/4$\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{proof}
+引理 \ref{lem:h-odd} 表明唯一的上下反射固定铺法是三行各自水平铺满的铺法，
+它同时被 $v,\rho$ 固定。
+若铺法同时由任意两个不同的非恒等群元素固定，则也由它们的积固定，
+因而由整个 $G$ 固定。故三种固定集的两两交集和三重交集都是上述单点。
+于是只具 $v$ 对称的铺法有 $v_n-1$ 个，只具 $\rho$ 对称的有 $r_n-1$ 个，
+只具 $h$ 对称的有零个；其余 $d_n-v_n-r_n+1$ 个的稳定子平凡。
+群 $G$ 交换，同一轨道中的稳定子相同。各类除以轨道大小即得表中结果。
+四元群的子群只有表中五种，故分类完整。
+\end{proof}
+
+例如 $n=8$ 时 $d_8=29681,v_8=265,r_8=153$。
+共有 $7525$ 个轨道，其中 $7316$ 个稳定子平凡，
+$132$ 个精确稳定子为 $\{e,v\}$，$76$ 个为 $\{e,\rho\}$，$1$ 个为 $G$。
+
+\begin{theorem}[对称铺法的渐近比例]\label{thm:asym}
+令 $\lambda=2+\sqrt3$。均匀选取一个有固定棋盘方向的普通铺法时，
+其具有非平凡对称的概率 $p_n$ 满足
+\begin{align}
+ p_{2j}&\sim(\lambda-1)\lambda^{-j},&
+ p_{2j+1}&\sim\frac{\lambda+1}{\lambda}\lambda^{-j}
+ \quad(j\to\infty).\label{eq:prob-asym}
+\end{align}
+特别地，$p_n=O(\lambda^{-n/2})\to0$，并且
+\begin{equation}\label{eq:orbit-asym}
+ a(n)=\frac{d_n}{4}+O(\lambda^{n/2})
+ \sim\frac{3+\sqrt3}{24}\lambda^n.
+\end{equation}
+\end{theorem}
+\begin{proof}
+由 \eqref{eq:d-rec} 的特征根和初值，
+\begin{equation}\label{eq:d-closed}
+ d_n=c_+\lambda^n+c_-\lambda^{-n},\qquad
+ c_+=\frac{3+\sqrt3}{6},\quad c_-=\frac{3-\sqrt3}{6}.
+\end{equation}
+表 \ref{tab:stabilizers} 给出
+$p_n=(v_n+r_n-1)/d_n$。
+而 \eqref{eq:parity-fixed} 给出
+\[
+ v_{2j}+r_{2j}=d_{j+1}-d_j,\qquad
+ v_{2j+1}+r_{2j+1}=d_{j+1}+d_j.
+\]
+将 \eqref{eq:d-closed} 代入，分子主项分别为
+$c_+(\lambda-1)\lambda^j$ 与 $c_+(\lambda+1)\lambda^j$，
+分母主项分别为 $c_+\lambda^{2j}$ 与 $c_+\lambda^{2j+1}$，
+故得 \eqref{eq:prob-asym}。
+最后由 $a(n)=(d_n+1+v_n+r_n)/4$ 得到 \eqref{eq:orbit-asym}。
+\end{proof}
+
+如果均匀选取的是轨道，则非平凡对称轨道数为
+$1+(v_n-1)/2+(r_n-1)/2=(v_n+r_n)/2$，
+其比例为 $(v_n+r_n)/(2a(n))$，同样趋于零，但这是不同的概率空间。

@@ -1,0 +1,85 @@
+\section{The reduced five-row certificate}\label{app:certificate}
+
+The even-column state orbits are listed in
+\eqref{eq:even-orbits}. The odd-column orbits, in order, are
+\[
+ \{1,16\},\ \{4\},\ \{7,28\},\ \{13,22\},\
+ \{19,25\},\ \{31\}.
+\]
+These twenty states form the set reachable from the empty
+state. This can be checked directly from \eqref{eq:Tm}:
+starting at mask zero and listing all successors reaches
+exactly these states, and all their successors remain in
+the set. Row reversal commutes with the transition relation
+and fixes the initial state, so reversed states have equal
+counts.
+
+Let $u_j$ be the even-column count vector, with one-state
+counts as in Section \ref{sec:five}, and let $z_j$ be the next
+odd-column vector. Then $z_j=Bu_j$ and $u_{j+1}=Cz_j$, where
+\begin{equation}\label{eq:BC}
+\begin{split}
+ B&=\begin{pmatrix}
+1&1&1&1&1&0\\
+1&2&0&0&0&1\\
+1&1&0&0&0&0\\
+0&0&0&1&0&0\\
+1&0&1&0&0&0\\
+1&0&0&0&0&0
+\end{pmatrix},\qquad
+ C=\begin{pmatrix}
+2&1&2&0&2&1\\
+1&1&1&0&0&0\\
+1&0&0&0&1&0\\
+1&0&0&1&0&0\\
+1&0&0&0&0&0\\
+0&1&0&0&0&0
+\end{pmatrix}.
+\end{split}
+\end{equation}
+For an input orbit $O_j$ and an output representative $q_i$,
+the corresponding entry is
+\[
+\sum_{p\in O_j}T_5[p,q_i].
+\]
+It does not depend on the choice of representative.
+For example, $B_{2,2}=2$ because both masks 3 and 24
+can precede mask 4.
+The reduced matrices need not be symmetric:
+their variables record the count of each state, not the
+total of an orbit. Matrix multiplication gives $CB=M$.
+
+The even orbit-size vector is $(1,2,2,2,2,1)$ and the odd
+orbit-size vector is $(2,1,2,2,2,1)$.
+The fixed masks of row reversal are 0 and 27 on the even side,
+and 4 and 31 on the odd side. Consequently,
+\[
+ w_{v,o}=(2,1,2,2,2,1)B,\qquad
+ w_{r,o}=(0,1,0,0,0,1)B,
+\]
+which gives the terminal vectors in the text.
+
+To check \eqref{eq:certificate} coefficientwise, write
+$N(t)=n_0+n_1t+n_2t^2+n_3t^3$, with
+\[
+\begin{array}{ll}
+n_0=(1,0,0,0,0,0)^{\trans},&
+n_1=(-7,3,2,1,1,1)^{\trans},\\
+n_2=(7,-4,-5,1,0,0)^{\trans},&
+n_3=(-1,1,1,0,-1,-1)^{\trans}.
+\end{array}
+\]
+Direct integer multiplication gives
+\[
+\begin{aligned}
+n_1-Mn_0&=-15\evec,&
+n_2-Mn_1&=32\evec,\\
+n_3-Mn_2&=-15\evec,&
+-Mn_3&=\evec.
+\end{aligned}
+\]
+Together with $n_0=\evec$, these are all coefficients of
+$(I-tM)N(t)=P(t)\evec$.
+Thus the certificate consists of finitely many explicit
+integer identities and determines every coefficient of
+the generating functions.

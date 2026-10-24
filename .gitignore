@@ -1,0 +1,22 @@
+# Local execution and document build artifacts
+tmp/
+**/build/
+**/rendered/
+__pycache__/
+*.py[cod]
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+# Private bundles, machine settings, and credentials
+*.zip
+.env
+.env.*
+.codex/
+.agents/
+.vscode/
+*.pem
+*.key

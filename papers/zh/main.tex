@@ -1,0 +1,68 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,graphicx}
+\usepackage{enumitem,fancyhdr,xcolor,hyperref}
+\usepackage{tikz}
+\hypersetup{colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black,
+pdftitle={三行矩形多米诺铺法的对称计数及奇数高度推广},
+pdfauthor={本地研究稿，AI 辅助整理}}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注}
+\renewcommand{\proofname}{证明}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\rev}{\operatorname{rev}}
+\newcommand{\one}{\boldsymbol{1}}
+\newcommand{\evec}{e_0}
+\newcommand{\trans}{\mathsf T}
+\numberwithin{equation}{section}
+\setlength{\parskip}{0.3em}
+\setlist{nosep}
+\allowdisplaybreaks[2]
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 三行矩形多米诺铺法的对称计数}
+\fancyhead[R]{\small 研究稿 v1.0}
+\fancyfoot[C]{\thepage}
+\title{\bfseries 三行矩形多米诺铺法的对称计数\\[4pt]
+\large 基本块、半棋盘与奇数高度推广}
+\author{本地研究稿}
+\date{2026 年 10 月 25 日\quad 版本 1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+本文研究无标号多米诺对三行、偶数列矩形的全部铺法在旋转和反射下的轨道计数。
+首先利用完整的列切口转移规则，将铺法唯一分解为不可竖切基本块，并把对称作用转化为字母对合和字的倒序。
+由此给出 OEIS A232622 所列生成函数及七阶递推的完整推导。
+其次建立半棋盘与对称固定铺法之间的双射，以两维递推重新得到三行公式，
+并确定各精确稳定子类型及其渐近比例。
+同一半棋盘方法给出任意固定奇数高度的轨道生成函数矩阵表达式及有理性；
+五行情形进一步得到显式有理式、十四阶递推和六维多项式证书。
+文中将一般证明、有限枚举与符号计算的作用分开，附可复现材料说明。
+\end{abstract}
+\noindent\textbf{关键词：} 多米诺铺法；Burnside 引理；生成函数；转移矩阵；对称轨道
+
+\medskip
+\noindent\textbf{稿件说明。}
+本稿由本地 P002 研究记录整理，推导、代码及文字使用 Codex 辅助完成。
+当前已作同一助手的书面自查与本地计算交叉核验，尚无独立外部审阅或形式化验证。
+本文给出可逐步检查的证明，不作首次证明或文献优先权声明；作者署名由后续正式投稿时确定。
+
+\input{sections/introduction}
+\input{sections/blocks}
+\input{sections/half-board}
+\input{sections/symmetry-types}
+\input{sections/odd-height}
+\input{sections/five-row}
+\input{sections/computation}
+\appendix
+\input{sections/certificate}
+\input{sections/reproducibility}
+\input{references}
+\end{document}

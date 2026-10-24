@@ -1,0 +1,247 @@
+{
+  "date_beijing": "2026-10-25T00:23:05.529756+08:00",
+  "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "sympy": "1.13.1",
+  "source_sha256": "a662cb881d1c9de909376fc36b85a218e818dc59171525d2f9bed4b31261ed8d",
+  "enumerator_path": "01_topics\\checks\\a232622-screening\\check_tilings.py",
+  "enumerator_sha256": "d0313bcca212f6c5f63ef9f2588ee5e36300f9f4d65e6cb2979b2d9f3ecf134b",
+  "historical_report_sha256": "05a3ad5836ac9da586011b76bb5c686ed9c284969280f5fdd49688d3e69c749a",
+  "random_seed": null,
+  "range_n": [
+    0,
+    8
+  ],
+  "rows": [
+    {
+      "n": 0,
+      "board": [
+        3,
+        0
+      ],
+      "tilings_checked": 1,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "orbit_count": 1,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 1,
+      "board": [
+        3,
+        2
+      ],
+      "tilings_checked": 3,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        3,
+        1,
+        3,
+        1
+      ],
+      "orbit_count": 2,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 2,
+      "board": [
+        3,
+        4
+      ],
+      "tilings_checked": 11,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        11,
+        1,
+        5,
+        3
+      ],
+      "orbit_count": 5,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 3,
+      "board": [
+        3,
+        6
+      ],
+      "tilings_checked": 41,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        41,
+        1,
+        11,
+        3
+      ],
+      "orbit_count": 14,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 4,
+      "board": [
+        3,
+        8
+      ],
+      "tilings_checked": 153,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        153,
+        1,
+        19,
+        11
+      ],
+      "orbit_count": 46,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 5,
+      "board": [
+        3,
+        10
+      ],
+      "tilings_checked": 571,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        571,
+        1,
+        41,
+        11
+      ],
+      "orbit_count": 156,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 6,
+      "board": [
+        3,
+        12
+      ],
+      "tilings_checked": 2131,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        2131,
+        1,
+        71,
+        41
+      ],
+      "orbit_count": 561,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 7,
+      "board": [
+        3,
+        14
+      ],
+      "tilings_checked": 7953,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        7953,
+        1,
+        153,
+        41
+      ],
+      "orbit_count": 2037,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    },
+    {
+      "n": 8,
+      "board": [
+        3,
+        16
+      ],
+      "tilings_checked": 29681,
+      "fixed_counts_identity_rowflip_colflip_halfturn": [
+        29681,
+        1,
+        265,
+        153
+      ],
+      "orbit_count": 7525,
+      "all_factorizations_rebuilt": true,
+      "all_four_word_actions_match_cell_actions": true
+    }
+  ],
+  "tilings_checked_total": 40545,
+  "primitive_counts_by_half_width": {
+    "1": 3,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2,
+    "6": 2,
+    "7": 2,
+    "8": 2
+  },
+  "transition_table_bit0_top_row": {
+    "0": [
+      1,
+      4,
+      7
+    ],
+    "1": [
+      0,
+      6
+    ],
+    "2": [
+      5
+    ],
+    "3": [
+      4
+    ],
+    "4": [
+      0,
+      3
+    ],
+    "5": [
+      2
+    ],
+    "6": [
+      1
+    ],
+    "7": [
+      0
+    ]
+  },
+  "symbolic_checks": {
+    "derived_equals_oeis_rational_function": true,
+    "derived_x_equals_mathar_eq26_after_x_z_squared": true,
+    "denominator_coefficients_ascending": [
+      1,
+      -5,
+      1,
+      19,
+      -19,
+      -1,
+      5,
+      -1
+    ],
+    "normalized_numerator": "x**6 - 4*x**5 + 10*x**3 - 4*x**2 - 3*x + 1",
+    "initial_values": [
+      1,
+      2,
+      5,
+      14,
+      46,
+      156,
+      561,
+      2037,
+      7525
+    ],
+    "method": "exact SymPy rational cancellation and polynomial expansion"
+  },
+  "matches_historical_report": true,
+  "elapsed_seconds": 17.20873019998544,
+  "limitations": [
+    "铺法枚举复用历史脚本；不是两个独立穷举实现。",
+    "本轮新执行逐个分解和四种对称作用检查；历史报告未覆盖这些检查。",
+    "有限枚举只覆盖所列 n；一般结论依赖 proof.md 的组合论证。",
+    "精确代数只验证输入表达式的恒等式，不验证其组合解释。",
+    "未运行形式化证明，不检验文献新颖性。"
+  ],
+  "publication_note": "Historical output with machine paths, invocation and platform metadata removed. Numerical fields are unchanged. This is not a new run or a formal proof."
+}

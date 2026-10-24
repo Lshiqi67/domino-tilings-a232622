@@ -1,0 +1,50 @@
+{
+  "date_beijing": "2026-10-25T02:29:01.858436+08:00",
+  "command": "python papers/en/checks/prepare_and_audit.py (from the repository root)",
+  "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "sympy": "1.13.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "random_seed": null,
+  "checks": {
+    "original_source_hashes_match": true,
+    "manuscript_M_B_C_match_original_certificate": true,
+    "manuscript_coefficient_vector_certificate_exact": true,
+    "terminal_vectors_match": true,
+    "four_five_row_functions_in_manuscript_exact": true,
+    "main_three_row_formula_exact": true,
+    "five_row_coefficients_vs_integer_matrix_n0_to100": true
+  },
+  "a5_initial_14": [
+    1,
+    5,
+    33,
+    329,
+    3818,
+    46878,
+    584386,
+    7318152,
+    91752831,
+    1150774799,
+    14434490195,
+    181060839597,
+    2271175917429,
+    28489049801109
+  ],
+  "source_sha256": {
+    "figures/blocks.tex": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848",
+    "generated/five-table.tex": "31d321b76d2633d7c494c4165438916e08f3f5a2ae29f36c02641e43c28bc083",
+    "main.tex": "0bab162859c5716109ad7f797b3a2fe1beb04fd32e3884bfd9ba39fda70d95f9",
+    "references.tex": "b0e2bf843149d0a4cc456ee23d1fabf24fc7ca48111d7536a9cfe63cd1bc8aa4",
+    "sections/blocks.tex": "8f93a4c879e35531ca76165c014377afa1c1ae763f81a43eaf07a3ca6663e74f",
+    "sections/certificate.tex": "c6496640afa2e0c1e5bd0754c305215f41a503c050268a08a2619e96e751e038",
+    "sections/computation.tex": "73532b6a540bb2d571197036e26620f32bdf96b1cd6857ad96607fa7768f311d",
+    "sections/five-row.tex": "37cb0dc4aa4e68499ba90eeb0797fce10db2474dd5d0122122f64cd8891a6e2c",
+    "sections/half-board.tex": "cf8c27f4c24a328f84e82f6d04ada551ed04b4ff86b8c17b31687edd3f74dfd5",
+    "sections/introduction.tex": "1017dbd1edc14d1b2c77d667312f080ed8880b2fc5b22f730e1c76190b4bf65e",
+    "sections/odd-height.tex": "bb4ef2f99af8788f94f33a217de2993aa13bbbd812f68a0597f92313dae8e683",
+    "sections/reproducibility.tex": "853b3ad3f22a455995b578ee0a1eda1b7ab490ae7ecdf8a9aa1f9b7646a52385",
+    "sections/symmetry-types.tex": "8063f2cd68e94160e0f63c9b98023fd0376e567993f50a28c957fa36b5b70207"
+  },
+  "script_sha256": "dc76315ab04e6436fc57d451b0a2b0bca76b42504f495e6dc8770158830a68aa",
+  "limits": "Checks manuscript transcription and exact algebra, not exhaustive tiling enumeration, independent review, or bibliographic priority."
+}

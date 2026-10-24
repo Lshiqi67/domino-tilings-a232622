@@ -1,0 +1,73 @@
+\section{Computational checks and further questions}\label{sec:computation}
+
+The arguments above are proposed combinatorial proofs for the
+stated parameters; their correctness remains to be verified in Lean.
+Computation checks implementations, transcriptions, and specified
+algebraic identities. It does not complete the research.
+The block-based verification enumerated all three-row tilings
+for $0\le n\le8$, a total of $40545$ tilings, and checked
+factorization, reconstruction, and all four symmetry actions.
+It reused an earlier row-major grid enumerator.
+A separate column-major enumerator, selecting at each step
+an unmatched cell with the fewest available neighbours,
+was subsequently implemented without importing the old
+enumerator or the block code.
+Its exhaustive ranges are shown in Table \ref{tab:checks}.
+
+\begin{table}[htbp]
+\centering
+\caption{Ranges of the second exhaustive enumeration.}
+\label{tab:checks}
+\begin{tabular}{ccl}
+\toprule
+Height & Half-width $n$ & Main checks\\
+\midrule
+1 & $0,\ldots,8$ & Smallest height and nonfaithful actions\\
+3 & $0,\ldots,8$ & Orbit counts and exact stabilizers\\
+5 & $0,\ldots,4$ & Five-row formulas and midline completion\\
+7 & $0,\ldots,2$ & Higher odd-height instances\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The second enumerator examined $57468$ tilings in total.
+For every tiling it computed the four cellwise symmetry
+images and a canonical orbit representative.
+For vertical-reflection and half-turn fixed tilings, it
+restricted to the left half, recorded the terminal row set,
+and reconstructed the full tiling.
+The resulting counts for each terminal state agreed with
+the transfer computation, and the three-row stabilizer
+counts agreed with Table \ref{tab:stabilizers}.
+
+Exact symbolic calculations also solved the full three-row
+and five-row matrix systems. Each resolvent row was checked
+against its defining linear equation with zero residual.
+The six-dimensional five-row model was checked against
+the full matrix model and against \eqref{eq:certificate}.
+For both heights, coefficients of the rational functions
+agreed with integer transfer iteration for $0\le n\le100$.
+This last comparison was not exhaustive tiling enumeration
+over that range.
+The recorded research runs used Python 3.13.0 and SymPy
+1.13.1 on Windows on October 25, 2026.
+They are deterministic and use exact arithmetic.
+Commands, input ranges, source hashes, and outputs are
+included in the supplementary research materials.
+
+The two proof routes share the local column-covering model
+but use different global bijections. They were developed
+in the same AI-assisted workflow, as disclosed below.
+Agreement of the implementations does not replace independent
+mathematical review.
+In particular, finite enumeration does not prove the
+unbounded-parameter statements; these follow from the
+bijections. The polynomial certificate establishes the
+evaluation of a specified matrix model.
+
+For even height, the horizontal-axis reflection term must
+allow dominoes crossing that axis. For squares, the full
+dihedral group requires two quarter-turns and two diagonal
+reflections in addition to the four symmetries considered here.
+These provide natural extensions, but no formula for those
+cases is asserted in this paper.

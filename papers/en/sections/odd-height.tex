@@ -1,0 +1,61 @@
+\section{Rectangles of arbitrary odd height}\label{sec:odd}
+
+Fix $m=2k+1\ge1$. Let $a_m(n)$ be the number of domino tilings
+of an $m\times2n$ rectangle up to its full symmetry group,
+with $a_m(0)=1$. A nonempty rectangle of odd height and even
+width is never a square, so its symmetry group is still
+$\{e,h,v,\rho\}$.
+Use $T_m,\chi_m,\evec$ as defined in Section \ref{sec:half}.
+The following is an explicit specialization of the general
+recurrence framework discussed by DeFord \cite{deford}.
+We include the proof to specify all symmetry boundary terms.
+
+\begin{theorem}\label{thm:odd}
+For every $m=2k+1\ge1$ and $n\ge0$,
+\begin{equation}\label{eq:odd-count}
+ a_m(n)=\frac14\left[
+ \evec^{\trans}T_m^{2n}\evec+
+ \evec^{\trans}T_k^{2n}\evec+
+ \evec^{\trans}T_m^n(\one+\chi_m)\right].
+\end{equation}
+Equivalently,
+\begin{equation}\label{eq:odd-gf}
+\begin{split}
+ A_m(x):=\sum_{n\ge0}a_m(n)x^n
+ =\frac14\bigl[&
+ \evec^{\trans}(I-xT_m^2)^{-1}\evec\\
+ &+\evec^{\trans}(I-xT_k^2)^{-1}\evec\\
+ &+\evec^{\trans}(I-xT_m)^{-1}(\one+\chi_m)\bigr].
+\end{split}
+\end{equation}
+For each fixed odd height, $A_m(x)$ is rational, and its
+coefficient sequence satisfies a constant-coefficient linear
+recurrence.
+\end{theorem}
+\begin{proof}
+The identity contribution is given by \eqref{eq:profile}.
+Lemma \ref{lem:h-odd} gives the horizontal-axis reflection
+contribution, and Lemma \ref{lem:half} gives the other two.
+The same double count as in Lemma \ref{lem:burnside} proves
+\eqref{eq:odd-count}.
+Summing over $n$ and using
+$\sum_{n\ge0}x^nM^n=(I-xM)^{-1}$ proves \eqref{eq:odd-gf}.
+Every matrix is finite, and $I-xM$ has constant term $I$.
+Its inverse exists formally, and its entries are rational
+by the adjugate formula.
+Multiplying the resulting generating function by a denominator
+with nonzero constant term and comparing sufficiently high
+coefficients gives the asserted recurrence.
+\end{proof}
+
+The vectors $\evec$ in the different summands belong to the
+corresponding state spaces; when $k=0$, the convention
+$T_0=(1)$ applies.
+Lemma \ref{lem:half} itself holds for even heights as well.
+However, \eqref{eq:h-odd} uses a middle row and cannot be
+applied unchanged at even height.
+That case requires a separate treatment of vertical dominoes
+crossing the horizontal axis. For a square, quarter-turns and
+diagonal reflections must also be included to count classes
+under the full symmetry group.
+Neither extension is asserted here.

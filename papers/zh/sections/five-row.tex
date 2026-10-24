@@ -1,0 +1,101 @@
+\section{五行棋盘的显式生成函数}\label{sec:five}
+五行情形可以把一般矩阵公式压缩为六维多项式恒等式。
+为使此实例可手工复核，本节给出证书和全部边界向量，
+附录 \ref{app:certificate} 列出单列转移的构造。
+
+用五位掩码表示行集合，最低位对应顶行。
+偶数列可达状态的行反转轨道依次为
+\begin{equation}\label{eq:even-orbits}
+ \{0\},\{3,24\},\{6,12\},\{9,18\},\{15,30\},\{27\}.
+\end{equation}
+计数在行反转下相同。令 $u_j$ 的六个分量表示第 $2j$ 列后
+相应轨道中\emph{每个单独状态}的计数，非轨道计数之和。
+则 $u_0=\evec$，$u_{j+1}=Mu_j$，其中
+\begin{equation}\label{eq:M5}
+ M=\begin{pmatrix}
+8&6&4&2&2&1\\
+3&4&1&1&1&1\\
+2&1&2&1&1&0\\
+1&1&1&2&1&0\\
+1&1&1&1&1&0\\
+1&2&0&0&0&1
+\end{pmatrix}.
+\end{equation}
+设
+\begin{equation}\label{eq:PN}
+\begin{split}
+ P(t)&=1-15t+32t^2-15t^3+t^4,\\
+ N(t)&=\bigl(1-7t+7t^2-t^3,\ 
+ 3t-4t^2+t^3,\ 2t-5t^2+t^3,\ t+t^2,\ t-t^3,\ t-t^3\bigr)^{\trans}.
+\end{split}
+\end{equation}
+直接多项式乘法给出
+\begin{equation}\label{eq:certificate}
+ (I-tM)N(t)=P(t)\evec.
+\end{equation}
+由于 $P(0)=1$，该恒等式证明
+\[
+ f(t):=\sum_{j\ge0}u_jt^j=\frac{N(t)}{P(t)}.
+\]
+附录还把式 \eqref{eq:certificate} 写成四个系数向量等式，
+因此不需要将符号软件输出作为黑箱。
+
+左右反射在偶数、奇数半长度的终端行向量分别为
+\begin{align*}
+ w_{v,e}&=(1,2,2,2,2,1),&w_{v,o}&=(8,6,4,4,2,1),
+\end{align*}
+半周旋转相应为
+\[
+ w_{r,e}=(1,0,0,0,0,1),\qquad w_{r,o}=(2,2,0,0,0,1).
+\]
+偶数终端向量分别累计所有状态，或仅累计行反转固定状态；
+奇数终端向量先作一次单列转移再累计。
+引理 \ref{lem:half} 因而给出
+\begin{equation}\label{eq:terminal5}
+ V_5(x)=(w_{v,e}+xw_{v,o})f(x^2),\qquad
+ R_5(x)=(w_{r,e}+xw_{r,o})f(x^2).
+\end{equation}
+
+\begin{theorem}[五行显式公式]\label{thm:five}
+令 $D_5,H_5,V_5,R_5$ 分别为五行四种固定点数的生成函数，则
+\begin{align}
+ D_5(x)&=\frac{1-7x+7x^2-x^3}{P(x)},&
+ H_5(x)&=\frac{1-x}{1-3x+x^2},\label{eq:five-DH}\\
+ V_5(x)&=\frac{1+8x+8x^2-23x^3-9x^4+16x^5-x^7}{P(x^2)},\label{eq:five-V}\\
+ R_5(x)&=\frac{1+2x-6x^2-7x^3+7x^4+6x^5-2x^6-x^7}{P(x^2)}.\label{eq:five-R}
+\end{align}
+轨道生成函数为
+\begin{equation}\label{eq:five-A}
+ A_5(x)=\frac{D_5(x)+H_5(x)+V_5(x)+R_5(x)}4.
+\end{equation}
+\end{theorem}
+\begin{proof}
+普通完整铺法对应空终端状态，故 $D_5=f_0$，
+给出 \eqref{eq:five-DH} 的第一式。
+将 \eqref{eq:PN} 代入 \eqref{eq:terminal5} 给出
+\eqref{eq:five-V} 和 \eqref{eq:five-R}。
+由引理 \ref{lem:h-odd}，$h_{5,n}=t_2(2n)$。
+两行铺法从最左列分类，或者首列由一块竖直砖覆盖，
+或者前两列由两块水平砖覆盖，所以
+$t_2(j)=t_2(j-1)+t_2(j-2)$，初值为 $t_2(0)=t_2(1)=1$。
+其两步转移矩阵为
+$\left(\begin{smallmatrix}2&1\\1&1\end{smallmatrix}\right)$，
+满足 $L^2-3L+I=0$。故偶长子序列 $b_n=t_2(2n)$ 的初值为 $1,2$，
+且 $b_{n+2}=3b_{n+1}-b_n$，得到 $H_5$。
+最后由定理 \ref{thm:odd} 或轨道平均公式得 \eqref{eq:five-A}。
+\end{proof}
+
+令 $Q(x)=(1-3x+x^2)P(x)P(x^2)=\sum_{j=0}^{14}q_jx^j$。
+通分后的分子记为 $U(x)=\sum_{j=0}^{13}b_jx^j$。
+表 \ref{tab:five-coeff} 给出二者全部系数和足以启动递推的 14 个初值。
+因此
+\begin{equation}\label{eq:rec5}
+ a_5(n)=-\sum_{j=1}^{14}q_j a_5(n-j),\qquad n\ge14.
+\end{equation}
+本文只主张这一十四阶递推，不另行声称阶数的最小性。
+
+\input{generated/five-table}
+
+Mathar \cite[表 12]{mathar2013} 给出的五行、列数 $2,4,6,8,10$ 的轨道数
+为 $5,33,329,3818,46878$，与这里得到的 $a_5(1),\ldots,a_5(5)$ 一致。
+该比较在公式推导之后进行，没有用这些数据拟合矩阵或生成函数。
