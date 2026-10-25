@@ -1,0 +1,51 @@
+{
+  "date_beijing": "2026-10-25T17:58:37.583065+08:00",
+  "command": "python papers/zh/checks/prepare_and_audit.py (from the repository root)",
+  "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "sympy": "1.13.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "random_seed": null,
+  "checks": {
+    "original_source_hashes_match": true,
+    "manuscript_M_B_C_match_original_certificate": true,
+    "manuscript_coefficient_vector_certificate_exact": true,
+    "terminal_vectors_match": true,
+    "four_five_row_functions_in_manuscript_exact": true,
+    "main_three_row_formula_exact": true,
+    "five_row_coefficients_vs_integer_matrix_n0_to100": true
+  },
+  "a5_initial_14": [
+    1,
+    5,
+    33,
+    329,
+    3818,
+    46878,
+    584386,
+    7318152,
+    91752831,
+    1150774799,
+    14434490195,
+    181060839597,
+    2271175917429,
+    28489049801109
+  ],
+  "source_sha256": {
+    "figures/blocks.tex": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848",
+    "generated/five-table.tex": "f9c018a420bbd7254ae9daf09752606252917494f9c5f6d854740e665ffcba9f",
+    "main.tex": "c1284774e79077f2158ad55ed7570b8abba15f9531cb2d11869686b4122beee2",
+    "references.tex": "cb31e57f2b38d152bcf6c0390b521171a84220aef733b381edf8986fd92071ac",
+    "sections/blocks.tex": "9cc69946e25d13697c6396ffd29f1b0ac6895a2555f1b3b5e35e0002a3b5307d",
+    "sections/certificate.tex": "736ae737fb2174246cc50826a412fcada4c4d903818fc64d0b3204d8f829fd5f",
+    "sections/computation.tex": "49733054992c87408af866b5810f86d21317a782de085db287788ca385ce3d92",
+    "sections/five-row.tex": "d298edea5d5d8a7e3479f1518fa6143dad2bc6b63b3329279af95a2708a0db93",
+    "sections/formalization.tex": "d052768dc2887b042bd7d38947fa3a0d555a44bb74786c8c44da029d221ba805",
+    "sections/half-board.tex": "3ed6b4903492a5f0f1481cf94186780b8134a006da48be28838c0b2c9a473811",
+    "sections/introduction.tex": "6f7b3391e78f517762fa9a227ba256c36d347efa5edbe0dd7a56855e2f48201b",
+    "sections/odd-height.tex": "105ddee3fd17c93152c37ac9a21250b3f39da6c70b2ad1ec909839b43150ca1d",
+    "sections/reproducibility.tex": "b915136dffdd1aaefa5d16df31b3aa8113df6cc9ca33d276e11268c7612a5564",
+    "sections/symmetry-types.tex": "eb037f2955bccd46edc3d20cab0c46cd092413b6754b6e1db4f9a1a6391dbab4"
+  },
+  "script_sha256": "efc23d64a95f5e5f1e78c45f62bc98bed4d3e10145a4c3406af3525038b68f7e",
+  "limits": "Checks manuscript transcription and exact algebra, not exhaustive tiling enumeration, independent review, or bibliographic priority."
+}

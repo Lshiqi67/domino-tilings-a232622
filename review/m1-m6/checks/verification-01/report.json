@@ -1,0 +1,221 @@
+{
+  "scope": "M1-M6",
+  "static_checks_passed": true,
+  "semantic_items": 25,
+  "mapped_declarations": 152,
+  "mathematical_modules": 32,
+  "audit_declarations": 413,
+  "source_manifest_sha256": "d500e9798cb38c6d5516388d50578141b589056af1258d4e47cda9d9e47d89de",
+  "import_graph": {
+    "Domino.Board.Basic": [],
+    "Domino.Board.Tiling": [
+      "Domino.Board.Basic"
+    ],
+    "Domino.Board.Partial": [
+      "Domino.Board.Tiling"
+    ],
+    "Domino.Board.Examples": [
+      "Domino.Board.Partial"
+    ],
+    "Domino.Symmetry.Action": [
+      "Domino.Board.Partial"
+    ],
+    "Domino.Symmetry.Counting": [
+      "Domino.Symmetry.Action"
+    ],
+    "Domino.Transfer.Bonds": [
+      "Domino.Board.Partial"
+    ],
+    "Domino.Transfer.ThreeRows": [
+      "Domino.Board.Partial"
+    ],
+    "Domino.Transfer.Grid": [
+      "Domino.Transfer.Bonds"
+    ],
+    "Domino.Transfer.Links": [
+      "Domino.Transfer.Grid",
+      "Domino.Transfer.ThreeRows"
+    ],
+    "Domino.Transfer.Frame": [
+      "Domino.Transfer.Links"
+    ],
+    "Domino.Transfer.PathEquiv": [
+      "Domino.Transfer.Frame"
+    ],
+    "Domino.Transfer.Count": [
+      "Domino.Transfer.PathEquiv",
+      "Domino.Symmetry.Counting"
+    ],
+    "Domino.Transfer.Examples": [
+      "Domino.Transfer.Count"
+    ],
+    "Domino.Symmetry.PathAction": [
+      "Domino.Transfer.Count"
+    ],
+    "Domino.HalfBoard.PathCompletion": [
+      "Domino.Symmetry.PathAction"
+    ],
+    "Domino.HalfBoard.Geometry": [
+      "Domino.HalfBoard.PathCompletion"
+    ],
+    "Domino.HalfBoard.Reflection": [
+      "Domino.HalfBoard.Geometry"
+    ],
+    "Domino.HalfBoard.HalfTurn": [
+      "Domino.HalfBoard.Reflection"
+    ],
+    "Domino.HalfBoard.Horizontal": [
+      "Domino.HalfBoard.HalfTurn"
+    ],
+    "Domino.HalfBoard.Examples": [
+      "Domino.HalfBoard.Horizontal",
+      "Domino.Transfer.Examples"
+    ],
+    "Domino.ThreeRows.ProfileRecurrence": [
+      "Domino.Transfer.Count"
+    ],
+    "Domino.ThreeRows.Ordinary": [
+      "Domino.ThreeRows.ProfileRecurrence"
+    ],
+    "Domino.ThreeRows.FixedCounts": [
+      "Domino.ThreeRows.Ordinary",
+      "Domino.HalfBoard.Horizontal"
+    ],
+    "Domino.Symmetry.Burnside": [
+      "Domino.Symmetry.Counting"
+    ],
+    "Domino.ThreeRows.OrbitCounts": [
+      "Domino.ThreeRows.FixedCounts",
+      "Domino.Symmetry.Burnside"
+    ],
+    "Domino.ThreeRows.Boundary": [
+      "Domino.ThreeRows.OrbitCounts",
+      "Domino.HalfBoard.Examples"
+    ],
+    "Domino.Series.Basic": [],
+    "Domino.ThreeRows.Algebra": [
+      "Domino.Series.Basic"
+    ],
+    "Domino.ThreeRows.Series": [
+      "Domino.ThreeRows.Algebra",
+      "Domino.ThreeRows.OrbitCounts"
+    ],
+    "Domino.ThreeRows.Main": [
+      "Domino.ThreeRows.Series"
+    ],
+    "Domino.ThreeRows.Recurrence": [
+      "Domino.ThreeRows.Main",
+      "Domino.ThreeRows.Boundary"
+    ]
+  },
+  "external_semantic_review": "pending",
+  "date_beijing": "2026-10-25T23:43:42.906895+08:00",
+  "python": "3.13.0",
+  "random_seed": null,
+  "lean_executed": true,
+  "commands": [
+    {
+      "name": "lean-version",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "lean",
+      "exit_code": 0
+    },
+    {
+      "name": "mathlib-revision",
+      "argv": [
+        "git",
+        "-C",
+        ".lake/packages/mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "lean",
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "argv": [
+        "lake",
+        "--wfail",
+        "build",
+        "Domino.Board.Basic",
+        "Domino.Board.Tiling",
+        "Domino.Board.Partial",
+        "Domino.Board.Examples",
+        "Domino.Symmetry.Action",
+        "Domino.Symmetry.Counting",
+        "Domino.Transfer.Bonds",
+        "Domino.Transfer.ThreeRows",
+        "Domino.Transfer.Grid",
+        "Domino.Transfer.Links",
+        "Domino.Transfer.Frame",
+        "Domino.Transfer.PathEquiv",
+        "Domino.Transfer.Count",
+        "Domino.Transfer.Examples",
+        "Domino.Symmetry.PathAction",
+        "Domino.HalfBoard.PathCompletion",
+        "Domino.HalfBoard.Geometry",
+        "Domino.HalfBoard.Reflection",
+        "Domino.HalfBoard.HalfTurn",
+        "Domino.HalfBoard.Horizontal",
+        "Domino.HalfBoard.Examples",
+        "Domino.ThreeRows.ProfileRecurrence",
+        "Domino.ThreeRows.Ordinary",
+        "Domino.ThreeRows.FixedCounts",
+        "Domino.Symmetry.Burnside",
+        "Domino.ThreeRows.OrbitCounts",
+        "Domino.ThreeRows.Boundary",
+        "Domino.Series.Basic",
+        "Domino.ThreeRows.Algebra",
+        "Domino.ThreeRows.Series",
+        "Domino.ThreeRows.Main",
+        "Domino.ThreeRows.Recurrence"
+      ],
+      "cwd": "lean",
+      "exit_code": 0
+    },
+    {
+      "name": "types",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "../review/m1-m6/Probe.lean"
+      ],
+      "cwd": "lean",
+      "exit_code": 0
+    },
+    {
+      "name": "axioms",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "../review/m1-m6/Axioms.lean"
+      ],
+      "cwd": "lean",
+      "exit_code": 0
+    }
+  ],
+  "axiom_dependencies_match_M6": true,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "status": "passed",
+  "limits": "固定 M1–M6 模块增量构建、声明类型和公理输出；不是新的独立干净重建、有限铺法穷举或外部人工语义审阅。",
+  "probe_sha256": {
+    "Probe.lean": "4f5e5cb7b5d8fc11cf20d1e04af4cec00781e4425d2e7e42a9bd9542a2323def",
+    "Axioms.lean": "944e2d5fb7519e4f2653da85574535e6da4398ef2b2f4bed11399a2e3ef1eea6",
+    "mapping.json": "cbcc94bc8e1a7d623600f3672948eedbdb095a4f3cfdbb210fa26e23c7e9589f",
+    "check_pack.py": "d808267110cdf0dfac917cccae20e8240cd5e04514b2cf4819b5b8ccd0047181"
+  }
+}

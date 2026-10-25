@@ -1,0 +1,344 @@
+@[reducible] def Domino.Cell : ℕ → ℕ → Type :=
+fun m w => Fin m × Fin w
+def Domino.Adjacent : {m w : ℕ} → Domino.Cell m w → Domino.Cell m w → Prop :=
+fun {m w} a b => a.1 = b.1 ∧ (↑a.2 + 1 = ↑b.2 ∨ ↑b.2 + 1 = ↑a.2) ∨ a.2 = b.2 ∧ (↑a.1 + 1 = ↑b.1 ∨ ↑b.1 + 1 = ↑a.1)
+def Domino.IsEdge : {m w : ℕ} → Finset (Domino.Cell m w) → Prop :=
+fun {m w} s => ∃ a b, Domino.Adjacent a b ∧ s = {a, b}
+def Domino.IsCover : {m w : ℕ} → Finset (Domino.Cell m w) → Finset (Domino.Edge m w) → Prop :=
+fun {m w} holes edges =>
+  (∀ (c : Domino.Cell m w), (∃ e ∈ edges, c ∈ ↑e) ↔ c ∉ holes) ∧ ∀ e ∈ edges, ∀ f ∈ edges, ∀ c ∈ ↑e, c ∈ ↑f → e = f
+@[reducible] def Domino.Tiling : ℕ → ℕ → Type :=
+fun m w => Domino.Cover m w ∅
+@[reducible] def Domino.PartialTiling : (m : ℕ) → ℕ → Domino.State m → Type :=
+fun m w S => { _T // w = 0 → S = ∅ }
+structure Domino.RectangleSymmetry : Type
+number of parameters: 0
+fields:
+  Domino.RectangleSymmetry.flipRows : Bool
+  Domino.RectangleSymmetry.flipCols : Bool
+constructor:
+  Domino.RectangleSymmetry.mk (flipRows flipCols : Bool) : Domino.RectangleSymmetry
+def Domino.cellAction : {m w : ℕ} → Domino.RectangleSymmetry → Domino.Cell m w → Domino.Cell m w :=
+fun {m w} g c => (if g.flipRows = true then c.1.rev else c.1, if g.flipCols = true then c.2.rev else c.2)
+@[reducible] def Domino.TilingOrbit : ℕ → ℕ → Type :=
+fun m w => Quotient (MulAction.orbitRel Domino.RectangleSymmetry (Domino.Tiling m w))
+def Domino.ordinaryCount : ℕ → ℕ → ℕ :=
+fun m n => Fintype.card (Domino.Tiling m (2 * n))
+def Domino.fixedCount : ℕ → ℕ → Domino.RectangleSymmetry → ℕ :=
+fun m n g => Fintype.card { T // g • T = T }
+def Domino.orbitCount : ℕ → ℕ → ℕ :=
+fun m n => Fintype.card (Domino.TilingOrbit m (2 * n))
+def Domino.a : ℕ → ℕ :=
+fun n => Domino.orbitCount 3 n
+def Domino.Legal3 : Domino.State 3 → Domino.State 3 → Prop :=
+fun p q => Disjoint p q ∧ (Finset.univ \ (p ∪ q) = ∅ ∨ Finset.univ \ (p ∪ q) = {0, 1} ∨ Finset.univ \ (p ∪ q) = {1, 2})
+structure Domino.StatePath (w : ℕ) (S : Domino.State 3) : Type
+number of parameters: 2
+fields:
+  Domino.StatePath.state : ℕ → Domino.State 3
+  Domino.StatePath.start : self.state 0 = ∅
+  Domino.StatePath.finish : self.state w = S
+  Domino.StatePath.support : ∀ (k : ℕ), w < k → self.state k = ∅
+  Domino.StatePath.step : ∀ k < w, Domino.Legal3 (self.state k) (self.state (k + 1))
+constructor:
+  Domino.StatePath.mk {w : ℕ} {S : Domino.State 3} (state : ℕ → Domino.State 3) (start : state 0 = ∅)
+    (finish : state w = S) (support : ∀ (k : ℕ), w < k → state k = ∅)
+    (step : ∀ k < w, Domino.Legal3 (state k) (state (k + 1))) : Domino.StatePath w S
+def Domino.profileCount : ℕ → Domino.State 3 → ℕ :=
+fun w S => Fintype.card (Domino.PartialTiling 3 w S)
+def Domino.profilePair : ℕ → ℕ × ℕ :=
+fun x => Nat.brecOn x Domino.profilePair._f
+def Domino.evenProfile : ℕ → ℕ → Domino.State 3 → ℕ :=
+fun a b S => if S = ∅ then a else if S = {0, 1} ∨ S = {1, 2} then b else 0
+def Domino.oddProfile : ℕ → ℕ → Domino.State 3 → ℕ :=
+fun a b S => if S = {0} ∨ S = {2} then a + b else if S = Finset.univ then a else 0
+def Domino.countSeries : (ℕ → ℕ) → PowerSeries ℚ :=
+fun f => PowerSeries.mk fun n => ↑(f n)
+def Domino.orbitSeries : PowerSeries ℚ :=
+Domino.countSeries Domino.a
+def Domino.orbitDenom : PowerSeries ℚ :=
+(1 - PowerSeries.X) * Domino.ordinaryDenom * Domino.parityDenom
+def Domino.orbitNumerator : PowerSeries ℚ :=
+1 - 3 * PowerSeries.X - 4 * PowerSeries.X ^ 2 + 10 * PowerSeries.X ^ 3 - 4 * PowerSeries.X ^ 5 + PowerSeries.X ^ 6
+Domino.Cell (m w : ℕ) : Type
+Domino.Adjacent {m w : ℕ} (a b : Domino.Cell m w) : Prop
+Domino.three_ne_even_width (n : ℕ) : 3 ≠ 2 * n
+Domino.IsEdge {m w : ℕ} (s : Finset (Domino.Cell m w)) : Prop
+Domino.Edge (m w : ℕ) : Type
+Domino.edgeOfAdjacent_swap {m w : ℕ} (a b : Domino.Cell m w) (h : Domino.Adjacent a b) :
+  Domino.edgeOfAdjacent a b h = Domino.edgeOfAdjacent b a ⋯
+Domino.edge_card_two {m w : ℕ} (e : Domino.Edge m w) : (↑e).card = 2
+Domino.IsCover {m w : ℕ} (holes : Finset (Domino.Cell m w)) (edges : Finset (Domino.Edge m w)) : Prop
+Domino.Cover (m w : ℕ) (holes : Finset (Domino.Cell m w)) : Type
+Domino.Tiling (m w : ℕ) : Type
+Domino.isCover_empty_iff {m w : ℕ} (edges : Finset (Domino.Edge m w)) :
+  Domino.IsCover ∅ edges ↔ ∀ (c : Domino.Cell m w), ∃! e, e ∈ edges ∧ c ∈ ↑e
+Domino.cover_exactly_one {m w : ℕ} {holes : Finset (Domino.Cell m w)} (T : Domino.Cover m w holes) (c : Domino.Cell m w)
+  (hc : c ∉ holes) : ∃! e, e ∈ ↑T ∧ c ∈ ↑e
+Domino.RectangleSymmetry : Type
+Domino.horizontal : Domino.RectangleSymmetry
+Domino.vertical : Domino.RectangleSymmetry
+Domino.halfTurn : Domino.RectangleSymmetry
+Domino.cellAction {m w : ℕ} (g : Domino.RectangleSymmetry) (c : Domino.Cell m w) : Domino.Cell m w
+Domino.cellAction_horizontal {m w : ℕ} (c : Domino.Cell m w) :
+  Domino.cellAction Domino.horizontal c = Domino.reflectRows c
+Domino.cellAction_vertical {m w : ℕ} (c : Domino.Cell m w) : Domino.cellAction Domino.vertical c = Domino.reflectCols c
+Domino.cellAction_halfTurn {m w : ℕ} (c : Domino.Cell m w) :
+  Domino.cellAction Domino.halfTurn c = Domino.reflectRows (Domino.reflectCols c)
+Domino.edgeAction {m w : ℕ} (g : Domino.RectangleSymmetry) (e : Domino.Edge m w) : Domino.Edge m w
+Domino.symmetry_card_four : Fintype.card Domino.RectangleSymmetry = 4
+Domino.TilingOrbit (m w : ℕ) : Type
+Domino.ordinaryCount (m n : ℕ) : ℕ
+Domino.fixedCount (m n : ℕ) (g : Domino.RectangleSymmetry) : ℕ
+Domino.orbitCount (m n : ℕ) : ℕ
+Domino.a (n : ℕ) : ℕ
+Domino.orbitRel_iff_four {m w : ℕ} (T U : Domino.Tiling m w) :
+  (MulAction.orbitRel Domino.RectangleSymmetry (Domino.Tiling m w)) T U ↔
+    T = U ∨ T = Domino.horizontal • U ∨ T = Domino.vertical • U ∨ T = Domino.halfTurn • U
+Domino.empty_tiling_unique (m : ℕ) (T : Domino.Tiling m 0) : T = Domino.emptyWidthTiling m
+Domino.a_zero : Domino.a 0 = 1
+Domino.fixedCount_zero (m : ℕ) (g : Domino.RectangleSymmetry) : Domino.fixedCount m 0 g = 1
+Domino.terminalHoles (m w : ℕ) (S : Domino.State m) : Finset (Domino.Cell m w)
+Domino.PartialTiling (m w : ℕ) (S : Domino.State m) : Type
+Domino.partial_width_zero_nonempty_iff (m : ℕ) (S : Domino.State m) : Nonempty (Domino.PartialTiling m 0 S) ↔ S = ∅
+Domino.partial_width_zero_card (m : ℕ) (S : Domino.State m) :
+  Fintype.card (Domino.PartialTiling m 0 S) = if S = ∅ then 1 else 0
+Domino.State (m : ℕ) : Type
+Domino.reverseState {m : ℕ} (S : Domino.State m) : Domino.State m
+Domino.mem_terminalHoles {m w : ℕ} (S : Domino.State m) (c : Domino.Cell m w) :
+  c ∈ Domino.terminalHoles m w S ↔ ↑c.2 + 1 = w ∧ c.1 ∈ S
+Domino.partialEmptyEquivTiling (m w : ℕ) : Domino.PartialTiling m w ∅ ≃ Domino.Tiling m w
+Domino.ColumnRule (p q : Domino.State 3) (v : Finset (Fin 2)) : Prop
+Domino.Legal3 (p q : Domino.State 3) : Prop
+Domino.legal3_iff_column_cover (p q : Domino.State 3) : Domino.Legal3 p q ↔ ∃ v, Domino.ColumnRule p q v
+Domino.column_cover_unique (p q : Domino.State 3) (v u : Finset (Fin 2)) :
+  Domino.ColumnRule p q v → Domino.ColumnRule p q u → v = u
+Domino.transfer3 (p q : Domino.State 3) : ℕ
+Domino.columnCover_card (p q : Domino.State 3) : Fintype.card (Domino.ColumnCover p q) = Domino.transfer3 p q
+Domino.StatePath (w : ℕ) (S : Domino.State 3) : Type
+Domino.partialTilingEquivPath (w : ℕ) (S : Domino.State 3) : Domino.PartialTiling 3 w S ≃ Domino.StatePath w S
+Domino.tilingEquivClosedPath (w : ℕ) : Domino.Tiling 3 w ≃ Domino.StatePath w ∅
+Domino.partial_path_roundtrip (w : ℕ) (S : Domino.State 3) (P : Domino.PartialTiling 3 w S) :
+  (Domino.partialTilingEquivPath w S).symm ((Domino.partialTilingEquivPath w S) P) = P
+Domino.path_partial_roundtrip (w : ℕ) (S : Domino.State 3) (P : Domino.StatePath w S) :
+  (Domino.partialTilingEquivPath w S) ((Domino.partialTilingEquivPath w S).symm P) = P
+Domino.partial_path_state {w : ℕ} {S : Domino.State 3} (P : Domino.PartialTiling 3 w S) (k : ℕ) :
+  ((Domino.partialTilingEquivPath w S) P).state k = Domino.gridH (Domino.gridOfPartial P) k
+Domino.profileCount (w : ℕ) (S : Domino.State 3) : ℕ
+Domino.profile_count_path (w : ℕ) (S : Domino.State 3) : Domino.profileCount w S = Fintype.card (Domino.StatePath w S)
+Domino.profile_count_zero (S : Domino.State 3) : Domino.profileCount 0 S = if S = ∅ then 1 else 0
+Domino.profile_count_succ (w : ℕ) (q : Domino.State 3) :
+  Domino.profileCount (w + 1) q = ∑ p, Domino.profileCount w p * Domino.transfer3 p q
+Domino.ordinary_count_profile (n : ℕ) : Domino.ordinaryCount 3 n = Domino.profileCount (2 * n) ∅
+Domino.coverBonds_action {m w : ℕ} (g : Domino.RectangleSymmetry) (T : Domino.Tiling m w) (a b : Domino.Cell m w) :
+  (a, b) ∈ Domino.coverBonds (g • T) ↔ (Domino.cellAction g a, Domino.cellAction g b) ∈ Domino.coverBonds T
+Domino.tilingPath_cut {w : ℕ} (T : Domino.Tiling 3 w) (k : ℕ) (hk : 0 < k) (hkw : k < w) (r : Fin 3) :
+  r ∈ (Domino.tilingPath T).state k ↔ ((r, ⟨k - 1, ⋯⟩), r, ⟨k, hkw⟩) ∈ Domino.coverBonds T
+Domino.tilingPath_horizontal {w : ℕ} (T : Domino.Tiling 3 w) (k : ℕ) :
+  (Domino.tilingPath (Domino.horizontal • T)).state k = Domino.reverseState ((Domino.tilingPath T).state k)
+Domino.tilingPath_vertical {w : ℕ} (T : Domino.Tiling 3 w) (k : ℕ) (hk : k ≤ w) :
+  (Domino.tilingPath (Domino.vertical • T)).state k = (Domino.tilingPath T).state (w - k)
+Domino.tilingPath_halfTurn {w : ℕ} (T : Domino.Tiling 3 w) (k : ℕ) (hk : k ≤ w) :
+  (Domino.tilingPath (Domino.halfTurn • T)).state k = Domino.reverseState ((Domino.tilingPath T).state (w - k))
+Domino.axial_fixed_iff_path {w : ℕ} (b : Bool) (T : Domino.Tiling 3 w) :
+  Domino.axialSymmetry b • T = T ↔
+    ∀ k ≤ w, (Domino.tilingPath T).state k = Domino.twistState b ((Domino.tilingPath T).state (w - k))
+Domino.reflectionFixedEquivPartial (n : ℕ) :
+  { T // Domino.vertical • T = T } ≃ (S : Domino.State 3) × Domino.PartialTiling 3 n S
+Domino.completeReflection {n : ℕ} (P : (S : Domino.State 3) × Domino.PartialTiling 3 n S) :
+  { T // Domino.vertical • T = T }
+Domino.restrictReflection {n : ℕ} (T : { T // Domino.vertical • T = T }) :
+  (S : Domino.State 3) × Domino.PartialTiling 3 n S
+Domino.restrict_complete_reflection {n : ℕ} (P : (S : Domino.State 3) × Domino.PartialTiling 3 n S) :
+  Domino.restrictReflection (Domino.completeReflection P) = P
+Domino.complete_restrict_reflection {n : ℕ} (T : { T // Domino.vertical • T = T }) :
+  Domino.completeReflection (Domino.restrictReflection T) = T
+Domino.reflection_fixed_count (n : ℕ) : Domino.fixedCount 3 n Domino.vertical = ∑ S, Domino.profileCount n S
+Domino.SymmetricTerminal : Type
+Domino.halfTurnFixedEquivPartial (n : ℕ) :
+  { T // Domino.halfTurn • T = T } ≃ (S : Domino.SymmetricTerminal) × Domino.PartialTiling 3 n ↑S
+Domino.restrict_complete_halfTurn {n : ℕ} (P : (S : Domino.SymmetricTerminal) × Domino.PartialTiling 3 n ↑S) :
+  Domino.restrictHalfTurn (Domino.completeHalfTurn P) = P
+Domino.complete_restrict_halfTurn {n : ℕ} (T : { T // Domino.halfTurn • T = T }) :
+  Domino.completeHalfTurn (Domino.restrictHalfTurn T) = T
+Domino.halfTurn_terminal_necessary {n : ℕ} (T : { T // Domino.halfTurn • T = T }) :
+  Domino.reverseState ((Domino.tilingPath ↑T).state n) = (Domino.tilingPath ↑T).state n
+Domino.halfTurn_extension_iff {n : ℕ} {S : Domino.State 3} (P : Domino.PartialTiling 3 n S) :
+  (∃ T, ∀ k ≤ n, ((Domino.partialTilingEquivPath n S) P).state k = (Domino.tilingPath ↑T).state k) ↔
+    Domino.reverseState S = S
+Domino.halfTurn_fixed_count (n : ℕ) : Domino.fixedCount 3 n Domino.halfTurn = ∑ S, Domino.profileCount n ↑S
+Domino.axial_restrict_internal {b : Bool} {n : ℕ} (T : Domino.AxialFixed b n) (a c : Domino.Cell 3 n) :
+  (a, c) ∈ Domino.coverBonds ↑((Domino.axialFixedEquivPartial b n) T).snd ↔
+    (Domino.leftCell a, Domino.leftCell c) ∈ Domino.coverBonds ↑T
+Domino.axial_complete_internal {b : Bool} {n : ℕ} (P : Domino.HalfPartial b n) (a c : Domino.Cell 3 n) :
+  (Domino.leftCell a, Domino.leftCell c) ∈ Domino.coverBonds ↑((Domino.axialFixedEquivPartial b n).symm P) ↔
+    (a, c) ∈ Domino.coverBonds ↑P.snd
+Domino.axial_complete_terminal {b : Bool} {n : ℕ} (P : Domino.HalfPartial b n) :
+  (Domino.tilingPath ↑((Domino.axialFixedEquivPartial b n).symm P)).state n = ↑P.fst
+Domino.axial_complete_crossing {b : Bool} {n : ℕ} (P : Domino.HalfPartial b n) (hn : 0 < n) (r : Fin 3) :
+  ((r, ⟨n - 1, ⋯⟩), r, ⟨n, ⋯⟩) ∈ Domino.coverBonds ↑((Domino.axialFixedEquivPartial b n).symm P) ↔ r ∈ ↑P.fst
+Domino.axial_complete_right {b : Bool} {n : ℕ} (P : Domino.HalfPartial b n) (a c : Domino.Cell 3 n) :
+  (Domino.cellAction (Domino.axialSymmetry b) (Domino.leftCell a),
+        Domino.cellAction (Domino.axialSymmetry b) (Domino.leftCell c)) ∈
+      Domino.coverBonds ↑((Domino.axialFixedEquivPartial b n).symm P) ↔
+    (a, c) ∈ Domino.coverBonds ↑P.snd
+Domino.crossing_bond_same_row {n : ℕ} (T : Domino.Tiling 3 (2 * n)) (a c : Domino.Cell 3 (2 * n))
+  (h : (a, c) ∈ Domino.coverBonds T) (ha : ↑a.2 < n) (hc : n ≤ ↑c.2) : a.1 = c.1 ∧ ↑a.2 + 1 = n ∧ ↑c.2 = n
+Domino.horizontal_fixed_no_vertical {w : ℕ} (T : Domino.Tiling 3 w) (hT : Domino.horizontal • T = T)
+  (a c : Domino.Cell 3 w) (h : (a, c) ∈ Domino.coverBonds T) : a.1 = c.1
+Domino.horizontal_fixed_unique (n : ℕ) (T : Domino.Tiling 3 (2 * n)) (hT : Domino.horizontal • T = T) :
+  T = Domino.allHorizontalTiling n
+Domino.horizontal_fixed_card_three (n : ℕ) : Domino.fixedCount 3 n Domino.horizontal = 1
+Domino.evenProfile (a b : ℕ) (S : Domino.State 3) : ℕ
+Domino.oddProfile (a b : ℕ) (S : Domino.State 3) : ℕ
+Domino.profilePair : ℕ → ℕ × ℕ
+Domino.alpha (j : ℕ) : ℕ
+Domino.beta (j : ℕ) : ℕ
+Domino.profile_even_odd (j : ℕ) :
+  (∀ (S : Domino.State 3), Domino.profileCount (2 * j) S = Domino.evenProfile (Domino.alpha j) (Domino.beta j) S) ∧
+    ∀ (S : Domino.State 3), Domino.profileCount (2 * j + 1) S = Domino.oddProfile (Domino.alpha j) (Domino.beta j) S
+Domino.profile_even_support (j : ℕ) (S : Domino.State 3) (h : Domino.profileCount (2 * j) S ≠ 0) :
+  S = ∅ ∨ S = {0, 1} ∨ S = {1, 2}
+Domino.profile_odd_support (j : ℕ) (S : Domino.State 3) (h : Domino.profileCount (2 * j + 1) S ≠ 0) :
+  S = {0} ∨ S = {2} ∨ S = Finset.univ
+Domino.even_profile_step (a b : ℕ) (q : Domino.State 3) :
+  ∑ p, Domino.evenProfile a b p * Domino.transfer3 p q = Domino.oddProfile a b q
+Domino.odd_profile_step (a b : ℕ) (q : Domino.State 3) :
+  ∑ p, Domino.oddProfile a b p * Domino.transfer3 p q = Domino.evenProfile (3 * a + 2 * b) (a + b) q
+Domino.alpha_succ (j : ℕ) : Domino.alpha (j + 1) = 3 * Domino.alpha j + 2 * Domino.beta j
+Domino.beta_succ (j : ℕ) : Domino.beta (j + 1) = Domino.alpha j + Domino.beta j
+Domino.alpha_eq_profile (j : ℕ) : Domino.alpha j = Domino.profileCount (2 * j) ∅
+Domino.beta_eq_profile (j : ℕ) : Domino.beta j = Domino.profileCount (2 * j) {0, 1}
+Domino.profile_matrix_recurrence (j : ℕ) :
+  ![Domino.alpha (j + 1), Domino.beta (j + 1)] = Domino.profileMatrix.mulVec ![Domino.alpha j, Domino.beta j]
+Domino.ordinary_eq_alpha (j : ℕ) : Domino.ordinaryCount 3 j = Domino.alpha j
+Domino.ordinary_recurrence_add (j : ℕ) :
+  Domino.ordinaryCount 3 (j + 2) + Domino.ordinaryCount 3 j = 4 * Domino.ordinaryCount 3 (j + 1)
+Domino.ordinary_recurrence_bound (j : ℕ) : Domino.ordinaryCount 3 j ≤ 4 * Domino.ordinaryCount 3 (j + 1)
+Domino.ordinary_recurrence_int (j : ℕ) :
+  ↑(Domino.ordinaryCount 3 (j + 2)) = 4 * ↑(Domino.ordinaryCount 3 (j + 1)) - ↑(Domino.ordinaryCount 3 j)
+Domino.ordinary_initial_values : Domino.ordinaryCount 3 0 = 1 ∧ Domino.ordinaryCount 3 1 = 3
+Domino.profile_matrix_characteristic : Domino.profileMatrix ^ 2 + 1 = 4 • Domino.profileMatrix
+Domino.reflection_even_add (j : ℕ) :
+  Domino.fixedCount 3 (2 * j) Domino.vertical + 2 * Domino.ordinaryCount 3 j = Domino.ordinaryCount 3 (j + 1)
+Domino.reflection_even_bound (j : ℕ) : 2 * Domino.ordinaryCount 3 j ≤ Domino.ordinaryCount 3 (j + 1)
+Domino.fixed_counts_parity (j : ℕ) :
+  Domino.fixedCount 3 (2 * j) Domino.vertical = Domino.ordinaryCount 3 (j + 1) - 2 * Domino.ordinaryCount 3 j ∧
+    Domino.fixedCount 3 (2 * j + 1) Domino.vertical = Domino.ordinaryCount 3 (j + 1) ∧
+      Domino.fixedCount 3 (2 * j) Domino.halfTurn = Domino.ordinaryCount 3 j ∧
+        Domino.fixedCount 3 (2 * j + 1) Domino.halfTurn = Domino.ordinaryCount 3 j
+Domino.four_mul_orbitCount (m n : ℕ) :
+  4 * Domino.orbitCount m n =
+    Domino.ordinaryCount m n + Domino.fixedCount m n Domino.horizontal + Domino.fixedCount m n Domino.vertical +
+      Domino.fixedCount m n Domino.halfTurn
+Domino.fixed_sum_divisible_four (m n : ℕ) :
+  4 ∣
+    Domino.ordinaryCount m n + Domino.fixedCount m n Domino.horizontal + Domino.fixedCount m n Domino.vertical +
+      Domino.fixedCount m n Domino.halfTurn
+Domino.orbitCount_eq_average (m n : ℕ) :
+  Domino.orbitCount m n =
+    (Domino.ordinaryCount m n + Domino.fixedCount m n Domino.horizontal + Domino.fixedCount m n Domino.vertical +
+        Domino.fixedCount m n Domino.halfTurn) /
+      4
+Domino.orbitCount_average_rat (m n : ℕ) :
+  ↑(Domino.orbitCount m n) =
+    (↑(Domino.ordinaryCount m n) + ↑(Domino.fixedCount m n Domino.horizontal) +
+          ↑(Domino.fixedCount m n Domino.vertical) +
+        ↑(Domino.fixedCount m n Domino.halfTurn)) /
+      4
+Domino.four_mul_a (n : ℕ) :
+  4 * Domino.a n =
+    Domino.ordinaryCount 3 n + 1 + Domino.fixedCount 3 n Domino.vertical + Domino.fixedCount 3 n Domino.halfTurn
+Domino.orbit_even_add (j : ℕ) :
+  4 * Domino.a (2 * j) + Domino.ordinaryCount 3 j = Domino.ordinaryCount 3 (2 * j) + 1 + Domino.ordinaryCount 3 (j + 1)
+Domino.orbit_odd_mul (j : ℕ) :
+  4 * Domino.a (2 * j + 1) =
+    Domino.ordinaryCount 3 (2 * j + 1) + 1 + Domino.ordinaryCount 3 (j + 1) + Domino.ordinaryCount 3 j
+Domino.orbit_even_rat (j : ℕ) :
+  ↑(Domino.a (2 * j)) =
+    (↑(Domino.ordinaryCount 3 (2 * j)) + 1 + ↑(Domino.ordinaryCount 3 (j + 1)) - ↑(Domino.ordinaryCount 3 j)) / 4
+Domino.orbit_odd_rat (j : ℕ) :
+  ↑(Domino.a (2 * j + 1)) =
+    (↑(Domino.ordinaryCount 3 (2 * j + 1)) + 1 + ↑(Domino.ordinaryCount 3 (j + 1)) + ↑(Domino.ordinaryCount 3 j)) / 4
+Domino.width_two_counts :
+  Domino.ordinaryCount 3 1 = 3 ∧
+    Domino.fixedCount 3 1 Domino.horizontal = 1 ∧
+      Domino.fixedCount 3 1 Domino.vertical = 3 ∧ Domino.fixedCount 3 1 Domino.halfTurn = 1 ∧ Domino.a 1 = 2
+Domino.three_row_small_orbit_counts : Domino.a 0 = 1 ∧ Domino.a 1 = 2 ∧ Domino.a 2 = 5
+Domino.countSeries (f : ℕ → ℕ) : PowerSeries ℚ
+Domino.coeff_countSeries (f : ℕ → ℕ) (n : ℕ) : (PowerSeries.coeff n) (Domino.countSeries f) = ↑(f n)
+Domino.orbitSeries : PowerSeries ℚ
+Domino.coeff_orbitSeries (n : ℕ) : (PowerSeries.coeff n) Domino.orbitSeries = ↑(Domino.a n)
+Domino.ordinarySeries : PowerSeries ℚ
+Domino.horizontalSeries : PowerSeries ℚ
+Domino.verticalSeries : PowerSeries ℚ
+Domino.halfTurnSeries : PowerSeries ℚ
+Domino.doubleSeries : PowerSeries ℚ →ₐ[ℚ] PowerSeries ℚ
+Domino.coeff_doubleSeries_even (F : PowerSeries ℚ) (j : ℕ) :
+  (PowerSeries.coeff (2 * j)) (Domino.doubleSeries F) = (PowerSeries.coeff j) F
+Domino.coeff_doubleSeries_odd (F : PowerSeries ℚ) (j : ℕ) : (PowerSeries.coeff (2 * j + 1)) (Domino.doubleSeries F) = 0
+Domino.ordinary_shift_identity : PowerSeries.X * Domino.ordinaryShiftSeries = Domino.ordinarySeries - 1
+Domino.even_shift_identity :
+  PowerSeries.X ^ 2 * Domino.doubleSeries Domino.ordinaryShiftSeries = Domino.doubleSeries Domino.ordinarySeries - 1
+Domino.vertical_series_parity_add :
+  Domino.verticalSeries + 2 * Domino.doubleSeries Domino.ordinarySeries =
+    Domino.doubleSeries Domino.ordinaryShiftSeries + PowerSeries.X * Domino.doubleSeries Domino.ordinaryShiftSeries
+Domino.halfTurn_series_parity :
+  Domino.halfTurnSeries =
+    Domino.doubleSeries Domino.ordinarySeries + PowerSeries.X * Domino.doubleSeries Domino.ordinarySeries
+Domino.ordinary_series_identity : Domino.ordinaryDenom * Domino.ordinarySeries = 1 - PowerSeries.X
+Domino.fixed_series_identities :
+  (1 - PowerSeries.X) * Domino.horizontalSeries = 1 ∧
+    Domino.parityDenom * Domino.verticalSeries = 1 + 3 * PowerSeries.X + PowerSeries.X ^ 2 - PowerSeries.X ^ 3 ∧
+      Domino.parityDenom * Domino.halfTurnSeries = 1 + PowerSeries.X - PowerSeries.X ^ 2 - PowerSeries.X ^ 3
+Domino.burnside_series_identity :
+  4 * Domino.orbitSeries =
+    Domino.ordinarySeries + Domino.horizontalSeries + Domino.verticalSeries + Domino.halfTurnSeries
+Domino.orbitDenom : PowerSeries ℚ
+Domino.orbitNumerator : PowerSeries ℚ
+Domino.common_numerator_identity :
+  (1 - PowerSeries.X) * Domino.parityDenom * (1 - PowerSeries.X) + Domino.ordinaryDenom * Domino.parityDenom +
+        (1 - PowerSeries.X) * Domino.ordinaryDenom * (1 + 3 * PowerSeries.X + PowerSeries.X ^ 2 - PowerSeries.X ^ 3) +
+      (1 - PowerSeries.X) * Domino.ordinaryDenom * (1 + PowerSeries.X - PowerSeries.X ^ 2 - PowerSeries.X ^ 3) =
+    4 * Domino.orbitNumerator
+Domino.orbitDenom_constant : PowerSeries.constantCoeff Domino.orbitDenom = 1
+Domino.orbitDenom_isUnit : IsUnit Domino.orbitDenom
+Domino.orbit_series_identity : Domino.orbitDenom * Domino.orbitSeries = Domino.orbitNumerator
+Domino.orbit_series_rational : Domino.orbitSeries = Domino.orbitNumerator * Domino.orbitDenom⁻¹
+Domino.orbit_series_paper :
+  Domino.orbitSeries =
+    (-1 + 3 * PowerSeries.X + 4 * PowerSeries.X ^ 2 - 10 * PowerSeries.X ^ 3 + 4 * PowerSeries.X ^ 5 -
+        PowerSeries.X ^ 6) *
+      ((PowerSeries.X - 1) * (PowerSeries.X ^ 2 - 4 * PowerSeries.X + 1) *
+          (PowerSeries.X ^ 4 - 4 * PowerSeries.X ^ 2 + 1))⁻¹
+Domino.orbitLag (n k : ℕ) : ℚ
+Domino.orbit_coefficient_equation (n : ℕ) :
+  ↑(Domino.a n) - 5 * Domino.orbitLag n 1 + Domino.orbitLag n 2 + 19 * Domino.orbitLag n 3 - 19 * Domino.orbitLag n 4 -
+          Domino.orbitLag n 5 +
+        5 * Domino.orbitLag n 6 -
+      Domino.orbitLag n 7 =
+    (PowerSeries.coeff n) Domino.orbitNumerator
+Domino.orbit_recurrence_seven (n : ℕ) :
+  ↑(Domino.a (n + 7)) =
+    5 * ↑(Domino.a (n + 6)) - ↑(Domino.a (n + 5)) - 19 * ↑(Domino.a (n + 4)) + 19 * ↑(Domino.a (n + 3)) +
+          ↑(Domino.a (n + 2)) -
+        5 * ↑(Domino.a (n + 1)) +
+      ↑(Domino.a n)
+Domino.orbit_recurrence_seven_add (n : ℕ) :
+  Domino.a (n + 7) + Domino.a (n + 5) + 19 * Domino.a (n + 4) + 5 * Domino.a (n + 1) =
+    5 * Domino.a (n + 6) + 19 * Domino.a (n + 3) + Domino.a (n + 2) + Domino.a n
+Domino.orbit_initial_values :
+  Domino.a 0 = 1 ∧
+    Domino.a 1 = 2 ∧ Domino.a 2 = 5 ∧ Domino.a 3 = 14 ∧ Domino.a 4 = 46 ∧ Domino.a 5 = 156 ∧ Domino.a 6 = 561
+Domino.orbit_recurrence_first : Domino.a 7 = 2037
+Domino.three_row_main_theorem :
+  Domino.orbitDenom * Domino.orbitSeries = Domino.orbitNumerator ∧
+    Domino.orbitSeries = Domino.orbitNumerator * Domino.orbitDenom⁻¹ ∧
+      (∀ (n : ℕ),
+          ↑(Domino.a (n + 7)) =
+            5 * ↑(Domino.a (n + 6)) - ↑(Domino.a (n + 5)) - 19 * ↑(Domino.a (n + 4)) + 19 * ↑(Domino.a (n + 3)) +
+                  ↑(Domino.a (n + 2)) -
+                5 * ↑(Domino.a (n + 1)) +
+              ↑(Domino.a n)) ∧
+        Domino.a 0 = 1 ∧
+          Domino.a 1 = 2 ∧ Domino.a 2 = 5 ∧ Domino.a 3 = 14 ∧ Domino.a 4 = 46 ∧ Domino.a 5 = 156 ∧ Domino.a 6 = 561

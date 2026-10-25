@@ -18,7 +18,7 @@ The repository contains proposed arguments, finite computations, exact algebraic
 
 | Material | English | 中文 |
 | --- | --- | --- |
-| Manuscript PDF | [Working draft](papers/en/domino-tilings-en.pdf) | [中文论文 v2.0（16 页）](papers/zh/domino-tilings-zh.pdf) |
+| Manuscript PDF | [English v2.0 (15 pages)](papers/en/domino-tilings-en.pdf) | [中文论文 v2.1（17 页）](papers/zh/domino-tilings-zh.pdf) |
 | Illustrated block-proof guide (10 pages) | [English PDF](guides/block-proof/domino-block-proof-guide-en.pdf) | [中文图解讲义](guides/block-proof/domino-block-proof-guide-zh.pdf) |
 | Source and edition notes | [LaTeX and build](papers/en/README.md) | [源码与版本说明](papers/zh/README.md) |
 | Exact problem | [Statement](docs/en/statement.md) | [题面](docs/zh/statement.md) |
@@ -28,9 +28,11 @@ The repository contains proposed arguments, finite computations, exact algebraic
 | Block route | [Draft argument](docs/en/blocks-proof.md) | [基本块草稿](docs/zh/blocks-proof.md) |
 | Half-rectangle route | [Draft argument](docs/en/half-board-proof.md) | [半棋盘草稿](docs/zh/half-board-proof.md) |
 
-The Chinese manuscript v2.0 incorporates the verified scope of Lean M1–M6, improves notation and bibliographic context, and supplies reproducible build instructions. The unchanged v1.0 PDF and TeX sources remain in [the archive](papers/zh/archive/v1.0/). See [edition notes](papers/zh/README.md).
+The Chinese manuscript v2.1 incorporates the verified scope of Lean M1–M6, improves notation and bibliographic context, and supplies reproducible build instructions. The unchanged v1.0 PDF and TeX sources remain in [the archive](papers/zh/archive/v1.0/). See [edition notes](papers/zh/README.md).
 
-中文论文 v2.0 署名 Shiqi Liu，纳入三行主定理的形式化成果，补充相关前作并修订数学表述。旧版原字节归档。全文扩展的形式化、外部数学审阅及文献优先权核查仍待完成。
+中文论文 v2.1 署名 Shiqi Liu，纳入三行主定理的形式化成果，补充相关前作并修订数学表述。旧版原字节归档。全文扩展的形式化、外部数学审阅及文献优先权核查仍待完成。
+
+**2026-10-25 可读性修订：**中英文稿均展开 E04 的状态支持归纳、来源求和及矩阵系数解释。英文 v1.0、中文 v2.0 的 PDF/TeX/原检查保存在各自 archive 目录，中文 v1.0 继续保留。新增 [M1–M6 外部语义审阅包](review/m1-m6/README.md)：25 项逐项对应、固定源码与可执行探针，外部审阅仍待完成。
 
 ## Reproduce and review / 复现与审阅
 

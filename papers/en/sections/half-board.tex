@@ -113,25 +113,94 @@ The remaining transitions are
 \{2,3\}\longrightarrow\{1\},\qquad
 \{1,2,3\}\longrightarrow\varnothing.
 \]
-Starting from the empty profile, induction gives
+We now make the induction explicit. Put
+\[
+ E=\{\varnothing,\{1,2\},\{2,3\}\},\qquad
+ O=\{\{1\},\{3\},\{1,2,3\}\}.
+\]
+Every transition out of $E$ ends in $O$, and every transition out of
+$O$ ends in $E$. There is no exit to either of the other two states.
+This is a statement about the complete list of allowed exits, not a
+claim that every pair of states in the two sets is connected.
+
+\paragraph{Induction statement and base case.}
+For each $j\ge0$, the support of $q_{2j}$ is contained in $E$, and
 \[
  q_{2j}(\varnothing)=\alpha_j,\qquad
- q_{2j}(\{1,2\})=q_{2j}(\{2,3\})=\beta_j,
+ q_{2j}(\{1,2\})=q_{2j}(\{2,3\})=\beta_j.
 \]
-with all other counts zero. One further step gives
+Thus $\beta_j$ counts one specified state; the two nonempty states
+together contribute $2\beta_j$. We do not assert that all states of
+$E$ have positive counts. At width zero only the empty state occurs,
+so $(\alpha_0,\beta_0)=(1,0)$, including equality of the two zero counts.
+
+\paragraph{One added column.}
+Assume the statement at width $2j$. Grouping by the previous state gives
 \[
- q_{2j+1}(\{1\})=q_{2j+1}(\{3\})=\alpha_j+\beta_j,\qquad
- q_{2j+1}(\{1,2,3\})=\alpha_j.
+\begin{aligned}
+q_{2j+1}(\{1\})
+ &=q_{2j}(\varnothing)+q_{2j}(\{2,3\})=\alpha_j+\beta_j,\\
+q_{2j+1}(\{3\})
+ &=q_{2j}(\varnothing)+q_{2j}(\{1,2\})=\alpha_j+\beta_j,\\
+q_{2j+1}(\{1,2,3\})&=q_{2j}(\varnothing)=\alpha_j.
+\end{aligned}
 \]
-Taking another step yields
+All other counts are zero because the exits from $E$ have been exhausted.
+Each legal transition has exactly one local filling. Conversely,
+removing the added column, and cutting any horizontal domino crossing
+its left boundary, recovers a unique previous object and state.
+The source classes are therefore disjoint and exhaustive; no extra
+multiplicity is needed in these sums.
+
+\paragraph{A second added column.}
+All three states in $O$ can end at the empty state. Only $\{3\}$
+can end at $\{1,2\}$, and only $\{1\}$ can end at $\{2,3\}$.
+Consequently,
+\[
+\begin{aligned}
+q_{2j+2}(\varnothing)
+ &=q_{2j+1}(\{1\})+q_{2j+1}(\{3\})+q_{2j+1}(\{1,2,3\})\\
+ &=(\alpha_j+\beta_j)+(\alpha_j+\beta_j)+\alpha_j
+   =3\alpha_j+2\beta_j,\\
+q_{2j+2}(\{1,2\})&=q_{2j+1}(\{3\})=\alpha_j+\beta_j,\\
+q_{2j+2}(\{2,3\})&=q_{2j+1}(\{1\})=\alpha_j+\beta_j.
+\end{aligned}
+\]
+There are no other nonzero counts, since all exits from $O$ lie in $E$.
+This proves the support statement and equality of the two counts at
+the next even width, completing the induction for every $j\ge0$.
+In column-vector form the recurrence is
 \begin{equation}\label{eq:two-dimensional}
  \binom{\alpha_{j+1}}{\beta_{j+1}}
  =\begin{pmatrix}3&2\\1&1\end{pmatrix}
  \binom{\alpha_j}{\beta_j},\qquad
  (\alpha_0,\beta_0)=(1,0).
 \end{equation}
-The listed transitions also prove that these support patterns
-are preserved at every step.
+
+\paragraph{Reading the four coefficients.}
+The first row counts arrivals at $\varnothing$; the second counts
+arrivals at the single target $\{1,2\}$.
+\begin{center}
+\small
+\begin{tabular}{cp{0.78\linewidth}}
+\toprule
+Entry & Two-column continuation counted\\
+\midrule
+$3$ & From $\varnothing$ back to $\varnothing$, through any of
+$\{1\}$, $\{3\}$, or $\{1,2,3\}$.\\
+$2$ & One return to $\varnothing$ from each of $\{1,2\}$ and
+$\{2,3\}$, giving two source classes of size $\beta_j$.\\
+$1$ & From $\varnothing$ through $\{3\}$ to $\{1,2\}$.\\
+$1$ & From $\{1,2\}$ through $\{3\}$ back to $\{1,2\}$;
+the other nonempty state contributes nothing to this target.\\
+\bottomrule
+\end{tabular}
+\end{center}
+In particular, the coefficient $2$ does not mean that each object
+in a fixed nonempty state has two returns to the empty state.
+For example, $(\alpha_1,\beta_1)=(3,1)$ gives
+$\alpha_2=(3+1)+(3+1)+3=11$ and $\beta_2=3+1=4$.
+This example illustrates the induction; it is not its basis.
 
 \begin{proposition}\label{prop:parity}
 The ordinary counts $d_j=t_3(2j)$ satisfy
@@ -180,8 +249,7 @@ and
  V(x)=(1+x)\frac{D(x^2)-1}{x^2}-2D(x^2)
  =\frac{1+3x+x^2-x^3}{1-4x^2+x^4}.
 \]
-Division of $D(t)-1$ by $t$ is valid in the formal power-series
-ring because its constant term vanishes.
+The quotient denotes the unique coefficient shift: $D(t)-1=tE(t)$, where $E(t)=\sum_{j\ge0}d_{j+1}t^j$. It does not treat $t$ as a unit in the formal power-series ring.
 Burnside's formula now gives \eqref{eq:average-rational};
 the algebraic simplification and coefficient comparison in
 the first proof finish the argument.

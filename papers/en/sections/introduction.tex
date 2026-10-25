@@ -21,7 +21,7 @@ that $a(0)=1$.
 Mathar \cite[Table 10, Conjecture 6]{mathar2013} proposed a generating
 function for these symmetry classes. The equivalent formula in
 OEIS A232622 \cite{oeis} is accompanied by a conjectured recurrence
-of order seven. We present two candidate derivations for further verification.
+of order seven. We give two derivations, with the M1--M6 formal evidence following the half-rectangle route.
 The first uses a complete classification of vertically
 indecomposable blocks and the action of $G$ on words in these blocks.
 The second counts symmetric tilings directly from partial tilings
@@ -47,6 +47,15 @@ list of coefficients.
 The source entry was checked on October 25, 2026; its conjecture
 label does not establish that no equivalent proof appears elsewhere.
 No claim of bibliographic priority is made here.
+
+\paragraph{Reading the widths and counts.}
+The exponent $n$ always records half the full width $2n$.
+In Section \ref{sec:half}, $q_w(S)$ counts a partial rectangle of
+actual width $w$, while the induction index $j$ groups widths $2j$
+and $2j+1$. Thus $\alpha_j=q_{2j}(\varnothing)=d_j$, whereas
+$\beta_j=q_{2j}(\{1,2\})$ counts one terminal state.
+The full transfer uses row vectors; its two-coordinate compression
+in \eqref{eq:two-dimensional} uses column vectors.
 
 \subsection{Main result}
 Let

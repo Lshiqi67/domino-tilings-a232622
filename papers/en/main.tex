@@ -25,21 +25,20 @@
 \allowdisplaybreaks[2]
 \title[Domino tilings up to symmetry]{Domino tilings of odd-height rectangles up to symmetry}
 \author{Shiqi Liu}
-\date{Working draft, October 25, 2026}
+\date{Version 2.0, October 25, 2026}
 \subjclass[2020]{Primary 05A15; Secondary 05B45, 05A16}
 \keywords{Domino tiling, Burnside's lemma, generating function, transfer matrix, symmetry class}
 \begin{document}
 \begin{abstract}
-We study domino tilings of odd-height rectangles of even width up to rectangle symmetries, with particular attention to the generating-function conjecture recorded as OEIS A232622. This working draft presents candidate derivations using indecomposable blocks and half-rectangle boundary states. It also records proposed stabilizer formulas, asymptotic calculations, an odd-height transfer expression, and a five-row polynomial certificate. The arguments and exposition remain subject to correction and revision. This work is unfinished, and no solution of the conjecture is claimed. Lean formalization and verification are still required; the computational checks reported here do not establish the correctness of the unbounded-parameter arguments.
+We count unlabelled domino tilings of odd-height rectangles of even width up to rectangle symmetries. For three rows, a block decomposition and a half-rectangle construction give the generating function recorded in OEIS A232622, its seventh-order recurrence, and all initial values. We also give stabilizer and asymptotic formulas, an odd-height transfer expression, and an explicit five-row polynomial certificate. The three-row main counting theorem has Lean M1--M6 evidence based on actual tiling-orbit cardinalities. This edition explains the state induction and the four coefficients of the compressed recurrence in detail. The formal coverage reported here is limited to M1--M6; external semantic review and bibliographic priority remain unresolved.
 \end{abstract}
 \maketitle
-\noindent\textbf{Research status.}
-This work is unfinished. No claim is made that the A232622 conjecture
-has been solved. The manuscript needs further refinement, and the
-correctness of the proposed arguments still requires Lean
-formalization and verification, together with mathematical review.
-No Lean verification has been completed. All theorem statements and
-proofs below are presented as draft arguments awaiting that work.
+\noindent\textbf{Scope of this edition.}
+Theorem \ref{thm:main} and its three-row half-rectangle dependencies
+have the M1--M6 formal evidence described in Section \ref{sec:formalization}.
+This edition reports that fixed scope, rather than a certification of
+all results in the manuscript. Independent mathematical and semantic
+review remain outstanding, and no bibliographic priority is claimed.
 \medskip
 
 \input{sections/introduction}
@@ -48,11 +47,12 @@ proofs below are presented as draft arguments awaiting that work.
 \input{sections/symmetry-types}
 \input{sections/odd-height}
 \input{sections/five-row}
+\input{sections/formalization}
 \input{sections/computation}
 \appendix
 \input{sections/certificate}
 \input{sections/reproducibility}
 \section*{Use of AI tools}
-OpenAI Codex was used on October 24--25, 2026, to assist with the mathematical derivations, source searches, verification programs, diagram code, drafting, and English translation. The two proof routes and their computational checks were developed within the same AI-assisted workflow; their agreement does not constitute independent review. No claim of completed independent refereeing or machine-checked formal verification is made. The accompanying research records specify the checks actually performed and their scope.
+OpenAI Codex was used on October 24--25, 2026, to assist with the mathematical derivations, source searches, verification programs, diagram code, drafting, and English translation. The two proof routes and their computational checks were developed within the same AI-assisted workflow; their agreement does not constitute independent review. No claim of completed independent refereeing is made. Machine verification is reported only for the M1--M6 scope in Section~\ref{sec:formalization}. The accompanying research records specify the checks actually performed and their scope.
 \input{references}
 \end{document}

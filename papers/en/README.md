@@ -1,23 +1,19 @@
-# English working draft
+# 英文论文 · v2.0
 
-**Shiqi Liu**
+署名：**Shiqi Liu**。修订日期：2026-10-25。正文 15 页。
 
-**Unfinished research. No solution of the A232622 conjecture is claimed. The manuscript needs further refinement, and correctness still requires Lean formalization and verification. No Lean verification has been completed.**
+[阅读新版 PDF](domino-tilings-en.pdf) · [LaTeX 主文件](main.tex) · [本轮修订与检查](checks/readability-revision.md) · [M1–M6 语义审阅包](../../review/m1-m6/README.md)
 
-- [Read the PDF](domino-tilings-en.pdf).
-- [Edit the LaTeX source](main.tex).
-- [Current scientific status](../../STATUS.md).
-- [Selected research notes](../../docs/en/statement.md).
-- [Programs and scope](../../research/README.md).
+本版重点落实 E04：展开 §3.3 的零宽基例、状态支持和计数同步归纳、两次转移的来源求和，以及二维矩阵四个系数的解释。明确 β 计数一个状态，增加 (3,1) 到 (11,4) 的说明实例；补充半宽、实际宽度和行/列向量的阅读约定。E01—E03 已有修订继续保留。
 
-This public version adds a draft notice and revised abstract. Existing mathematical statements remain proposed arguments for examination. It includes an AI-use disclosure and makes no priority claim.
+形式化说明固定为 M1–M6：真实三行轨道的主生成函数、七阶递推和完整初值。更晚本地阶段单独记录，不属于本版语义审阅包。外部语义审阅和文献优先权核查仍未完成；本次没有修改 Lean 数学源码或增加数学定理。
 
-Build with Python, SymPy and TeX Live (or another installation providing amsart, Latin Modern, microtype, mathtools, booktabs, enumitem and TikZ):
+## 原版保留
 
-~~~powershell
-./build.ps1
-~~~
+[旧 v1.0 PDF](archive/v1.0/domino-tilings-en.pdf) 及其全部源码、构建脚本和原检查报告原字节保存在 [archive/v1.0/](archive/v1.0/)。[SHA256 清单](archive/v1.0/SHA256.json) 记录原提交及各文件摘要。归档内旧 README 和旧相对链接保持原样；请通过本页导航。更早的中文 v1.0 继续保留。
 
-The script audits transcribed formulas against the preserved numerical certificates, runs pdfLaTeX twice and checks for unresolved references, missing glyphs and overflow. These checks are not Lean verification.
+## 构建与核对
 
-For a portable command-line build, run python checks/prepare_and_audit.py, create build/, then invoke pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build main.tex twice. Copy build/main.pdf to domino-tilings-en.pdf.
+在本目录运行 `./build.ps1`。需要 Python、SymPy 和 pdfLaTeX，以及现有 LaTeX 包。先运行精确公式转录检查，再编译两遍并拒绝溢出、缺字与未定义引用。
+
+在仓库根目录运行 `python -X utf8 review/m1-m6/check_delivery.py` 可核对新版引用、归档摘要、源码记录和 PDF 摘要；这不执行 Lean，也不替代视觉检查。

@@ -1,0 +1,85 @@
+\section{问题、记号与主要结果}
+\label{sec:intro}
+
+\subsection{计数对象与文献背景}
+对整数 $n\ge1$，令 $\mathcal T_n$ 为 $3\times2n$ 单位格矩形的全部多米诺铺法。
+每块砖覆盖两个共边相邻的格子，允许横放或竖放；铺法是这些无序格对的集合，
+砖不带标号，不重叠、不留空，也不施加 tatami 条件。
+行号从上到下为 $r=1,2,3$，列号从左到右为 $c=1,\ldots,2n$。定义
+\[
+ h(r,c)=(4-r,c),\qquad v(r,c)=(r,2n+1-c),\qquad \rho=hv.
+\]
+记 $G=\{e,h,v,\rho\}$，其中 $h$ 为上下反射，$v$ 为左右反射，$\rho$ 为半周旋转。
+因为 $3\ne2n$，$G$ 是保持该矩形的完整平面等距对称群。
+令 $a(n)=|\mathcal T_n/G|$。对 $n=0$，规定只有一个空铺法，四个抽象群元素均固定它，
+故 $a(0)=1$。此约定允许群作用不忠实。
+
+Mathar \cite{mathar2013} 的表 10 和 Conjecture 6 给出三行对称轨道计数及其猜想生成函数；
+OEIS A232622 \cite{oeis} 列有等价的有理式和七阶递推。
+2026 年 10 月 25 日核查时，OEIS 页面仍保留猜想标签；
+这一页面状态不构成对全部既有文献或问题开放状态的判定。
+本文的目标是给出这组公式的自足推导，并整理其对称细化与奇数高度推广。
+
+固定宽度铺法的有限状态方法是已有工具。Mathar \cite{mathar2014} 的第 2.1--2.3 节
+讨论了三行普通铺法和不可竖切块的生成函数。
+DeFord \cite[定理 6.1]{deford} 研究了固定高度矩形在对称作用下的铺法计数，
+给出此类序列满足常系数线性递推的一般框架。
+因此，对称轨道生成函数的有理性本身已有文献基础。
+本文重新证明所需块分类，补充反射和旋转在基本块字上的作用，
+并用另一种半棋盘双射处理固定点。本文不以文献中的目标猜想、
+有限数列或程序输出作为一般证明的前提。
+本文着重给出三行目标公式的两条自足推导、精确对称类型、
+奇数高度的明确边界向量及五行有限代数证书。
+三行半棋盘路线还提供从实际铺法定义到主生成函数的 Lean 证明；
+具体公式及证明方法的文献优先权仍待系统核查。
+
+\subsection{主定理}
+四类固定点数分别记为
+\[
+ d_n=|\mathcal T_n|,\quad h_n=|\Fix(h)|,\quad
+ v_n=|\Fix(v)|,\quad r_n=|\Fix(\rho)|,
+\]
+其以半长度 $n$ 为指数的普通生成函数记为 $D,H,V,R$。
+除渐近分析外，本文所有生成函数都在 $\mathbb Q[[x]]$ 中解释。
+
+\begin{theorem}[三行对称轨道的生成函数]\label{thm:main}
+对上述全部铺法，有
+\begin{equation}\label{eq:main}
+ A(x):=\sum_{n\ge0}a(n)x^n
+ =\frac{1-3x-4x^2+10x^3-4x^5+x^6}
+ {(1-x)(1-4x+x^2)(1-4x^2+x^4)}.
+\end{equation}
+相应递推为
+\begin{equation}\label{eq:recurrence}
+\begin{split}
+a(n)={}&5a(n-1)-a(n-2)-19a(n-3)+19a(n-4)\\
+       &+a(n-5)-5a(n-6)+a(n-7),\qquad n\ge7,
+\end{split}
+\end{equation}
+初值为 $(a(0),\ldots,a(6))=(1,2,5,14,46,156,561)$。
+\end{theorem}
+
+式 \eqref{eq:main} 分子、分母同乘 $-1$ 即得到 OEIS 所列形式。
+第 \ref{sec:blocks} 节给出基本块证明；
+第 \ref{sec:half} 节用半棋盘方法重新推导四类固定点数。
+第 \ref{sec:types} 节确定精确稳定子并研究对称比例；
+第 \ref{sec:odd} 节推广到任意固定奇数高度，
+第 \ref{sec:five} 节给出五行显式实例。五行计算所需的全部小矩阵在附录中列出。
+第 \ref{sec:formalization} 节说明三行主定理的形式化对应及验证边界。
+
+\begin{lemma}[轨道平均公式]\label{lem:burnside}
+对每个 $n\ge0$，
+\begin{equation}\label{eq:burnside}
+ a(n)=\frac{d_n+h_n+v_n+r_n}{4}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+双重计数集合 $\{(g,T):g\in G,\ T\in\mathcal T_n,\ gT=T\}$ 得
+\[
+ \sum_{g\in G}|\Fix(g)|=\sum_{T\in\mathcal T_n}|\Stab(T)|.
+\]
+轨道稳定子公式表明，一个轨道 $O$ 对右边的贡献为
+$|O|\cdot4/|O|=4$，故得所需等式。
+这也是 Burnside 引理 \cite[第 7 章，Lemma 7.2]{stanley} 在本问题的应用。
+上述计数不要求作用忠实，因而包含空棋盘。
+\end{proof}

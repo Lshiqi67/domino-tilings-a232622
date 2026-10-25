@@ -1,0 +1,190 @@
+\section{Half-rectangle bijections}\label{sec:half}
+We now derive the fixed-point counts without using the block
+classification or the palindrome argument. The local construction
+is stated for any positive height.
+
+\subsection{Partial tilings and a transfer matrix}
+For $m,j\ge1$ and $S\subseteq[m]=\{1,\ldots,m\}$,
+let $\mathcal P_m(j,S)$ be the set of partial tilings of an
+$m\times j$ rectangle that cover every cell except the cells in
+rows $S$ of the last column.
+Each uncovered cell is regarded as the left half of a horizontal
+domino to be completed in the next column.
+For $j=0$, only the empty object with $S=\varnothing$ is allowed.
+Write $q_j(S)=|\mathcal P_m(j,S)|$.
+
+Index rows and columns of $T_m$ by all subsets of $[m]$, and set
+\begin{equation}\label{eq:Tm}
+ T_m[p,q]=
+ \begin{cases}
+ 1,&p\cap q=\varnothing\ \text{and every consecutive run}\\
+   &\quad\text{in }[m]\setminus(p\cup q)\text{ has even length},\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+An empty complement satisfies the condition.
+The cells in $p$ complete the incoming horizontal dominoes;
+those in $q$ remain as outgoing halves.
+Each remaining consecutive run has a vertical tiling if and
+only if its length is even, and then that tiling is unique.
+This follows by pairing the endpoint with its only available
+neighbour and proceeding along the run.
+Consequently, legal state paths and partial tilings determine
+one another uniquely.
+
+Let $\evec$ be the unit column vector at the empty state, and
+let $t_m(j)$ count complete $m\times j$ tilings. Then
+\begin{equation}\label{eq:profile}
+ q_j^{\trans}=\evec^{\trans}T_m^j,\qquad
+ t_m(j)=\evec^{\trans}T_m^j\evec.
+\end{equation}
+For an auxiliary height-zero term, set $T_0=(1)$ and $t_0(j)=1$.
+
+\subsection{Boundary conditions imposed by symmetry}
+Define $J(S)=\{m+1-r:r\in S\}$.
+Let $\one$ be the all-ones column vector, and let
+$\chi_m(S)=1$ if $J(S)=S$, and $0$ otherwise.
+Denote the fixed-point counts of the two reflections and the
+half-turn on an $m\times2n$ rectangle by $h_{m,n},v_{m,n},r_{m,n}$,
+respectively.
+
+\begin{lemma}\label{lem:half}
+For every $m\ge1$ and $n\ge0$,
+\begin{equation}\label{eq:half-fixed}
+ v_{m,n}=\evec^{\trans}T_m^n\one,\qquad
+ r_{m,n}=\evec^{\trans}T_m^n\chi_m.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Suppose first that $n\ge1$. Given $P\in\mathcal P_m(n,S)$,
+reflect its internal dominoes into the right half of the
+rectangle, and insert a horizontal domino joining $(r,n)$
+to $(r,n+1)$ for each $r\in S$.
+The internal dominoes in the two halves are disjoint, and the
+inserted dominoes cover precisely the remaining cells.
+The resulting tiling is fixed by vertical-axis reflection.
+Conversely, restrict any such fixed tiling to its left half
+and cut its midline-crossing dominoes. This recovers $P,S$
+uniquely, proving the first bijection and formula.
+
+For the half-turn, rotate the internal dominoes of $P$ into
+the right half. The unmatched rows on the right are $J(S)$.
+A domino crossing the midline must join two cells in the same
+row, so completion is possible if and only if $J(S)=S$.
+When this condition holds, inserting one crossing domino in
+each row of $S$ gives a half-turn-invariant tiling.
+Restriction to the left half is again the inverse map.
+Equivalently, necessity follows because the half-turn sends a
+crossing domino in row $r$ to one in row $m+1-r$.
+The empty-object convention gives both formulas for $n=0$.
+\end{proof}
+
+\begin{lemma}\label{lem:h-odd}
+If $m=2k+1$ with $k\ge0$, then
+\begin{equation}\label{eq:h-odd}
+ h_{m,n}=t_k(2n)\qquad(n\ge0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+In a tiling fixed by horizontal-axis reflection, a vertical
+domino incident with the middle row would have a distinct
+reflected image sharing its middle-row cell. Such a domino
+is impossible.
+The middle row must therefore have its unique horizontal
+tiling. The top $k$ rows form a complete tiling, and their
+reflection determines the bottom $k$ rows.
+Conversely, every tiling of the top subrectangle gives a fixed
+tiling in this way. Restriction is the inverse.
+The conventions cover $k=0$ and $n=0$.
+\end{proof}
+
+\subsection{A two-dimensional recurrence for height three}
+From \eqref{eq:Tm}, the states reachable from the empty state
+at height three are
+\[
+\varnothing,\quad\{1\},\quad\{3\},\quad\{1,2\},\quad\{2,3\},\quad\{1,2,3\}.
+\]
+The empty state leads to $\{1\},\{3\},\{1,2,3\}$;
+$\{1\}$ leads to $\varnothing,\{2,3\}$;
+$\{3\}$ leads to $\varnothing,\{1,2\}$;
+The remaining transitions are
+\[
+\{1,2\}\longrightarrow\{3\},\qquad
+\{2,3\}\longrightarrow\{1\},\qquad
+\{1,2,3\}\longrightarrow\varnothing.
+\]
+Starting from the empty profile, induction gives
+\[
+ q_{2j}(\varnothing)=\alpha_j,\qquad
+ q_{2j}(\{1,2\})=q_{2j}(\{2,3\})=\beta_j,
+\]
+with all other counts zero. One further step gives
+\[
+ q_{2j+1}(\{1\})=q_{2j+1}(\{3\})=\alpha_j+\beta_j,\qquad
+ q_{2j+1}(\{1,2,3\})=\alpha_j.
+\]
+Taking another step yields
+\begin{equation}\label{eq:two-dimensional}
+ \binom{\alpha_{j+1}}{\beta_{j+1}}
+ =\begin{pmatrix}3&2\\1&1\end{pmatrix}
+ \binom{\alpha_j}{\beta_j},\qquad
+ (\alpha_0,\beta_0)=(1,0).
+\end{equation}
+The listed transitions also prove that these support patterns
+are preserved at every step.
+
+\begin{proposition}\label{prop:parity}
+The ordinary counts $d_j=t_3(2j)$ satisfy
+\begin{equation}\label{eq:d-rec}
+ d_0=1,\qquad d_1=3,\qquad
+ d_{j+2}=4d_{j+1}-d_j\quad(j\ge0).
+\end{equation}
+For every $j\ge0$,
+\begin{equation}\label{eq:parity-fixed}
+\begin{gathered}
+ h_n=1\quad(n\ge0),\qquad r_{2j}=r_{2j+1}=d_j,\\
+ v_{2j}=d_{j+1}-2d_j,\qquad v_{2j+1}=d_{j+1}.
+\end{gathered}
+\end{equation}
+In particular,
+\begin{equation}\label{eq:parity-orbits}
+\begin{split}
+ a(2j)&=\frac{d_{2j}+1+d_{j+1}-d_j}{4},\\
+ a(2j+1)&=\frac{d_{2j+1}+1+d_{j+1}+d_j}{4}.
+\end{split}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Equation \eqref{eq:profile} gives $d_j=\alpha_j$.
+The matrix in \eqref{eq:two-dimensional} satisfies
+$M^2-4M+I=0$, proving \eqref{eq:d-rec}.
+At an even step, the only reachable $J$-invariant state is
+$\varnothing$; at an odd step it is $\{1,2,3\}$.
+Lemma \ref{lem:half} therefore gives the two formulas for $r$.
+Summing all terminal counts gives
+$\alpha_j+2\beta_j=d_{j+1}-2d_j$ at an even step and
+$3\alpha_j+2\beta_j=d_{j+1}$ at an odd step.
+Lemma \ref{lem:h-odd} gives $h_n=t_1(2n)=1$.
+Substitution in Burnside's formula proves \eqref{eq:parity-orbits}.
+\end{proof}
+
+\begin{proof}[Second proof of Theorem \ref{thm:main}]
+The recurrence \eqref{eq:d-rec} gives
+$D(x)=(1-x)/(1-4x+x^2)$.
+Summing \eqref{eq:parity-fixed} over the two parities gives
+\[
+ H(x)=\frac1{1-x},\qquad R(x)=(1+x)D(x^2),
+\]
+and
+\[
+ V(x)=(1+x)\frac{D(x^2)-1}{x^2}-2D(x^2)
+ =\frac{1+3x+x^2-x^3}{1-4x^2+x^4}.
+\]
+Division of $D(t)-1$ by $t$ is valid in the formal power-series
+ring because its constant term vanishes.
+Burnside's formula now gives \eqref{eq:average-rational};
+the algebraic simplification and coefficient comparison in
+the first proof finish the argument.
+The combinatorial derivation here uses only the partial-tiling
+model and the half-rectangle bijections.
+\end{proof}

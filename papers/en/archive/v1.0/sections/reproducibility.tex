@@ -1,0 +1,49 @@
+\section{Reproducibility and supplementary materials}\label{app:repro}
+
+The accompanying public repository includes selected problem,
+approach, lemma, proof, and source notes in Chinese and English,
+together with verification instructions.
+Its \path{research/02_problems/P002-domino-orbit-counting/}
+directory preserves the original dependency layout.
+The historical grid enumerator is in
+\path{research/01_topics/checks/a232622-screening/}.
+Historical numerical reports are published with local paths,
+invocation details, and platform metadata removed. Their numerical
+fields are unchanged, and each report identifies this treatment.
+These sanitized records are distinct from a new experiment.
+The six selected research programs are unchanged. Private archives,
+personal metadata, and machine logs are not included.
+
+Relative to the problem directory, the principal programs are:
+\begin{itemize}
+\item \path{attempts/A001-irreducible-blocks/checks/verify_blocks.py}
+for block factorization and the four symmetry actions;
+\item \path{attempts/A002-half-board-transfer/checks/transfer_core.py}
+for the column model and integer fixed-point counts;
+\item \path{attempts/A002-half-board-transfer/checks/derive_functions.py}
+for exact rational functions and resolvent certificates;
+\item \path{attempts/A002-half-board-transfer/checks/verify_geometry.py}
+for the second exhaustive enumeration and half-rectangle reconstruction;
+\item \path{attempts/A002-half-board-transfer/checks/five_row_certificate.py}
+for the reduced five-row certificate.
+\end{itemize}
+
+The programs use Python and SymPy. The first verification
+program also imports the historical enumerator by its
+relative location, so the package directory structure must
+be retained. Exact commands and environment information
+appear in the English verification records.
+Executing a historical program can regenerate its report;
+the supplied reports should be retained when reproducing
+the computations in a working copy.
+
+The English manuscript has a separate audit that compares
+its displayed rational functions, matrices, terminal vectors,
+and polynomial certificate with the research records.
+The five-row coefficient table is generated from the exact
+recorded numerator and denominator, and its coefficients are
+compared with integer matrix iteration.
+This audit is documented separately from the historical
+exhaustive enumerations.
+The LaTeX source, build script, and file-hash manifest are
+included for independent examination.

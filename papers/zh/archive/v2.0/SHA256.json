@@ -1,0 +1,28 @@
+{
+  "source_commit": "df7ef27ece7bbedc6815bb25c14fbf377cc8979b",
+  "edition": "v2.0",
+  "sha256": {
+    "build.ps1": "e89762f568459904ff2d663e068ad6e03a6dfda25679feaea73b747ce6ccfecf",
+    "domino-tilings-zh.pdf": "13b86dccf51294e35e1efdddeb28c21b406783661abdf6f0716f36d1fb09b0c2",
+    "main.tex": "c1284774e79077f2158ad55ed7570b8abba15f9531cb2d11869686b4122beee2",
+    "README.md": "bf8716190dd5bc2471a2eb569dfd2cdaf60ed1c032a222c9be712e0c58bcc92c",
+    "references.tex": "cb31e57f2b38d152bcf6c0390b521171a84220aef733b381edf8986fd92071ac",
+    "checks/check_edition.py": "e10fce459fe8adb0f1547de2dda4f1e1b97b15d18fa8a1e675af25a0e6e1cb67",
+    "checks/edition-audit.json": "3b908d464c01de85595dabaac58f9d66fd705bfd7c55f4979444306de7d694ff",
+    "checks/manuscript-audit.json": "83192b581411e031a4d88434d9fad68991f43faaa315c747dee02f58629acb5a",
+    "checks/prepare_and_audit.py": "efc23d64a95f5e5f1e78c45f62bc98bed4d3e10145a4c3406af3525038b68f7e",
+    "checks/README.md": "36de17ff164f27ac1fb3a8dcbabf5dea7514ea0422a1ca32643d788677cc6868",
+    "figures/blocks.tex": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848",
+    "generated/five-table.tex": "f9c018a420bbd7254ae9daf09752606252917494f9c5f6d854740e665ffcba9f",
+    "sections/blocks.tex": "9cc69946e25d13697c6396ffd29f1b0ac6895a2555f1b3b5e35e0002a3b5307d",
+    "sections/certificate.tex": "736ae737fb2174246cc50826a412fcada4c4d903818fc64d0b3204d8f829fd5f",
+    "sections/computation.tex": "49733054992c87408af866b5810f86d21317a782de085db287788ca385ce3d92",
+    "sections/five-row.tex": "d298edea5d5d8a7e3479f1518fa6143dad2bc6b63b3329279af95a2708a0db93",
+    "sections/formalization.tex": "d052768dc2887b042bd7d38947fa3a0d555a44bb74786c8c44da029d221ba805",
+    "sections/half-board.tex": "3ed6b4903492a5f0f1481cf94186780b8134a006da48be28838c0b2c9a473811",
+    "sections/introduction.tex": "6f7b3391e78f517762fa9a227ba256c36d347efa5edbe0dd7a56855e2f48201b",
+    "sections/odd-height.tex": "105ddee3fd17c93152c37ac9a21250b3f39da6c70b2ad1ec909839b43150ca1d",
+    "sections/reproducibility.tex": "b915136dffdd1aaefa5d16df31b3aa8113df6cc9ca33d276e11268c7612a5564",
+    "sections/symmetry-types.tex": "eb037f2955bccd46edc3d20cab0c46cd092413b6754b6e1db4f9a1a6391dbab4"
+  }
+}

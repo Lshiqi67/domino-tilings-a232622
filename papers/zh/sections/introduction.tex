@@ -42,6 +42,14 @@ DeFord \cite[定理 6.1]{deford} 研究了固定高度矩形在对称作用下�
 其以半长度 $n$ 为指数的普通生成函数记为 $D,H,V,R$。
 除渐近分析外，本文所有生成函数都在 $\mathbb Q[[x]]$ 中解释。
 
+\paragraph{下标与计数的阅读约定。}
+生成函数指数 $n$ 始终记录完整棋盘宽度 $2n$ 的一半。
+第 \ref{sec:half} 节的 $q_w(S)$ 使用实际部分棋盘宽度 $w$，
+而归纳指标 $j$ 将宽度写为 $2j$ 与 $2j+1$。
+因此 $\alpha_j=q_{2j}(\varnothing)=d_j$，
+$\beta_j=q_{2j}(\{1,2\})$ 只计一个末端状态。
+完整状态转移使用行向量，式 \eqref{eq:two-dimensional} 的二维压缩使用列向量。
+
 \begin{theorem}[三行对称轨道的生成函数]\label{thm:main}
 对上述全部铺法，有
 \begin{equation}\label{eq:main}

@@ -1,0 +1,434 @@
+{
+  "scope": "M1-M6 only",
+  "rows": [
+    {
+      "id": "S01",
+      "stage": "M1",
+      "paper_location": "introduction.tex：计数对象",
+      "statement": "任意 n≥0；非空棋盘 3×2n；纸面一基坐标对应 Fin 3 × Fin (2*n) 的零基坐标。",
+      "declarations": [
+        "Domino.Cell",
+        "Domino.Adjacent",
+        "Domino.three_ne_even_width"
+      ],
+      "preparation_assessment": "已核对：邻接使用同行/同列及相差 1 的析取，允许两个方向；未加入 tatami 限制。",
+      "external_review": "pending",
+      "review_question": "请逐项核对坐标平移；纸面 r=1,2,3 对应代码 0,1,2。三行永不等于正偶数宽度，但这不是全部欧氏等距分类定理。"
+    },
+    {
+      "id": "S02",
+      "stage": "M1",
+      "paper_location": "introduction.tex：铺法定义",
+      "statement": "砖为无序相邻两格集合；铺法为这些砖的有限集合，每格恰覆盖一次。",
+      "declarations": [
+        "Domino.IsEdge",
+        "Domino.Edge",
+        "Domino.edgeOfAdjacent_swap",
+        "Domino.edge_card_two",
+        "Domino.IsCover",
+        "Domino.Cover",
+        "Domino.Tiling",
+        "Domino.isCover_empty_iff",
+        "Domino.cover_exactly_one"
+      ],
+      "preparation_assessment": "已核对：IsEdge 保证相邻与两格；IsCover 的覆盖充要条件加交叠唯一性刻画精确覆盖。Subtype 的证明不产生额外标签。",
+      "external_review": "pending",
+      "review_question": "请检查没有砖编号、端点方向、重叠或漏格；Bonds 中临时有序配对只是中间表示，不能直接当作计数对象。"
+    },
+    {
+      "id": "S03",
+      "stage": "M1",
+      "paper_location": "introduction.tex：h,v,rho 与 G",
+      "statement": "行反转是 h，列反转是 v，复合是半周旋转；指定四元群作用在实际砖集合上。",
+      "declarations": [
+        "Domino.RectangleSymmetry",
+        "Domino.horizontal",
+        "Domino.vertical",
+        "Domino.halfTurn",
+        "Domino.cellAction",
+        "Domino.cellAction_horizontal",
+        "Domino.cellAction_vertical",
+        "Domino.cellAction_halfTurn",
+        "Domino.edgeAction",
+        "Domino.symmetry_card_four"
+      ],
+      "preparation_assessment": "已核对：两个布尔位以 xor 相乘，反射用 Fin.rev；edgeAction 对无序格集合取像。",
+      "external_review": "pending",
+      "review_question": "不要按 horizontal/vertical 的英文名称猜旋转方向；要看实际坐标公式。完整几何对称群与四坐标作用的对应仍需人工判断。"
+    },
+    {
+      "id": "S04",
+      "stage": "M1",
+      "paper_location": "introduction.tex：a(n) 与四固定数",
+      "statement": "a(n) 是真实群作用商集的基数，d/h/v/r 为完整棋盘的普通数和固定集基数。",
+      "declarations": [
+        "Domino.TilingOrbit",
+        "Domino.ordinaryCount",
+        "Domino.fixedCount",
+        "Domino.orbitCount",
+        "Domino.a",
+        "Domino.orbitRel_iff_four"
+      ],
+      "preparation_assessment": "已核对：TilingOrbit 的参数 w 是实际宽度，三个 Count 的参数 n 是半宽；a=orbitCount 3，不由目标递推定义。",
+      "external_review": "pending",
+      "review_question": "检查等价关系恰为四种像，固定条件为整个铺法 g • T=T，不要求每块砖逐块固定。"
+    },
+    {
+      "id": "S05",
+      "stage": "M1",
+      "paper_location": "introduction.tex 与 half-board.tex：零尺寸",
+      "statement": "零宽只有空铺法；部分铺法在宽零时只能有空终端。",
+      "declarations": [
+        "Domino.empty_tiling_unique",
+        "Domino.a_zero",
+        "Domino.fixedCount_zero",
+        "Domino.terminalHoles",
+        "Domino.PartialTiling",
+        "Domino.partial_width_zero_nonempty_iff",
+        "Domino.partial_width_zero_card"
+      ],
+      "preparation_assessment": "已核对：terminalHoles 在零宽总为空，额外守卫 w=0 → S=∅ 排除伪终端；不能省略。",
+      "external_review": "pending",
+      "review_question": "检查空棋盘是抽象四元群的平凡作用；无需把空区域的几何等距群误认成四元群。"
+    },
+    {
+      "id": "S06",
+      "stage": "M1",
+      "paper_location": "half-board.tex §3.1：部分铺法",
+      "statement": "末列的 S 行留空，其余格精确覆盖；S 是将来伸向右侧的横砖行集合。",
+      "declarations": [
+        "Domino.State",
+        "Domino.reverseState",
+        "Domino.terminalHoles",
+        "Domino.mem_terminalHoles",
+        "Domino.PartialTiling",
+        "Domino.partialEmptyEquivTiling"
+      ],
+      "preparation_assessment": "已核对：洞条件 c.2.val+1=w 对应纸面末列；部分对象只含内部完整砖，不含半砖标签。空 S 与完整铺法等价。",
+      "external_review": "pending",
+      "review_question": "请核对全体 S 的不交并不会重计，也没有误将半棋盘右边界要求为空。"
+    },
+    {
+      "id": "S07",
+      "stage": "M2",
+      "paper_location": "half-board.tex 式 eq:Tm，三行特例",
+      "statement": "输入输出不交且剩余行可唯一竖直配对；T[p,q]∈{0,1}。",
+      "declarations": [
+        "Domino.ColumnRule",
+        "Domino.Legal3",
+        "Domino.legal3_iff_column_cover",
+        "Domino.column_cover_unique",
+        "Domino.transfer3",
+        "Domino.columnCover_card"
+      ],
+      "preparation_assessment": "已核对：只验证三行，余集为 ∅、{0,1}、{1,2}；两个有限 decide 证明合法性充要和填法唯一。",
+      "external_review": "pending",
+      "review_question": "不要把三行有限规则解释成任意高度扫描定理；它未枚举任意宽度的全部铺法。"
+    },
+    {
+      "id": "S08",
+      "stage": "M2",
+      "paper_location": "half-board.tex §3.1：几何—路径双射",
+      "statement": "对全部实际宽度 w 与终端 S，部分铺法与起点空、终点 S 的合法路径互逆。",
+      "declarations": [
+        "Domino.StatePath",
+        "Domino.partialTilingEquivPath",
+        "Domino.tilingEquivClosedPath",
+        "Domino.partial_path_roundtrip",
+        "Domino.path_partial_roundtrip",
+        "Domino.partial_path_state"
+      ],
+      "preparation_assessment": "已核对：StatePath 使用 ℕ 索引，但 w 之后强制为空；逆构造依赖局部填法唯一性，不依赖预期计数。",
+      "external_review": "pending",
+      "review_question": "沿 Bonds→Grid→Frame→PathEquiv 检查双向构造；仅有 card 相等不足以核对几何语义。"
+    },
+    {
+      "id": "S09",
+      "stage": "M2",
+      "paper_location": "half-board.tex 式 eq:profile",
+      "statement": "q_w(S) 为实际部分铺法基数；按输入状态求和得到单列递推和矩阵表达。",
+      "declarations": [
+        "Domino.profileCount",
+        "Domino.profile_count_path",
+        "Domino.profile_count_zero",
+        "Domino.profile_count_succ",
+        "Domino.ordinary_count_profile"
+      ],
+      "preparation_assessment": "已核对：pathSuccEquiv 分拆最后一步后才取基数；T 的行是输入、列是输出，q 是行向量。",
+      "external_review": "pending",
+      "review_question": "检查完整普通数使用宽度 2*n，而反射求和的半棋盘只使用宽度 n。"
+    },
+    {
+      "id": "S10",
+      "stage": "M3",
+      "paper_location": "half-board.tex 引理 lem:half：实际对称",
+      "statement": "坐标反射作用转换为路径倒序，半周再加行反转。",
+      "declarations": [
+        "Domino.coverBonds_action",
+        "Domino.tilingPath_cut",
+        "Domino.tilingPath_horizontal",
+        "Domino.tilingPath_vertical",
+        "Domino.tilingPath_halfTurn",
+        "Domino.axial_fixed_iff_path"
+      ],
+      "preparation_assessment": "已核对：先由实际坐标作用证明路径相容，再借几何—路径单射性刻画固定铺法，未把路径对称直接定义成几何对称。",
+      "external_review": "pending",
+      "review_question": "核对切口下标 w-k 及边界；中线砖不能在限制中丢失。"
+    },
+    {
+      "id": "S11",
+      "stage": "M3",
+      "paper_location": "half-board.tex 引理 lem:half：左右反射",
+      "statement": "Fix(v) 与所有终端部分铺法的不交并等价，补全与限制两向互逆。",
+      "declarations": [
+        "Domino.reflectionFixedEquivPartial",
+        "Domino.completeReflection",
+        "Domino.restrictReflection",
+        "Domino.restrict_complete_reflection",
+        "Domino.complete_restrict_reflection",
+        "Domino.reflection_fixed_count"
+      ],
+      "preparation_assessment": "已核对：对所有 n，包括零宽；定义域没有额外终端对称条件。",
+      "external_review": "pending",
+      "review_question": "请看等价类型和两条逆等式；不要把几何限制描述误读为必须没有跨中线砖。"
+    },
+    {
+      "id": "S12",
+      "stage": "M3",
+      "paper_location": "half-board.tex 引理 lem:half：半周旋转",
+      "statement": "Fix(rho) 对应且仅对应 J(S)=S 的终端，不要求左半铺法自身对称。",
+      "declarations": [
+        "Domino.SymmetricTerminal",
+        "Domino.halfTurnFixedEquivPartial",
+        "Domino.restrict_complete_halfTurn",
+        "Domino.complete_restrict_halfTurn",
+        "Domino.halfTurn_terminal_necessary",
+        "Domino.halfTurn_extension_iff",
+        "Domino.halfTurn_fixed_count"
+      ],
+      "preparation_assessment": "已核对：终端约束在 SymmetricTerminal 子类型；extension_iff 另证存在相同左半路径扩展的充要性。",
+      "external_review": "pending",
+      "review_question": "核查必要性和充分性各自方向；不得把约束错误增强为左半对象固定于 h。"
+    },
+    {
+      "id": "S13",
+      "stage": "M3",
+      "paper_location": "half-board.tex 引理 lem:half：补全的几何含义",
+      "statement": "左内部砖保持；跨中线砖恰对应 S；右内部砖为左侧的指定对称像。",
+      "declarations": [
+        "Domino.axial_restrict_internal",
+        "Domino.axial_complete_internal",
+        "Domino.axial_complete_terminal",
+        "Domino.axial_complete_crossing",
+        "Domino.axial_complete_right",
+        "Domino.crossing_bond_same_row"
+      ],
+      "preparation_assessment": "已核对：Geometry 以 coverBonds 证明实际格对对应；跨线定理有 n>0 前提，零宽由 S05/S11/S12 单独覆盖。",
+      "external_review": "pending",
+      "review_question": "这些定理是排除任意抽象等势双射的重要接口；核对 n-1,n 的零基中线坐标。"
+    },
+    {
+      "id": "S14",
+      "stage": "M3",
+      "paper_location": "half-board.tex 引理 lem:h-odd 的 m=3 特例",
+      "statement": "三行 h 固定铺法唯一，因此 h_n=1。",
+      "declarations": [
+        "Domino.horizontal_fixed_no_vertical",
+        "Domino.horizontal_fixed_unique",
+        "Domino.horizontal_fixed_card_three"
+      ],
+      "preparation_assessment": "已核对：竖砖的反射像共享中行格而冲突；再用路径唯一性证明全水平铺法唯一。",
+      "external_review": "pending",
+      "review_question": "M1–M6 不覆盖该引理的一般奇数高度陈述；不能因正文写 m=2k+1 而把全引理标为已覆盖。"
+    },
+    {
+      "id": "S15",
+      "stage": "M4",
+      "paper_location": "half-board.tex §3.3，E04：支持与基例",
+      "statement": "所有 j≥0 的偶/奇支持及各状态计数同时归纳，β₀=0。",
+      "declarations": [
+        "Domino.evenProfile",
+        "Domino.oddProfile",
+        "Domino.profilePair",
+        "Domino.alpha",
+        "Domino.beta",
+        "Domino.profile_even_odd",
+        "Domino.profile_even_support",
+        "Domino.profile_odd_support"
+      ],
+      "preparation_assessment": "已核对：Lean 先递归定义 profilePair，再从 profile_count_zero/succ 归纳证明与实际基数一致；支持只是包含。",
+      "external_review": "pending",
+      "review_question": "关键不是 alpha_succ 的 rfl，而是 profile_even_odd 的全指标桥接。请检查两个非空状态计数相等也在归纳中维持。"
+    },
+    {
+      "id": "S16",
+      "stage": "M4",
+      "paper_location": "half-board.tex 式 eq:two-dimensional，E04：3,2,1,1",
+      "statement": "第一步来源求和给 α+β,α+β,α；第二步给 3α+2β,α+β。",
+      "declarations": [
+        "Domino.even_profile_step",
+        "Domino.odd_profile_step",
+        "Domino.alpha_succ",
+        "Domino.beta_succ",
+        "Domino.alpha_eq_profile",
+        "Domino.beta_eq_profile",
+        "Domino.profile_matrix_recurrence"
+      ],
+      "preparation_assessment": "已核对：纸面 {1,2} 对应代码 {0,1}，β 是单状态计数；二维矩阵使用列向量。",
+      "external_review": "pending",
+      "review_question": "系数 2 来自两类各 β 个对象，不是某一非空状态有两条回空路径。新稿展开与这两个 step 定理逐项对应。"
+    },
+    {
+      "id": "S17",
+      "stage": "M4",
+      "paper_location": "half-board.tex 式 eq:d-rec",
+      "statement": "d_j=α_j；d₀=1,d₁=3，d_(j+2)=4d_(j+1)-d_j。",
+      "declarations": [
+        "Domino.ordinary_eq_alpha",
+        "Domino.ordinary_recurrence_add",
+        "Domino.ordinary_recurrence_bound",
+        "Domino.ordinary_recurrence_int",
+        "Domino.ordinary_initial_values",
+        "Domino.profile_matrix_characteristic"
+      ],
+      "preparation_assessment": "已核对：先证自然数加法式及下界，再给整数/减法式；不是从有限数值拟合递推。",
+      "external_review": "pending",
+      "review_question": "纸面以矩阵特征式消元，代码亦有矩阵证书，但计数递推通过已桥接 α、β 直接消元；两种证明组织不必逐行相同。"
+    },
+    {
+      "id": "S18",
+      "stage": "M4",
+      "paper_location": "half-board.tex 式 eq:parity-fixed",
+      "statement": "v_(2j)=d_(j+1)-2d_j，v_(2j+1)=d_(j+1)，r_(2j)=r_(2j+1)=d_j。",
+      "declarations": [
+        "Domino.reflection_even_add",
+        "Domino.reflection_even_bound",
+        "Domino.fixed_counts_parity"
+      ],
+      "preparation_assessment": "已核对：从真实终端求和并用支持归纳得到；先证明减法下界。",
+      "external_review": "pending",
+      "review_question": "纸面只说可达的 J 固定状态；全部八状态中还有不可达的 J 固定状态，不能误删一般终端条件。"
+    },
+    {
+      "id": "S19",
+      "stage": "M5",
+      "paper_location": "introduction.tex 引理 lem:burnside",
+      "statement": "实际群作用满足 4a=d+h+v+r，且和可被 4 整除，无忠实性要求。",
+      "declarations": [
+        "Domino.four_mul_orbitCount",
+        "Domino.fixed_sum_divisible_four",
+        "Domino.orbitCount_eq_average",
+        "Domino.orbitCount_average_rat"
+      ],
+      "preparation_assessment": "已核对：调用 mathlib 的有限群作用 Burnside，商集与固定集都显式接回 M1 基数；先乘法后除法。",
+      "external_review": "pending",
+      "review_question": "一般高度参数仅说明指定四元群的作用；不能据此将正方形解释为完整 D4 轨道。"
+    },
+    {
+      "id": "S20",
+      "stage": "M5",
+      "paper_location": "half-board.tex 式 eq:parity-orbits 与边界",
+      "statement": "轨道奇偶式；空棋盘计一次，3×2 的 (d,h,v,r,a)=(3,1,3,1,2)。",
+      "declarations": [
+        "Domino.four_mul_a",
+        "Domino.orbit_even_add",
+        "Domino.orbit_odd_mul",
+        "Domino.orbit_even_rat",
+        "Domino.orbit_odd_rat",
+        "Domino.width_two_counts",
+        "Domino.three_row_small_orbit_counts"
+      ],
+      "preparation_assessment": "已核对：从 Burnside 和固定数推出，低维作用可以不忠实；n=1 的轨道数不是普通铺法数 3。",
+      "external_review": "pending",
+      "review_question": "请将 q 的宽度、d 的半宽、a 的半宽分开核对，尤其 v_(2j) 对应完整 3×4j。"
+    },
+    {
+      "id": "S21",
+      "stage": "M6",
+      "paper_location": "introduction.tex 形式幂级数约定",
+      "statement": "A 的系数为真实 a(n)；D/H/V/R 也由真实普通/固定基数构造。",
+      "declarations": [
+        "Domino.countSeries",
+        "Domino.coeff_countSeries",
+        "Domino.orbitSeries",
+        "Domino.coeff_orbitSeries",
+        "Domino.ordinarySeries",
+        "Domino.horizontalSeries",
+        "Domino.verticalSeries",
+        "Domino.halfTurnSeries"
+      ],
+      "preparation_assessment": "已核对：PowerSeries ℚ，系数为自然数基数的有理数像；不需要解析收敛。",
+      "external_review": "pending",
+      "review_question": "检查目标有理函数不是序列定义，也没有先假设目标递推。"
+    },
+    {
+      "id": "S22",
+      "stage": "M6",
+      "paper_location": "half-board.tex 第二证明：移位与奇偶插零",
+      "statement": "D(X²) 用 expand 2；(D(X²)-1)/X² 是系数移位，不是 X 的单位逆。",
+      "declarations": [
+        "Domino.doubleSeries",
+        "Domino.coeff_doubleSeries_even",
+        "Domino.coeff_doubleSeries_odd",
+        "Domino.ordinary_shift_identity",
+        "Domino.even_shift_identity",
+        "Domino.vertical_series_parity_add",
+        "Domino.halfTurn_series_parity"
+      ],
+      "preparation_assessment": "已核对：先证 X E=D-1 和 X² E(X²)=D(X²)-1，再得到固定点恒等式。",
+      "external_review": "pending",
+      "review_question": "请核对所有移位零次项；非零形式幂级数不一定可逆，X 的常数项为零。"
+    },
+    {
+      "id": "S23",
+      "stage": "M6",
+      "paper_location": "half-board.tex 第二证明与 formalization.tex：四固定级数",
+      "statement": "四类固定点级数满足各自的分母乘法式，Burnside 逐系数提升为 4A=D+H+V+R。",
+      "declarations": [
+        "Domino.ordinary_series_identity",
+        "Domino.fixed_series_identities",
+        "Domino.burnside_series_identity"
+      ],
+      "preparation_assessment": "已核对：各式由 M4 全指标结论与 M5 实际 Burnside 得到，非有限展开比较。",
+      "external_review": "pending",
+      "review_question": "检查 V/R 的奇偶分支、系数域以及四个分母常数项；此处不使用基本块路线结论。"
+    },
+    {
+      "id": "S24",
+      "stage": "M6",
+      "paper_location": "introduction.tex 式 eq:main；formalization.tex",
+      "statement": "B=(1-X)(1-4X+X²)(1-4X²+X⁴)，N=1-3X-4X²+10X³-4X⁵+X⁶，BA=N，A=NB⁻¹。",
+      "declarations": [
+        "Domino.orbitDenom",
+        "Domino.orbitNumerator",
+        "Domino.common_numerator_identity",
+        "Domino.orbitDenom_constant",
+        "Domino.orbitDenom_isUnit",
+        "Domino.orbit_series_identity",
+        "Domino.orbit_series_rational",
+        "Domino.orbit_series_paper"
+      ],
+      "preparation_assessment": "已核对：纯代数模块不导入计数结论；B(0)=1 后取逆，原题符号排列分母常数项为 -1。",
+      "external_review": "pending",
+      "review_question": "请同时核对正负号、半宽指数与单位条件。机器不负责确认文献首次性。"
+    },
+    {
+      "id": "S25",
+      "stage": "M6",
+      "paper_location": "introduction.tex 式 eq:recurrence 与七项初值",
+      "statement": "对全部自然数 n 在 ℤ 中证明 a(n+7)=5a(n+6)-a(n+5)-19a(n+4)+19a(n+3)+a(n+2)-5a(n+1)+a(n)。",
+      "declarations": [
+        "Domino.orbitLag",
+        "Domino.orbit_coefficient_equation",
+        "Domino.orbit_recurrence_seven",
+        "Domino.orbit_recurrence_seven_add",
+        "Domino.orbit_initial_values",
+        "Domino.orbit_recurrence_first",
+        "Domino.three_row_main_theorem"
+      ],
+      "preparation_assessment": "已核对：从 BA=N 取系数；n+7 时分子系数为零，0..6 解出完整初值，a(7)=2037。",
+      "external_review": "pending",
+      "review_question": "整数强制转换必须涵盖所有负项；论文 n≥7 与代码 n+7（n≥0）量词等价。没有证明七阶最小。"
+    }
+  ]
+}

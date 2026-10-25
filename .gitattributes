@@ -1,3 +1,5 @@
 *.pdf binary
 papers/zh/** -text
+papers/en/** -text
+review/** -text
 lean/** -text

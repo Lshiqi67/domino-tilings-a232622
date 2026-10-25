@@ -1,5 +1,5 @@
 {
-  "date_beijing": "2026-10-25T18:04:22.489242+08:00",
+  "date_beijing": "2026-10-25T23:54:55.089044+08:00",
   "command": "python -X utf8 checks/check_edition.py (from papers/zh)",
   "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
   "checks": {
@@ -11,13 +11,12 @@
     "all_eight_named_Lean_declarations_audited": true,
     "no_overflow_missing_glyph_or_unresolved_reference": true
   },
-  "pdf_pages": 16,
-  "pdf_sha256": "13b86dccf51294e35e1efdddeb28c21b406783661abdf6f0716f36d1fb09b0c2",
+  "pdf_pages": 17,
+  "pdf_sha256": "23ded1cc3c6a2c46a7bd3595ed1d175998a964f57911c643be9d3a04bea49a91",
   "matched_Lean_source_sha256": {
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "lakefile.toml": "85cf3282199be800377c2954df5380308db40536ca667a36af860613a4c6e9a9",
     "lake-manifest.json": "da7a96248698f49cd4b1fa9166675e820a1dab03ec820aa973ed74b12b59f9ae",
-    "Domino.lean": "01401c1ea492a12d89f1b6cb0e64ef9e1aa259084a230ba769400b0c65148e5f",
     "Domino/Audit/M1.lean": "77d0033f30a98556d967e994b59eb9c632754a1347adc34fe901d6c25c68eb6a",
     "Domino/Audit/M2.lean": "fd48384712e18539408b9958cf6925390e59686683e80d47ff2c7181a904c2c4",
     "Domino/Audit/M3.lean": "906035949900a40b053a568441cdf6ea38abc18d07e92662c48fdec0646c3413",

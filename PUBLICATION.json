@@ -2,7 +2,7 @@
   "date": "2026-10-25",
   "author": "Shiqi Liu",
   "status": "Lean M1-M6 locally verified for the three-row main counting theorem; extensions, second proof and external review pending; no novelty claim.",
-  "chinese_manuscript": "Version 2.0, signed Shiqi Liu, incorporates existing M1-M6 scope; original v1.0 PDF and TeX archived byte for byte.",
+  "chinese_manuscript": "Version 2.1, 17 pages; E04 exposition and M1-M6 semantic review entry; v1.0 and v2.0 preserved byte for byte.",
   "selection": "Manuscripts, two draft proof routes, problem/source/lemma notes, final verification code, and sanitized numerical outputs. Personal information, full historical archives, machine logs and unrelated research are excluded.",
   "files": [
     {
@@ -25,9 +25,10 @@
       "file": "papers/zh/main.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/main.tex",
       "source_sha256": "8b0689ad7efd8004356b9aef8c4cdcf1aa15121c2f3adcb75f1856af797eb370",
-      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
       "legacy_file": "papers/zh/archive/v1.0/main.tex",
-      "current_sha256": "c1284774e79077f2158ad55ed7570b8abba15f9531cb2d11869686b4122beee2"
+      "current_sha256": "d8419a8e48f248a1d67921fcdcb416c69e8c5101c036544d1563f5f9be6e4945",
+      "previous_treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive"
     },
     {
       "file": "papers/zh/references.tex",
@@ -57,9 +58,10 @@
       "file": "papers/zh/sections/computation.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/computation.tex",
       "source_sha256": "a85a1e26b4c5e77502ac4946f83f968e4880fc6bcaf89659ea06a1891b9165dd",
-      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
       "legacy_file": "papers/zh/archive/v1.0/sections/computation.tex",
-      "current_sha256": "49733054992c87408af866b5810f86d21317a782de085db287788ca385ce3d92"
+      "current_sha256": "1ed9cdfd3b78176db495443fb05f587494aecffb7055fd06b163000dc0238766",
+      "previous_treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive"
     },
     {
       "file": "papers/zh/sections/five-row.tex",
@@ -73,17 +75,19 @@
       "file": "papers/zh/sections/half-board.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/half-board.tex",
       "source_sha256": "b8d0a67e52c75b83fa617ddb5b1a6c79e5a04e5af597fe364fdc5e305f41d1d9",
-      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
       "legacy_file": "papers/zh/archive/v1.0/sections/half-board.tex",
-      "current_sha256": "3ed6b4903492a5f0f1481cf94186780b8134a006da48be28838c0b2c9a473811"
+      "current_sha256": "4e91708c4ced32348be393f626ad0668e2de138d3b521e1ada7ee9fd529548b4",
+      "previous_treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive"
     },
     {
       "file": "papers/zh/sections/introduction.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/introduction.tex",
       "source_sha256": "ff91758bf2357a22cd10fcb083b7d49fd84dd21e4a845034b40b625712a943e0",
-      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
       "legacy_file": "papers/zh/archive/v1.0/sections/introduction.tex",
-      "current_sha256": "6f7b3391e78f517762fa9a227ba256c36d347efa5edbe0dd7a56855e2f48201b"
+      "current_sha256": "d0240f1c6c86df38b7a12b86eed722543d45d6adaa8e8b25fa6b3882de65813f",
+      "previous_treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive"
     },
     {
       "file": "papers/zh/sections/odd-height.tex",
@@ -97,9 +101,10 @@
       "file": "papers/zh/sections/reproducibility.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/reproducibility.tex",
       "source_sha256": "09ed0e0861027f6ffc686768d9583291822edff5bf20d684ace20d406edd0fba",
-      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
       "legacy_file": "papers/zh/archive/v1.0/sections/reproducibility.tex",
-      "current_sha256": "b915136dffdd1aaefa5d16df31b3aa8113df6cc9ca33d276e11268c7612a5564"
+      "current_sha256": "3bcab07c7259a92d85362ac4489312893c8f89de3760fd5be4020e41fd0b9a06",
+      "previous_treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive"
     },
     {
       "file": "papers/zh/sections/symmetry-types.tex",
@@ -113,243 +118,306 @@
       "file": "papers/zh/domino-tilings-zh.pdf",
       "source": "02_problems/P002-domino-orbit-counting/paper/output/pdf/domino-symmetry-paper.pdf",
       "source_sha256": "8f97dc34482bb11c61d30bad63cbffa2120a641c4aab4af820bb7331876ff87e",
-      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
       "legacy_file": "papers/zh/archive/v1.0/domino-tilings-zh.pdf",
-      "current_sha256": "13b86dccf51294e35e1efdddeb28c21b406783661abdf6f0716f36d1fb09b0c2"
+      "current_sha256": "23ded1cc3c6a2c46a7bd3595ed1d175998a964f57911c643be9d3a04bea49a91",
+      "previous_treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive"
     },
     {
       "file": "papers/en/figures/blocks.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/figures/blocks.tex",
       "source_sha256": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848"
     },
     {
       "file": "papers/en/generated/five-table.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/generated/five-table.tex",
       "source_sha256": "31d321b76d2633d7c494c4165438916e08f3f5a2ae29f36c02641e43c28bc083",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "31d321b76d2633d7c494c4165438916e08f3f5a2ae29f36c02641e43c28bc083"
     },
     {
       "file": "papers/en/main.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/main.tex",
       "source_sha256": "3b8e20f01b7201c43de511988d00d120b6434e0e401fa2130577eb2ff3af0588",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "226cee95d56c56093ed375c4c316330215d584b0e4de992e95b480387240f585"
     },
     {
       "file": "papers/en/references.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/references.tex",
       "source_sha256": "b0e2bf843149d0a4cc456ee23d1fabf24fc7ca48111d7536a9cfe63cd1bc8aa4",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "b0e2bf843149d0a4cc456ee23d1fabf24fc7ca48111d7536a9cfe63cd1bc8aa4"
     },
     {
       "file": "papers/en/sections/blocks.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/blocks.tex",
       "source_sha256": "8f93a4c879e35531ca76165c014377afa1c1ae763f81a43eaf07a3ca6663e74f",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "8f93a4c879e35531ca76165c014377afa1c1ae763f81a43eaf07a3ca6663e74f"
     },
     {
       "file": "papers/en/sections/certificate.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/certificate.tex",
       "source_sha256": "c6496640afa2e0c1e5bd0754c305215f41a503c050268a08a2619e96e751e038",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "c6496640afa2e0c1e5bd0754c305215f41a503c050268a08a2619e96e751e038"
     },
     {
       "file": "papers/en/sections/computation.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/computation.tex",
       "source_sha256": "3da609e2fd1fc9e577a52e596fc681498b62d827e0557365f19c5a37f52d3f53",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "596b4beeb3fe6f9a97635cb621ea64b4b402d06c85de93d5b7200fd06ee532ed"
     },
     {
       "file": "papers/en/sections/five-row.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/five-row.tex",
       "source_sha256": "37cb0dc4aa4e68499ba90eeb0797fce10db2474dd5d0122122f64cd8891a6e2c",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "37cb0dc4aa4e68499ba90eeb0797fce10db2474dd5d0122122f64cd8891a6e2c"
     },
     {
       "file": "papers/en/sections/half-board.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/half-board.tex",
       "source_sha256": "cf8c27f4c24a328f84e82f6d04ada551ed04b4ff86b8c17b31687edd3f74dfd5",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "79bc1c42b325e8408438d13654d10ea931bb9918ba128ae81d3f8d28c7dbeb8d"
     },
     {
       "file": "papers/en/sections/introduction.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/introduction.tex",
       "source_sha256": "9109958ae1a9a301b74cc97b59e6d073166e459032b88e7f3258bc831de593c3",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "806ddad7137d9eb15cc9aed81486c4bf15c3d95c0a46428ba708f9ede45af7a7"
     },
     {
       "file": "papers/en/sections/odd-height.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/odd-height.tex",
       "source_sha256": "bb4ef2f99af8788f94f33a217de2993aa13bbbd812f68a0597f92313dae8e683",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "bb4ef2f99af8788f94f33a217de2993aa13bbbd812f68a0597f92313dae8e683"
     },
     {
       "file": "papers/en/sections/reproducibility.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/reproducibility.tex",
       "source_sha256": "b2cf6f8de71659bde560bd7140accc0e3eafbc9cf6ed8a8125ba0a6f51e1bdfe",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "853b3ad3f22a455995b578ee0a1eda1b7ab490ae7ecdf8a9aa1f9b7646a52385"
     },
     {
       "file": "papers/en/sections/symmetry-types.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/symmetry-types.tex",
       "source_sha256": "8063f2cd68e94160e0f63c9b98023fd0376e567993f50a28c957fa36b5b70207",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
+      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
+      "current_sha256": "8063f2cd68e94160e0f63c9b98023fd0376e567993f50a28c957fa36b5b70207"
     },
     {
       "file": "research/01_topics/checks/a232622-screening/check_tilings.py",
       "source": "01_topics/checks/a232622-screening/check_tilings.py",
       "source_sha256": "d0313bcca212f6c5f63ef9f2588ee5e36300f9f4d65e6cb2979b2d9f3ecf134b",
-      "treatment": "unchanged source"
+      "treatment": "unchanged source",
+      "current_sha256": "d0313bcca212f6c5f63ef9f2588ee5e36300f9f4d65e6cb2979b2d9f3ecf134b"
     },
     {
       "file": "research/01_topics/checks/a232622-screening/report.json",
       "source": "01_topics/checks/a232622-screening/report.json",
       "source_sha256": "05a3ad5836ac9da586011b76bb5c686ed9c284969280f5fdd49688d3e69c749a",
-      "treatment": "sanitized historical report; numerical data unchanged"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "sanitized historical report; numerical data unchanged",
+      "current_sha256": "b447fdff6373a816c5c103edf24ba2df3a0a45d96e3f914e026f8509db92d93e"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/checks/verify_blocks.py",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/checks/verify_blocks.py",
       "source_sha256": "a662cb881d1c9de909376fc36b85a218e818dc59171525d2f9bed4b31261ed8d",
-      "treatment": "unchanged source"
+      "treatment": "unchanged source",
+      "current_sha256": "a662cb881d1c9de909376fc36b85a218e818dc59171525d2f9bed4b31261ed8d"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/checks/report.json",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/checks/report.json",
       "source_sha256": "6d9ae1c0e539692d3c6851a84dba7ce6182295d5b01db2ebd374191c10a8146b",
-      "treatment": "sanitized historical report; numerical data unchanged"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "sanitized historical report; numerical data unchanged",
+      "current_sha256": "09082843477fbe48dde4ba8929e0f63bdc758c1af4f3d226bafed20643b53546"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/transfer_core.py",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/transfer_core.py",
       "source_sha256": "8533bec67b765efcfbbf6677a768ef7e9f015bfd733885b8b5786913c18bc393",
-      "treatment": "unchanged source"
+      "treatment": "unchanged source",
+      "current_sha256": "8533bec67b765efcfbbf6677a768ef7e9f015bfd733885b8b5786913c18bc393"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/derive_functions.py",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/derive_functions.py",
       "source_sha256": "862cb8b9d6dcfad7c87055b19a3d4a6b3b529f1a8967d6b2c757076ec5ba3e78",
-      "treatment": "unchanged source"
+      "treatment": "unchanged source",
+      "current_sha256": "862cb8b9d6dcfad7c87055b19a3d4a6b3b529f1a8967d6b2c757076ec5ba3e78"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/verify_geometry.py",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/verify_geometry.py",
       "source_sha256": "76ef5c1dd7b2b08ff7d0097451c0054ce61c90d32848f4057bcf3c5a73ff93bb",
-      "treatment": "unchanged source"
+      "treatment": "unchanged source",
+      "current_sha256": "76ef5c1dd7b2b08ff7d0097451c0054ce61c90d32848f4057bcf3c5a73ff93bb"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/five_row_certificate.py",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/five_row_certificate.py",
       "source_sha256": "e6f0f06aa4b5dadb4c85f00b6ce18f01e6fab093a4ff9050087761d5f7391c8f",
-      "treatment": "unchanged source"
+      "treatment": "unchanged source",
+      "current_sha256": "e6f0f06aa4b5dadb4c85f00b6ce18f01e6fab093a4ff9050087761d5f7391c8f"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/symbolic-report.json",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/symbolic-report.json",
       "source_sha256": "2d260fd068fb9098f0aacbeeca3e9eeb1e2860077ed49e214617a0f35bdf91db",
-      "treatment": "sanitized historical report; numerical data unchanged"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "sanitized historical report; numerical data unchanged",
+      "current_sha256": "338a8000bb0e2910c41bf654fc881c4320497257bd9a8cef5db3a3d10541b2c5"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/geometry-report.json",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/geometry-report.json",
       "source_sha256": "f43fefd0a34f20fa4b37ccce74986781e07b0deb02c9e5dd6b2126854d499fbb",
-      "treatment": "sanitized historical report; numerical data unchanged"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "sanitized historical report; numerical data unchanged",
+      "current_sha256": "401ba3b3cd2a627d1adb66612b6ba5b8a6a206144b2d85044784f1ba5ed2445e"
     },
     {
       "file": "research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/five-row-certificate.json",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/checks/five-row-certificate.json",
       "source_sha256": "ed8246e64f08ea40cf0dd8c040f0d130de97a9f0f0d200d8a745caebb21c3e2a",
-      "treatment": "sanitized historical report; numerical data unchanged"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "sanitized historical report; numerical data unchanged",
+      "current_sha256": "af813775bc19fe364dcfb968495b68e6a26a724b39d8d111fb68fb9c57e4e5b5"
     },
     {
       "file": "docs/zh/statement.md",
       "source": "02_problems/P002-domino-orbit-counting/statement.md",
       "source_sha256": "4a79bbb4c0a98d1d33b4730279d2d960a04fdd8ff0d849dcc1ca70a3c45aff36",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "387d140ffe131f9085092635ce54844ab27b940c12b72972c7e767a3e66fd316"
     },
     {
       "file": "docs/zh/approaches.md",
       "source": "02_problems/P002-domino-orbit-counting/approaches.md",
       "source_sha256": "374890fbd60b280c82b1f0317243e526bc1f9f9980377f8b154a4855898d3573",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "6fea24f97c890cb5aaa7794c8f7185be3d44e4f2b0b19a12ccf988c0ae4ae19a"
     },
     {
       "file": "docs/zh/references.md",
       "source": "02_problems/P002-domino-orbit-counting/references.md",
       "source_sha256": "1aef36decc09742665d0f963c260c8b3fb744ac22cc016d51d08ebe2453913c2",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "c7f07368a18d976ac20ab23cab80834a45b965c9b99f889aedfb9229a2b40698"
     },
     {
       "file": "docs/zh/lemmas.md",
       "source": "02_problems/P002-domino-orbit-counting/lemmas.md",
       "source_sha256": "84c294641c09fe2d71a7ee72d2d74c0536e6ba91a1ed7b2171f50f941868499d",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "b5d28dbac85f17f2367c5f37e33002933a90a5b1c05718e47447054df8bd4a95"
     },
     {
       "file": "docs/zh/blocks-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/proof.md",
       "source_sha256": "3cf01db0e9ffd4356f0fa7a1cb4a458a014a6cf395128e85611179d940b18832",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "b70a4ea3eda9fa10989d03953db67a4d41eabb7e0b645a697445e9051df4611e"
     },
     {
       "file": "docs/zh/half-board-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/proof.md",
       "source_sha256": "69bd16b0d78481e9fbdc0c7616730bdd2bd4c2081ad403f2c7d3f55c73429a17",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "e5449e6a344f16b0e5d17cc4993153a3552aec6f2de0a4cb9ce4476d4a5e162b"
     },
     {
       "file": "docs/en/statement.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/statement.md",
       "source_sha256": "676f3c02a9a90ebfb8dbb746566deda338c135c11355c169a009dc2dd2eccbed",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "910d8d090aaca5b269fb0d5f5ab6c29fc0b161bfaf7286977945c7ef526c22a6"
     },
     {
       "file": "docs/en/approaches.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/approaches.md",
       "source_sha256": "57a67fd2b4cb87aa89bae9acd2ae35e8dfb523056a18c76193ff4663f313a61a",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "7ad7c4e78c30c3ad64bd832b328a9398be058ae8506d862a88d3b6827e184d9f"
     },
     {
       "file": "docs/en/references.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/references.md",
       "source_sha256": "affb50d5bde93d4598d22e6e87a229b80f1a238500e9d52adc561e71df3268b1",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "217fdfa677c0a97f5269699dbe5503e6d745f689e3141ddc4d8764e8e94634f9"
     },
     {
       "file": "docs/en/lemmas.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/lemmas.md",
       "source_sha256": "4e9e7d710df9b46961e5d9a343f23e7ad3dbb7962330656d336923652d5b888a",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "596e4f47fb30e7e25d440026c84afd91c950966346c77868bc660e37b64ee374"
     },
     {
       "file": "docs/en/blocks-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/proof.md",
       "source_sha256": "b52f377fa716940e138547b47c095d08927617f273c0c5eb1dcd1425d762584f",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "3a94db72340f67f8cc14466cf80f2cace9740febc68152354ea1362e1505e101"
     },
     {
       "file": "docs/en/half-board-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/proof.md",
       "source_sha256": "97e0e315245d93c5cc82be1a1be5e65e7608b6dc343083b0ac03887a7ee8ba28",
-      "treatment": "selected draft; status notice and portable links added"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "selected draft; status notice and portable links added",
+      "current_sha256": "8a0a5af6a10ca8359ca7eafd31bc9229a965f5509d91997ec81b7a23d1dc0cfb"
     },
     {
       "file": "papers/en/checks/prepare_and_audit.py",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/checks/prepare_and_audit.py",
       "source_sha256": "90e3ffcfa1b1c5969df4939f74919f61ff7322e35bc5949efbcc816cd7830603",
-      "treatment": "repository-relative paths adapted"
+      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "previous_treatment": "repository-relative paths adapted",
+      "current_sha256": "dc76315ab04e6436fc57d451b0a2b0bca76b42504f495e6dc8770158830a68aa"
     },
     {
       "file": "guides/block-proof/domino-block-proof-guide-en.pdf",
       "source": "02_problems/P002-domino-orbit-counting/notes/block-proof-guide/output/pdf/domino-block-proof-guide-en.pdf",
       "source_sha256": "8e151a2f78e78d1036ddf58f3be44e0b85a7a685cd600c11a1c938879cf0a7ed",
-      "treatment": "unchanged; illustrated educational guide"
+      "treatment": "unchanged; illustrated educational guide",
+      "current_sha256": "8e151a2f78e78d1036ddf58f3be44e0b85a7a685cd600c11a1c938879cf0a7ed"
     },
     {
       "file": "guides/block-proof/domino-block-proof-guide-zh.pdf",
       "source": "02_problems/P002-domino-orbit-counting/notes/block-proof-guide/output/pdf/domino-block-proof-guide-zh.pdf",
       "source_sha256": "cf578bc25696bec0222b42a171b3a3668ead0c61e22aa5eb6812f35fc0c8a36e",
-      "treatment": "unchanged; illustrated educational guide"
+      "treatment": "unchanged; illustrated educational guide",
+      "current_sha256": "cf578bc25696bec0222b42a171b3a3668ead0c61e22aa5eb6812f35fc0c8a36e"
     }
   ],
   "lean_publication": {
@@ -372,5 +440,15 @@
     "scope": "Chinese manuscript and necessary edition metadata only; no Lean code or English paper changes.",
     "checks": "papers/zh/checks/README.md",
     "archive": "papers/zh/archive/v1.0/SHA256.json"
+  },
+  "english_manuscript": "Version 2.0, 15 pages; E04 exposition and explicit M1-M6 scope; v1.0 preserved byte for byte.",
+  "semantic_review_package": {
+    "path": "review/m1-m6",
+    "scope": "M1-M6",
+    "items": 25,
+    "mapped_declarations": 152,
+    "audited_declarations": 413,
+    "external_review": "pending",
+    "mathematical_Lean_sources_changed": false
   }
 }

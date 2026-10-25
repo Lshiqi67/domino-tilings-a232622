@@ -15,6 +15,6 @@ try {
         throw "Resolve the layout or reference warning before publishing."
     }
     Copy-Item -LiteralPath build/main.pdf -Destination domino-tilings-zh.pdf -Force
-    Write-Output "Built domino-tilings-zh.pdf (Chinese v2.0)."
+    Write-Output "Built domino-tilings-zh.pdf (Chinese v2.1)."
 }
 finally { Pop-Location }

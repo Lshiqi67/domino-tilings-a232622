@@ -1,0 +1,46 @@
+\section{源码、计算材料与复现}\label{app:repro}
+
+本文的 LaTeX 源码、PDF、验证程序和形式化项目公开于
+\begin{center}
+\url{https://github.com/Lshiqi67/domino-tilings-a232622}.
+\end{center}
+以下路径均相对于该仓库根目录，适用于独立克隆的公开副本。
+论文当前版本位于 \path{papers/zh/}，版本 1.0 的 PDF 与 TeX
+保存在 \path{papers/zh/archive/v1.0/}。
+版本说明和本轮核查记录位于 \path{papers/zh/README.md}
+及 \path{papers/zh/checks/}。
+
+\begin{description}[style=nextline,leftmargin=2em]
+\item[论文构建]
+在 \path{papers/zh/} 中运行 \texttt{./build.ps1}。
+脚本先执行 \path{checks/prepare_and_audit.py}，
+核对公式、矩阵和五行系数表，再运行两遍 XeLaTeX。
+构建需要 Python、SymPy、XeLaTeX、ctex、Fandol 字体及 TikZ。
+\item[基本块和半棋盘程序]
+\path{research/README.md} 列出原脚本、实际检查范围及命令。
+程序按来源放在 \path{research/01_topics/} 和
+\path{research/02_problems/} 中，保留依赖所需的相对目录关系。
+\item[形式化源码与证据]
+\path{lean/Domino/} 包含对象定义和证明代码，
+\path{lean/docs/m6-main-theorem.md} 说明主定理的语义及依赖，
+\path{lean/evidence/} 保存经路径脱敏的既有验收证据。
+公开证据保留数学结果、退出码、源码摘要和公理依赖；
+目录调整及脱敏不作为一次新的验证运行。
+\end{description}
+
+从 \path{lean/} 目录运行下列命令，可在固定工具链及依赖版本下复核：
+\begin{quote}\small\ttfamily
+lake exe cache get\\
+lake --wfail build\\
+python -X utf8 scripts/check\_m6.py --report-dir checks/reproduce-m6
+\end{quote}
+最后一条命令要求输出目录尚不存在，以免覆盖历史证据。
+其验收包括旧阶段回归、累计公理审计以及项目源码的独立重建。
+具体依赖版本由 \path{lean/lean-toolchain} 和
+\path{lean/lake-manifest.json} 固定。
+
+原枚举程序可能覆盖自己的输出文件，故应依照
+\path{research/README.md} 在临时副本中运行。
+论文整理核查、原始有限枚举及 Lean 验收分别记录，
+不能由其中某项通过推断其余检查也已执行。
+各次运行的输入范围、环境、命令、结果与局限见相应报告。

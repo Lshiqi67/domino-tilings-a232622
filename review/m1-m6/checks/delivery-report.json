@@ -1,0 +1,42 @@
+{
+  "date_beijing": "2026-10-25T23:57:52.509324+08:00",
+  "command": "python -X utf8 review/m1-m6/check_delivery.py",
+  "python": "3.13.0",
+  "random_seed": null,
+  "status": "passed",
+  "editions": {
+    "en": {
+      "pdf_sha256": "c6af448ddd085f1df8abf04ac2b0fa78c19b07f012a9c42299f01cf5ad4c77dc",
+      "pages": 15,
+      "references_valid": true,
+      "transcription_source_hashes_match": true,
+      "archives_verified": {
+        "v1.0": 18
+      }
+    },
+    "zh": {
+      "pdf_sha256": "23ded1cc3c6a2c46a7bd3595ed1d175998a964f57911c643be9d3a04bea49a91",
+      "pages": 17,
+      "references_valid": true,
+      "transcription_source_hashes_match": true,
+      "archives_verified": {
+        "v1.0": 15,
+        "v2.0": 22
+      }
+    }
+  },
+  "packet_and_guide_links": 246,
+  "E04_two_step_matrix": [
+    [
+      3,
+      2
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "source_manifest_sha256": "d500e9798cb38c6d5516388d50578141b589056af1258d4e47cda9d9e47d89de",
+  "paper_manifest_sha256": "01c3b61b36966ea39fcbe80c8dc1a1ed181075475ed3d3f74f638e70d00745c1",
+  "limits": "摘要、引用、归档和三行单列/两列局部规则检查；不替代全宽度归纳、Lean 构建、外部人类审阅或 PDF 视觉检查。"
+}

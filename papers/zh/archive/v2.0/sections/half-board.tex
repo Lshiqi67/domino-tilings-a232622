@@ -1,0 +1,143 @@
+\section{半棋盘双射与第二种证明}\label{sec:half}
+本节从局部覆盖重新构造计数，不使用基本块分类或回文公式。
+为便于后续推广，先允许任意整数高度 $m\ge1$。
+
+\subsection{带末端半块的部分铺法}
+对 $j\ge1$ 和 $S\subseteq\{1,\ldots,m\}$，令 $\mathcal P_m(j,S)$ 为
+$m\times j$ 棋盘的部分铺法：除末列行号属于 $S$ 的格外，所有格都由内部多米诺覆盖；
+这些未覆盖格标记为向右伸出的半块，准备与右邻格配成水平砖。
+$j=0$ 时只有 $S=\varnothing$ 的空对象。记 $q_j(S)=|\mathcal P_m(j,S)|$。
+
+令 $T_m$ 的行列按所有行子集排列。定义
+\begin{equation}\label{eq:Tm}
+ T_m[p,q]=
+ \begin{cases}
+ 1,&p\cap q=\varnothing,\text{ 且 }[m]\setminus(p\cup q)
+       \text{ 的每个连续段均为偶长},\\
+ 0,&\text{否则}.
+ \end{cases}
+\end{equation}
+这里 $[m]=\{1,\ldots,m\}$，空补集满足条件。
+每段偶长剩余行的竖直配对唯一，因为端点只能与相邻格配对，
+剥去此对后继续。奇长段无法配满。
+因此 \eqref{eq:Tm} 恰好刻画加一列的合法转移。
+放入指定水平砖和唯一竖直配对给出逆构造，故
+\begin{equation}\label{eq:profile}
+ q_j^{\trans}=\evec^{\trans}T_m^j,\qquad
+ t_m(j)=\evec^{\trans}T_m^j\evec,
+\end{equation}
+其中 $\evec$ 是空状态的单位列向量，$t_m(j)$ 为完整 $m\times j$ 铺法数。
+辅助定义 $T_0=(1)$、$t_0(j)=1$。
+
+\subsection{对称固定铺法的边界条件}
+记 $J(S)=\{m+1-r:r\in S\}$，$\one$ 为全 1 列向量，
+$\chi_m(S)=1$ 当且仅当 $J(S)=S$。
+用 $v_{m,n},r_{m,n}$ 表示 $m\times2n$ 的左右反射、半周旋转固定数。
+
+\begin{lemma}[中线补全双射]\label{lem:half}
+对 $m\ge1$ 和 $n\ge0$，
+\begin{equation}\label{eq:half-fixed}
+ v_{m,n}=\evec^{\trans}T_m^n\one,\qquad
+ r_{m,n}=\evec^{\trans}T_m^n\chi_m.
+\end{equation}
+\end{lemma}
+\begin{proof}
+先设 $n\ge1$。任取 $P\in\mathcal P_m(n,S)$，
+将内部砖左右反射到右半棋盘，然后对每个 $r\in S$
+插入连接 $(r,n)$ 与 $(r,n+1)$ 的水平砖。
+两半内部砖不相交，跨中线砖恰好补齐剩余格，
+得到唯一的左右反射固定铺法。
+反向限制到左半，切断跨中线砖，唯一恢复 $P,S$，
+因此所有 $S$ 都可取，并有第一式。
+
+对半周旋转，将左半内部砖旋转到右半后，右侧待补行集合为 $J(S)$。
+跨中线砖必须水平，故能补全的充要条件是 $J(S)=S$。
+条件满足时逐行插入跨中线砖，所得砖集合在半周旋转下保持不变；
+限制到左半是逆操作，得到第二式。
+条件的必要性也来自跨中线第 $r$ 行的砖必须有第 $m+1-r$ 行的旋转像。
+$n=0$ 时只有空对象，两式均为 1。
+\end{proof}
+
+\begin{lemma}[奇数高度的上下反射]\label{lem:h-odd}
+若 $m=2k+1$，$k\ge0$，则
+\begin{equation}\label{eq:h-odd}
+ h_{m,n}=t_k(2n).
+\end{equation}
+\end{lemma}
+\begin{proof}
+在上下反射固定铺法中，接触中央行的竖直砖会被映到另一块竖直砖，
+两者在中央行重叠，因此不存在这样的砖。
+中央行只能以唯一方式水平铺满。其上 $k$ 行必须自行铺满，
+下方由其反射唯一确定。任意上方完整铺法都给出一个固定铺法，
+限制回上方为逆操作。$k=0$ 与 $n=0$ 由空对象约定覆盖。
+\end{proof}
+
+\subsection{三行的两维递推}
+对 $m=3$，由 \eqref{eq:Tm} 从空状态可达的状态恰为
+$\varnothing,\{1\},\{3\},\{1,2\},\{2,3\},\{1,2,3\}$。
+规则给出空集的输出为两个端点单集和全体集合；
+$\{1\}$ 的输出为 $\varnothing,\{2,3\}$，
+$\{3\}$ 的输出为 $\varnothing,\{1,2\}$，
+其余三个状态的输出分别被迫为 $\{3\},\{1\},\varnothing$。
+从初始计数归纳可得
+\[
+ q_{2j}(\varnothing)=\alpha_j,\qquad
+ q_{2j}(\{1,2\})=q_{2j}(\{2,3\})=\beta_j;
+\]
+一步后仅有
+\[
+ q_{2j+1}(\{1\})=q_{2j+1}(\{3\})=\alpha_j+\beta_j,\qquad
+ q_{2j+1}(\{1,2,3\})=\alpha_j.
+\]
+再次转移于是得到
+\begin{equation}\label{eq:two-dimensional}
+ \binom{\alpha_{j+1}}{\beta_{j+1}}
+ =\begin{pmatrix}3&2\\1&1\end{pmatrix}
+ \binom{\alpha_j}{\beta_j},\qquad
+ (\alpha_0,\beta_0)=(1,0).
+\end{equation}
+这同时证明了所列非零状态的归纳封闭性。
+
+\begin{proposition}\label{prop:parity}
+设 $d_j=t_3(2j)$，则
+\begin{equation}\label{eq:d-rec}
+ d_0=1,\quad d_1=3,\quad d_{j+2}=4d_{j+1}-d_j\quad(j\ge0).
+\end{equation}
+三行固定点数满足
+\begin{equation}\label{eq:parity-fixed}
+ h_n=1,\quad r_{2j}=r_{2j+1}=d_j,\quad
+ v_{2j}=d_{j+1}-2d_j,\quad v_{2j+1}=d_{j+1}.
+\end{equation}
+因此
+\begin{equation}\label{eq:parity-orbits}
+ a(2j)=\frac{d_{2j}+1+d_{j+1}-d_j}{4},\qquad
+ a(2j+1)=\frac{d_{2j+1}+1+d_{j+1}+d_j}{4}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+由 \eqref{eq:profile}，$d_j=\alpha_j$。
+式 \eqref{eq:two-dimensional} 中的矩阵满足 $M^2-4M+I=0$，
+从而得 \eqref{eq:d-rec}。
+偶数步可达的 $J$-不变集合只有空集，
+奇数步可达的 $J$-不变集合只有全三行集合，故引理 \ref{lem:half} 给出 $r$ 的两式。
+对所有状态求和，偶数步得
+$\alpha_j+2\beta_j=d_{j+1}-2d_j$，
+奇数步得 $3\alpha_j+2\beta_j=d_{j+1}$。
+引理 \ref{lem:h-odd} 给出 $h_n=t_1(2n)=1$。
+最后代入轨道平均公式即得 \eqref{eq:parity-orbits}。
+\end{proof}
+
+\begin{proof}[定理 \ref{thm:main} 的第二种证明]
+递推 \eqref{eq:d-rec} 给出 $D(x)=(1-x)/(1-4x+x^2)$。
+对 \eqref{eq:parity-fixed} 分别求和可得
+\[
+ H(x)=\frac1{1-x},\quad R(x)=(1+x)D(x^2),\quad
+ V(x)=(1+x)\frac{D(x^2)-1}{x^2}-2D(x^2).
+\]
+这里 $D(x^2)-1$ 可唯一写为 $x^2 E(x)$，
+其中 $E(x)=\sum_{j\ge0}d_{j+1}x^{2j}$；上式的商表示这一系数移位，
+并未将 $x$ 或 $x^2$ 当作形式幂级数环中的单位。
+化简 $V$ 得到 \eqref{eq:V}，再用轨道平均公式即得
+\eqref{eq:average-rational}，其通分和系数比较已在前文完整写出。
+本次推导的组合前提仅为半棋盘双射和单列覆盖规则。
+\end{proof}

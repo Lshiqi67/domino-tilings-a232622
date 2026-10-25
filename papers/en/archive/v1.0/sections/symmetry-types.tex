@@ -1,0 +1,86 @@
+\section{Stabilizers and asymptotics}\label{sec:types}
+
+\begin{theorem}\label{thm:stabilizers}
+For every $n\ge0$, the exact stabilizers of three-row tilings
+are distributed as in Table \ref{tab:stabilizers}.
+\end{theorem}
+
+\begin{table}[htbp]
+\centering
+\caption{Tilings and orbits classified by exact stabilizer.}
+\label{tab:stabilizers}
+\begin{tabular}{cccc}
+\toprule
+Stabilizer & Tilings & Orbit size & Orbits\\
+\midrule
+$G$ & $1$ & $1$ & $1$\\
+$\{e,h\}$ & $0$ & $2$ & $0$\\
+$\{e,v\}$ & $v_n-1$ & $2$ & $(v_n-1)/2$\\
+$\{e,\rho\}$ & $r_n-1$ & $2$ & $(r_n-1)/2$\\
+$\{e\}$ & $d_n-v_n-r_n+1$ & $4$ & $(d_n-v_n-r_n+1)/4$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proof}
+By Lemma \ref{lem:h-odd}, the only tiling fixed by $h$ is the
+tiling in which each of the three rows is tiled horizontally.
+It is also fixed by $v$ and $\rho$.
+A tiling fixed by any two distinct nonidentity elements is
+fixed by their product, and hence by all of $G$.
+Thus every pairwise intersection, as well as the triple
+intersection, of the three nonidentity fixed sets is this
+single tiling.
+
+There are consequently $v_n-1$ tilings with exact stabilizer
+$\{e,v\}$, $r_n-1$ with exact stabilizer $\{e,\rho\}$, none with
+exact stabilizer $\{e,h\}$, and $d_n-v_n-r_n+1$ with trivial
+stabilizer. Since $G$ is abelian, the stabilizer is constant
+on an orbit. Dividing by the corresponding orbit size gives
+the table. These five subgroups exhaust all subgroups of $G$.
+\end{proof}
+
+For example, when $n=8$ the fixed-point counts are
+$d_8=29681$, $v_8=265$, and $r_8=153$.
+Among the $7525$ orbits, $7316$ have trivial stabilizer,
+$132$ have stabilizer $\{e,v\}$, $76$ have stabilizer
+$\{e,\rho\}$, and one has stabilizer $G$.
+
+\begin{theorem}\label{thm:asym}
+Let $\lambda=2+\sqrt3$. If a tiling is chosen uniformly from
+$\mathcal T_n$, let $p_n$ be the probability that it has a
+nonidentity symmetry. Then, as $j\to\infty$,
+\begin{equation}\label{eq:prob-asym}
+ p_{2j}\sim(\lambda-1)\lambda^{-j},\qquad
+ p_{2j+1}\sim\frac{\lambda+1}{\lambda}\lambda^{-j}.
+\end{equation}
+In particular, $p_n=O(\lambda^{-n/2})\to0$, and
+\begin{equation}\label{eq:orbit-asym}
+ a(n)=\frac{d_n}{4}+O(\lambda^{n/2})
+ \sim\frac{3+\sqrt3}{24}\lambda^n.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Solving \eqref{eq:d-rec} with its initial values gives
+\begin{equation}\label{eq:d-closed}
+ d_n=c_+\lambda^n+c_-\lambda^{-n},\qquad
+ c_\pm=\frac{3\pm\sqrt3}{6}.
+\end{equation}
+By Table \ref{tab:stabilizers},
+$p_n=(v_n+r_n-1)/d_n$, whereas \eqref{eq:parity-fixed} gives
+\[
+ v_{2j}+r_{2j}=d_{j+1}-d_j,\qquad
+ v_{2j+1}+r_{2j+1}=d_{j+1}+d_j.
+\]
+The leading terms of these numerators are
+$c_+(\lambda-1)\lambda^j$ and $c_+(\lambda+1)\lambda^j$,
+respectively. The corresponding denominators have leading
+terms $c_+\lambda^{2j}$ and $c_+\lambda^{2j+1}$.
+This proves \eqref{eq:prob-asym}. Finally,
+$a(n)=(d_n+1+v_n+r_n)/4$ gives \eqref{eq:orbit-asym}.
+\end{proof}
+
+Uniform sampling of orbits gives a different probability
+space. The number of orbits with nontrivial stabilizer is
+$(v_n+r_n)/2$, so their proportion is
+$(v_n+r_n)/(2a(n))$, which also tends to zero.

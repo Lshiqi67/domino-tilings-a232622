@@ -1,0 +1,54 @@
+\section{任意固定奇数高度的矩阵公式}\label{sec:odd}
+
+本节将固定高度对称计数的有限状态方法具体化。
+递推存在性与有理性已有 DeFord \cite[定理 6.1]{deford} 的一般框架；
+这里给出适用于无标号多米诺的状态矩阵及各对称固定集的边界向量，
+并直接证明所用公式。
+
+现在固定 $m=2k+1\ge1$，以 $a_m(n)$ 记全部 $m\times2n$ 多米诺铺法
+在完整矩形对称群下的轨道数，空棋盘计 1。
+正高度为奇数，正宽度为偶数，非空棋盘不可能为正方形，
+因此仍使用四元群 $\{e,h,v,\rho\}$。
+矩阵 $T_m$、行反转指标 $\chi_m$ 及边界向量采用第 \ref{sec:half} 节的定义。
+
+\begin{theorem}[奇数高度的轨道公式]\label{thm:odd}
+对每个固定 $m=2k+1\ge1$ 和全部 $n\ge0$，
+\begin{equation}\label{eq:odd-count}
+ a_m(n)=\frac14\left[
+ \evec^{\trans}T_m^{2n}\evec
+ +\evec^{\trans}T_k^{2n}\evec
+ +\evec^{\trans}T_m^n(\one+\chi_m)\right].
+\end{equation}
+其生成函数为
+\begin{equation}\label{eq:odd-gf}
+\begin{split}
+ A_m(x)=\frac14\bigl[&
+ \evec^{\trans}(I-xT_m^2)^{-1}\evec
+ +\evec^{\trans}(I-xT_k^2)^{-1}\evec\\
+ &+\evec^{\trans}(I-xT_m)^{-1}(\one+\chi_m)\bigr].
+\end{split}
+\end{equation}
+因而每个固定奇数高度的轨道生成函数都是有理函数，
+计数序列满足某个常系数线性递推。
+\end{theorem}
+\begin{proof}
+式 \eqref{eq:profile} 给出恒等项，
+引理 \ref{lem:h-odd} 给出上下反射项，
+引理 \ref{lem:half} 给出左右反射及半周旋转项。
+对四元群应用引理 \ref{lem:burnside} 的同一双重计数论证，
+即得 \eqref{eq:odd-count}。
+对 $n$ 作形式求和，利用
+$\sum_{n\ge0}x^n M^n=(I-xM)^{-1}$ 得 \eqref{eq:odd-gf}。
+各矩阵有限，$I-xM$ 的常数项为单位矩阵，
+故其逆存在；由伴随矩阵公式，每个元素都是有理函数。
+有理生成函数乘以其常数项非零的分母，再比较充分高次数的系数，
+得到常系数线性递推。
+\end{proof}
+
+各项的 $\evec$ 按对应矩阵空间解释，特别是 $k=0$ 时使用 $T_0=(1)$。
+该定理的固定点边界向量已经明确给出，故可直接求任意指定奇数高度的精确表达式。
+引理 \ref{lem:half} 本身允许偶数高度，
+但上下反射式 \eqref{eq:h-odd} 依赖中央行。
+偶数高度需要另行处理中轴上的竖直砖；
+正方形若按全部对称取商，还必须加入四分之一周旋转和对角反射。
+这些情形不包含在定理 \ref{thm:odd} 中。

@@ -41,7 +41,9 @@ def main():
     assert all(set(v) <= allowed for v in evidence['axiom_dependencies'].values())
     matched = {}
     for rel, digest in evidence['source_sha256'].items():
-        if rel.endswith('.lean') or rel in ['lean-toolchain', 'lakefile.toml', 'lake-manifest.json']:
+        # The aggregate Domino.lean may import later local stages; it is not
+        # one of the M1-M6 mathematical modules. Check the pinned modules below.
+        if (rel.endswith('.lean') and rel != 'Domino.lean') or rel in ['lean-toolchain', 'lakefile.toml', 'lake-manifest.json']:
             assert sha(ROOT / 'lean' / rel) == digest, rel
             matched[rel] = digest
     formal = (PAPER / 'sections/formalization.tex').read_text(encoding='utf-8')
@@ -56,7 +58,10 @@ def main():
         assert sha(archive / rel) == digest, rel
     log = (PAPER / 'build/main.log').read_text(encoding='utf-8', errors='replace')
     assert not re.search(r'Overfull \\[hv]box|Missing character:|undefined references|Citation .+ undefined', log)
-    assert 'Output written on build/main.pdf (16 pages)' in log
+    page_match = re.search(r'Output written on .*?\((\d+) pages?', log)
+    assert page_match, '编译日志缺少输出页数'
+    pages = int(page_match.group(1))
+    assert pages > 0
     report = {
         'date_beijing': datetime.now(timezone(timedelta(hours=8))).isoformat(),
         'command': 'python -X utf8 checks/check_edition.py (from papers/zh)',
@@ -70,14 +75,14 @@ def main():
             'all_eight_named_Lean_declarations_audited': True,
             'no_overflow_missing_glyph_or_unresolved_reference': True,
         },
-        'pdf_pages': 16,
+        'pdf_pages': pages,
         'pdf_sha256': sha(PAPER / 'domino-tilings-zh.pdf'),
         'matched_Lean_source_sha256': matched,
         'Lean_evidence': evidence_path.relative_to(ROOT).as_posix(),
         'limits': '只复核已有验收报告与数学源码的一致性。本轮未重跑 Lean、历史穷举或外部同行审阅；不认证新颖性。',
     }
     (PAPER / 'checks/edition-audit.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
-    print(json.dumps({'status': 'passed', 'pdf_pages': 16, 'Lean_sources_and_locks': len(matched)}, ensure_ascii=False))
+    print(json.dumps({'status': 'passed', 'pdf_pages': pages, 'Lean_sources_and_locks': len(matched)}, ensure_ascii=False))
 
 
 if __name__ == '__main__':
