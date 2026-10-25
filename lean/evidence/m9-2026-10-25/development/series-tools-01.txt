@@ -1,0 +1,13 @@
+✖ [3186/3186] Building Domino.FiveRows.SeriesTools (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\FiveRows\SeriesTools.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\SeriesTools.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\SeriesTools.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\SeriesTools.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\SeriesTools.setup.json --json
+error: build failed
+error: Domino/FiveRows/SeriesTools.lean:31:9: unsolved goals
+case zero
+d : ℕ
+M : Matrix (Fin d) (Fin d) ℕ
+u : ℕ → Fin d → ℕ
+hu : ∀ (n : ℕ), u (n + 1) = M.mulVec (u n)
+i : Fin d
+⊢ constantCoeff (countSeries fun n => u n i) = ↑(u 0 i)
+Some required targets logged failures:
+- Domino.FiveRows.SeriesTools

@@ -1,0 +1,14 @@
+✖ [3155/3155] Building Domino.Blocks.Symmetry (19s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Symmetry.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Symmetry.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Symmetry.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Symmetry.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Symmetry.setup.json --json
+error: Domino/Blocks/Symmetry.lean:57:34: Unknown identifier `FixedTilings`
+
+Note: It is not possible to treat `FixedTilings` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Domino/Blocks/Symmetry.lean:61:34: Unknown identifier `FixedTilings`
+
+Note: It is not possible to treat `FixedTilings` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Domino/Blocks/Symmetry.lean:65:34: Unknown identifier `FixedTilings`
+
+Note: It is not possible to treat `FixedTilings` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Some required targets logged failures:
+- Domino.Blocks.Symmetry

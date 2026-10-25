@@ -1,0 +1,34 @@
+✖ [3215/3216] Building Domino.Stabilizers.Classification (38s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Stabilizers\Classification.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Stabilizers\Classification.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Stabilizers\Classification.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Stabilizers\Classification.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Stabilizers\Classification.setup.json --json
+warning: Domino/Stabilizers/Classification.lean:55:58: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+error: Domino/Stabilizers/Classification.lean:112:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ b ≤ 4
+where
+ b := ↑↑((fun i => i) ⟨0, ⋯⟩)
+error: Domino/Stabilizers/Classification.lean:112:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c ≤ 1
+  0 ≤ b ≤ 4
+where
+ b := ↑↑((fun i => i) ⟨1, ⋯⟩)
+ c := ↑(Finset.filter (Membership.mem (MulAction.orbit RectangleSymmetry ↑T)) Finset.univ).card
+error: Domino/Stabilizers/Classification.lean:112:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c ≤ 1
+  0 ≤ b ≤ 4
+where
+ b := ↑↑((fun i => i) ⟨2, ⋯⟩)
+ c := ↑(Finset.filter (Membership.mem (MulAction.orbit RectangleSymmetry ↑T)) Finset.univ).card
+error: Domino/Stabilizers/Classification.lean:112:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c ≤ 1
+  0 ≤ b ≤ 4
+where
+ b := ↑↑((fun i => i) ⟨3, ⋯⟩)
+ c := ↑(Finset.filter (Membership.mem (MulAction.orbit RectangleSymmetry ↑T)) Finset.univ).card
+Some required targets logged failures:
+- Domino.Stabilizers.Classification
+error: build failed

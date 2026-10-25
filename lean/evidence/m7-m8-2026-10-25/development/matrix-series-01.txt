@@ -1,0 +1,352 @@
+✖ [3185/3185] Building Domino.OddHeight.MatrixSeries (17s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\MatrixSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\MatrixSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\MatrixSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\MatrixSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\MatrixSeries.setup.json --json
+error: Domino/OddHeight/MatrixSeries.lean:20:6: typeclass instance problem is stuck
+  Semiring ?m.4
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Semiring` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+error: Domino/OddHeight/MatrixSeries.lean:23:6: typeclass instance problem is stuck
+  Semiring ?m.3
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Semiring` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+error: Domino/OddHeight/MatrixSeries.lean:28:9: unsolved goals
+case zero
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+⊢ constantCoeff ((sorry M * matrixSeries M) i j) = constantCoeff (1 i j)
+error: Domino/OddHeight/MatrixSeries.lean:29:11: unsolved goals
+case succ
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+n : ℕ
+⊢ ∑ x, (coeff (n + 1)) (sorry M i x * mk fun n => (M ^ n) x j) = (coeff (n + 1)) (if i = j then 1 else 0)
+warning: Domino/OddHeight/MatrixSeries.lean:28:18: declaration uses `sorry`
+warning: Domino/OddHeight/MatrixSeries.lean:28:32: This simp argument is unused:
+  Matrix.sub_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seriesPencil, Matrix.smul_mul, matrixSeries]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:28:48: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seriesPencil, Matrix.sub_mul, matrixSeries]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:28:65: This simp argument is unused:
+  matrixSeries
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seriesPencil, Matrix.sub_mul, Matrix.smul_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:30:29: This simp argument is unused:
+  Matrix.sub_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:30:45: This simp argument is unused:
+  Matrix.one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:30:61: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.sub_apply, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:31:6: This simp argument is unused:
+  Matrix.sub_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:31:24: This simp argument is unused:
+  Matrix.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:31:43: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:31:56: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:31:65: This simp argument is unused:
+  coeff_succ_X_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:32:33: This simp argument is unused:
+  coeff_C_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:32:46: This simp argument is unused:
+  Matrix.map_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:32:78: This simp argument is unused:
+  coeff_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.sub_mul, Matrix.one_mul, Matrix.smul_mul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_C_mul, Matrix.map_apply, matrixSeries]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:33:10: This simp argument is unused:
+  pow_succ'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, Matrix.one_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:33:21: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pow_succ', Matrix.one_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/OddHeight/MatrixSeries.lean:38:9: unsolved goals
+case zero
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+⊢ constantCoeff ((matrixSeries M * sorry M) i j) = constantCoeff (1 i j)
+error: Domino/OddHeight/MatrixSeries.lean:39:11: unsolved goals
+case succ
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+n : ℕ
+⊢ ∑ x, (coeff (n + 1)) ((mk fun n => (M ^ n) i x) * sorry M x j) = (coeff (n + 1)) (if i = j then 1 else 0)
+warning: Domino/OddHeight/MatrixSeries.lean:38:18: declaration uses `sorry`
+warning: Domino/OddHeight/MatrixSeries.lean:38:32: This simp argument is unused:
+  Matrix.mul_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seriesPencil, Matrix.mul_smul, matrixSeries]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:38:48: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seriesPencil, Matrix.mul_sub, matrixSeries]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:38:65: This simp argument is unused:
+  matrixSeries
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seriesPencil, Matrix.mul_sub, Matrix.mul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:40:29: This simp argument is unused:
+  Matrix.mul_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:40:45: This simp argument is unused:
+  Matrix.mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:40:61: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.sub_apply, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:41:6: This simp argument is unused:
+  Matrix.sub_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.smul_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:41:24: This simp argument is unused:
+  Matrix.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, smul_eq_mul,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:41:43: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply,
+    map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:41:56: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:41:65: This simp argument is unused:
+  coeff_succ_X_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:42:33: This simp argument is unused:
+  coeff_mul_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, Matrix.map_apply, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:42:46: This simp argument is unused:
+  Matrix.map_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, matrixSeries, coeff_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:42:78: This simp argument is unused:
+  coeff_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [seriesPencil, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_smul, Matrix.sub_apply, Matrix.smul_apply,
+    smul_eq_mul, map_sub, coeff_succ_X_mul, Matrix.mul_apply, map_sum, coeff_mul_C, Matrix.map_apply, matrixSeries]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:43:10: This simp argument is unused:
+  pow_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, Matrix.one_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:43:20: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pow_succ, Matrix.one_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/OddHeight/MatrixSeries.lean:46:76: unsolved goals
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+n✝ : ℕ
+⊢ (sorry M i j).coeff n✝ = (coeff n✝) (sorry M i j)
+warning: Domino/OddHeight/MatrixSeries.lean:48:8: declaration uses `sorry`
+warning: Domino/OddHeight/MatrixSeries.lean:48:22: declaration uses `sorry`
+warning: Domino/OddHeight/MatrixSeries.lean:48:36: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [matrixPencil, seriesPencil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/OddHeight/MatrixSeries.lean:51:52: unsolved goals
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+⊢ Polynomial.eval 0 (sorry M i j) = if i = j then 1 else 0
+warning: Domino/OddHeight/MatrixSeries.lean:53:8: declaration uses `sorry`
+error: Domino/OddHeight/MatrixSeries.lean:56:30: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?m.31 (Matrix.det ?M)
+in the target expression
+  (matrixPencil M).det.coeff (Polynomial.eval ?m.18 0) = 1
+
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+⊢ (matrixPencil M).det.coeff (Polynomial.eval ?m.18 0) = 1
+error: Domino/OddHeight/MatrixSeries.lean:69:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((RingHom.mapMatrix ?m.155) ?M).det
+in the target expression
+  ((matrixPencil M).map fun p => ↑p).det * matrixSeries M i j = ((matrixPencil M).map fun p => ↑p).adjugate i j
+
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+h : (seriesPencil M).det • matrixSeries M = (seriesPencil M).adjugate
+he : ((matrixPencil M).map fun p => ↑p).det * matrixSeries M i j = ((matrixPencil M).map fun p => ↑p).adjugate i j
+⊢ ↑(matrixPencil M).det * matrixSeries M i j = ↑((matrixPencil M).adjugate i j)
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  function expected
+    matrixSeries M i
+Some required targets logged failures:
+- Domino.OddHeight.MatrixSeries
+error: build failed

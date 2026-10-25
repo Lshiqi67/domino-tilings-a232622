@@ -1,0 +1,580 @@
+✖ [3156/3162] Building Domino.OddHeight.Transpose (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\Transpose.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Transpose.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Transpose.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Transpose.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Transpose.setup.json --json
+error: Domino/OddHeight/Transpose.lean:53:2: `simp` made no progress
+error: Domino/OddHeight/Transpose.lean:75:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  vertical • transposeTiling ?T
+in the target expression
+  horizontal • T = T ↔ vertical • (transposeTilingEquiv m w) T = (transposeTilingEquiv m w) T
+
+m w : ℕ
+T : Tiling m w
+⊢ horizontal • T = T ↔ vertical • (transposeTilingEquiv m w) T = (transposeTilingEquiv m w) T
+error: Domino/OddHeight/Transpose.lean:72:18: (kernel) declaration has metavariables 'Domino.General.horizontalFixedTransposeEquiv'
+✔ [3157/3162] Built Domino.OddHeight.Count (19s)
+✔ [3158/3162] Built Domino.OddHeight.PathAction (18s)
+✖ [3159/3162] Building Domino.OddHeight.PathCompletion (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\PathCompletion.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\PathCompletion.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\PathCompletion.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\PathCompletion.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\PathCompletion.setup.json --json
+error: Domino/OddHeight/PathCompletion.lean:29:34: don't know how to synthesize implicit argument `α`
+  @Eq (HalfPath b n) P Q
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+h : P.snd.state = Q.snd.state
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:9: don't know how to synthesize implicit argument `α`
+  @Eq (ℕ → State ?m.17) P.snd.state Q.snd.state
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:21: don't know how to synthesize implicit argument `S`
+  @StatePath.state ?m.17 n (↑Q.fst) Q.snd
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ State ?m.17
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:21: don't know how to synthesize implicit argument `m`
+  @StatePath.state ?m.17 n (↑Q.fst) Q.snd
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:21: don't know how to synthesize implicit argument `β`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) Q
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ { S // twistState b S = S } → Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:21: don't know how to synthesize implicit argument `α`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) Q
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:9: don't know how to synthesize implicit argument `S`
+  @StatePath.state ?m.17 n (↑P.fst) P.snd
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ State ?m.17
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:9: don't know how to synthesize implicit argument `m`
+  @StatePath.state ?m.17 n (↑P.fst) P.snd
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:9: don't know how to synthesize implicit argument `β`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) P
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ { S // twistState b S = S } → Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:29:9: don't know how to synthesize implicit argument `α`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) P
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P Q : HalfPath b n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:28:47: don't know how to synthesize implicit argument `m`
+  @HalfPath ?m.17 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:28:47: don't know how to synthesize implicit argument `m`
+  @HalfPath ?m.17 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:32:12: Application type mismatch: The argument
+  S
+has type
+  State ?m.17
+but is expected to have type
+  ?m.57
+in the application
+  Eq S
+error: Domino/OddHeight/PathCompletion.lean:32:21: Application type mismatch: The argument
+  P
+has type
+  StatePath n ↑⟨S, hS⟩
+but is expected to have type
+  StatePath ?m.59 ?m.60
+in the application
+  P.finish
+error: Domino/OddHeight/PathCompletion.lean:32:52: Application type mismatch: The argument
+  h
+has type
+  ⟨⟨S, hS⟩, P⟩.snd.state = ⟨⟨R, hR⟩, Q⟩.snd.state
+but is expected to have type
+  ?m.70 = ?m.71
+in the application
+  congrFun h
+error: Domino/OddHeight/PathCompletion.lean:32:63: Application type mismatch: The argument
+  Q
+has type
+  StatePath n ↑⟨R, hR⟩
+but is expected to have type
+  StatePath ?m.77 ?m.78
+in the application
+  Q.finish
+error: Domino/OddHeight/PathCompletion.lean:29:43: unsolved goals
+b : Bool
+n : ℕ
+S : State ?m.17
+hS : twistState b S = S
+P : StatePath n ↑⟨S, hS⟩
+R : State ?m.17
+hR : twistState b R = R
+Q : StatePath n ↑⟨R, hR⟩
+h : ⟨⟨S, hS⟩, P⟩.snd.state = ⟨⟨R, hR⟩, Q⟩.snd.state
+⊢ ⟨⟨S, hS⟩, P⟩ = ⟨⟨R, hR⟩, Q⟩
+error: Domino/OddHeight/PathCompletion.lean:38:41: don't know how to synthesize implicit argument `m`
+  @HalfPath ?m.2 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:42:4: don't know how to synthesize implicit argument `α`
+  @Eq (State ?m.14) (doubledState P k) (P.snd.state k)
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:42:23: don't know how to synthesize implicit argument `S`
+  @StatePath.state ?m.14 n (↑P.fst) P.snd k
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ n
+⊢ State ?m.14
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:42:23: don't know how to synthesize implicit argument `m`
+  @StatePath.state ?m.14 n (↑P.fst) P.snd k
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:42:23: don't know how to synthesize implicit argument `β`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) P
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ n
+⊢ { S // twistState b S = S } → Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:42:23: don't know how to synthesize implicit argument `α`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) P
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:42:4: don't know how to synthesize implicit argument `m`
+  @doubledState ?m.14 b n P k
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:41:50: don't know how to synthesize implicit argument `m`
+  @HalfPath ?m.14 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:42:38: unsolved goals
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ n
+⊢ P.snd.state k = P.snd.state k
+error: Domino/OddHeight/PathCompletion.lean:46:4: don't know how to synthesize implicit argument `α`
+  @Eq (State ?m.33) (doubledState P k) (twistState b (P.snd.state (2 * n - k)))
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : n ≤ k
+hkw : k ≤ 2 * n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:46:23: don't know how to synthesize implicit argument `m`
+  @twistState ?m.33 b (P.snd.state (2 * n - k))
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : n ≤ k
+hkw : k ≤ 2 * n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:46:37: don't know how to synthesize implicit argument `S`
+  @StatePath.state ?m.33 n (↑P.fst) P.snd (2 * n - k)
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : n ≤ k
+hkw : k ≤ 2 * n
+⊢ State ?m.33
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:46:37: don't know how to synthesize implicit argument `m`
+  @StatePath.state ?m.33 n (↑P.fst) P.snd (2 * n - k)
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : n ≤ k
+hkw : k ≤ 2 * n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:46:37: don't know how to synthesize implicit argument `β`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) P
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : n ≤ k
+hkw : k ≤ 2 * n
+⊢ { S // twistState b S = S } → Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:46:37: don't know how to synthesize implicit argument `α`
+  @Sigma.snd { S // twistState b S = S } (fun S => StatePath n ↑S) P
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : n ≤ k
+hkw : k ≤ 2 * n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:46:4: don't know how to synthesize implicit argument `m`
+  @doubledState ?m.33 b n P k
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : n ≤ k
+hkw : k ≤ 2 * n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:44:51: don't know how to synthesize implicit argument `m`
+  @HalfPath ?m.33 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:47:2: Type mismatch
+  if he : k = n then ?pos✝ else ?neg✝
+has type
+  ?m.37
+but is expected to have type
+  doubledState P k = twistState b (P.snd.state (2 * n - k))
+error: Domino/OddHeight/PathCompletion.lean:56:4: don't know how to synthesize implicit argument `α`
+  @Eq (State ?m.28) (doubledState P k) (twistState b (doubledState P (2 * n - k)))
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ 2 * n
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:56:23: don't know how to synthesize implicit argument `m`
+  @twistState ?m.28 b (doubledState P (2 * n - k))
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ 2 * n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:56:37: don't know how to synthesize implicit argument `m`
+  @doubledState ?m.28 b n P (2 * n - k)
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ 2 * n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:56:4: don't know how to synthesize implicit argument `m`
+  @doubledState ?m.28 b n P k
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+k : ℕ
+hk : k ≤ 2 * n
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:54:55: don't know how to synthesize implicit argument `m`
+  @HalfPath ?m.28 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:58:2: Type mismatch
+  if hl : k ≤ n then ?pos✝ else ?neg✝
+has type
+  ?m.63
+but is expected to have type
+  doubledState P k = twistState b (doubledState P (2 * n - k))
+error: Domino/OddHeight/PathCompletion.lean:63:61: don't know how to synthesize implicit argument `m`
+  @AxialPath (?m.4 P) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+P : HalfPath b n
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:63:45: don't know how to synthesize implicit argument `m`
+  @HalfPath ?m.3 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:80:4: Unknown identifier `doubledState_symmetric`
+error: Domino/OddHeight/PathCompletion.lean:70:13: tactic execution is stuck, goal contains metavariables
+  ∀ k < 2 * n, Legal (doubledState P k) (doubledState P (k + 1))
+error: Domino/OddHeight/PathCompletion.lean:82:63: don't know how to synthesize implicit argument `m`
+  @HalfPath (?m.4 Q) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+Q : AxialPath b n
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:82:46: don't know how to synthesize implicit argument `m`
+  @AxialPath ?m.3 b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:91:13: tactic execution is stuck, goal contains metavariables
+  ∀ k < n, Legal (if k ≤ n then (↑Q).state k else ∅) (if k + 1 ≤ n then (↑Q).state (k + 1) else ∅)
+error: Domino/OddHeight/PathCompletion.lean:96:4: Unknown identifier `restrictAxialPath`
+
+Note: It is not possible to treat `restrictAxialPath` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Domino/OddHeight/PathCompletion.lean:97:8: Unknown identifier `halfPath_ext`
+error: Domino/OddHeight/PathCompletion.lean:105:4: Unknown identifier `completeHalfPath`
+
+Note: It is not possible to treat `completeHalfPath` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Domino/OddHeight/PathCompletion.lean:118:63: don't know how to synthesize implicit argument `m`
+  @AxialPath (?m.4 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:118:48: don't know how to synthesize implicit argument `m`
+  @HalfPath (?m.3 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:119:11: Unknown identifier `completeHalfPath`
+error: Domino/OddHeight/PathCompletion.lean:120:12: Unknown identifier `restrictAxialPath`
+error: Domino/OddHeight/PathCompletion.lean:121:14: Unknown identifier `restrict_complete_halfPath`
+error: Domino/OddHeight/PathCompletion.lean:122:15: Unknown identifier `complete_restrict_axialPath`
+error: Domino/OddHeight/PathCompletion.lean:127:76: don't know how to synthesize implicit argument `m`
+  @AxialPath (?m.4 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:127:59: don't know how to synthesize implicit argument `m`
+  @AxialFixed (?m.3 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:130:36: tactic execution is stuck, goal contains metavariables
+  ∀ k ≤ 2 * n,
+    (tilingPath ((tilingEquivClosedPath (2 * n)).symm ↑P)).state k =
+      twistState b ((tilingPath ((tilingEquivClosedPath (2 * n)).symm ↑P)).state (2 * n - k))
+error: Domino/OddHeight/PathCompletion.lean:138:78: don't know how to synthesize implicit argument `m`
+  @HalfPath (?m.4 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:138:60: don't know how to synthesize implicit argument `m`
+  @HalfPartial (?m.3 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:142:21: don't know how to synthesize implicit argument `m`
+  @HalfPartial (?m.4 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:142:4: don't know how to synthesize implicit argument `m`
+  @AxialFixed (?m.3 b n) b n
+context:
+m : ℕ
+b : Bool
+n : ℕ
+⊢ ℕ
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+error: Domino/OddHeight/PathCompletion.lean:143:3: Unknown identifier `axialFixedEquivPath`
+Some required targets logged failures:
+- Domino.OddHeight.Transpose
+- Domino.OddHeight.PathCompletion
+error: build failed

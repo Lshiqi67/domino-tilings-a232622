@@ -1,0 +1,36 @@
+✖ [3208/3211] Building Domino.Blocks.Boundary (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Boundary.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Boundary.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Boundary.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Boundary.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Boundary.setup.json --json
+error: Domino/Blocks/Boundary.lean:109:43: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 1
+where
+ b := ↑(mass [])
+error: Domino/Blocks/Boundary.lean:130:41: No goals to be solved
+✔ [3209/3211] Built Domino.Blocks.FixedSeries (19s)
+✖ [3210/3211] Building Domino.Blocks.Horizontal (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Horizontal.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Horizontal.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Horizontal.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Horizontal.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Horizontal.setup.json --json
+error: Domino/Blocks/Horizontal.lean:18:18: unsolved goals
+case mp.cons
+W : List Letter
+ih : List.map flip W = W → W = List.replicate (mass W) Letter.c
+hw : List.map flip W = W
+h : List.map flip (Letter.c :: W) = Letter.c :: W
+he : flip Letter.c = Letter.c
+⊢ Letter.c :: List.replicate (mass W) Letter.c = List.replicate (1 + mass W) Letter.c
+warning: Domino/Blocks/Horizontal.lean:24:36: This simp argument is unused:
+  List.replicate_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [mass_replicate_c, weight]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Blocks/Horizontal.lean:43:2: Type mismatch: After simplification, term
+  Eq.symm h
+ has type
+  Fintype.card ↑(MulAction.fixedBy (Tiling 3 (2 * n)) horizontal) = 1
+but is expected to have type
+  fixedCount 3 n horizontal = 1
+Some required targets logged failures:
+- Domino.Blocks.Boundary
+- Domino.Blocks.Horizontal
+error: build failed

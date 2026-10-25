@@ -2,7 +2,7 @@
 
 This is a curated research snapshot, not the complete private workspace.
 
-Included: Chinese and English manuscripts, selected research notes, both proposed proof routes, illustrated block-proof guides, six historical computational programs, and now the complete Lean M1–M6 project with pinned dependencies, scripts, stage documentation and sanitized evidence.
+Included: Chinese and English manuscripts, selected research notes, both proposed proof routes, illustrated block-proof guides, six historical computational programs, and the complete Lean M1–M11 project with pinned dependencies, scripts, stage documentation and sanitized evidence.
 
 Excluded: institutional information, complete private archives, conversation dumps, unredacted machine logs, local absolute paths, credentials, build caches and unrelated projects. Git commits use the author and committer identity explicitly provided by the repository owner.
 
@@ -32,3 +32,11 @@ See [STATUS.md](STATUS.md) for the current scientific claims and limitations.
 ## 可读性与语义审阅包发布（2026-10-25）
 
 新增中英文 E04 展开与 M1–M6 审阅包。此次新检查的模块构建、声明类型、公理输出见 `review/m1-m6/checks/verification-01/`；它是新的实际运行，不冒称新的独立干净重建。外部语义审阅表仍空白。原 M1–M6 数学源码、版本锁和历史证据保持原样；更晚本地阶段不纳入本次提交。
+
+## M7–M11 增量发布（2026-10-26）
+
+本次追加 51 个数学模块，使总数达到 83；累计声明 1078 项、其中 699 个定理（含辅助引理）。沿用 `lean/Domino/` 的主题目录，阶段说明和覆盖表置于 `lean/docs/`，验收程序在 `lean/scripts/`，公开证据在 `lean/evidence/`。原 M1–M6 数学源文件、版本锁、论文及既有审阅包不变；旧阶段历史叙述保持其当时范围，当前状态见 STATUS.md。
+
+新增报告来自 2026-10-25 的实际阶段验收及用户复跑。只替换机器路径并添加来源说明；保留原始源码哈希、公理映射、命令结构、退出码和开发失败记录。本次核对用户复跑报告的 113 个输入文件与发布源码一致。没有把报告复制称为新验收，没有重跑旧铺法枚举。原始检查、依赖缓存、clean-project 副本与无关工作区文件不上传。
+
+根目录 MANIFEST-SHA256.json 更新为本次提交文件的完整性清单；此前版本仍可从 Git 历史取得。Git 只传输新增对象和变化，已存在且未变化的论文与源码不重复提交。作者和提交者均使用用户指定的 Shiqi Liu <1456010547@qq.com>，账号关联由 GitHub 提交 API 核对。

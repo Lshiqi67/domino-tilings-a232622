@@ -1,0 +1,46 @@
+✔ [3221/3223] Built Domino.Asymptotics.OrbitLimits (19s)
+✖ [3222/3223] Building Domino.Asymptotics.ErrorBounds (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\ErrorBounds.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ErrorBounds.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ErrorBounds.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ErrorBounds.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ErrorBounds.setup.json --json
+error: Domino/Asymptotics/ErrorBounds.lean:46:4: Type mismatch: After simplification, term
+  probability_even_scaled_tendsto
+ has type
+  Tendsto (fun j => tilingProbability (2 * j) * growth ^ j) atTop (𝓝 (growth - 1))
+but is expected to have type
+  Tendsto ((fun j => tilingProbability (2 * j)) * (fun j => (growth ^ j)⁻¹)⁻¹) atTop (𝓝 (growth - 1))
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instMul ↦ 12
+  Real.instInv ↦ 36
+error: Domino/Asymptotics/ErrorBounds.lean:50:4: Type mismatch: After simplification, term
+  Tendsto.mul_const (growth ^ (1 / 2)) probability_odd_scaled_tendsto
+ has type
+  Tendsto (fun x => tilingProbability (2 * x + 1) * (growth ^ x * growth ^ 2⁻¹)) atTop
+    (𝓝 ((growth + 1) * (growth⁻¹ * growth ^ 2⁻¹)))
+but is expected to have type
+  Tendsto ((fun j => tilingProbability (2 * j + 1)) * (fun j => (growth ^ 2⁻¹)⁻¹ * (growth ^ j)⁻¹)⁻¹) atTop
+    (𝓝 ((growth + 1) * (growth⁻¹ * growth ^ 2⁻¹)))
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instMul ↦ 12
+  Real.instInv ↦ 24
+error: Domino/Asymptotics/ErrorBounds.lean:60:2: linarith failed to find a contradiction
+case h1
+j : ℕ
+h : 4 * ↑(a (2 * j)) + d j = d (2 * j) + 1 + d (j + 1)
+a✝ :
+  (↑(a (2 * j)) * 4 - d (2 * j)) * growth ^ (j + 1) <
+    growth ^ j * growth * d (j + 1) - growth ^ (j + 1) * d j + growth ^ (j + 1)
+⊢ False
+failed
+error: Domino/Asymptotics/ErrorBounds.lean:69:2: linarith failed to find a contradiction
+case h1
+j : ℕ
+h : 4 * ↑(a (2 * j + 1)) = d (2 * j + 1) + 1 + d (j + 1) + d j
+a✝ :
+  (↑(a (2 * j + 1)) * 4 - d (2 * j + 1)) * growth ^ (j + 1) <
+    growth ^ j * growth * d (j + 1) + growth ^ (j + 1) * d j + growth ^ (j + 1)
+⊢ False
+failed
+Some required targets logged failures:
+- Domino.Asymptotics.ErrorBounds
+error: build failed

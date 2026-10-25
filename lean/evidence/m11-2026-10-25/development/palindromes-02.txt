@@ -1,0 +1,31 @@
+✖ [3156/3156] Building Domino.Blocks.Palindromes (18s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Palindromes.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Palindromes.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Palindromes.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Palindromes.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Palindromes.setup.json --json
+warning: Domino/Blocks/Palindromes.lean:79:49: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Domino/Blocks/Palindromes.lean:79:49: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp at hc
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Domino/Blocks/Palindromes.lean:79:49: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp at hc
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: Domino/Blocks/Palindromes.lean:104:30: Application type mismatch: The argument
+  he
+has type
+  ((↑p).1, ↑(↑p).2) = ((↑q).1, ↑(↑q).2)
+but is expected to have type
+  ↑p = ↑q
+in the application
+  congrArg Prod.fst he
+Some required targets logged failures:
+- Domino.Blocks.Palindromes

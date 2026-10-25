@@ -1,0 +1,27 @@
+✔ [3152/3153] Built Domino.Blocks.Letters (19s)
+✖ [3153/3153] Building Domino.Blocks.Decomposition (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Decomposition.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Decomposition.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Decomposition.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Decomposition.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Decomposition.setup.json --json
+error: Domino/Blocks/Decomposition.lean:44:17: Invalid `⟨...⟩` notation: The expected type
+  Valid ∅ (core Letter.c ++ ∅ :: trace W)
+is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+warning: Domino/Blocks/Decomposition.lean:130:49: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: Domino/Blocks/Decomposition.lean:123:68: unsolved goals
+L : List (State 3)
+hne : L ≠ []
+hv : Valid ∅ L
+hi : ∅ ∉ L.dropLast
+a b : Letter
+W : List Letter
+hW : trace (a :: b :: W) = L
+hb : core b ++ ∅ :: trace W ≠ []
+⊢ ∅ ∈ core a ∨ ∅ ∈ (∅ :: (core b ++ ∅ :: trace W)).dropLast
+Some required targets logged failures:
+- Domino.Blocks.Decomposition
+error: build failed

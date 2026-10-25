@@ -1,0 +1,42 @@
+def Domino.a : ℕ → ℕ :=
+fun n => Domino.orbitCount 3 n
+def Domino.orbitCount : ℕ → ℕ → ℕ :=
+fun m n => Fintype.card (Domino.TilingOrbit m (2 * n))
+def Domino.orbitSeries : PowerSeries ℚ :=
+Domino.countSeries Domino.a
+def Domino.countSeries : (ℕ → ℕ) → PowerSeries ℚ :=
+fun f => PowerSeries.mk fun n => ↑(f n)
+def Domino.orbitDenom : PowerSeries ℚ :=
+(1 - PowerSeries.X) * Domino.ordinaryDenom * Domino.parityDenom
+def Domino.orbitNumerator : PowerSeries ℚ :=
+1 - 3 * PowerSeries.X - 4 * PowerSeries.X ^ 2 + 10 * PowerSeries.X ^ 3 - 4 * PowerSeries.X ^ 5 + PowerSeries.X ^ 6
+Domino.coeff_orbitSeries (n : ℕ) : (PowerSeries.coeff n) Domino.orbitSeries = ↑(Domino.a n)
+Domino.orbit_series_identity : Domino.orbitDenom * Domino.orbitSeries = Domino.orbitNumerator
+Domino.orbit_series_rational : Domino.orbitSeries = Domino.orbitNumerator * Domino.orbitDenom⁻¹
+Domino.orbit_series_paper :
+  Domino.orbitSeries =
+    (-1 + 3 * PowerSeries.X + 4 * PowerSeries.X ^ 2 - 10 * PowerSeries.X ^ 3 + 4 * PowerSeries.X ^ 5 -
+        PowerSeries.X ^ 6) *
+      ((PowerSeries.X - 1) * (PowerSeries.X ^ 2 - 4 * PowerSeries.X + 1) *
+          (PowerSeries.X ^ 4 - 4 * PowerSeries.X ^ 2 + 1))⁻¹
+Domino.orbit_recurrence_seven (n : ℕ) :
+  ↑(Domino.a (n + 7)) =
+    5 * ↑(Domino.a (n + 6)) - ↑(Domino.a (n + 5)) - 19 * ↑(Domino.a (n + 4)) + 19 * ↑(Domino.a (n + 3)) +
+          ↑(Domino.a (n + 2)) -
+        5 * ↑(Domino.a (n + 1)) +
+      ↑(Domino.a n)
+Domino.orbit_initial_values :
+  Domino.a 0 = 1 ∧
+    Domino.a 1 = 2 ∧ Domino.a 2 = 5 ∧ Domino.a 3 = 14 ∧ Domino.a 4 = 46 ∧ Domino.a 5 = 156 ∧ Domino.a 6 = 561
+Domino.orbit_recurrence_first : Domino.a 7 = 2037
+Domino.three_row_main_theorem :
+  Domino.orbitDenom * Domino.orbitSeries = Domino.orbitNumerator ∧
+    Domino.orbitSeries = Domino.orbitNumerator * Domino.orbitDenom⁻¹ ∧
+      (∀ (n : ℕ),
+          ↑(Domino.a (n + 7)) =
+            5 * ↑(Domino.a (n + 6)) - ↑(Domino.a (n + 5)) - 19 * ↑(Domino.a (n + 4)) + 19 * ↑(Domino.a (n + 3)) +
+                  ↑(Domino.a (n + 2)) -
+                5 * ↑(Domino.a (n + 1)) +
+              ↑(Domino.a n)) ∧
+        Domino.a 0 = 1 ∧
+          Domino.a 1 = 2 ∧ Domino.a 2 = 5 ∧ Domino.a 3 = 14 ∧ Domino.a 4 = 46 ∧ Domino.a 5 = 156 ∧ Domino.a 6 = 561

@@ -1,0 +1,12 @@
+✔ [3210/3211] Built Domino.Blocks.Horizontal (24s)
+✖ [3211/3211] Building Domino.Blocks.Main (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Main.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Main.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Main.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Main.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Main.setup.json --json
+error: Domino/Blocks/Main.lean:19:2: Type mismatch: After simplification, term
+  h
+ has type
+  (expand 2 doubleSeries._proof_1) ordinaryDenom * (expand 2 doubleSeries._proof_1) wordSeries = 1 - X ^ 2
+but is expected to have type
+  parityDenom * (expand 2 doubleSeries._proof_1) wordSeries = 1 - X ^ 2
+Some required targets logged failures:
+- Domino.Blocks.Main
+error: build failed

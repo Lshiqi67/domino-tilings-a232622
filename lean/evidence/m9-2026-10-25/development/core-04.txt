@@ -1,0 +1,23 @@
+✔ [3222/3224] Built Domino.FiveRows.SeriesTools (19s)
+✔ [3223/3224] Built Domino.FiveRows.Compression (31s)
+✖ [3224/3224] Building Domino.FiveRows.Counts (23s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\FiveRows\Counts.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Counts.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Counts.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Counts.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Counts.setup.json --json
+error: Domino/FiveRows/Counts.lean:33:103: unsolved goals
+n : ℕ
+⊢ ∑ x, General.profileCount n (maskState 5 x) = ∑ i, General.profileCount n (maskState 5 i)
+error: Domino/FiveRows/Counts.lean:38:91: unsolved goals
+n : ℕ
+h : ∑ S, General.profileCount n ↑S = ∑ S, if reverseState S = S then General.profileCount n S else 0
+⊢ (∑ x, if reverseState (maskState 5 x) = maskState 5 x then General.profileCount n (maskState 5 x) else 0) =
+    ∑ i, if reverseState (maskState 5 i) = maskState 5 i then General.profileCount n (maskState 5 i) else 0
+error: Domino/FiveRows/Counts.lean:61:81: failed to synthesize
+  Decidable (∀ (p : Fin 32) (i : Fin 6), p ∉ evenSupport → evenLift p i = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Domino/FiveRows/Counts.lean:75:79: failed to synthesize
+  Decidable (∀ (p : Fin 32) (i : Fin 6), p ∉ oddSupport → oddLift p i = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Some required targets logged failures:
+- Domino.FiveRows.Counts
+error: build failed

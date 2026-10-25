@@ -1,0 +1,154 @@
+✔ [3215/3216] Built Domino.Stabilizers.Classification (20s)
+✖ [3216/3216] Building Domino.Stabilizers.Counts (27s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Stabilizers\Counts.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Stabilizers\Counts.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Stabilizers\Counts.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Stabilizers\Counts.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Stabilizers\Counts.setup.json --json
+warning: Domino/Stabilizers/Counts.lean:70:32: This simp argument is unused:
+  Fin.sum_univ_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.sum_univ_succ, Fin.succ_zero_eq_one] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Stabilizers/Counts.lean:90:4: failed to synthesize instance of type class
+  Fintype ↑(MulAction.fixedBy (SymmetryTilings n t) g)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Domino/Stabilizers/Counts.lean:108:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  f ≥ 0
+  f - g ≤ -1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d + e - 4*f ≤ 0
+  b ≥ 0
+where
+ b := ↑(symmetryOrbitCount n ((fun i => i) ⟨0, ⋯⟩))
+ c := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨0, ⋯⟩)) { flipRows := true, flipCols := false }))
+      Finset.univ).card
+ d := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨0, ⋯⟩)) { flipRows := false, flipCols := true }))
+error: build failed
+      Finset.univ).card
+ e := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨0, ⋯⟩)) { flipRows := true, flipCols := true }))
+      Finset.univ).card
+ f := ↑(symmetryOrbitCount n 0)
+ g := ↑(symmetryTilingCount n 0)
+error: Domino/Stabilizers/Counts.lean:108:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  f ≥ 0
+  2*f - g ≤ -1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d + e - 4*f ≤ 0
+  b ≥ 0
+where
+ b := ↑(symmetryOrbitCount n ((fun i => i) ⟨1, ⋯⟩))
+ c := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨1, ⋯⟩)) { flipRows := true, flipCols := false }))
+      Finset.univ).card
+ d := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨1, ⋯⟩)) { flipRows := false, flipCols := true }))
+      Finset.univ).card
+ e := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨1, ⋯⟩)) { flipRows := true, flipCols := true }))
+      Finset.univ).card
+ f := ↑(symmetryOrbitCount n 1)
+ g := ↑(symmetryTilingCount n 1)
+error: Domino/Stabilizers/Counts.lean:108:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  f ≥ 0
+  2*f - g ≤ -1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d + e - 4*f ≤ 0
+  b ≥ 0
+where
+ b := ↑(symmetryOrbitCount n ((fun i => i) ⟨2, ⋯⟩))
+ c := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨2, ⋯⟩)) { flipRows := true, flipCols := false }))
+      Finset.univ).card
+ d := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨2, ⋯⟩)) { flipRows := false, flipCols := true }))
+      Finset.univ).card
+ e := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨2, ⋯⟩)) { flipRows := true, flipCols := true }))
+      Finset.univ).card
+ f := ↑(symmetryOrbitCount n 2)
+ g := ↑(symmetryTilingCount n 2)
+error: Domino/Stabilizers/Counts.lean:108:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  f ≥ 0
+  2*f - g ≤ -1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d + e - 4*f ≤ 0
+  b ≥ 0
+where
+ b := ↑(symmetryOrbitCount n ((fun i => i) ⟨3, ⋯⟩))
+ c := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨3, ⋯⟩)) { flipRows := true, flipCols := false }))
+      Finset.univ).card
+ d := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨3, ⋯⟩)) { flipRows := false, flipCols := true }))
+      Finset.univ).card
+ e := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨3, ⋯⟩)) { flipRows := true, flipCols := true }))
+      Finset.univ).card
+ f := ↑(symmetryOrbitCount n 3)
+ g := ↑(symmetryTilingCount n 3)
+error: Domino/Stabilizers/Counts.lean:108:33: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  f ≥ 0
+  4*f - g ≤ -1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d + e - 4*f ≤ 0
+  b ≥ 0
+where
+ b := ↑(symmetryOrbitCount n ((fun i => i) ⟨4, ⋯⟩))
+ c := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨4, ⋯⟩)) { flipRows := true, flipCols := false }))
+      Finset.univ).card
+ d := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨4, ⋯⟩)) { flipRows := false, flipCols := true }))
+      Finset.univ).card
+ e := ↑(Finset.filter
+      (Membership.mem
+        (MulAction.fixedBy (SymmetryTilings n ((fun i => i) ⟨4, ⋯⟩)) { flipRows := true, flipCols := true }))
+      Finset.univ).card
+ f := ↑(symmetryOrbitCount n 4)
+ g := ↑(symmetryTilingCount n 4)
+warning: Domino/Stabilizers/Counts.lean:106:13: This simp argument is unused:
+  typed_fixed_card
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ho, symmetry_card_four, sum_rectangle_symmetries] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Stabilizers.Counts

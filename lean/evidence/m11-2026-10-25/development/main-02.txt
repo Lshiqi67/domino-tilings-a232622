@@ -1,0 +1,17 @@
+✖ [3208/3210] Building Domino.Blocks.FixedSeries (129s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\FixedSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\FixedSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\FixedSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\FixedSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\FixedSeries.setup.json --json
+error: Domino/Blocks/FixedSeries.lean:94:2: mod_cast has type
+  ((if n = 0 then 1 else 0) + if n = 1 then 1 else 0) = Fintype.card (Grade (fun c => centerMass ↑c) n)
+but is expected to have type
+  Fintype.card (Grade (fun c => centerMass ↑c) n) = (if n = 0 then 1 else 0) + if n = 1 then 1 else 0
+warning: Domino/Blocks/FixedSeries.lean:101:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Some required targets logged failures:
+- Domino.Blocks.FixedSeries
+error: build failed

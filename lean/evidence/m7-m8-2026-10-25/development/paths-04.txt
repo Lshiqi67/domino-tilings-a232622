@@ -1,0 +1,21 @@
+✔ [3154/3161] Built Domino.OddHeight.ColumnSymmetry (19s)
+✔ [3155/3161] Built Domino.OddHeight.PathEquiv (19s)
+✖ [3156/3161] Building Domino.OddHeight.Count (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\Count.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Count.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Count.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Count.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Count.setup.json --json
+error: Domino/OddHeight/Count.lean:110:61: don't know how to synthesize implicit argument `m`
+  @profileCount (?m.11 n) (2 * n) ∅
+context:
+m n : ℕ
+⊢ ℕ
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+error: Domino/OddHeight/Count.lean:110:82: don't know how to synthesize implicit argument `α`
+  @EmptyCollection.emptyCollection (State (?m.11 n)) Finset.instEmptyCollection
+context:
+m n : ℕ
+⊢ Type
+
+Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
+Some required targets logged failures:
+- Domino.OddHeight.Count
+error: build failed

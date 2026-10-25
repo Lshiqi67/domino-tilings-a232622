@@ -1,0 +1,122 @@
+inductive Domino.Blocks.Letter : Type
+number of parameters: 0
+constructors:
+Domino.Blocks.Letter.c : Domino.Blocks.Letter
+Domino.Blocks.Letter.arm : Bool → ℕ → Domino.Blocks.Letter
+def Domino.Blocks.weight : Domino.Blocks.Letter → ℕ :=
+fun x =>
+  match x with
+  | Domino.Blocks.Letter.c => 1
+  | Domino.Blocks.Letter.arm side k => k + 1
+@[irreducible] def Domino.Blocks.core : Domino.Blocks.Letter → List (Domino.State 3) :=
+Domino.Blocks.core._proof_1.fix fun a a_1 =>
+  (match (motive :=
+      (x : Domino.Blocks.Letter) →
+        ((y : Domino.Blocks.Letter) → (invImage (fun x => x) sizeOfWFRel).1 y x → List (Domino.State 3)) →
+          List (Domino.State 3))
+      a with
+    | Domino.Blocks.Letter.c => fun x => [Finset.univ]
+    | Domino.Blocks.Letter.arm b 0 => fun x => [Domino.Blocks.single b]
+    | Domino.Blocks.Letter.arm b k.succ => fun x =>
+      Domino.Blocks.single b :: Domino.Blocks.paired b :: x (Domino.Blocks.Letter.arm b k) ⋯)
+    a_1
+def Domino.Blocks.trace : List Domino.Blocks.Letter → List (Domino.State 3) :=
+fun W => List.flatMap (fun a => Domino.Blocks.core a ++ [∅]) W
+def Domino.Blocks.mass : List Domino.Blocks.Letter → ℕ :=
+fun W => (List.map Domino.Blocks.weight W).sum
+def Domino.Blocks.Valid : Domino.State 3 → List (Domino.State 3) → Prop :=
+fun p x => List.brecOn (motive := fun x => Domino.State 3 → Prop) x Domino.Blocks.Valid._f p
+def Domino.Blocks.Irreducible : List (Domino.State 3) → Prop :=
+fun L => L ≠ [] ∧ Domino.Blocks.Valid ∅ L ∧ ∅ ∉ L.dropLast
+def Domino.Blocks.BasicTiling : {w : ℕ} → Domino.Tiling 3 w → Prop :=
+fun {w} T => 0 < w ∧ ∀ (k : ℕ), 0 < k → k < w → (Domino.tilingPath T).state k ≠ ∅
+@[reducible] def Domino.Blocks.Word : ℕ → Type :=
+fun n => { W // Domino.Blocks.mass W = n }
+def Domino.Blocks.wordEquivTiling : (n : ℕ) → Domino.Blocks.Word n ≃ Domino.Tiling 3 (2 * n) :=
+fun n => (Domino.Blocks.wordEquivPath n).trans (Domino.tilingEquivClosedPath (2 * n)).symm
+def Domino.Blocks.mirror : Bool → List Domino.Blocks.Letter → List Domino.Blocks.Letter :=
+fun b W => List.map (Domino.Blocks.twist b) W.reverse
+def Domino.Blocks.CenterOK : Bool → Option Domino.Blocks.Letter → Prop :=
+fun b c => List.map (Domino.Blocks.twist b) c.toList = c.toList
+def Domino.Blocks.assemble : Bool →
+  List Domino.Blocks.Letter → Option Domino.Blocks.Letter → List Domino.Blocks.Letter :=
+fun b U c => U ++ c.toList ++ Domino.Blocks.mirror b U
+@[reducible] def Domino.Blocks.Grade.{u_1} : {α : Type u_1} → (α → ℕ) → ℕ → Type (max 0 u_1) :=
+fun {α} f n => { a // f a = n }
+def Domino.Blocks.gradedSeries.{u_1} : {α : Type u_1} →
+  (f : α → ℕ) → [(n : ℕ) → Fintype (Domino.Blocks.Grade f n)] → PowerSeries ℚ :=
+fun {α} f [(n : ℕ) → Fintype (Domino.Blocks.Grade f n)] =>
+  Domino.countSeries fun n => Fintype.card (Domino.Blocks.Grade f n)
+def Domino.Blocks.letterSeries : PowerSeries ℚ :=
+Domino.Blocks.gradedSeries Domino.Blocks.weight
+def Domino.Blocks.wordSeries : PowerSeries ℚ :=
+Domino.Blocks.gradedSeries Domino.Blocks.mass
+Domino.Blocks.irreducible_iff_letter (L : List (Domino.State 3)) :
+  Domino.Blocks.Irreducible L ↔ ∃! a, Domino.Blocks.trace [a] = L
+Domino.Blocks.unique_decomposition (L : List (Domino.State 3)) (h : Domino.Blocks.Valid ∅ L) :
+  ∃! W, Domino.Blocks.trace W = L
+Domino.Blocks.valid_decode (L : List (Domino.State 3)) (h : Domino.Blocks.Valid ∅ L) :
+  Domino.Blocks.trace (Domino.Blocks.decode L) = L
+Domino.Blocks.letterEquivBasic (n : ℕ) :
+  Domino.Blocks.Grade Domino.Blocks.weight n ≃ { T // Domino.Blocks.BasicTiling T }
+Domino.Blocks.all_cuts_are_block_boundaries (W : List Domino.Blocks.Letter) (k : ℕ)
+  (hk : k ≤ 2 * Domino.Blocks.mass W) :
+  (∅ :: Domino.Blocks.trace W).getD k ∅ = ∅ ↔ ∃ U V, W = U ++ V ∧ k = 2 * Domino.Blocks.mass U
+Domino.Blocks.empty_cut_iff_no_crossing {w : ℕ} (T : Domino.Tiling 3 w) (k : ℕ) (hk : 0 < k) (hkw : k < w) :
+  (Domino.tilingPath T).state k = ∅ ↔ ∀ (r : Fin 3), ((r, ⟨k - 1, ⋯⟩), r, ⟨k, hkw⟩) ∉ Domino.coverBonds T
+Domino.Blocks.tiling_word_roundtrip (n : ℕ) (T : Domino.Tiling 3 (2 * n)) :
+  (Domino.Blocks.wordEquivTiling n) ((Domino.Blocks.wordEquivTiling n).symm T) = T
+Domino.Blocks.word_tiling_roundtrip (n : ℕ) (W : Domino.Blocks.Word n) :
+  (Domino.Blocks.wordEquivTiling n).symm ((Domino.Blocks.wordEquivTiling n) W) = W
+Domino.Blocks.word_horizontal {n : ℕ} (W : Domino.Blocks.Word n) :
+  Domino.horizontal • (Domino.Blocks.wordEquivTiling n) W = (Domino.Blocks.wordEquivTiling n) (Domino.Blocks.hWord W)
+Domino.Blocks.word_vertical {n : ℕ} (W : Domino.Blocks.Word n) :
+  Domino.vertical • (Domino.Blocks.wordEquivTiling n) W = (Domino.Blocks.wordEquivTiling n) (Domino.Blocks.vWord W)
+Domino.Blocks.word_halfTurn {n : ℕ} (W : Domino.Blocks.Word n) :
+  Domino.halfTurn • (Domino.Blocks.wordEquivTiling n) W = (Domino.Blocks.wordEquivTiling n) (Domino.Blocks.rWord W)
+Domino.Blocks.palindrome_unique (b : Bool) (W : List Domino.Blocks.Letter) (h : Domino.Blocks.mirror b W = W) :
+  ∃! p, Domino.Blocks.CenterOK b p.2 ∧ Domino.Blocks.assemble b p.1 p.2 = W
+Domino.Blocks.assemble_injective (b : Bool) : Function.Injective fun p => Domino.Blocks.assemble b p.1 p.2
+Domino.Blocks.palindromeEquiv (b : Bool) (n : ℕ) : Domino.Blocks.HalfData b n ≃ Domino.Blocks.PalWord b n
+Domino.Blocks.graded_product.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → ℕ) (g : β → ℕ)
+  [(n : ℕ) → Fintype (Domino.Blocks.Grade f n)] [(n : ℕ) → Fintype (Domino.Blocks.Grade g n)] :
+  (Domino.Blocks.gradedSeries fun p => f p.1 + g p.2) = Domino.Blocks.gradedSeries f * Domino.Blocks.gradedSeries g
+Domino.Blocks.letter_series_identity :
+  (1 - PowerSeries.X) * Domino.Blocks.letterSeries = 3 * PowerSeries.X - PowerSeries.X ^ 2
+Domino.Blocks.word_series_equation :
+  Domino.Blocks.wordSeries = 1 + Domino.Blocks.letterSeries * Domino.Blocks.wordSeries
+Domino.Blocks.horizontal_card_via_words (n : ℕ) : Domino.fixedCount 3 n Domino.horizontal = 1
+Domino.Blocks.vertical_word_series :
+  (Domino.countSeries fun n => Domino.fixedCount 3 n Domino.vertical) =
+    (1 + Domino.Blocks.letterSeries) * Domino.doubleSeries Domino.Blocks.wordSeries
+Domino.Blocks.halfTurn_word_series :
+  (Domino.countSeries fun n => Domino.fixedCount 3 n Domino.halfTurn) =
+    (1 + PowerSeries.X) * Domino.doubleSeries Domino.Blocks.wordSeries
+Domino.Blocks.ordinary_series_via_blocks :
+  Domino.ordinaryDenom * Domino.countSeries (Domino.ordinaryCount 3) = 1 - PowerSeries.X
+Domino.Blocks.vertical_series_via_blocks :
+  (Domino.parityDenom * Domino.countSeries fun n => Domino.fixedCount 3 n Domino.vertical) =
+    1 + 3 * PowerSeries.X + PowerSeries.X ^ 2 - PowerSeries.X ^ 3
+Domino.Blocks.halfTurn_series_via_blocks :
+  (Domino.parityDenom * Domino.countSeries fun n => Domino.fixedCount 3 n Domino.halfTurn) =
+    1 + PowerSeries.X - PowerSeries.X ^ 2 - PowerSeries.X ^ 3
+Domino.Blocks.orbit_series_identity_via_blocks : Domino.orbitDenom * Domino.countSeries Domino.a = Domino.orbitNumerator
+Domino.Blocks.orbit_series_via_blocks : Domino.countSeries Domino.a = Domino.orbitNumerator * Domino.orbitDenom⁻¹
+Domino.Blocks.orbit_series_paper_via_blocks :
+  Domino.countSeries Domino.a =
+    (-1 + 3 * PowerSeries.X + 4 * PowerSeries.X ^ 2 - 10 * PowerSeries.X ^ 3 + 4 * PowerSeries.X ^ 5 -
+        PowerSeries.X ^ 6) *
+      ((PowerSeries.X - 1) * (PowerSeries.X ^ 2 - 4 * PowerSeries.X + 1) *
+          (PowerSeries.X ^ 4 - 4 * PowerSeries.X ^ 2 + 1))⁻¹
+Domino.Blocks.blocks_parameter_one :
+  Domino.Blocks.core Domino.Blocks.Letter.c = [Finset.univ] ∧
+    Domino.Blocks.core (Domino.Blocks.Letter.arm false 0) = [{2}] ∧
+      Domino.Blocks.core (Domino.Blocks.Letter.arm true 0) = [{0}] ∧
+        Fintype.card (Domino.Blocks.Grade Domino.Blocks.weight 1) = 3
+Domino.Blocks.empty_word_unique (W : Domino.Blocks.Word 0) : ↑W = []
+Domino.Blocks.three_row_block_main :
+  (∀ (L : List (Domino.State 3)), Domino.Blocks.Irreducible L ↔ ∃! a, Domino.Blocks.trace [a] = L) ∧
+    (∀ (n : ℕ), Nonempty (Domino.Blocks.Word n ≃ Domino.Tiling 3 (2 * n))) ∧
+      (∀ (b : Bool) (W : List Domino.Blocks.Letter),
+          Domino.Blocks.mirror b W = W → ∃! p, Domino.Blocks.CenterOK b p.2 ∧ Domino.Blocks.assemble b p.1 p.2 = W) ∧
+        Domino.countSeries Domino.a = Domino.orbitNumerator * Domino.orbitDenom⁻¹

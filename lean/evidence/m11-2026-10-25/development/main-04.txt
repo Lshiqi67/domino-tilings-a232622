@@ -1,0 +1,38 @@
+✖ [3209/3211] Building Domino.Blocks.Horizontal (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Horizontal.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Horizontal.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Horizontal.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Horizontal.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Horizontal.setup.json --json
+error: Domino/Blocks/Horizontal.lean:18:18: unsolved goals
+case mp.cons
+W : List Letter
+ih : List.map flip W = W → W = List.replicate (mass W) Letter.c
+hw : List.map flip W = W
+h : List.map flip (Letter.c :: W) = Letter.c :: W
+he : flip Letter.c = Letter.c
+⊢ Letter.c :: List.replicate (mass W) Letter.c = List.replicate (1 + mass W) Letter.c
+warning: Domino/Blocks/Horizontal.lean:24:36: This simp argument is unused:
+  Nat.add_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [mass_replicate_c, weight, List.replicate_succ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Blocks/Horizontal.lean:24:49: This simp argument is unused:
+  List.replicate_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [mass_replicate_c, weight, Nat.add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Blocks/Horizontal.lean:44:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fintype.card ↑(MulAction.fixedBy (Tiling 3 (2 * n)) horizontal)
+in the target expression
+  Fintype.card { W // hWord W = W } = Fintype.card ↑(MulAction.fixedBy (Tiling 3 (2 * n)) horizontal)
+
+n : ℕ
+this : Unique { W // hWord W = W } := { default := horizontalDefault n, uniq := ⋯ }
+h : Fintype.card { W // hWord W = W } = Fintype.card ↑(MulAction.fixedBy (Tiling 3 (2 * n)) horizontal)
+he : Fintype.card ↑(MulAction.fixedBy (Tiling 3 (2 * n)) horizontal) = fixedCount 3 n horizontal
+⊢ fixedCount 3 n horizontal = 1
+✔ [3210/3211] Built Domino.Blocks.Boundary (20s)
+error: build failed
+Some required targets logged failures:
+- Domino.Blocks.Horizontal

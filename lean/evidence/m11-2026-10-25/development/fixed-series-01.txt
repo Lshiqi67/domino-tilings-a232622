@@ -1,0 +1,8 @@
+✖ [3206/3207] Building Domino.Blocks.WordSeries (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\WordSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\WordSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\WordSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\WordSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\WordSeries.setup.json --json
+error: Domino/Blocks/WordSeries.lean:63:4: unsolved goals
+case pos
+⊢ -1 = 3 * (coeff 2) X - 1
+Some required targets logged failures:
+- Domino.Blocks.WordSeries
+error: build failed

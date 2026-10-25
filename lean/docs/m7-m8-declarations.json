@@ -1,0 +1,4937 @@
+{
+  "stage": "M1-M8",
+  "scope": "全部生产数学模块的显式命名声明及其传递公理依赖",
+  "modules": [
+    "Domino/Board/Basic.lean",
+    "Domino/Board/Tiling.lean",
+    "Domino/Board/Partial.lean",
+    "Domino/Board/Examples.lean",
+    "Domino/Symmetry/Action.lean",
+    "Domino/Symmetry/Counting.lean",
+    "Domino/Transfer/Bonds.lean",
+    "Domino/Transfer/ThreeRows.lean",
+    "Domino/Transfer/Grid.lean",
+    "Domino/Transfer/Links.lean",
+    "Domino/Transfer/Frame.lean",
+    "Domino/Transfer/PathEquiv.lean",
+    "Domino/Transfer/Count.lean",
+    "Domino/Transfer/Examples.lean",
+    "Domino/Symmetry/PathAction.lean",
+    "Domino/HalfBoard/PathCompletion.lean",
+    "Domino/HalfBoard/Geometry.lean",
+    "Domino/HalfBoard/Reflection.lean",
+    "Domino/HalfBoard/HalfTurn.lean",
+    "Domino/HalfBoard/Horizontal.lean",
+    "Domino/HalfBoard/Examples.lean",
+    "Domino/ThreeRows/ProfileRecurrence.lean",
+    "Domino/ThreeRows/Ordinary.lean",
+    "Domino/ThreeRows/FixedCounts.lean",
+    "Domino/Symmetry/Burnside.lean",
+    "Domino/ThreeRows/OrbitCounts.lean",
+    "Domino/ThreeRows/Boundary.lean",
+    "Domino/Series/Basic.lean",
+    "Domino/ThreeRows/Algebra.lean",
+    "Domino/ThreeRows/Series.lean",
+    "Domino/ThreeRows/Main.lean",
+    "Domino/ThreeRows/Recurrence.lean",
+    "Domino/Stabilizers/Classification.lean",
+    "Domino/Stabilizers/Counts.lean",
+    "Domino/Stabilizers/Examples.lean",
+    "Domino/OddHeight/Boundary.lean",
+    "Domino/OddHeight/Column.lean",
+    "Domino/OddHeight/ColumnSymmetry.lean",
+    "Domino/OddHeight/Count.lean",
+    "Domino/OddHeight/EvenColumn.lean",
+    "Domino/OddHeight/EvenRuns.lean",
+    "Domino/OddHeight/Frame.lean",
+    "Domino/OddHeight/Geometry.lean",
+    "Domino/OddHeight/Grid.lean",
+    "Domino/OddHeight/HalfTurn.lean",
+    "Domino/OddHeight/Links.lean",
+    "Domino/OddHeight/MatrixSeries.lean",
+    "Domino/OddHeight/OddReflection.lean",
+    "Domino/OddHeight/OrbitCounts.lean",
+    "Domino/OddHeight/PathAction.lean",
+    "Domino/OddHeight/PathCompletion.lean",
+    "Domino/OddHeight/PathEquiv.lean",
+    "Domino/OddHeight/RationalSeries.lean",
+    "Domino/OddHeight/Reflection.lean",
+    "Domino/OddHeight/Series.lean",
+    "Domino/OddHeight/TopGeometry.lean",
+    "Domino/OddHeight/Transpose.lean"
+  ],
+  "declarations": [
+    {
+      "name": "Domino.Cell",
+      "kind": "abbrev",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 14
+    },
+    {
+      "name": "Domino.Adjacent",
+      "kind": "def",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 16
+    },
+    {
+      "name": "Domino.adjacentDecidable",
+      "kind": "instance",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 20
+    },
+    {
+      "name": "Domino.adjacent_symm",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 23
+    },
+    {
+      "name": "Domino.adjacent_ne",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 29
+    },
+    {
+      "name": "Domino.reflectRows",
+      "kind": "def",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 33
+    },
+    {
+      "name": "Domino.reflectCols",
+      "kind": "def",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 34
+    },
+    {
+      "name": "Domino.reflectRows_twice",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 36
+    },
+    {
+      "name": "Domino.reflectCols_twice",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 39
+    },
+    {
+      "name": "Domino.reflections_commute",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 42
+    },
+    {
+      "name": "Domino.fin_rev_neighbor_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 45
+    },
+    {
+      "name": "Domino.adjacent_reflectRows_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 53
+    },
+    {
+      "name": "Domino.adjacent_reflectCols_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "stage": "M1",
+      "line": 57
+    },
+    {
+      "name": "Domino.IsEdge",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 11
+    },
+    {
+      "name": "Domino.Edge",
+      "kind": "abbrev",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 14
+    },
+    {
+      "name": "Domino.edgeFintype",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 16
+    },
+    {
+      "name": "Domino.edgeOfAdjacent",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 20
+    },
+    {
+      "name": "Domino.edgeOfAdjacent_swap",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 23
+    },
+    {
+      "name": "Domino.edge_card_two",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 28
+    },
+    {
+      "name": "Domino.edge_nonempty",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 33
+    },
+    {
+      "name": "Domino.edgeWidthZeroIsEmpty",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 37
+    },
+    {
+      "name": "Domino.edgeHeightZeroIsEmpty",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 41
+    },
+    {
+      "name": "Domino.IsCover",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 46
+    },
+    {
+      "name": "Domino.Cover",
+      "kind": "abbrev",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 50
+    },
+    {
+      "name": "Domino.Tiling",
+      "kind": "abbrev",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 53
+    },
+    {
+      "name": "Domino.coverFintype",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 55
+    },
+    {
+      "name": "Domino.tiling_finite",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 58
+    },
+    {
+      "name": "Domino.cover_exactly_one",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 60
+    },
+    {
+      "name": "Domino.cover_avoids_holes",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 68
+    },
+    {
+      "name": "Domino.isCover_empty_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 74
+    },
+    {
+      "name": "Domino.emptyWidthTiling",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 92
+    },
+    {
+      "name": "Domino.emptyHeightTiling",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 99
+    },
+    {
+      "name": "Domino.tilingWidthZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 106
+    },
+    {
+      "name": "Domino.tilingHeightZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 113
+    },
+    {
+      "name": "Domino.empty_tiling_unique",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 120
+    },
+    {
+      "name": "Domino.tiling_card_width_zero",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 123
+    },
+    {
+      "name": "Domino.tiling_card_height_zero",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "stage": "M1",
+      "line": 126
+    },
+    {
+      "name": "Domino.State",
+      "kind": "abbrev",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 11
+    },
+    {
+      "name": "Domino.reverseState",
+      "kind": "def",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 13
+    },
+    {
+      "name": "Domino.mem_reverseState",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 15
+    },
+    {
+      "name": "Domino.reverseState_twice",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 18
+    },
+    {
+      "name": "Domino.reverseState_empty",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 23
+    },
+    {
+      "name": "Domino.terminalHoles",
+      "kind": "def",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 25
+    },
+    {
+      "name": "Domino.mem_terminalHoles",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 28
+    },
+    {
+      "name": "Domino.terminalHoles_empty",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 32
+    },
+    {
+      "name": "Domino.terminalHoles_width_zero",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 36
+    },
+    {
+      "name": "Domino.PartialTiling",
+      "kind": "abbrev",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 42
+    },
+    {
+      "name": "Domino.partialTilingFintype",
+      "kind": "instance",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 45
+    },
+    {
+      "name": "Domino.partialTilingDecidableEq",
+      "kind": "instance",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 49
+    },
+    {
+      "name": "Domino.partialEmptyEquivTiling",
+      "kind": "def",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 52
+    },
+    {
+      "name": "Domino.partial_width_zero_state",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 58
+    },
+    {
+      "name": "Domino.partial_width_zero_nonempty_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 61
+    },
+    {
+      "name": "Domino.partial_width_zero_isEmpty",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 69
+    },
+    {
+      "name": "Domino.partialWidthZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 72
+    },
+    {
+      "name": "Domino.partial_width_zero_card",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 77
+    },
+    {
+      "name": "Domino.partial_empty_card",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "stage": "M1",
+      "line": 86
+    },
+    {
+      "name": "Domino.singleEdgeTiling",
+      "kind": "def",
+      "file": "Domino/Board/Examples.lean",
+      "stage": "M1",
+      "line": 11
+    },
+    {
+      "name": "Domino.horizontalUnitTiling",
+      "kind": "def",
+      "file": "Domino/Board/Examples.lean",
+      "stage": "M1",
+      "line": 19
+    },
+    {
+      "name": "Domino.verticalUnitTiling",
+      "kind": "def",
+      "file": "Domino/Board/Examples.lean",
+      "stage": "M1",
+      "line": 22
+    },
+    {
+      "name": "Domino.one_cell_not_tileable",
+      "kind": "theorem",
+      "file": "Domino/Board/Examples.lean",
+      "stage": "M1",
+      "line": 25
+    },
+    {
+      "name": "Domino.diagonal_not_adjacent",
+      "kind": "theorem",
+      "file": "Domino/Board/Examples.lean",
+      "stage": "M1",
+      "line": 31
+    },
+    {
+      "name": "Domino.RectangleSymmetry",
+      "kind": "structure",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 12
+    },
+    {
+      "name": "Domino.rectangle_group",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 17
+    },
+    {
+      "name": "Domino.symmetry_mul_def",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 27
+    },
+    {
+      "name": "Domino.symmetry_one_def",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 30
+    },
+    {
+      "name": "Domino.horizontal",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 32
+    },
+    {
+      "name": "Domino.vertical",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 33
+    },
+    {
+      "name": "Domino.halfTurn",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 34
+    },
+    {
+      "name": "Domino.symmetry_card_four",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 36
+    },
+    {
+      "name": "Domino.horizontal_mul_vertical",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 37
+    },
+    {
+      "name": "Domino.symmetry_exhaustive",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 39
+    },
+    {
+      "name": "Domino.cellAction",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 44
+    },
+    {
+      "name": "Domino.cellAction_one",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 47
+    },
+    {
+      "name": "Domino.cellAction_twice",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 50
+    },
+    {
+      "name": "Domino.cellAction_mul",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 55
+    },
+    {
+      "name": "Domino.cellAction_horizontal",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 62
+    },
+    {
+      "name": "Domino.cellAction_vertical",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 65
+    },
+    {
+      "name": "Domino.cellAction_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 68
+    },
+    {
+      "name": "Domino.cellAction_adjacent_iff",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 71
+    },
+    {
+      "name": "Domino.cellPerm",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 81
+    },
+    {
+      "name": "Domino.edgeAction",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 87
+    },
+    {
+      "name": "Domino.mem_edgeAction",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 93
+    },
+    {
+      "name": "Domino.edgeAction_twice",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 98
+    },
+    {
+      "name": "Domino.edgeAction_one",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 104
+    },
+    {
+      "name": "Domino.edgeAction_mul",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 109
+    },
+    {
+      "name": "Domino.edgePerm",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 116
+    },
+    {
+      "name": "Domino.mapEdges",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 122
+    },
+    {
+      "name": "Domino.mapHoles",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 125
+    },
+    {
+      "name": "Domino.mem_mapEdges",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 128
+    },
+    {
+      "name": "Domino.mem_mapHoles",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 132
+    },
+    {
+      "name": "Domino.mapEdges_one",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 136
+    },
+    {
+      "name": "Domino.mapEdges_mul",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 140
+    },
+    {
+      "name": "Domino.isCover_map",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 146
+    },
+    {
+      "name": "Domino.tilingAction",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 166
+    },
+    {
+      "name": "Domino.rectangle_action",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 169
+    },
+    {
+      "name": "Domino.smul_edges",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 174
+    },
+    {
+      "name": "Domino.empty_tiling_action",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "stage": "M1",
+      "line": 177
+    },
+    {
+      "name": "Domino.TilingOrbit",
+      "kind": "abbrev",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 12
+    },
+    {
+      "name": "Domino.tilingOrbitFintype",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 14
+    },
+    {
+      "name": "Domino.ordinaryCount",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 16
+    },
+    {
+      "name": "Domino.orbitCount",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 18
+    },
+    {
+      "name": "Domino.fixedCount",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 20
+    },
+    {
+      "name": "Domino.a",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 24
+    },
+    {
+      "name": "Domino.orbitRel_iff_four",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 26
+    },
+    {
+      "name": "Domino.odd_height_ne_even_width",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 43
+    },
+    {
+      "name": "Domino.three_ne_even_width",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 45
+    },
+    {
+      "name": "Domino.tilingOrbitWidthZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 47
+    },
+    {
+      "name": "Domino.ordinaryCount_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 54
+    },
+    {
+      "name": "Domino.orbitCount_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 57
+    },
+    {
+      "name": "Domino.a_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 60
+    },
+    {
+      "name": "Domino.fixedCount_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "stage": "M1",
+      "line": 62
+    },
+    {
+      "name": "Domino.Bonds",
+      "kind": "abbrev",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 12
+    },
+    {
+      "name": "Domino.BondValid",
+      "kind": "def",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 14
+    },
+    {
+      "name": "Domino.BondCover",
+      "kind": "abbrev",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 20
+    },
+    {
+      "name": "Domino.edge_pair_at",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 23
+    },
+    {
+      "name": "Domino.pair_partner_unique",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 31
+    },
+    {
+      "name": "Domino.coverBonds",
+      "kind": "def",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 36
+    },
+    {
+      "name": "Domino.mem_coverBonds",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 41
+    },
+    {
+      "name": "Domino.coverBonds_valid",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 47
+    },
+    {
+      "name": "Domino.bondEdges",
+      "kind": "def",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 88
+    },
+    {
+      "name": "Domino.mem_bondEdges",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 93
+    },
+    {
+      "name": "Domino.bondEdges_at",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 99
+    },
+    {
+      "name": "Domino.bondEdges_valid",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 108
+    },
+    {
+      "name": "Domino.coverEquivBonds",
+      "kind": "def",
+      "file": "Domino/Transfer/Bonds.lean",
+      "stage": "M2",
+      "line": 127
+    },
+    {
+      "name": "Domino.ColumnRule",
+      "kind": "def",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 12
+    },
+    {
+      "name": "Domino.columnRuleDecidable",
+      "kind": "instance",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 18
+    },
+    {
+      "name": "Domino.Legal3",
+      "kind": "def",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 21
+    },
+    {
+      "name": "Domino.legal3Decidable",
+      "kind": "instance",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 27
+    },
+    {
+      "name": "Domino.ColumnCover",
+      "kind": "abbrev",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 30
+    },
+    {
+      "name": "Domino.legal3_iff_column_cover",
+      "kind": "theorem",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 34
+    },
+    {
+      "name": "Domino.column_cover_unique",
+      "kind": "theorem",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 39
+    },
+    {
+      "name": "Domino.columnCoverSubsingleton",
+      "kind": "instance",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 43
+    },
+    {
+      "name": "Domino.fillColumn",
+      "kind": "def",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 46
+    },
+    {
+      "name": "Domino.transfer3",
+      "kind": "def",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 50
+    },
+    {
+      "name": "Domino.columnCover_card",
+      "kind": "theorem",
+      "file": "Domino/Transfer/ThreeRows.lean",
+      "stage": "M2",
+      "line": 52
+    },
+    {
+      "name": "Domino.GridCell",
+      "kind": "abbrev",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 11
+    },
+    {
+      "name": "Domino.gridCell",
+      "kind": "def",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 13
+    },
+    {
+      "name": "Domino.GridAdjacent",
+      "kind": "def",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 15
+    },
+    {
+      "name": "Domino.GridLive",
+      "kind": "def",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 19
+    },
+    {
+      "name": "Domino.GridMatching",
+      "kind": "structure",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 22
+    },
+    {
+      "name": "Domino.gridMatching_ext",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 30
+    },
+    {
+      "name": "Domino.grid_matching_bounds",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 38
+    },
+    {
+      "name": "Domino.grid_adjacent_iff",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 42
+    },
+    {
+      "name": "Domino.gridOfPartial",
+      "kind": "def",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 46
+    },
+    {
+      "name": "Domino.gridOfPartial_at",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 74
+    },
+    {
+      "name": "Domino.finiteBonds",
+      "kind": "def",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 79
+    },
+    {
+      "name": "Domino.mem_finiteBonds",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 102
+    },
+    {
+      "name": "Domino.partialOfGrid",
+      "kind": "def",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 107
+    },
+    {
+      "name": "Domino.coverBonds_partialOfGrid",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 111
+    },
+    {
+      "name": "Domino.partialEquivGrid",
+      "kind": "def",
+      "file": "Domino/Transfer/Grid.lean",
+      "stage": "M2",
+      "line": 115
+    },
+    {
+      "name": "Domino.GridLink",
+      "kind": "def",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 12
+    },
+    {
+      "name": "Domino.gridLink_symmetric",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 18
+    },
+    {
+      "name": "Domino.gridLink_adjacent",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 26
+    },
+    {
+      "name": "Domino.nat_predecessor_iff",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 36
+    },
+    {
+      "name": "Domino.gridLink_row_zero",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 38
+    },
+    {
+      "name": "Domino.gridLink_row_one",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 50
+    },
+    {
+      "name": "Domino.gridLink_row_two",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 62
+    },
+    {
+      "name": "Domino.unique_three_iff",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 74
+    },
+    {
+      "name": "Domino.unique_four_iff",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 82
+    },
+    {
+      "name": "Domino.columnRule_iff_unique_neighbors",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 91
+    },
+    {
+      "name": "Domino.gridLink_horizontal",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 123
+    },
+    {
+      "name": "Domino.gridLink_vertical_zero",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 128
+    },
+    {
+      "name": "Domino.gridLink_vertical_one",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Links.lean",
+      "stage": "M2",
+      "line": 131
+    },
+    {
+      "name": "Domino.ColumnFrame",
+      "kind": "structure",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 11
+    },
+    {
+      "name": "Domino.columnFrame_ext",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 20
+    },
+    {
+      "name": "Domino.frame_hbound",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 28
+    },
+    {
+      "name": "Domino.gridOfFrame",
+      "kind": "def",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 34
+    },
+    {
+      "name": "Domino.gridH",
+      "kind": "def",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 68
+    },
+    {
+      "name": "Domino.gridV",
+      "kind": "def",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 72
+    },
+    {
+      "name": "Domino.mem_gridH",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 76
+    },
+    {
+      "name": "Domino.mem_gridV",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 81
+    },
+    {
+      "name": "Domino.gridH_start",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 86
+    },
+    {
+      "name": "Domino.gridH_finish",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 94
+    },
+    {
+      "name": "Domino.gridH_support",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 104
+    },
+    {
+      "name": "Domino.gridV_support",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 113
+    },
+    {
+      "name": "Domino.GridCompletion",
+      "kind": "def",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 121
+    },
+    {
+      "name": "Domino.three_row_neighbors",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 125
+    },
+    {
+      "name": "Domino.gridLink_extract_iff",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 130
+    },
+    {
+      "name": "Domino.gridCompletion_unique",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 189
+    },
+    {
+      "name": "Domino.frameOfGrid",
+      "kind": "def",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 208
+    },
+    {
+      "name": "Domino.grid_frame_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 220
+    },
+    {
+      "name": "Domino.frame_horizontal_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 234
+    },
+    {
+      "name": "Domino.frame_vertical_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 260
+    },
+    {
+      "name": "Domino.frame_grid_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 268
+    },
+    {
+      "name": "Domino.gridEquivFrame",
+      "kind": "def",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 272
+    },
+    {
+      "name": "Domino.partialEquivFrame",
+      "kind": "def",
+      "file": "Domino/Transfer/Frame.lean",
+      "stage": "M2",
+      "line": 279
+    },
+    {
+      "name": "Domino.StatePath",
+      "kind": "structure",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 11
+    },
+    {
+      "name": "Domino.statePath_ext",
+      "kind": "theorem",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 18
+    },
+    {
+      "name": "Domino.pathCode",
+      "kind": "def",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 25
+    },
+    {
+      "name": "Domino.pathCode_injective",
+      "kind": "theorem",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 28
+    },
+    {
+      "name": "Domino.statePathFinite",
+      "kind": "instance",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 37
+    },
+    {
+      "name": "Domino.statePathFintype",
+      "kind": "instance",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 40
+    },
+    {
+      "name": "Domino.pathOfFrame",
+      "kind": "def",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 43
+    },
+    {
+      "name": "Domino.frameOfPath",
+      "kind": "def",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 50
+    },
+    {
+      "name": "Domino.frameEquivPath",
+      "kind": "def",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 61
+    },
+    {
+      "name": "Domino.partialTilingEquivPath",
+      "kind": "def",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 76
+    },
+    {
+      "name": "Domino.tilingEquivClosedPath",
+      "kind": "def",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 80
+    },
+    {
+      "name": "Domino.partial_path_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 83
+    },
+    {
+      "name": "Domino.path_partial_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 87
+    },
+    {
+      "name": "Domino.partial_path_state",
+      "kind": "theorem",
+      "file": "Domino/Transfer/PathEquiv.lean",
+      "stage": "M2",
+      "line": 91
+    },
+    {
+      "name": "Domino.pathPrefix",
+      "kind": "def",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 13
+    },
+    {
+      "name": "Domino.pathAppend",
+      "kind": "def",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 21
+    },
+    {
+      "name": "Domino.PathLast",
+      "kind": "abbrev",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 34
+    },
+    {
+      "name": "Domino.pathLastTo",
+      "kind": "def",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 36
+    },
+    {
+      "name": "Domino.pathLastFrom",
+      "kind": "def",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 39
+    },
+    {
+      "name": "Domino.pathLast_from_to",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 42
+    },
+    {
+      "name": "Domino.pathLastFrom_injective",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 53
+    },
+    {
+      "name": "Domino.pathLast_to_from",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 70
+    },
+    {
+      "name": "Domino.pathSuccEquiv",
+      "kind": "def",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 75
+    },
+    {
+      "name": "Domino.profileCount",
+      "kind": "def",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 81
+    },
+    {
+      "name": "Domino.profile_count_path",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 83
+    },
+    {
+      "name": "Domino.profile_count_zero",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 87
+    },
+    {
+      "name": "Domino.profile_count_succ",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 90
+    },
+    {
+      "name": "Domino.transferMatrix",
+      "kind": "def",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 98
+    },
+    {
+      "name": "Domino.profile_count_matrix",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 100
+    },
+    {
+      "name": "Domino.ordinary_count_profile",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 108
+    },
+    {
+      "name": "Domino.tiling_count_matrix",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Count.lean",
+      "stage": "M2",
+      "line": 111
+    },
+    {
+      "name": "Domino.legal3_transition_card",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Examples.lean",
+      "stage": "M2",
+      "line": 13
+    },
+    {
+      "name": "Domino.profileEval",
+      "kind": "def",
+      "file": "Domino/Transfer/Examples.lean",
+      "stage": "M2",
+      "line": 16
+    },
+    {
+      "name": "Domino.profile_count_eval",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Examples.lean",
+      "stage": "M2",
+      "line": 20
+    },
+    {
+      "name": "Domino.profile_width_one",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Examples.lean",
+      "stage": "M2",
+      "line": 29
+    },
+    {
+      "name": "Domino.three_row_small_tiling_counts",
+      "kind": "theorem",
+      "file": "Domino/Transfer/Examples.lean",
+      "stage": "M2",
+      "line": 39
+    },
+    {
+      "name": "Domino.edgeAction_pair",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 11
+    },
+    {
+      "name": "Domino.coverBonds_action",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 22
+    },
+    {
+      "name": "Domino.tilingPath",
+      "kind": "def",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 36
+    },
+    {
+      "name": "Domino.tilingPath_state",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 39
+    },
+    {
+      "name": "Domino.tilingPath_cut",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 42
+    },
+    {
+      "name": "Domino.tilingPath_horizontal",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 56
+    },
+    {
+      "name": "Domino.tilingPath_vertical",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 72
+    },
+    {
+      "name": "Domino.tilingPath_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 102
+    },
+    {
+      "name": "Domino.horizontal_fixed_iff_path",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 106
+    },
+    {
+      "name": "Domino.twistState",
+      "kind": "def",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 117
+    },
+    {
+      "name": "Domino.twistState_twice",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 119
+    },
+    {
+      "name": "Domino.twistState_empty",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 122
+    },
+    {
+      "name": "Domino.axialSymmetry",
+      "kind": "def",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 125
+    },
+    {
+      "name": "Domino.axial_fixed_iff_path",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/PathAction.lean",
+      "stage": "M3",
+      "line": 127
+    },
+    {
+      "name": "Domino.legal3_twist_reverse",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 13
+    },
+    {
+      "name": "Domino.HalfPath",
+      "kind": "abbrev",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 16
+    },
+    {
+      "name": "Domino.AxialPath",
+      "kind": "abbrev",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 19
+    },
+    {
+      "name": "Domino.halfPath_ext",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 22
+    },
+    {
+      "name": "Domino.doubledState",
+      "kind": "def",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 32
+    },
+    {
+      "name": "Domino.doubledState_left",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 35
+    },
+    {
+      "name": "Domino.doubledState_right",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 38
+    },
+    {
+      "name": "Domino.doubledState_symmetric",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 48
+    },
+    {
+      "name": "Domino.completeHalfPath",
+      "kind": "def",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 57
+    },
+    {
+      "name": "Domino.restrictAxialPath",
+      "kind": "def",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 76
+    },
+    {
+      "name": "Domino.restrict_complete_halfPath",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 89
+    },
+    {
+      "name": "Domino.complete_restrict_axialPath",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 98
+    },
+    {
+      "name": "Domino.halfPathEquivAxialPath",
+      "kind": "def",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 112
+    },
+    {
+      "name": "Domino.AxialFixed",
+      "kind": "abbrev",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 118
+    },
+    {
+      "name": "Domino.axialFixedEquivPath",
+      "kind": "def",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 121
+    },
+    {
+      "name": "Domino.HalfPartial",
+      "kind": "abbrev",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 129
+    },
+    {
+      "name": "Domino.halfPartialEquivPath",
+      "kind": "def",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 132
+    },
+    {
+      "name": "Domino.axialFixedEquivPartial",
+      "kind": "def",
+      "file": "Domino/HalfBoard/PathCompletion.lean",
+      "stage": "M3",
+      "line": 135
+    },
+    {
+      "name": "Domino.grid_left_agreement",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 11
+    },
+    {
+      "name": "Domino.axial_restrict_state",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 28
+    },
+    {
+      "name": "Domino.axial_restrict_terminal",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 38
+    },
+    {
+      "name": "Domino.leftCell",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 41
+    },
+    {
+      "name": "Domino.axial_restrict_internal",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 44
+    },
+    {
+      "name": "Domino.axial_complete_internal",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 57
+    },
+    {
+      "name": "Domino.axial_complete_terminal",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 64
+    },
+    {
+      "name": "Domino.axial_complete_crossing",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 70
+    },
+    {
+      "name": "Domino.axial_complete_right",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 76
+    },
+    {
+      "name": "Domino.crossing_bond_same_row",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Geometry.lean",
+      "stage": "M3",
+      "line": 84
+    },
+    {
+      "name": "Domino.unrestrictedHalfPartialEquiv",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Reflection.lean",
+      "stage": "M3",
+      "line": 11
+    },
+    {
+      "name": "Domino.reflectionFixedEquivPartial",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Reflection.lean",
+      "stage": "M3",
+      "line": 17
+    },
+    {
+      "name": "Domino.completeReflection",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Reflection.lean",
+      "stage": "M3",
+      "line": 21
+    },
+    {
+      "name": "Domino.restrictReflection",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Reflection.lean",
+      "stage": "M3",
+      "line": 24
+    },
+    {
+      "name": "Domino.restrict_complete_reflection",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Reflection.lean",
+      "stage": "M3",
+      "line": 27
+    },
+    {
+      "name": "Domino.complete_restrict_reflection",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Reflection.lean",
+      "stage": "M3",
+      "line": 31
+    },
+    {
+      "name": "Domino.reflection_fixed_count",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Reflection.lean",
+      "stage": "M3",
+      "line": 35
+    },
+    {
+      "name": "Domino.SymmetricTerminal",
+      "kind": "abbrev",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 11
+    },
+    {
+      "name": "Domino.halfTurnFixedEquivPartial",
+      "kind": "def",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 13
+    },
+    {
+      "name": "Domino.completeHalfTurn",
+      "kind": "def",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 17
+    },
+    {
+      "name": "Domino.restrictHalfTurn",
+      "kind": "def",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 20
+    },
+    {
+      "name": "Domino.restrict_complete_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 23
+    },
+    {
+      "name": "Domino.complete_restrict_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 27
+    },
+    {
+      "name": "Domino.halfTurn_terminal_necessary",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 31
+    },
+    {
+      "name": "Domino.halfTurn_extension_iff",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 35
+    },
+    {
+      "name": "Domino.halfTurn_fixed_count",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/HalfTurn.lean",
+      "stage": "M3",
+      "line": 53
+    },
+    {
+      "name": "Domino.horizontal_fixed_no_vertical",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 11
+    },
+    {
+      "name": "Domino.horizontalProfile",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 37
+    },
+    {
+      "name": "Domino.horizontalProfile_zero",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 39
+    },
+    {
+      "name": "Domino.horizontalProfile_values",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 41
+    },
+    {
+      "name": "Domino.horizontalProfile_succ",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 46
+    },
+    {
+      "name": "Domino.horizontalProfile_step",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 56
+    },
+    {
+      "name": "Domino.horizontal_next_unique",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 62
+    },
+    {
+      "name": "Domino.horizontalProfile_reverse",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 65
+    },
+    {
+      "name": "Domino.horizontal_fixed_path_state",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 68
+    },
+    {
+      "name": "Domino.allHorizontalPath",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 80
+    },
+    {
+      "name": "Domino.allHorizontalTiling",
+      "kind": "def",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 88
+    },
+    {
+      "name": "Domino.allHorizontalTiling_fixed",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 91
+    },
+    {
+      "name": "Domino.horizontal_fixed_unique",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 99
+    },
+    {
+      "name": "Domino.horizontal_fixed_card_three",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Horizontal.lean",
+      "stage": "M3",
+      "line": 110
+    },
+    {
+      "name": "Domino.halfPartial_zero_terminal",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Examples.lean",
+      "stage": "M3",
+      "line": 12
+    },
+    {
+      "name": "Domino.three_row_empty_fixed_counts",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Examples.lean",
+      "stage": "M3",
+      "line": 15
+    },
+    {
+      "name": "Domino.three_row_width_two_fixed_counts",
+      "kind": "theorem",
+      "file": "Domino/HalfBoard/Examples.lean",
+      "stage": "M3",
+      "line": 21
+    },
+    {
+      "name": "Domino.state_three_cases",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 11
+    },
+    {
+      "name": "Domino.sum_states_three",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 15
+    },
+    {
+      "name": "Domino.evenProfile",
+      "kind": "def",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 24
+    },
+    {
+      "name": "Domino.oddProfile",
+      "kind": "def",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 27
+    },
+    {
+      "name": "Domino.even_profile_step",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 30
+    },
+    {
+      "name": "Domino.odd_profile_step",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 37
+    },
+    {
+      "name": "Domino.profilePair",
+      "kind": "def",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 45
+    },
+    {
+      "name": "Domino.alpha",
+      "kind": "def",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 50
+    },
+    {
+      "name": "Domino.beta",
+      "kind": "def",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 51
+    },
+    {
+      "name": "Domino.alpha_zero",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 53
+    },
+    {
+      "name": "Domino.beta_zero",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 54
+    },
+    {
+      "name": "Domino.alpha_succ",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 55
+    },
+    {
+      "name": "Domino.beta_succ",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 56
+    },
+    {
+      "name": "Domino.profile_even_odd",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 58
+    },
+    {
+      "name": "Domino.profile_even",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 80
+    },
+    {
+      "name": "Domino.profile_odd",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 83
+    },
+    {
+      "name": "Domino.profile_even_support",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 86
+    },
+    {
+      "name": "Domino.profile_odd_support",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/ProfileRecurrence.lean",
+      "stage": "M4",
+      "line": 92
+    },
+    {
+      "name": "Domino.ordinary_eq_alpha",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 11
+    },
+    {
+      "name": "Domino.alpha_eq_profile",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 15
+    },
+    {
+      "name": "Domino.beta_eq_profile",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 18
+    },
+    {
+      "name": "Domino.alpha_recurrence_add",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 21
+    },
+    {
+      "name": "Domino.ordinary_recurrence_add",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 25
+    },
+    {
+      "name": "Domino.ordinary_recurrence_bound",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 29
+    },
+    {
+      "name": "Domino.ordinary_recurrence",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 33
+    },
+    {
+      "name": "Domino.ordinary_recurrence_int",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 38
+    },
+    {
+      "name": "Domino.ordinary_initial_values",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 43
+    },
+    {
+      "name": "Domino.ordinary_monotone_step",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 46
+    },
+    {
+      "name": "Domino.ordinary_positive",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 50
+    },
+    {
+      "name": "Domino.profileMatrix",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 55
+    },
+    {
+      "name": "Domino.profile_matrix_recurrence",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 57
+    },
+    {
+      "name": "Domino.profile_matrix_characteristic",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Ordinary.lean",
+      "stage": "M4",
+      "line": 62
+    },
+    {
+      "name": "Domino.sum_symmetric_terminals",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 12
+    },
+    {
+      "name": "Domino.reflection_even_profile",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 20
+    },
+    {
+      "name": "Domino.reflection_odd_profile",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 26
+    },
+    {
+      "name": "Domino.halfTurn_even_profile",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 32
+    },
+    {
+      "name": "Domino.halfTurn_odd_profile",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 37
+    },
+    {
+      "name": "Domino.reflection_even_add",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 42
+    },
+    {
+      "name": "Domino.reflection_even_bound",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 47
+    },
+    {
+      "name": "Domino.reflection_even",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 51
+    },
+    {
+      "name": "Domino.reflection_odd",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 56
+    },
+    {
+      "name": "Domino.halfTurn_even",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 59
+    },
+    {
+      "name": "Domino.halfTurn_odd",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 62
+    },
+    {
+      "name": "Domino.fixed_counts_parity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/FixedCounts.lean",
+      "stage": "M4",
+      "line": 65
+    },
+    {
+      "name": "Domino.sum_rectangle_symmetries",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Burnside.lean",
+      "stage": "M5",
+      "line": 12
+    },
+    {
+      "name": "Domino.fixedCount_one",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Burnside.lean",
+      "stage": "M5",
+      "line": 19
+    },
+    {
+      "name": "Domino.four_mul_orbitCount",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Burnside.lean",
+      "stage": "M5",
+      "line": 23
+    },
+    {
+      "name": "Domino.fixed_sum_divisible_four",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Burnside.lean",
+      "stage": "M5",
+      "line": 35
+    },
+    {
+      "name": "Domino.orbitCount_eq_average",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Burnside.lean",
+      "stage": "M5",
+      "line": 39
+    },
+    {
+      "name": "Domino.orbitCount_average_rat",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Burnside.lean",
+      "stage": "M5",
+      "line": 45
+    },
+    {
+      "name": "Domino.four_mul_a",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 12
+    },
+    {
+      "name": "Domino.orbit_even_add",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 16
+    },
+    {
+      "name": "Domino.orbit_odd_mul",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 23
+    },
+    {
+      "name": "Domino.orbit_even_numerator_bound",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 28
+    },
+    {
+      "name": "Domino.orbit_even_numerator",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 33
+    },
+    {
+      "name": "Domino.orbit_even_divisible",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 38
+    },
+    {
+      "name": "Domino.orbit_odd_divisible",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 42
+    },
+    {
+      "name": "Domino.orbit_even",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 46
+    },
+    {
+      "name": "Domino.orbit_odd",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 51
+    },
+    {
+      "name": "Domino.orbit_even_rat",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 56
+    },
+    {
+      "name": "Domino.orbit_odd_rat",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/OrbitCounts.lean",
+      "stage": "M5",
+      "line": 62
+    },
+    {
+      "name": "Domino.a_one",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Boundary.lean",
+      "stage": "M5",
+      "line": 12
+    },
+    {
+      "name": "Domino.a_two",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Boundary.lean",
+      "stage": "M5",
+      "line": 17
+    },
+    {
+      "name": "Domino.three_row_small_orbit_counts",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Boundary.lean",
+      "stage": "M5",
+      "line": 22
+    },
+    {
+      "name": "Domino.width_two_counts",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Boundary.lean",
+      "stage": "M5",
+      "line": 24
+    },
+    {
+      "name": "Domino.countSeries",
+      "kind": "def",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 15
+    },
+    {
+      "name": "Domino.coeff_countSeries",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 17
+    },
+    {
+      "name": "Domino.coeff_X_mul_at",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 20
+    },
+    {
+      "name": "Domino.series_second_order",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 24
+    },
+    {
+      "name": "Domino.series_shift",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 42
+    },
+    {
+      "name": "Domino.doubleSeries",
+      "kind": "def",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 46
+    },
+    {
+      "name": "Domino.coeff_doubleSeries_even",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 49
+    },
+    {
+      "name": "Domino.coeff_doubleSeries_odd",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 53
+    },
+    {
+      "name": "Domino.coeff_X_doubleSeries_even",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 58
+    },
+    {
+      "name": "Domino.coeff_X_doubleSeries_odd",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 66
+    },
+    {
+      "name": "Domino.series_ext_parity",
+      "kind": "theorem",
+      "file": "Domino/Series/Basic.lean",
+      "stage": "M6",
+      "line": 70
+    },
+    {
+      "name": "Domino.ordinaryDenom",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 13
+    },
+    {
+      "name": "Domino.parityDenom",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 14
+    },
+    {
+      "name": "Domino.orbitDenom",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 15
+    },
+    {
+      "name": "Domino.orbitNumerator",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 16
+    },
+    {
+      "name": "Domino.double_ordinaryDenom",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 19
+    },
+    {
+      "name": "Domino.orbitDenom_expanded",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 23
+    },
+    {
+      "name": "Domino.common_numerator_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 28
+    },
+    {
+      "name": "Domino.orbitDenom_constant",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 35
+    },
+    {
+      "name": "Domino.orbitDenom_isUnit",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Algebra.lean",
+      "stage": "M6",
+      "line": 38
+    },
+    {
+      "name": "Domino.ordinarySeries",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 14
+    },
+    {
+      "name": "Domino.ordinaryShiftSeries",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 15
+    },
+    {
+      "name": "Domino.horizontalSeries",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 16
+    },
+    {
+      "name": "Domino.verticalSeries",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 17
+    },
+    {
+      "name": "Domino.halfTurnSeries",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 18
+    },
+    {
+      "name": "Domino.orbitSeries",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 19
+    },
+    {
+      "name": "Domino.coeff_orbitSeries",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 21
+    },
+    {
+      "name": "Domino.ordinary_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 23
+    },
+    {
+      "name": "Domino.ordinary_shift_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 30
+    },
+    {
+      "name": "Domino.ordinary_shift_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 34
+    },
+    {
+      "name": "Domino.even_ordinary_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 42
+    },
+    {
+      "name": "Domino.even_shift_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 48
+    },
+    {
+      "name": "Domino.even_shift_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 54
+    },
+    {
+      "name": "Domino.horizontal_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 58
+    },
+    {
+      "name": "Domino.halfTurn_series_parity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 64
+    },
+    {
+      "name": "Domino.vertical_series_parity_add",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 70
+    },
+    {
+      "name": "Domino.halfTurn_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 79
+    },
+    {
+      "name": "Domino.vertical_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 88
+    },
+    {
+      "name": "Domino.fixed_series_identities",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Series.lean",
+      "stage": "M6",
+      "line": 95
+    },
+    {
+      "name": "Domino.burnside_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Main.lean",
+      "stage": "M6",
+      "line": 13
+    },
+    {
+      "name": "Domino.orbit_series_identity",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Main.lean",
+      "stage": "M6",
+      "line": 20
+    },
+    {
+      "name": "Domino.orbit_series_rational",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Main.lean",
+      "stage": "M6",
+      "line": 34
+    },
+    {
+      "name": "Domino.orbit_series_paper",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Main.lean",
+      "stage": "M6",
+      "line": 38
+    },
+    {
+      "name": "Domino.orbitLag",
+      "kind": "def",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 14
+    },
+    {
+      "name": "Domino.orbit_coefficient_equation",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 16
+    },
+    {
+      "name": "Domino.orbit_recurrence_seven_rat",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 24
+    },
+    {
+      "name": "Domino.orbit_recurrence_seven",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 36
+    },
+    {
+      "name": "Domino.orbit_recurrence_seven_add",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 41
+    },
+    {
+      "name": "Domino.orbit_initial_values",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 47
+    },
+    {
+      "name": "Domino.orbit_recurrence_first",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 69
+    },
+    {
+      "name": "Domino.three_row_main_theorem",
+      "kind": "theorem",
+      "file": "Domino/ThreeRows/Recurrence.lean",
+      "stage": "M6",
+      "line": 76
+    },
+    {
+      "name": "Domino.horizontal_fixed_all",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 12
+    },
+    {
+      "name": "Domino.allHorizontal_fixed_all",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 17
+    },
+    {
+      "name": "Domino.vertical_halfTurn_implies_horizontal",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 21
+    },
+    {
+      "name": "Domino.nonidentity_fixed_intersections",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 26
+    },
+    {
+      "name": "Domino.stabilizerElements",
+      "kind": "def",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 36
+    },
+    {
+      "name": "Domino.symmetryOrbitSize",
+      "kind": "def",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 39
+    },
+    {
+      "name": "Domino.symmetryKind",
+      "kind": "def",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 41
+    },
+    {
+      "name": "Domino.symmetryKind_fixed_iff",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 46
+    },
+    {
+      "name": "Domino.symmetryKind_ne_horizontal",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 58
+    },
+    {
+      "name": "Domino.symmetryKind_full_iff",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 63
+    },
+    {
+      "name": "Domino.fixed_after_smul_iff",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 69
+    },
+    {
+      "name": "Domino.symmetryKind_smul",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 73
+    },
+    {
+      "name": "Domino.symmetryKind_orbit_invariant",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 78
+    },
+    {
+      "name": "Domino.SymmetryTilings",
+      "kind": "abbrev",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 84
+    },
+    {
+      "name": "Domino.symmetryTilingsFintype",
+      "kind": "instance",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 86
+    },
+    {
+      "name": "Domino.symmetryTilingCount",
+      "kind": "def",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 89
+    },
+    {
+      "name": "Domino.exact_stabilizer",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 91
+    },
+    {
+      "name": "Domino.stabilizer_card_exact",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 97
+    },
+    {
+      "name": "Domino.orbit_size_exact",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 103
+    },
+    {
+      "name": "Domino.symmetryTilingsAction",
+      "kind": "instance",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 116
+    },
+    {
+      "name": "Domino.SymmetryOrbits",
+      "kind": "abbrev",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 122
+    },
+    {
+      "name": "Domino.symmetryOrbitsFintype",
+      "kind": "instance",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 125
+    },
+    {
+      "name": "Domino.symmetryOrbitCount",
+      "kind": "def",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 128
+    },
+    {
+      "name": "Domino.typed_orbit_iff",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Classification.lean",
+      "stage": "M7",
+      "line": 130
+    },
+    {
+      "name": "Domino.symmetryTilingCount_full",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 11
+    },
+    {
+      "name": "Domino.symmetryTilingCount_horizontal",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 18
+    },
+    {
+      "name": "Domino.fixed_iff_kind",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 23
+    },
+    {
+      "name": "Domino.reflection_fixed_iff_kind",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 26
+    },
+    {
+      "name": "Domino.halfTurn_fixed_iff_kind",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 32
+    },
+    {
+      "name": "Domino.kind_union_card",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 38
+    },
+    {
+      "name": "Domino.symmetryTilingCount_vertical_add",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 45
+    },
+    {
+      "name": "Domino.symmetryTilingCount_halfTurn_add",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 53
+    },
+    {
+      "name": "Domino.symmetryTilingCount_partition",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 61
+    },
+    {
+      "name": "Domino.symmetryTilingCount_trivial_add",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 66
+    },
+    {
+      "name": "Domino.symmetryTilingCount_formulas",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 78
+    },
+    {
+      "name": "Domino.typed_fixed_card",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 89
+    },
+    {
+      "name": "Domino.symmetryOrbitCount_mul_size",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 100
+    },
+    {
+      "name": "Domino.symmetryOrbitCount_formulas",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 125
+    },
+    {
+      "name": "Domino.symmetry_type_divisibility",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Counts.lean",
+      "stage": "M7",
+      "line": 140
+    },
+    {
+      "name": "Domino.symmetryOrbitCount_partition",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Examples.lean",
+      "stage": "M7",
+      "line": 11
+    },
+    {
+      "name": "Domino.symmetry_orbit_zero",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Examples.lean",
+      "stage": "M7",
+      "line": 28
+    },
+    {
+      "name": "Domino.symmetry_orbit_eight",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Examples.lean",
+      "stage": "M7",
+      "line": 34
+    },
+    {
+      "name": "Domino.three_row_stabilizer_counting",
+      "kind": "theorem",
+      "file": "Domino/Stabilizers/Examples.lean",
+      "stage": "M7",
+      "line": 52
+    },
+    {
+      "name": "Domino.General.horizontal_one_row",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Boundary.lean",
+      "stage": "M8",
+      "line": 10
+    },
+    {
+      "name": "Domino.General.oneRowEquivEmpty",
+      "kind": "def",
+      "file": "Domino/OddHeight/Boundary.lean",
+      "stage": "M8",
+      "line": 22
+    },
+    {
+      "name": "Domino.General.ordinary_one_row",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Boundary.lean",
+      "stage": "M8",
+      "line": 26
+    },
+    {
+      "name": "Domino.General.fixed_one_row",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Boundary.lean",
+      "stage": "M8",
+      "line": 30
+    },
+    {
+      "name": "Domino.General.orbit_one_row",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Boundary.lean",
+      "stage": "M8",
+      "line": 36
+    },
+    {
+      "name": "Domino.General.zero_height_matrix_powers",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Boundary.lean",
+      "stage": "M8",
+      "line": 41
+    },
+    {
+      "name": "Domino.General.odd_height_main",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Boundary.lean",
+      "stage": "M8",
+      "line": 45
+    },
+    {
+      "name": "Domino.General.RowBonds",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 14
+    },
+    {
+      "name": "Domino.General.RowAdjacent",
+      "kind": "def",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 16
+    },
+    {
+      "name": "Domino.General.RowValid",
+      "kind": "def",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 18
+    },
+    {
+      "name": "Domino.General.RowCover",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 24
+    },
+    {
+      "name": "Domino.General.rowCoverFintype",
+      "kind": "instance",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 26
+    },
+    {
+      "name": "Domino.General.row_cover_unique",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 28
+    },
+    {
+      "name": "Domino.General.rowCoverSubsingleton",
+      "kind": "instance",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 57
+    },
+    {
+      "name": "Domino.General.ColumnRule",
+      "kind": "def",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 59
+    },
+    {
+      "name": "Domino.General.Legal",
+      "kind": "def",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 61
+    },
+    {
+      "name": "Domino.General.legalDecidable",
+      "kind": "instance",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 63
+    },
+    {
+      "name": "Domino.General.ColumnCover",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 65
+    },
+    {
+      "name": "Domino.General.legal_iff_column_cover",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 67
+    },
+    {
+      "name": "Domino.General.column_cover_unique",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 72
+    },
+    {
+      "name": "Domino.General.fillColumn",
+      "kind": "def",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 76
+    },
+    {
+      "name": "Domino.General.legal_symm",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 79
+    },
+    {
+      "name": "Domino.General.legal_self_iff",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 82
+    },
+    {
+      "name": "Domino.General.transfer",
+      "kind": "def",
+      "file": "Domino/OddHeight/Column.lean",
+      "stage": "M8",
+      "line": 89
+    },
+    {
+      "name": "Domino.General.reverseRowBonds",
+      "kind": "def",
+      "file": "Domino/OddHeight/ColumnSymmetry.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.mem_reverseRowBonds",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/ColumnSymmetry.lean",
+      "stage": "M8",
+      "line": 16
+    },
+    {
+      "name": "Domino.General.rowAdjacent_reverse",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/ColumnSymmetry.lean",
+      "stage": "M8",
+      "line": 19
+    },
+    {
+      "name": "Domino.General.reverseState_union",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/ColumnSymmetry.lean",
+      "stage": "M8",
+      "line": 25
+    },
+    {
+      "name": "Domino.General.rowValid_reverse",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/ColumnSymmetry.lean",
+      "stage": "M8",
+      "line": 29
+    },
+    {
+      "name": "Domino.General.legal_reverse",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/ColumnSymmetry.lean",
+      "stage": "M8",
+      "line": 49
+    },
+    {
+      "name": "Domino.General.pathPrefix",
+      "kind": "def",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.pathAppend",
+      "kind": "def",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 23
+    },
+    {
+      "name": "Domino.General.PathLast",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 36
+    },
+    {
+      "name": "Domino.General.pathLastTo",
+      "kind": "def",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 38
+    },
+    {
+      "name": "Domino.General.pathLastFrom",
+      "kind": "def",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 41
+    },
+    {
+      "name": "Domino.General.pathLast_from_to",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 44
+    },
+    {
+      "name": "Domino.General.pathLastFrom_injective",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 55
+    },
+    {
+      "name": "Domino.General.pathLast_to_from",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 72
+    },
+    {
+      "name": "Domino.General.pathSuccEquiv",
+      "kind": "def",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 77
+    },
+    {
+      "name": "Domino.General.profileCount",
+      "kind": "def",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 83
+    },
+    {
+      "name": "Domino.General.profile_count_path",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 85
+    },
+    {
+      "name": "Domino.General.profile_count_zero",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 89
+    },
+    {
+      "name": "Domino.General.profile_count_succ",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 92
+    },
+    {
+      "name": "Domino.General.transferMatrix",
+      "kind": "def",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 100
+    },
+    {
+      "name": "Domino.General.profile_count_matrix",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 102
+    },
+    {
+      "name": "Domino.General.ordinary_count_profile",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 110
+    },
+    {
+      "name": "Domino.General.tiling_count_matrix",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Count.lean",
+      "stage": "M8",
+      "line": 113
+    },
+    {
+      "name": "Domino.General.evenPartner",
+      "kind": "def",
+      "file": "Domino/OddHeight/EvenColumn.lean",
+      "stage": "M8",
+      "line": 11
+    },
+    {
+      "name": "Domino.General.evenPartner_adjacent",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenColumn.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.evenPartner_twice",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenColumn.lean",
+      "stage": "M8",
+      "line": 23
+    },
+    {
+      "name": "Domino.General.evenRowBonds",
+      "kind": "def",
+      "file": "Domino/OddHeight/EvenColumn.lean",
+      "stage": "M8",
+      "line": 32
+    },
+    {
+      "name": "Domino.General.evenRowBonds_valid",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenColumn.lean",
+      "stage": "M8",
+      "line": 35
+    },
+    {
+      "name": "Domino.General.legal_empty_even",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenColumn.lean",
+      "stage": "M8",
+      "line": 51
+    },
+    {
+      "name": "Domino.General.EvenRuns",
+      "kind": "inductive",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 12
+    },
+    {
+      "name": "Domino.General.IntervalCover",
+      "kind": "def",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 17
+    },
+    {
+      "name": "Domino.General.interval_cover_even_runs",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 23
+    },
+    {
+      "name": "Domino.General.even_runs_interval_cover",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 76
+    },
+    {
+      "name": "Domino.General.row_mem_val_image",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 126
+    },
+    {
+      "name": "Domino.General.row_cover_iff_even_runs",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 135
+    },
+    {
+      "name": "Domino.General.legal_iff_even_runs",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 179
+    },
+    {
+      "name": "Domino.General.even_runs_all_free",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 183
+    },
+    {
+      "name": "Domino.General.evenRunScan",
+      "kind": "def",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 190
+    },
+    {
+      "name": "Domino.General.even_runs_scan",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 195
+    },
+    {
+      "name": "Domino.General.scan_even_runs",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 203
+    },
+    {
+      "name": "Domino.General.legal_iff_even_run_scan",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/EvenRuns.lean",
+      "stage": "M8",
+      "line": 224
+    },
+    {
+      "name": "Domino.General.ColumnFrame",
+      "kind": "structure",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.columnFrame_ext",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 22
+    },
+    {
+      "name": "Domino.General.frame_hbound",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 30
+    },
+    {
+      "name": "Domino.General.frame_vertical_adjacent",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 36
+    },
+    {
+      "name": "Domino.General.frame_vertical_symmetric",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 42
+    },
+    {
+      "name": "Domino.General.gridOfFrame",
+      "kind": "def",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 48
+    },
+    {
+      "name": "Domino.General.gridH",
+      "kind": "def",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 81
+    },
+    {
+      "name": "Domino.General.gridV",
+      "kind": "def",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 85
+    },
+    {
+      "name": "Domino.General.mem_gridH",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 89
+    },
+    {
+      "name": "Domino.General.mem_gridV",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 94
+    },
+    {
+      "name": "Domino.General.gridH_start",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 99
+    },
+    {
+      "name": "Domino.General.gridH_finish",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 107
+    },
+    {
+      "name": "Domino.General.gridH_support",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 117
+    },
+    {
+      "name": "Domino.General.gridV_support",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 126
+    },
+    {
+      "name": "Domino.General.GridCompletion",
+      "kind": "def",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 134
+    },
+    {
+      "name": "Domino.General.gridLink_extract_iff",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 138
+    },
+    {
+      "name": "Domino.General.gridCompletion_unique",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 183
+    },
+    {
+      "name": "Domino.General.frameOfGrid",
+      "kind": "def",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 202
+    },
+    {
+      "name": "Domino.General.grid_frame_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 222
+    },
+    {
+      "name": "Domino.General.frame_horizontal_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 236
+    },
+    {
+      "name": "Domino.General.frame_vertical_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 262
+    },
+    {
+      "name": "Domino.General.frame_grid_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 270
+    },
+    {
+      "name": "Domino.General.gridEquivFrame",
+      "kind": "def",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 274
+    },
+    {
+      "name": "Domino.General.partialEquivFrame",
+      "kind": "def",
+      "file": "Domino/OddHeight/Frame.lean",
+      "stage": "M8",
+      "line": 281
+    },
+    {
+      "name": "Domino.General.grid_left_agreement",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.axial_restrict_state",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 30
+    },
+    {
+      "name": "Domino.General.axial_restrict_terminal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 40
+    },
+    {
+      "name": "Domino.General.leftCell",
+      "kind": "def",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 43
+    },
+    {
+      "name": "Domino.General.axial_restrict_internal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 46
+    },
+    {
+      "name": "Domino.General.axial_complete_internal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 59
+    },
+    {
+      "name": "Domino.General.axial_complete_terminal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 66
+    },
+    {
+      "name": "Domino.General.axial_complete_crossing",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 72
+    },
+    {
+      "name": "Domino.General.axial_complete_right",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 78
+    },
+    {
+      "name": "Domino.General.crossing_bond_same_row",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Geometry.lean",
+      "stage": "M8",
+      "line": 86
+    },
+    {
+      "name": "Domino.General.GridCell",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.gridCell",
+      "kind": "def",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.GridAdjacent",
+      "kind": "def",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 17
+    },
+    {
+      "name": "Domino.General.GridLive",
+      "kind": "def",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 21
+    },
+    {
+      "name": "Domino.General.GridMatching",
+      "kind": "structure",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 24
+    },
+    {
+      "name": "Domino.General.gridMatching_ext",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 32
+    },
+    {
+      "name": "Domino.General.grid_matching_bounds",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 40
+    },
+    {
+      "name": "Domino.General.grid_adjacent_iff",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 44
+    },
+    {
+      "name": "Domino.General.gridOfPartial",
+      "kind": "def",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 48
+    },
+    {
+      "name": "Domino.General.gridOfPartial_at",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 76
+    },
+    {
+      "name": "Domino.General.finiteBonds",
+      "kind": "def",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 81
+    },
+    {
+      "name": "Domino.General.mem_finiteBonds",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 104
+    },
+    {
+      "name": "Domino.General.partialOfGrid",
+      "kind": "def",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 109
+    },
+    {
+      "name": "Domino.General.coverBonds_partialOfGrid",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 113
+    },
+    {
+      "name": "Domino.General.partialEquivGrid",
+      "kind": "def",
+      "file": "Domino/OddHeight/Grid.lean",
+      "stage": "M8",
+      "line": 117
+    },
+    {
+      "name": "Domino.General.SymmetricTerminal",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.halfTurnFixedEquivPartial",
+      "kind": "def",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.completeHalfTurn",
+      "kind": "def",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 19
+    },
+    {
+      "name": "Domino.General.restrictHalfTurn",
+      "kind": "def",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 22
+    },
+    {
+      "name": "Domino.General.restrict_complete_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 25
+    },
+    {
+      "name": "Domino.General.complete_restrict_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 29
+    },
+    {
+      "name": "Domino.General.halfTurn_terminal_necessary",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 33
+    },
+    {
+      "name": "Domino.General.halfTurn_extension_iff",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 37
+    },
+    {
+      "name": "Domino.General.halfTurn_fixed_count",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/HalfTurn.lean",
+      "stage": "M8",
+      "line": 55
+    },
+    {
+      "name": "Domino.General.GridLink",
+      "kind": "def",
+      "file": "Domino/OddHeight/Links.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.gridLink_horizontal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Links.lean",
+      "stage": "M8",
+      "line": 18
+    },
+    {
+      "name": "Domino.General.gridLink_adjacent",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Links.lean",
+      "stage": "M8",
+      "line": 22
+    },
+    {
+      "name": "Domino.General.gridLink_symmetric",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Links.lean",
+      "stage": "M8",
+      "line": 30
+    },
+    {
+      "name": "Domino.General.gridLink_vertical",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Links.lean",
+      "stage": "M8",
+      "line": 38
+    },
+    {
+      "name": "Domino.General.column_rule_neighbors",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Links.lean",
+      "stage": "M8",
+      "line": 41
+    },
+    {
+      "name": "Domino.General.neighbors_column_rule",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Links.lean",
+      "stage": "M8",
+      "line": 72
+    },
+    {
+      "name": "Domino.General.matrixSeries",
+      "kind": "def",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 16
+    },
+    {
+      "name": "Domino.General.matrixPencil",
+      "kind": "def",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 19
+    },
+    {
+      "name": "Domino.General.seriesPencil",
+      "kind": "def",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 22
+    },
+    {
+      "name": "Domino.General.matrix_geometric_left",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 25
+    },
+    {
+      "name": "Domino.General.matrix_geometric_right",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 39
+    },
+    {
+      "name": "Domino.General.matrixPencil_coe",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 54
+    },
+    {
+      "name": "Domino.General.matrixPencil_eval_zero",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 62
+    },
+    {
+      "name": "Domino.General.matrix_denominator_constant",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 68
+    },
+    {
+      "name": "Domino.General.matrix_entry_denominator",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 76
+    },
+    {
+      "name": "Domino.General.RationalSeries",
+      "kind": "def",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 92
+    },
+    {
+      "name": "Domino.General.matrix_entry_rational",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 95
+    },
+    {
+      "name": "Domino.General.matrix_geometric_constant",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 99
+    },
+    {
+      "name": "Domino.General.matrix_geometric_unique",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/MatrixSeries.lean",
+      "stage": "M8",
+      "line": 105
+    },
+    {
+      "name": "Domino.General.OddAxialPath",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.oddAxial_center_empty",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 19
+    },
+    {
+      "name": "Domino.General.restrictOddPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 27
+    },
+    {
+      "name": "Domino.General.oddDoubledState",
+      "kind": "def",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 35
+    },
+    {
+      "name": "Domino.General.oddDoubledState_symmetric",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 38
+    },
+    {
+      "name": "Domino.General.completeOddPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 47
+    },
+    {
+      "name": "Domino.General.restrict_complete_odd",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 68
+    },
+    {
+      "name": "Domino.General.complete_restrict_odd",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 76
+    },
+    {
+      "name": "Domino.General.oddAxialEquivClosed",
+      "kind": "def",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 89
+    },
+    {
+      "name": "Domino.General.oddReflectionFixedEquiv",
+      "kind": "def",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 96
+    },
+    {
+      "name": "Domino.General.horizontalFixedEquivTop",
+      "kind": "def",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 102
+    },
+    {
+      "name": "Domino.General.horizontal_fixed_count_odd",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OddReflection.lean",
+      "stage": "M8",
+      "line": 107
+    },
+    {
+      "name": "Domino.General.odd_height_four_counts",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OrbitCounts.lean",
+      "stage": "M8",
+      "line": 11
+    },
+    {
+      "name": "Domino.General.odd_height_divisible",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OrbitCounts.lean",
+      "stage": "M8",
+      "line": 21
+    },
+    {
+      "name": "Domino.General.zero_height_transfer",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OrbitCounts.lean",
+      "stage": "M8",
+      "line": 28
+    },
+    {
+      "name": "Domino.General.odd_height_empty",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OrbitCounts.lean",
+      "stage": "M8",
+      "line": 37
+    },
+    {
+      "name": "Domino.General.horizontal_top_inverse",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OrbitCounts.lean",
+      "stage": "M8",
+      "line": 39
+    },
+    {
+      "name": "Domino.General.top_horizontal_inverse",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/OrbitCounts.lean",
+      "stage": "M8",
+      "line": 44
+    },
+    {
+      "name": "Domino.General.tilingPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.tilingPath_state",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 18
+    },
+    {
+      "name": "Domino.General.tilingPath_cut",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 21
+    },
+    {
+      "name": "Domino.General.tilingPath_horizontal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 35
+    },
+    {
+      "name": "Domino.General.tilingPath_vertical",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 51
+    },
+    {
+      "name": "Domino.General.tilingPath_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 81
+    },
+    {
+      "name": "Domino.General.horizontal_fixed_iff_path",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 85
+    },
+    {
+      "name": "Domino.General.twistState",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 96
+    },
+    {
+      "name": "Domino.General.twistState_twice",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 98
+    },
+    {
+      "name": "Domino.General.twistState_empty",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 101
+    },
+    {
+      "name": "Domino.General.axialSymmetry",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 104
+    },
+    {
+      "name": "Domino.General.axial_fixed_iff_path",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathAction.lean",
+      "stage": "M8",
+      "line": 106
+    },
+    {
+      "name": "Domino.General.legal_twist_reverse",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.HalfPath",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 22
+    },
+    {
+      "name": "Domino.General.AxialPath",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 25
+    },
+    {
+      "name": "Domino.General.halfPath_ext",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 28
+    },
+    {
+      "name": "Domino.General.doubledState",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 38
+    },
+    {
+      "name": "Domino.General.doubledState_left",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 41
+    },
+    {
+      "name": "Domino.General.doubledState_right",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 44
+    },
+    {
+      "name": "Domino.General.doubledState_symmetric",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 54
+    },
+    {
+      "name": "Domino.General.completeHalfPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 63
+    },
+    {
+      "name": "Domino.General.restrictAxialPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 82
+    },
+    {
+      "name": "Domino.General.restrict_complete_halfPath",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 95
+    },
+    {
+      "name": "Domino.General.complete_restrict_axialPath",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 104
+    },
+    {
+      "name": "Domino.General.halfPathEquivAxialPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 118
+    },
+    {
+      "name": "Domino.General.AxialFixed",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 124
+    },
+    {
+      "name": "Domino.General.axialFixedEquivPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 127
+    },
+    {
+      "name": "Domino.General.HalfPartial",
+      "kind": "abbrev",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 135
+    },
+    {
+      "name": "Domino.General.halfPartialEquivPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 138
+    },
+    {
+      "name": "Domino.General.axialFixedEquivPartial",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathCompletion.lean",
+      "stage": "M8",
+      "line": 141
+    },
+    {
+      "name": "Domino.General.StatePath",
+      "kind": "structure",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.statePath_ext",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 20
+    },
+    {
+      "name": "Domino.General.pathCode",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 27
+    },
+    {
+      "name": "Domino.General.pathCode_injective",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 30
+    },
+    {
+      "name": "Domino.General.statePathFinite",
+      "kind": "instance",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 39
+    },
+    {
+      "name": "Domino.General.statePathFintype",
+      "kind": "instance",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 42
+    },
+    {
+      "name": "Domino.General.pathOfFrame",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 45
+    },
+    {
+      "name": "Domino.General.frameOfPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 52
+    },
+    {
+      "name": "Domino.General.frameEquivPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 63
+    },
+    {
+      "name": "Domino.General.partialTilingEquivPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 78
+    },
+    {
+      "name": "Domino.General.tilingEquivClosedPath",
+      "kind": "def",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 82
+    },
+    {
+      "name": "Domino.General.partial_path_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 85
+    },
+    {
+      "name": "Domino.General.path_partial_roundtrip",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 89
+    },
+    {
+      "name": "Domino.General.partial_path_state",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/PathEquiv.lean",
+      "stage": "M8",
+      "line": 93
+    },
+    {
+      "name": "Domino.General.rational_zero",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/RationalSeries.lean",
+      "stage": "M8",
+      "line": 11
+    },
+    {
+      "name": "Domino.General.rational_add",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/RationalSeries.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.rational_scale",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/RationalSeries.lean",
+      "stage": "M8",
+      "line": 24
+    },
+    {
+      "name": "Domino.General.rational_sum",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/RationalSeries.lean",
+      "stage": "M8",
+      "line": 31
+    },
+    {
+      "name": "Domino.General.polynomial_series_coeff",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/RationalSeries.lean",
+      "stage": "M8",
+      "line": 41
+    },
+    {
+      "name": "Domino.General.rational_eventual_recurrence",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/RationalSeries.lean",
+      "stage": "M8",
+      "line": 52
+    },
+    {
+      "name": "Domino.General.unrestrictedHalfPartialEquiv",
+      "kind": "def",
+      "file": "Domino/OddHeight/Reflection.lean",
+      "stage": "M8",
+      "line": 13
+    },
+    {
+      "name": "Domino.General.reflectionFixedEquivPartial",
+      "kind": "def",
+      "file": "Domino/OddHeight/Reflection.lean",
+      "stage": "M8",
+      "line": 19
+    },
+    {
+      "name": "Domino.General.completeReflection",
+      "kind": "def",
+      "file": "Domino/OddHeight/Reflection.lean",
+      "stage": "M8",
+      "line": 23
+    },
+    {
+      "name": "Domino.General.restrictReflection",
+      "kind": "def",
+      "file": "Domino/OddHeight/Reflection.lean",
+      "stage": "M8",
+      "line": 26
+    },
+    {
+      "name": "Domino.General.restrict_complete_reflection",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Reflection.lean",
+      "stage": "M8",
+      "line": 29
+    },
+    {
+      "name": "Domino.General.complete_restrict_reflection",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Reflection.lean",
+      "stage": "M8",
+      "line": 33
+    },
+    {
+      "name": "Domino.General.reflection_fixed_count",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Reflection.lean",
+      "stage": "M8",
+      "line": 37
+    },
+    {
+      "name": "Domino.General.rationalTransfer",
+      "kind": "def",
+      "file": "Domino/OddHeight/Series.lean",
+      "stage": "M8",
+      "line": 15
+    },
+    {
+      "name": "Domino.General.rationalTransfer_pow",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Series.lean",
+      "stage": "M8",
+      "line": 18
+    },
+    {
+      "name": "Domino.General.orbitSeries",
+      "kind": "def",
+      "file": "Domino/OddHeight/Series.lean",
+      "stage": "M8",
+      "line": 23
+    },
+    {
+      "name": "Domino.General.orbit_matrix_series",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Series.lean",
+      "stage": "M8",
+      "line": 25
+    },
+    {
+      "name": "Domino.General.odd_height_orbit_rational",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Series.lean",
+      "stage": "M8",
+      "line": 44
+    },
+    {
+      "name": "Domino.General.odd_height_eventual_recurrence",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Series.lean",
+      "stage": "M8",
+      "line": 54
+    },
+    {
+      "name": "Domino.General.odd_height_rational_witness",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Series.lean",
+      "stage": "M8",
+      "line": 62
+    },
+    {
+      "name": "Domino.General.odd_restrict_state",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/TopGeometry.lean",
+      "stage": "M8",
+      "line": 10
+    },
+    {
+      "name": "Domino.General.oddLeftCell",
+      "kind": "def",
+      "file": "Domino/OddHeight/TopGeometry.lean",
+      "stage": "M8",
+      "line": 18
+    },
+    {
+      "name": "Domino.General.odd_restrict_internal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/TopGeometry.lean",
+      "stage": "M8",
+      "line": 21
+    },
+    {
+      "name": "Domino.General.topCell",
+      "kind": "def",
+      "file": "Domino/OddHeight/TopGeometry.lean",
+      "stage": "M8",
+      "line": 35
+    },
+    {
+      "name": "Domino.General.horizontal_restrict_top_bonds",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/TopGeometry.lean",
+      "stage": "M8",
+      "line": 38
+    },
+    {
+      "name": "Domino.General.horizontal_complete_top_bonds",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/TopGeometry.lean",
+      "stage": "M8",
+      "line": 49
+    },
+    {
+      "name": "Domino.General.transposeBonds",
+      "kind": "def",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 11
+    },
+    {
+      "name": "Domino.General.mem_transposeBonds",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 14
+    },
+    {
+      "name": "Domino.General.transpose_bonds_valid",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 17
+    },
+    {
+      "name": "Domino.General.transposeTiling",
+      "kind": "def",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 38
+    },
+    {
+      "name": "Domino.General.transposeTiling_bonds",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 42
+    },
+    {
+      "name": "Domino.General.transposeTiling_twice",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 46
+    },
+    {
+      "name": "Domino.General.transposeTilingEquiv",
+      "kind": "def",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 56
+    },
+    {
+      "name": "Domino.General.transposeTiling_horizontal",
+      "kind": "theorem",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 62
+    },
+    {
+      "name": "Domino.General.horizontalFixedTransposeEquiv",
+      "kind": "def",
+      "file": "Domino/OddHeight/Transpose.lean",
+      "stage": "M8",
+      "line": 73
+    }
+  ]
+}

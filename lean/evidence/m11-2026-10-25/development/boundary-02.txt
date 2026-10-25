@@ -1,0 +1,12 @@
+✖ [3205/3205] Building Domino.Blocks.Boundary (129s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Boundary.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Boundary.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Boundary.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Boundary.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Boundary.setup.json --json
+error: Domino/Blocks/Boundary.lean:81:4: Type mismatch: After simplification, term
+  Eq.symm (congrArg List.head? h)
+ has type
+  some ⋯.choose = (↑((wordEquivTiling n).symm ((wordEquivTiling n) ⟨[↑a], ⋯⟩))).head?
+but is expected to have type
+  ⋯.choose = ↑a
+error: Domino/Blocks/Boundary.lean:68:18: (kernel) declaration has metavariables 'Domino.Blocks.letterEquivBasic'
+Some required targets logged failures:
+- Domino.Blocks.Boundary
+error: build failed

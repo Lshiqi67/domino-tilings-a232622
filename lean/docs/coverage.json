@@ -1,6 +1,6 @@
 {
   "date": "2026-10-25",
-  "route": "A002-half-board-transfer",
+  "route": "A002-half-board-transfer + A001-irreducible-blocks",
   "first_target": "三行主定理，对全部 n >= 0，包括生成函数、递推、初值",
   "status_legend": {
     "planned": "待实现",
@@ -76,6 +76,46 @@
       "report": "../evidence/m6-2026-10-25/verification-02/report.json",
       "semantic_review": "m6-main-theorem.md",
       "declarations": "m6-declarations.json"
+    },
+    {
+      "id": "M7",
+      "status": "checked",
+      "scope": "全部 n 的三行精确稳定子、真实轨道大小、分类计数、整除与零宽",
+      "report": "../evidence/m7-m8-2026-10-25/verification-01/report.json",
+      "semantic_review": "m7-m8-stabilizers-odd-height.md",
+      "declarations": "m7-m8-declarations.json"
+    },
+    {
+      "id": "M8",
+      "status": "checked",
+      "scope": "任意高度局部/轴向双射、偶长段判据、全部 k,n 的奇数高度 h 双射、通用计数、矩阵形式逆、有理性及最终递推",
+      "report": "../evidence/m7-m8-2026-10-25/verification-01/report.json",
+      "semantic_review": "m7-m8-stabilizers-odd-height.md",
+      "declarations": "m7-m8-declarations.json"
+    },
+    {
+      "id": "M9",
+      "status": "checked",
+      "scope": "真实五行铺法的全部状态压缩、四类计数、六维多项式证书、主有理式、全部指标十四阶递推、14 项初值及起点；不含最小阶或渐近",
+      "report": "../evidence/m9-2026-10-25/verification-01/report.json",
+      "semantic_review": "m9-five-row-certificate.md",
+      "declarations": "m9-declarations.json"
+    },
+    {
+      "id": "M10",
+      "status": "checked",
+      "scope": "三行真实计数闭式；均匀铺法与均匀轨道概率的真实基数定义、奇偶首项渐近、完整序列指数 Big-O 界、轨道主项及两种概率趋零；不含一般高度渐近",
+      "report": "../evidence/m10-2026-10-25/verification-01/report.json",
+      "semantic_review": "m10-asymptotics-probability.md",
+      "declarations": "m10-declarations.json"
+    },
+    {
+      "id": "M11",
+      "status": "checked",
+      "scope": "三行基本块首次回空完整分类、全部空切口唯一分解、真实几何保权双射、三种字对称、回文唯一半字/中心分解、四固定点级数和第二条主生成函数证明；k=1 边界",
+      "report": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md",
+      "declarations": "m11-declarations.json"
     }
   ],
   "source_chain": "proof-chain/claims.json",
@@ -191,103 +231,169 @@
     },
     {
       "id": "A02",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
-        "Blocks/Classification"
+        "Blocks/Letters",
+        "Blocks/Decomposition",
+        "Blocks/Boundary"
       ],
       "exports": [
-        "first_return_classification"
+        "Blocks.irreducible_iff_letter",
+        "Blocks.letterEquivBasic",
+        "Blocks.basic_iff_irreducible",
+        "Blocks.empty_cut_iff_no_crossing"
       ],
       "depends": [
         "A01"
-      ]
+      ],
+      "note": "所有首次回空路径恰好对应 C/A/B 一个字母；通过实际路径状态连接非空无断口几何铺法。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "A03",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
-        "Blocks/Decomposition"
+        "Blocks/Decomposition",
+        "Blocks/Geometry",
+        "Blocks/Boundary"
       ],
       "exports": [
-        "tilingEquivWeightedWord"
+        "Blocks.unique_decomposition",
+        "Blocks.decode_trace",
+        "Blocks.valid_decode",
+        "Blocks.wordEquivTiling",
+        "Blocks.tiling_word_roundtrip",
+        "Blocks.word_tiling_roundtrip",
+        "Blocks.all_cuts_are_block_boundaries"
       ],
       "depends": [
         "A02"
-      ]
+      ],
+      "note": "字重为半宽；任意宽块的全部断口与前缀总重精确对应，存在唯一且双向互逆，固定总权的字集有限。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "A04",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
+        "Blocks/Letters",
         "Blocks/Symmetry"
       ],
       "exports": [
-        "word_symmetry"
+        "Blocks.core_reverse",
+        "Blocks.word_horizontal",
+        "Blocks.word_vertical",
+        "Blocks.word_halfTurn",
+        "Blocks.horizontal_fixed_word",
+        "Blocks.vertical_fixed_word",
+        "Blocks.halfTurn_fixed_word"
       ],
       "depends": [
         "A03"
-      ]
+      ],
+      "note": "原始坐标对称对应字母对合、倒序、倒序加对合；覆盖不同块宽。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "A05",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
-        "Blocks/Series"
+        "Blocks/Graded",
+        "Blocks/WordSeries",
+        "Blocks/Main"
       ],
       "exports": [
-        "word_ordinary_series"
+        "Blocks.graded_product",
+        "Blocks.letter_series_identity",
+        "Blocks.wordHeadEquiv",
+        "Blocks.word_series_equation",
+        "Blocks.word_ordinary_identity",
+        "Blocks.word_series_rational",
+        "Blocks.wordSeries_actual"
       ],
       "depends": [
         "A03"
-      ]
+      ],
+      "note": "实际有限纤维计数和字首分解推出 F、D；不使用半棋盘递推或已得普通公式。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "A06",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
-        "Blocks/FixedWords"
+        "Blocks/Horizontal"
       ],
       "exports": [
-        "word_horizontal_series"
+        "Blocks.fixed_letters_iff",
+        "Blocks.horizontal_card_via_words",
+        "Blocks.horizontal_series_via_words"
       ],
       "depends": [
         "A04"
-      ]
+      ],
+      "note": "唯一固定字母 C；全部固定字为 C 的重复，真实固定点数为 1。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "A07",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
-        "Blocks/FixedWords"
+        "Blocks/Palindromes",
+        "Blocks/FixedSeries",
+        "Blocks/Main"
       ],
       "exports": [
-        "word_vertical_series"
+        "Blocks.palindrome_unique",
+        "Blocks.assemble_injective",
+        "Blocks.palindromeEquiv",
+        "Blocks.double_mass_series",
+        "Blocks.center_series_false",
+        "Blocks.vertical_word_series",
+        "Blocks.vertical_series_via_blocks"
       ],
       "depends": [
         "A04",
         "A05"
-      ]
+      ],
+      "note": "普通回文有唯一半字及空/任意单字母中心；权重加倍产生 D(X²)。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "A08",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
-        "Blocks/FixedWords"
+        "Blocks/Palindromes",
+        "Blocks/FixedSeries",
+        "Blocks/Main"
       ],
       "exports": [
-        "word_half_turn_series"
+        "Blocks.palindrome_unique",
+        "Blocks.palindromeEquiv",
+        "Blocks.center_true_cases",
+        "Blocks.center_series_true",
+        "Blocks.halfTurn_word_series",
+        "Blocks.halfTurn_series_via_blocks"
       ],
       "depends": [
         "A04",
         "A05"
-      ]
+      ],
+      "note": "带对合回文中心只能为空或 C；真实固定点生成函数由保权等价推出。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "B01",
@@ -502,13 +608,17 @@
     },
     {
       "id": "T01",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M11",
       "modules": [
         "Blocks/Main"
       ],
       "exports": [
-        "orbit_series_via_blocks"
+        "Blocks.burnside_series_via_blocks",
+        "Blocks.orbit_series_identity_via_blocks",
+        "Blocks.orbit_series_via_blocks",
+        "Blocks.orbit_series_paper_via_blocks",
+        "Blocks.three_row_block_main"
       ],
       "depends": [
         "C02",
@@ -517,7 +627,10 @@
         "A06",
         "A07",
         "A08"
-      ]
+      ],
+      "note": "基本块组合链经共享 Burnside/纯代数得到真实 a(n) 的主式。项目导入闭包排除半棋盘计数及 T02。",
+      "evidence": "../evidence/m11-2026-10-25/verification-01/report.json",
+      "semantic_review": "m11-block-route.md"
     },
     {
       "id": "T02",
@@ -567,7 +680,7 @@
     },
     {
       "id": "T04",
-      "status": "partial",
+      "status": "checked",
       "stage": "M1+M2+M3+M4+M5+M6+M11",
       "modules": [
         "Board/Partial",
@@ -582,7 +695,7 @@
         "orbitCount_zero",
         "partial_width_zero_card",
         "width_two_counts",
-        "blocks_parameter_one"
+        "Blocks.blocks_parameter_one"
       ],
       "depends": [
         "C00",
@@ -603,9 +716,11 @@
         "a_two",
         "three_row_small_orbit_counts",
         "width_two_counts",
-        "orbit_recurrence_first"
+        "orbit_recurrence_first",
+        "Blocks.blocks_parameter_one",
+        "Blocks.empty_word_unique"
       ],
-      "note": "零宽、3×2 完整计数及小轨道边界已有证据；M6 完成七阶递推起点 a(7)=2037。原基本块 k=1 仍待 M11，整个节点保持 partial。",
+      "note": "此前零宽、3×2 计数及递推起点证据保留；M11 完成 C/A₁/B₁ 的内部状态及权重 1 字母恰有三个，补全原 T04 基本块边界。",
       "evidence": "../evidence/m1-2026-10-25/verification-02/report.json",
       "additional_evidence": "../evidence/m2-2026-10-25/verification-01/report.json",
       "m3_evidence": "../evidence/m3-2026-10-25/verification-01/report.json",
@@ -615,14 +730,15 @@
         "B07"
       ],
       "m4_m5_evidence": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
-      "m6_evidence": "../evidence/m6-2026-10-25/verification-02/report.json"
+      "m6_evidence": "../evidence/m6-2026-10-25/verification-02/report.json",
+      "m11_evidence": "../evidence/m11-2026-10-25/verification-01/report.json"
     }
   ],
   "extensions": [
     {
       "id": "EXT-STABILIZERS",
       "paper": "Theorem 4.1",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M7",
       "depends": [
         "C00",
@@ -631,51 +747,74 @@
         "B07"
       ],
       "exports": [
-        "exact_stabilizer_counts"
-      ]
+        "three_row_stabilizer_counting",
+        "symmetryOrbitCount_formulas",
+        "symmetry_type_divisibility",
+        "symmetry_orbit_eight"
+      ],
+      "evidence": "../evidence/m7-m8-2026-10-25/verification-01/report.json"
     },
     {
       "id": "EXT-ODD-HEIGHT",
       "paper": "Section 5; L007/L008 general case; L011",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M8",
       "depends": [
         "C00",
         "C02"
       ],
       "exports": [
-        "odd_height_orbit_count",
-        "odd_height_series_rational"
+        "General.odd_height_four_counts",
+        "General.orbit_matrix_series",
+        "General.odd_height_rational_witness",
+        "General.odd_height_eventual_recurrence"
       ],
       "additional_obligations": [
-        "general_column_cover_unique",
-        "general_partial_path_equiv",
-        "general_reflection_equiv",
-        "general_half_turn_equiv",
-        "odd_height_horizontal_equiv",
-        "matrix_series_inverse"
-      ]
+        "General.column_cover_unique",
+        "General.legal_iff_even_run_scan",
+        "General.partialTilingEquivPath",
+        "General.reflectionFixedEquivPartial",
+        "General.halfTurnFixedEquivPartial",
+        "General.horizontalFixedEquivTop",
+        "General.horizontal_restrict_top_bonds",
+        "General.matrix_geometric_left",
+        "General.matrix_geometric_right",
+        "General.matrix_geometric_unique",
+        "General.matrix_denominator_constant"
+      ],
+      "evidence": "../evidence/m7-m8-2026-10-25/verification-01/report.json",
+      "note": "本节点证明全部 k,n，包含一行及零宽；五行显式证书另见 M9。最小递推阶、渐近及欧氏全等距分类未包含。"
     },
     {
       "id": "EXT-FIVE-ROWS",
       "paper": "Section 6 and Appendix A",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M9",
       "depends": [
         "EXT-ODD-HEIGHT"
       ],
       "exports": [
-        "five_row_compression",
-        "five_row_certificate",
-        "five_row_series",
-        "five_row_recurrence",
-        "five_row_initial_values"
-      ]
+        "FiveRows.profile_even_odd",
+        "FiveRows.even_reachable_iff",
+        "FiveRows.odd_reachable_iff",
+        "FiveRows.compressed_is_single_state_count",
+        "FiveRows.matrix_CB",
+        "FiveRows.terminal_weights",
+        "FiveRows.polynomial_certificate",
+        "FiveRows.fixed_series_identities",
+        "FiveRows.orbit_series_rational",
+        "FiveRows.orbit_recurrence_fourteen",
+        "FiveRows.orbit_initial_values",
+        "FiveRows.orbit_recurrence_first",
+        "FiveRows.five_row_main_theorem"
+      ],
+      "evidence": "../evidence/m9-2026-10-25/verification-01/report.json",
+      "note": "对全部自然数半宽，包括空棋盘；实际计数经 M8 双射连接矩阵，有限证书由形式逆推出全体系数。十四阶有效性已证，最小阶未证。"
     },
     {
       "id": "EXT-ASYMPTOTICS",
       "paper": "Theorem 4.2 and orbit-sampling paragraph",
-      "status": "deferred",
+      "status": "checked",
       "stage": "M10",
       "depends": [
         "EXT-STABILIZERS",
@@ -684,11 +823,26 @@
         "C02"
       ],
       "exports": [
-        "ordinary_closed_form",
-        "symmetric_tiling_probability_asymptotics",
-        "orbit_count_asymptotics",
-        "symmetric_orbit_probability_tendsto_zero"
-      ]
+        "Asymptotic.ordinary_closed_form_paper",
+        "Asymptotic.symmetric_tiling_probability_asymptotics",
+        "Asymptotic.orbit_count_asymptotics",
+        "Asymptotic.symmetric_orbit_probability_tendsto_zero",
+        "Asymptotic.probability_exponential_bound",
+        "Asymptotic.orbit_exponential_error_bound",
+        "Asymptotic.three_row_asymptotic_main"
+      ],
+      "evidence": "../evidence/m10-2026-10-25/verification-01/report.json",
+      "additional_obligations": [
+        "Asymptotic.symmetricOrbitInclusion_injective",
+        "Asymptotic.symmetricOrbitInclusion_image",
+        "Asymptotic.symmetric_count_add_one",
+        "Asymptotic.twice_symmetric_orbit_count",
+        "Asymptotic.probabilities_mem_unit_interval",
+        "Asymptotic.probabilities_zero",
+        "Asymptotic.probabilities_two",
+        "Asymptotic.halfDecay_rpow"
+      ],
+      "note": "三行，半宽 n 为自然数；概率分别按真实铺法和真实轨道均匀抽样。半指数使用 Real.rpow，两个奇偶比值分别趋于 1。一般高度渐近及数值最优误差常数不在此范围。"
     }
   ]
 }

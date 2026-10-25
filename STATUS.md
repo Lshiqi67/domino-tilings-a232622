@@ -1,28 +1,31 @@
 # Research status / 研究状态
 
-Date / 日期: 2026-10-25  
-Author / 署名: **Shiqi Liu**
+更新日期：2026-10-26。署名：**Shiqi Liu**。
 
-## Current position
+**M1–M11 已通过本地 Lean 累计验收。** 83 个数学模块、1078 项显式声明，其中 699 个定理（含辅助引理）。本次发布主要追加 M7–M11；原 M1–M6 数学源文件、版本锁、论文、历史审阅包保持原字节。
 
-**The three-row main counting theorem is now locally verified in Lean under the stated tiling and four-coordinate-symmetry definitions. The project as a whole remains unfinished: extensions, the block-route second proof and external mathematical review are still pending. No novelty or priority claim is made.**
+## 已取得的成果
 
-Lean M1 through M6 have passed local builds and cumulative axiom audits. M6 proves the formal generating function with coefficients equal to actual orbit cardinalities, the original signed rational expression, the seventh-order recurrence for every natural index and all seven initial values. A fresh project directory rebuilds all project sources using the verified pinned dependency cache. See the [precise M6 scope](lean/docs/m6-main-theorem.md).
+- M1–M6：真实三行铺法轨道的主生成函数、全部指标七阶递推及七项初值。
+- M7：三行精确稳定子、分类铺法/轨道计数、轨道大小和整除性。
+- M8：一般高度几何路径及半棋盘双射；任意正奇数高度的四类计数、轨道级数有理性和最终线性递推，包含一行及零宽。
+- M9：真实五行铺法的压缩证书、主生成函数、十四阶递推、全部初值及首个递推点；未证明最小阶。
+- M10：三行普通计数闭式、轨道渐近、均匀铺法与均匀轨道两种概率、趋零及指数误差界。
+- M11：基本块完整分类、真实保权字双射、全部断口唯一分解、坐标作用与字对称、回文唯一中心、第二条主生成函数证明及 k=1 边界。
 
-The available material consists of two proposed derivations, refinements and extensions, finite exhaustive computations, and exact symbolic identities for specified models. These may be useful research evidence; they do not settle the validity of every definition, bijection and infinite-parameter inference.
+完整数学范围、定义和量词见 [阶段成果](lean/docs/progress.md)、[覆盖表](lean/docs/coverage.json)及各阶段说明。两条组合路线共享基础定义、几何路径、Burnside 和纯代数，不等于外部独立作者认证。
 
-## 当前立场
+## 验收依据
 
-**三行主计数定理现已按明确的铺法与四种坐标对称定义完成本地 Lean 验证。研究整体仍有全文扩展、基本块第二证明和外部数学审阅待办，不主张文献优先权。**
+[用户本地复跑报告](lean/evidence/m11-rerun-20261025-232056/report.json)为 `m11_passed`，包含旧阶段回归、全部声明公理审计及项目干净重建。发布前核对报告中 113 个输入文件的 SHA-256，全部一致。只允许 `propext`、`Classical.choice`、`Quot.sound`。干净重建共享核对后的固定依赖缓存，不是从零重编译 mathlib。
 
-目前已完成 Lean M1–M6：累计 32 数学模块、413 项显式声明公理审计及干净项目重建。M6 新增四类固定点生成函数、主分母恒等式与单位逆、题面原式、全部自然数指标七阶递推及七项初值 1,2,5,14,46,156,561；递推起点 a(7)=2037。C00/B08/C03/T02/T03 已完成，全文其他部分不自动升级。
+历史证据的整理不冒称新的运行；本次发布没有修改数学证明和验收脚本。远端 CI 状态以 [GitHub Actions 对应提交](https://github.com/Lshiqi67/domino-tilings-a232622/actions/workflows/lean.yml) 为准，本地通过与远端通过分开记录。
 
-中文论文已修订为 [v2.0（16 页）](papers/zh/README.md)：纳入既有 M1–M6 结果，区分三行主定理和全文扩展的验证范围，补全文献定位、符号和复现说明。旧中文 v1.0 逐字节归档，英文稿保持此前版本。本次论文整理没有新增数学定理或扩大形式化覆盖范围。
+## 尚待完成
 
-## What remains / 尚待完成
+1. 外部人工语义审阅：逐项检查形式化定义、假设和论文陈述的对应；现有 [M1–M6 审阅包](review/m1-m6/README.md)保留原范围。
+2. 更新论文中的形式化覆盖说明；当前英文 v2.0、中文 v2.1 的 PDF/TeX 仍记载其发布时的 M1–M6 范围。
+3. 一般高度及五行渐近、最小递推阶、全部欧氏等距分类等独立推广。
+4. 继续文献核查；不主张首次性、优先权或全文所有结论均获形式化认证。
 
-1. Formalize exact stabilizers and the corresponding orbit counts (M7).
-2. Formalize arbitrary odd heights, five-row certificates, asymptotics and the block-route second proof (M8–M11).
-3. Refine the exposition and compare related literature systematically; priority and global open status are not established.
-
-Lean 4.35.0、mathlib 精确提交和原 M1–M5 的 27 数学源文件保持不变。方案与覆盖表见 [Lean 项目](lean/README.md)，实际证据见 [M6 记录](lean/evidence/m6-2026-10-25/README.md)。下一项 M7；T04 的基本块 k=1 未完成。未另行形式化欧氏全部等距变换分类；非空三行偶宽棋盘按题面四种坐标映射取商。代码、固定版本配置、阶段说明、公开验证证据及 CI 工作流现一并提供。远端验收状态以 [GitHub Actions](https://github.com/Lshiqi67/domino-tilings-a232622/actions/workflows/lean.yml) 对应提交为准。阶段顺序见[成果及后续工作](lean/docs/progress.md)。
+下一项可执行工作：将 [覆盖表](lean/docs/coverage.json)与论文逐项对应，取得外部语义审阅，再修订论文的覆盖说明。

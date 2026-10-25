@@ -1,0 +1,4 @@
+✔ [3227/3229] Built Domino.FiveRows.Series (18s)
+✔ [3228/3229] Built Domino.FiveRows.Main (18s)
+✔ [3229/3229] Built Domino.FiveRows.Recurrence (23s)
+Build completed successfully (3229 jobs).

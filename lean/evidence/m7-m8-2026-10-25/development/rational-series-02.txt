@@ -1,0 +1,35 @@
+⚠ [3185/3186] Building Domino.OddHeight.MatrixSeries (30s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\MatrixSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\MatrixSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\MatrixSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\MatrixSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\MatrixSeries.setup.json --json
+warning: Domino/OddHeight/MatrixSeries.lean:53:0: automatically included section variable(s) unused in theorem `Domino.General.matrixPencil_coe`:
+  [Fintype ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✖ [3186/3186] Building Domino.OddHeight.RationalSeries (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\RationalSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\RationalSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\RationalSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\RationalSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\RationalSeries.setup.json --json
+error: Domino/OddHeight/RationalSeries.lean:63:2: Tactic `apply` failed: could not unify the conclusion of `(eq_div_iff hQ).mpr`
+  ?m.175 = ?m.173 / Q.coeff 0
+with the goal
+  (coeff (n + Q.natDegree)) F =
+    -(Q.coeff 0)⁻¹ * ∑ i ∈ Finset.range Q.natDegree, Q.coeff (i + 1) * (coeff (n + Q.natDegree - (i + 1))) F
+
+Note: The full type of `(eq_div_iff hQ).mpr` is
+  ?m.175 * Q.coeff 0 = ?m.173 → ?m.175 = ?m.173 / Q.coeff 0
+
+F : ℚ⟦X⟧
+P Q : Polynomial ℚ
+hQ : Q.coeff 0 ≠ 0
+he : ↑Q * F = ↑P
+error: build failed
+n : ℕ
+hn : P.natDegree + 1 ≤ n
+h :
+  ∑ k ∈ Finset.range Q.natDegree, Q.coeff (k + 1) * (coeff (n + Q.natDegree - (k + 1))) F +
+      Q.coeff 0 * (coeff (n + Q.natDegree)) F =
+    0
+⊢ (coeff (n + Q.natDegree)) F =
+    -(Q.coeff 0)⁻¹ * ∑ i ∈ Finset.range Q.natDegree, Q.coeff (i + 1) * (coeff (n + Q.natDegree - (i + 1))) F
+Some required targets logged failures:
+- Domino.OddHeight.MatrixSeries
+- Domino.OddHeight.RationalSeries

@@ -1,0 +1,2 @@
+✔ [3156/3156] Built Domino.Blocks.Palindromes (18s)
+Build completed successfully (3156 jobs).

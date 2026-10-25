@@ -1,0 +1,39 @@
+⚠ [3220/3223] Building Domino.Asymptotics.ParityLimits (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\ParityLimits.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ParityLimits.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ParityLimits.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ParityLimits.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ParityLimits.setup.json --json
+warning: Domino/Asymptotics/ParityLimits.lean:82:4: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Asymptotics/ParityLimits.lean:82:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Domino/Asymptotics/ParityLimits.lean:98:4: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Asymptotics/ParityLimits.lean:98:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [3221/3223] Building Domino.Asymptotics.OrbitLimits (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\OrbitLimits.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\OrbitLimits.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\OrbitLimits.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\OrbitLimits.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\OrbitLimits.setup.json --json
+error: Domino/Asymptotics/OrbitLimits.lean:15:2: Type mismatch: After simplification, term
+  h
+ has type
+  Tendsto ((fun n => (growth ^ n)⁻¹) * (fun n => (growth ^ n)⁻¹ * d n)⁻¹) atTop (𝓝 0)
+but is expected to have type
+  Tendsto (fun n => (d n)⁻¹) atTop (𝓝 0)
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instMul ↦ 21
+error: Domino/Asymptotics/OrbitLimits.lean:30:14: Unknown identifier `one_add_zero`
+error: Domino/Asymptotics/OrbitLimits.lean:54:2: Type mismatch: After simplification, term
+  h
+ has type
+  Tendsto ((fun x => tilingProbability x + (d x)⁻¹) / fun x => 2 * (↑(a x) / d x)) atTop (𝓝 0)
+but is expected to have type
+  Tendsto orbitProbability atTop (𝓝 0)
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instAdd ↦ 2
+Some required targets logged failures:
+- Domino.Asymptotics.ParityLimits
+- Domino.Asymptotics.OrbitLimits
+error: build failed

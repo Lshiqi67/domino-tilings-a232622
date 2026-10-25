@@ -1,0 +1,17 @@
+✖ [3152/3153] Building Domino.Blocks.Letters (19s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Letters.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Letters.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Letters.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Letters.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Letters.setup.json --json
+error: Domino/Blocks/Letters.lean:74:6: unsolved goals
+case c
+⊢ ¬∅ = Finset.univ
+error: Domino/Blocks/Letters.lean:116:72: Type mismatch: After simplification, term
+  Eq.symm (core_arm_snoc b k)
+ has type
+  core (Letter.arm b k) ++ [paired b, single b] = single b :: paired b :: core (Letter.arm b k)
+but is expected to have type
+  core (Letter.arm b k) ++ [paired b] ++ [single b] = single b :: paired b :: core (Letter.arm b k)
+error: Domino/Blocks/Letters.lean:120:6: unsolved goals
+case c
+⊢ reverseState Finset.univ = Finset.univ
+Some required targets logged failures:
+- Domino.Blocks.Letters

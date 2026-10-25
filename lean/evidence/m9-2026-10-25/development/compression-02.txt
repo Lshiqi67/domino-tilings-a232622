@@ -1,0 +1,22 @@
+error: build failed
+✖ [3222/3222] Building Domino.FiveRows.Compression (29s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\FiveRows\Compression.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Compression.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Compression.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Compression.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Compression.setup.json --json
+error: Domino/FiveRows/Compression.lean:84:53: failed to synthesize
+  Decidable (∀ (i : Fin 6), ∀ p ∈ evenClass i, ∀ (j : Fin 6), evenLift p j = if i = j then 1 else 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Domino/FiveRows/Compression.lean:87:52: failed to synthesize
+  Decidable (∀ (i : Fin 6), ∀ p ∈ oddClass i, ∀ (j : Fin 6), oddLift p j = if i = j then 1 else 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Domino/FiveRows/Compression.lean:117:114: failed to synthesize
+  Decidable
+    (∀ (p q : Fin 32), maskState 5 q = reverseState (maskState 5 p) → ∀ (i : Fin 6), evenLift q i = evenLift p i)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Domino/FiveRows/Compression.lean:118:112: failed to synthesize
+  Decidable (∀ (p q : Fin 32), maskState 5 q = reverseState (maskState 5 p) → ∀ (i : Fin 6), oddLift q i = oddLift p i)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Some required targets logged failures:
+- Domino.FiveRows.Compression

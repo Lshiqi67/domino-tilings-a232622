@@ -1,0 +1,4 @@
+✔ [3216/3218] Built Domino.OddHeight.MatrixSeries (18s)
+✔ [3217/3218] Built Domino.OddHeight.RationalSeries (19s)
+✔ [3218/3218] Built Domino.OddHeight.Series (19s)
+Build completed successfully (3218 jobs).

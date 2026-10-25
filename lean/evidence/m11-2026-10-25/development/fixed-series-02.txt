@@ -1,0 +1,99 @@
+✔ [3206/3208] Built Domino.Blocks.WordSeries (19s)
+✖ [3207/3208] Building Domino.Blocks.FixedSeries (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\FixedSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\FixedSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\FixedSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\FixedSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\FixedSeries.setup.json --json
+error: Domino/Blocks/FixedSeries.lean:16:42: Application type mismatch: The argument
+  h
+has type
+  (fun W => ⟨↑W, ⋯⟩) U = (fun W => ⟨↑W, ⋯⟩) V
+but is expected to have type
+  U = V
+in the application
+  congrArg Subtype.val h
+error: Domino/Blocks/FixedSeries.lean:29:4: 'change' tactic failed, pattern
+  ↑(Fintype.card (Grade (fun W => 2 * mass W) (2 * n))) = ↑(Fintype.card (Word n))
+is not definitionally equal to target
+  ↑(Fintype.card (Grade (fun W => 2 * mass W) (2 * n))) = (coeff n) wordSeries
+error: Domino/Blocks/FixedSeries.lean:39:55: Application type mismatch: The argument
+  h
+has type
+  (fun c => ⟨↑↑c, ⋯⟩) c = (fun c => ⟨↑↑c, ⋯⟩) d
+but is expected to have type
+  ↑c = ↑d
+in the application
+  congrArg Subtype.val h
+error: Domino/Blocks/FixedSeries.lean:51:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  1 + gradedSeries weight
+in the target expression
+  centerSeries false = 1 + letterSeries
+
+⊢ centerSeries false = 1 + letterSeries
+error: Domino/Blocks/FixedSeries.lean:80:49: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  centerMass ↑?c
+in the target expression
+  (fun c => centerMass ↑c) (centerTrueEquiv.symm ↑i) = n
+
+n : ℕ
+i : { i // ↑i = n }
+⊢ (fun c => centerMass ↑c) (centerTrueEquiv.symm ↑i) = n
+error: Domino/Blocks/FixedSeries.lean:88:2: `simp` made no progress
+warning: Domino/Blocks/FixedSeries.lean:87:34: This simp argument is unused:
+  Fin.sum_univ_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.card_subtype, Fin.sum_univ_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Blocks/FixedSeries.lean:87:52: This simp argument is unused:
+  Fin.sum_univ_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.card_subtype, Fin.sum_univ_succ] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Blocks/FixedSeries.lean:98:2: mod_cast has type
+  Fintype.card (PalWord b n) = @Fintype.card (HalfData b n) (halfDataFintype b n)
+but is expected to have type
+  Fintype.card (PalWord b n) =
+    @Fintype.card (Grade (fun p => 2 * mass p.1 + centerMass ↑p.2) n)
+      (pairGradeFintype (fun W => 2 * mass W) (fun c => centerMass ↑c) n)
+error: Domino/Blocks/FixedSeries.lean:103:54: unsolved goals
+n : ℕ
+W : Word n
+⊢ (List.map (twist false) ↑W).reverse = ↑W ↔ (↑W).reverse = ↑W
+error: Domino/Blocks/FixedSeries.lean:104:54: unsolved goals
+n : ℕ
+W : Word n
+⊢ (List.map (twist true) ↑W).reverse = ↑W ↔ (List.map flip ↑W).reverse = ↑W
+warning: Domino/Blocks/FixedSeries.lean:103:70: This simp argument is unused:
+  twist
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [mirror, vWord, Subtype.ext_iff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Blocks/FixedSeries.lean:104:70: This simp argument is unused:
+  twist
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [mirror, rWord, hWord, vWord, Subtype.ext_iff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Blocks/FixedSeries.lean:109:17: failed to synthesize instance of type class
+  Fintype ↑(MulAction.fixedBy (Tiling 3 (2 * n)) (axialSymmetry b))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Domino/Blocks/FixedSeries.lean:112:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  countSeries fun n => fixedCount 3 n (axialSymmetry false)
+in the target expression
+  (countSeries fun n => fixedCount 3 n vertical) = (1 + letterSeries) * doubleSeries wordSeries
+
+⊢ (countSeries fun n => fixedCount 3 n vertical) = (1 + letterSeries) * doubleSeries wordSeries
+error: Domino/Blocks/FixedSeries.lean:115:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  countSeries fun n => fixedCount 3 n (axialSymmetry true)
+in the target expression
+  (countSeries fun n => fixedCount 3 n halfTurn) = (1 + X) * doubleSeries wordSeries
+
+⊢ (countSeries fun n => fixedCount 3 n halfTurn) = (1 + X) * doubleSeries wordSeries
+Some required targets logged failures:
+- Domino.Blocks.FixedSeries
+error: build failed

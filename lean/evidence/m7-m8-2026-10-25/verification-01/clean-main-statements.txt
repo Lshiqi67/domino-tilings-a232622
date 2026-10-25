@@ -1,0 +1,116 @@
+def Domino.symmetryKind : {n : ℕ} → Domino.Tiling 3 (2 * n) → Fin 5 :=
+fun {n} T =>
+  if Domino.horizontal • T = T then 0
+  else if Domino.vertical • T = T then 2 else if Domino.halfTurn • T = T then 3 else 4
+def Domino.symmetryOrbitCount : ℕ → Fin 5 → ℕ :=
+fun n t => Fintype.card (Domino.SymmetryOrbits n t)
+Domino.three_row_stabilizer_counting (n : ℕ) :
+  (∀ (t : Fin 5) (T : Domino.SymmetryTilings n t),
+      (∀ (g : Domino.RectangleSymmetry),
+          g ∈ MulAction.stabilizer Domino.RectangleSymmetry ↑T ↔ g ∈ Domino.stabilizerElements t) ∧
+        Nat.card ↑(MulAction.orbit Domino.RectangleSymmetry ↑T) = Domino.symmetryOrbitSize t) ∧
+    (∀ (t : Fin 5), Domino.symmetryOrbitSize t * Domino.symmetryOrbitCount n t = Domino.symmetryTilingCount n t) ∧
+      ∑ t, Domino.symmetryOrbitCount n t = Domino.a n
+Domino.symmetryTilingCount_formulas (n : ℕ) :
+  Domino.symmetryTilingCount n 0 = 1 ∧
+    Domino.symmetryTilingCount n 1 = 0 ∧
+      Domino.symmetryTilingCount n 2 = Domino.fixedCount 3 n Domino.vertical - 1 ∧
+        Domino.symmetryTilingCount n 3 = Domino.fixedCount 3 n Domino.halfTurn - 1 ∧
+          Domino.symmetryTilingCount n 4 =
+            Domino.ordinaryCount 3 n + 1 -
+              (Domino.fixedCount 3 n Domino.vertical + Domino.fixedCount 3 n Domino.halfTurn)
+Domino.symmetryOrbitCount_formulas (n : ℕ) :
+  Domino.symmetryOrbitCount n 0 = 1 ∧
+    Domino.symmetryOrbitCount n 1 = 0 ∧
+      Domino.symmetryOrbitCount n 2 = (Domino.fixedCount 3 n Domino.vertical - 1) / 2 ∧
+        Domino.symmetryOrbitCount n 3 = (Domino.fixedCount 3 n Domino.halfTurn - 1) / 2 ∧
+          Domino.symmetryOrbitCount n 4 =
+            (Domino.ordinaryCount 3 n + 1 -
+                (Domino.fixedCount 3 n Domino.vertical + Domino.fixedCount 3 n Domino.halfTurn)) /
+              4
+Domino.symmetry_type_divisibility (n : ℕ) :
+  2 ∣ Domino.fixedCount 3 n Domino.vertical - 1 ∧
+    2 ∣ Domino.fixedCount 3 n Domino.halfTurn - 1 ∧
+      4 ∣ Domino.ordinaryCount 3 n + 1 - (Domino.fixedCount 3 n Domino.vertical + Domino.fixedCount 3 n Domino.halfTurn)
+Domino.symmetry_orbit_zero :
+  Domino.symmetryOrbitCount 0 0 = 1 ∧
+    Domino.symmetryOrbitCount 0 1 = 0 ∧
+      Domino.symmetryOrbitCount 0 2 = 0 ∧ Domino.symmetryOrbitCount 0 3 = 0 ∧ Domino.symmetryOrbitCount 0 4 = 0
+Domino.symmetry_orbit_eight :
+  Domino.symmetryOrbitCount 8 0 = 1 ∧
+    Domino.symmetryOrbitCount 8 1 = 0 ∧
+      Domino.symmetryOrbitCount 8 2 = 132 ∧
+        Domino.symmetryOrbitCount 8 3 = 76 ∧ Domino.symmetryOrbitCount 8 4 = 7316 ∧ Domino.a 8 = 7525
+def Domino.General.Legal : {m : ℕ} → Domino.State m → Domino.State m → Prop :=
+fun {m} p q => Disjoint p q ∧ Nonempty (Domino.General.RowCover (p ∪ q))
+def Domino.General.evenRunScan : (ℕ → Bool) → Bool → ℕ → ℕ → Bool :=
+fun free pending a x => Nat.brecOn (motive := fun x => Bool → ℕ → Bool) x (Domino.General.evenRunScan._f free) pending a
+Domino.General.legal_iff_even_run_scan {m : ℕ} (p q : Domino.State m) :
+  Domino.General.Legal p q ↔
+    Disjoint p q ∧ Domino.General.evenRunScan (fun r => decide (r ∉ Finset.image Fin.val (p ∪ q))) false 0 m = true
+Domino.General.row_cover_unique {m : ℕ} (H : Domino.State m) (V W : Domino.General.RowCover H) : V = W
+Domino.General.partialTilingEquivPath {m : ℕ} (w : ℕ) (S : Domino.State m) :
+  Domino.PartialTiling m w S ≃ Domino.General.StatePath w S
+Domino.General.profile_count_matrix {m : ℕ} (w : ℕ) (S : Domino.State m) :
+  Domino.General.profileCount w S = (Domino.General.transferMatrix ^ w) ∅ S
+Domino.General.reflectionFixedEquivPartial {m : ℕ} (n : ℕ) :
+  { T // Domino.vertical • T = T } ≃ (S : Domino.State m) × Domino.PartialTiling m n S
+Domino.General.halfTurnFixedEquivPartial {m : ℕ} (n : ℕ) :
+  { T // Domino.halfTurn • T = T } ≃ (S : Domino.General.SymmetricTerminal m) × Domino.PartialTiling m n ↑S
+Domino.General.halfTurn_extension_iff {m n : ℕ} {S : Domino.State m} (P : Domino.PartialTiling m n S) :
+  (∃ T, ∀ k ≤ n, ((Domino.General.partialTilingEquivPath n S) P).state k = (Domino.General.tilingPath ↑T).state k) ↔
+    Domino.reverseState S = S
+Domino.General.horizontalFixedEquivTop (k n : ℕ) : { T // Domino.horizontal • T = T } ≃ Domino.Tiling k (2 * n)
+Domino.General.horizontal_restrict_top_bonds {k n : ℕ} (T : { T // Domino.horizontal • T = T })
+  (a c : Domino.Cell k (2 * n)) :
+  (a, c) ∈ Domino.coverBonds ((Domino.General.horizontalFixedEquivTop k n) T) ↔
+    (Domino.General.topCell a, Domino.General.topCell c) ∈ Domino.coverBonds ↑T
+Domino.General.odd_height_four_counts (k n : ℕ) :
+  4 * Domino.orbitCount (2 * k + 1) n =
+    (Domino.General.transferMatrix ^ (2 * n)) ∅ ∅ + (Domino.General.transferMatrix ^ (2 * n)) ∅ ∅ +
+        ∑ S, (Domino.General.transferMatrix ^ n) ∅ S +
+      ∑ S, (Domino.General.transferMatrix ^ n) ∅ ↑S
+def Domino.General.matrixPencil.{u_1} : {ι : Type u_1} → [DecidableEq ι] → Matrix ι ι ℚ → Matrix ι ι (Polynomial ℚ) :=
+fun {ι} [DecidableEq ι] M => 1 - Polynomial.X • M.map ⇑Polynomial.C
+Domino.General.matrix_geometric_left.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι ℚ) :
+  Domino.General.seriesPencil M * Domino.General.matrixSeries M = 1
+Domino.General.matrix_geometric_right.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι ℚ) :
+  Domino.General.matrixSeries M * Domino.General.seriesPencil M = 1
+Domino.General.matrix_geometric_constant.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι ℚ) :
+  (Domino.General.matrixSeries M).map ⇑(PowerSeries.coeff 0) = 1
+Domino.General.matrix_geometric_unique.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι ℚ)
+  (U : Matrix ι ι (PowerSeries ℚ)) (hU : Domino.General.seriesPencil M * U = 1) : U = Domino.General.matrixSeries M
+Domino.General.matrix_denominator_constant.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι ℚ) :
+  (Domino.General.matrixPencil M).det.coeff 0 = 1
+Domino.General.matrix_entry_denominator.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι ℚ) (i j : ι) :
+  ↑(Domino.General.matrixPencil M).det * Domino.General.matrixSeries M i j =
+    ↑((Domino.General.matrixPencil M).adjugate i j)
+def Domino.General.orbitSeries : ℕ → PowerSeries ℚ :=
+fun k => Domino.countSeries (Domino.orbitCount (2 * k + 1))
+def Domino.General.RationalSeries : PowerSeries ℚ → Prop :=
+fun F => ∃ P Q, Q.coeff 0 ≠ 0 ∧ ↑Q * F = ↑P
+Domino.General.orbit_matrix_series (k : ℕ) :
+  Domino.General.orbitSeries k =
+    PowerSeries.C (1 / 4) *
+      (Domino.General.matrixSeries (Domino.General.rationalTransfer (2 * k + 1) ^ 2) ∅ ∅ +
+            Domino.General.matrixSeries (Domino.General.rationalTransfer k ^ 2) ∅ ∅ +
+          ∑ S, Domino.General.matrixSeries (Domino.General.rationalTransfer (2 * k + 1)) ∅ S +
+        ∑ S, Domino.General.matrixSeries (Domino.General.rationalTransfer (2 * k + 1)) ∅ ↑S)
+Domino.General.odd_height_rational_witness (k : ℕ) :
+  ∃ P Q, Q.coeff 0 ≠ 0 ∧ ↑Q * Domino.countSeries (Domino.orbitCount (2 * k + 1)) = ↑P
+Domino.General.odd_height_eventual_recurrence (k : ℕ) :
+  ∃ d N c,
+    c 0 ≠ 0 ∧
+      ∀ (n : ℕ),
+        N ≤ n →
+          ↑(Domino.orbitCount (2 * k + 1) (n + d)) =
+            -(c 0)⁻¹ * ∑ i ∈ Finset.range d, c (i + 1) * ↑(Domino.orbitCount (2 * k + 1) (n + d - (i + 1)))
+Domino.General.zero_height_transfer : Domino.General.transferMatrix = 1
+Domino.General.orbit_one_row (n : ℕ) : Domino.orbitCount 1 n = 1
+Domino.General.odd_height_empty (k : ℕ) : Domino.orbitCount (2 * k + 1) 0 = 1
+Domino.General.odd_height_main (k n : ℕ) :
+  4 * Domino.orbitCount (2 * k + 1) n =
+      (Domino.General.transferMatrix ^ (2 * n)) ∅ ∅ + (Domino.General.transferMatrix ^ (2 * n)) ∅ ∅ +
+          ∑ S, (Domino.General.transferMatrix ^ n) ∅ S +
+        ∑ S, (Domino.General.transferMatrix ^ n) ∅ ↑S ∧
+    Domino.General.RationalSeries (Domino.General.orbitSeries k)

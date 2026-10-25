@@ -1,0 +1,81 @@
+✔ [3218/3220] Built Domino.Asymptotics.Sampling (20s)
+✔ [3219/3220] Built Domino.Asymptotics.ClosedForm (21s)
+✖ [3220/3220] Building Domino.Asymptotics.ParityLimits (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\ParityLimits.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ParityLimits.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ParityLimits.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ParityLimits.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ParityLimits.setup.json --json
+warning: Domino/Asymptotics/ParityLimits.lean:59:2: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Asymptotics/ParityLimits.lean:59:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Domino/Asymptotics/ParityLimits.lean:67:2: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Asymptotics/ParityLimits.lean:67:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: Domino/Asymptotics/ParityLimits.lean:81:16: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+error: Domino/Asymptotics/ParityLimits.lean:80:71: unsolved goals
+hs : Tendsto (fun j => d (j + 1) / growth ^ (j + 1)) atTop (𝓝 leading)
+he : Tendsto (fun j => d (2 * j) / growth ^ (2 * j)) atTop (𝓝 leading)
+h :
+  Tendsto
+    ((fun x => growth * (d (x + 1) / growth ^ (x + 1)) - d x / growth ^ x - (growth ^ x)⁻¹) / fun j =>
+      d (2 * j) / growth ^ (2 * j))
+    atTop (𝓝 ((growth * leading - leading - 0) / leading))
+⊢ leading * growth * leading⁻¹ - leading * leading⁻¹ = -1 + growth
+error: Domino/Asymptotics/ParityLimits.lean:82:2: Type mismatch: After simplification, term
+  h
+ has type
+  Tendsto
+    ((fun x => growth * (d (x + 1) / growth ^ (x + 1)) - d x / growth ^ x - (growth ^ x)⁻¹) / fun j =>
+      d (2 * j) / growth ^ (2 * j))
+    atTop (𝓝 (growth - 1))
+but is expected to have type
+  Tendsto (fun j => tilingProbability (2 * j) * growth ^ j) atTop (𝓝 (growth - 1))
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instAdd ↦ 2
+info: Domino/Asymptotics/ParityLimits.lean:93:16: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+error: Domino/Asymptotics/ParityLimits.lean:92:93: unsolved goals
+hs : Tendsto (fun j => d (j + 1) / growth ^ (j + 1)) atTop (𝓝 leading)
+ho : Tendsto (fun j => d (2 * j + 1) / growth ^ (2 * j + 1)) atTop (𝓝 leading)
+h :
+  Tendsto
+    ((fun x => growth * (d (x + 1) / growth ^ (x + 1)) + d x / growth ^ x - (growth ^ x)⁻¹) / fun x =>
+      growth * (d (2 * x + 1) / growth ^ (2 * x + 1)))
+    atTop (𝓝 ((growth * leading + leading - 0) / (growth * leading)))
+⊢ leading * growth * leading⁻¹ * growth⁻¹ + leading * leading⁻¹ * growth⁻¹ = growth * growth⁻¹ + growth⁻¹
+error: Domino/Asymptotics/ParityLimits.lean:94:2: Type mismatch: After simplification, term
+  h
+ has type
+  Tendsto
+    ((fun x => growth * (d (x + 1) / growth ^ (x + 1)) + d x / growth ^ x - (growth ^ x)⁻¹) / fun x =>
+      growth * (d (2 * x + 1) / growth ^ (2 * x + 1)))
+    atTop (𝓝 ((growth + 1) / growth))
+but is expected to have type
+  Tendsto (fun j => tilingProbability (2 * j + 1) * growth ^ j) atTop (𝓝 ((growth + 1) / growth))
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instAdd ↦ 2
+error: Domino/Asymptotics/ParityLimits.lean:105:54: failed to prove positivity/nonnegativity/nonzeroness
+error: Domino/Asymptotics/ParityLimits.lean:107:2: Type mismatch: After simplification, term
+  h
+ has type
+  Tendsto (fun a => growth * (growth ^ a * ((growth + 1)⁻¹ * tilingProbability (a * 2 + 1)))) atTop
+    (𝓝 (growth * (growth⁻¹ * ((growth + 1) * (growth + 1)⁻¹))))
+but is expected to have type
+  Tendsto (fun j => growth * (growth ^ j * ((growth + 1)⁻¹ * tilingProbability (j * 2 + 1)))) atTop (𝓝 1)
+Some required targets logged failures:
+- Domino.Asymptotics.ParityLimits
+error: build failed

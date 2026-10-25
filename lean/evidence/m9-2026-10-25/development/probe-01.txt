@@ -1,0 +1,10 @@
+Domino.FiveRows.evenLift : Matrix (Fin 32) (Fin 6) ℕ
+evenLift 0 0 : ℕ
+instDecidableEqNat (evenLift 0 0) 1
+Nat.decidableForallFin fun i => evenLift 0 i = 1
+[diag] Diagnostics
+  [reduction] unfolded reducible declarations (max: 32, num: 1):
+    [reduction] DecidablePred ↦ 32
+  use `set_option diagnostics.threshold <num>` to control threshold for reporting counters
+checks/m9-2026-10-25/Probe.lean:59:0: error: failed to synthesize
+  Decidable (∀ (i : Fin 6) (p : Fin 32) (j : Fin 6), p ∈ evenClass i → evenLift p j = if i = j then 1 else 0)

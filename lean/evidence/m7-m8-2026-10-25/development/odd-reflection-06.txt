@@ -1,0 +1,43 @@
+✖ [3158/3160] Building Domino.OddHeight.Transpose (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\Transpose.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Transpose.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Transpose.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Transpose.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Transpose.setup.json --json
+error: Domino/OddHeight/Transpose.lean:53:2: `simp` made no progress
+error: Domino/OddHeight/Transpose.lean:75:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  vertical • transposeTiling ?T
+in the target expression
+  horizontal • T = T ↔ vertical • (transposeTilingEquiv m w) T = (transposeTilingEquiv m w) T
+
+m w : ℕ
+T : Tiling m w
+⊢ horizontal • T = T ↔ vertical • (transposeTilingEquiv m w) T = (transposeTilingEquiv m w) T
+error: Domino/OddHeight/Transpose.lean:72:18: (kernel) declaration has metavariables 'Domino.General.horizontalFixedTransposeEquiv'
+✖ [3159/3160] Building Domino.OddHeight.EvenColumn (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\EvenColumn.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\EvenColumn.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\EvenColumn.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\EvenColumn.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\EvenColumn.setup.json --json
+error: Domino/OddHeight/EvenColumn.lean:18:4: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 0
+  b ≥ 0
+  2*b - c ≥ 1
+  a ≥ 0
+  a - b ≤ -1
+  2*a - c ≥ 2
+where
+ a := ↑↑r / 2
+ b := ↑n
+ c := ↑↑⟨↑r + 1, ⋯⟩
+error: Domino/OddHeight/EvenColumn.lean:19:4: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 0
+  b ≥ 0
+  b - c ≥ 1
+  a ≥ 0
+  a - 2*b ≤ -1
+  a - 2*c ≤ -1
+where
+ a := ↑↑⟨↑r - 1, ⋯⟩
+ b := ↑n
+ c := ↑↑r / 2
+error: Domino/OddHeight/EvenColumn.lean:28:4: `dsimp` made no progress
+Some required targets logged failures:
+- Domino.OddHeight.Transpose
+- Domino.OddHeight.EvenColumn
+error: build failed

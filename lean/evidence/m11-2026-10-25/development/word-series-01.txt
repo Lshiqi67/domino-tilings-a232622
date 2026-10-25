@@ -1,0 +1,64 @@
+✖ [3204/3204] Building Domino.Blocks.WordSeries (35s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\WordSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\WordSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\WordSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\WordSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\WordSeries.setup.json --json
+error: Domino/Blocks/WordSeries.lean:31:14: unsolved goals
+case arm
+n : ℕ
+b : Bool
+k : ℕ
+h : weight (Letter.arm b k) = n + 1
+this : k = n
+⊢ (fun x =>
+        match x with
+        | Sum.inl u => ⟨Letter.c, ⋯⟩
+        | Sum.inr b => ⟨Letter.arm b n, ⋯⟩)
+      ((fun a =>
+          match a with
+          | ⟨Letter.c, h⟩ => Sum.inl ⟨(), ⋯⟩
+          | ⟨Letter.arm b extra, property⟩ => Sum.inr b)
+        ⟨Letter.arm b k, h⟩) =
+    ⟨Letter.arm b k, h⟩
+error: build failed
+error: Domino/Blocks/WordSeries.lean:20:77: could not synthesize default value for field 'right_inv' of 'Equiv' using tactics
+error: Domino/Blocks/WordSeries.lean:20:77: No applicable extensionality theorem found for type
+  { _u // n = 0 } ⊕ Bool
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+error: Domino/Blocks/WordSeries.lean:20:4: (kernel) declaration has metavariables 'Domino.Blocks.letterSuccEquiv'
+error: Domino/Blocks/WordSeries.lean:32:18: unexpected identifier; expected command
+warning: Domino/Blocks/WordSeries.lean:37:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Domino/Blocks/WordSeries.lean:49:66: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [letterSeries]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: Domino/Blocks/WordSeries.lean:56:2: unsolved goals
+case zero
+⊢ constantCoeff letterSeries = 0
+error: Domino/Blocks/WordSeries.lean:58:2: unsolved goals
+case succ.succ
+n : ℕ
+⊢ 2 - (coeff (n + 1)) letterSeries = 3 * (coeff (n + 1 + 1)) X - if n = 0 then 1 else 0
+warning: Domino/Blocks/WordSeries.lean:58:35: This simp argument is unused:
+  show n + 2 ≠ 1 by omega
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_mul, coeff_succ_X_mul, show n + 2 ≠ 0 by omega]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Blocks/WordSeries.lean:58:55: This simp argument is unused:
+  show n + 2 ≠ 0 by omega
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_mul, coeff_succ_X_mul, show n + 2 ≠ 1 by omega]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Blocks.WordSeries

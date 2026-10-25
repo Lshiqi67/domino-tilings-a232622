@@ -1,0 +1,25 @@
+Nat.decidableForallFin fun i => ∀ (p : Fin 32) (j : Fin 6), True
+checks/m9-2026-10-25/Probe.lean:54:21: warning: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+checks/m9-2026-10-25/Probe.lean:54:33: warning: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+checks/m9-2026-10-25/Probe.lean:54:46: warning: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+checks/m9-2026-10-25/Probe.lean:55:0: error: failed to synthesize
+  Decidable (∀ (i : Fin 6) (p : Fin 32) (j : Fin 6), evenLift p j = if i = j then 1 else 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Nat.decidableForallFin fun i => ∀ p ∈ evenClass i, evenLift p 0 = 1
+Nat.decidableForallFin fun i => ∀ p ∈ evenClass i, evenLift p 0 = 1

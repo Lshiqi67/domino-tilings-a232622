@@ -1,0 +1,164 @@
+✔ [3155/3156] Built Domino.Blocks.Symmetry (19s)
+✖ [3156/3156] Building Domino.Blocks.Palindromes (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Palindromes.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Palindromes.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Palindromes.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Palindromes.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Palindromes.setup.json --json
+error: Domino/Blocks/Palindromes.lean:37:71: unsolved goals
+c : Option Letter
+⊢ List.map (twist false) c.toList = c.toList
+warning: Domino/Blocks/Palindromes.lean:37:89: This simp argument is unused:
+  twist
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [CenterOK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Blocks/Palindromes.lean:41:58: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [CenterOK, mirror]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: Domino/Blocks/Palindromes.lean:51:25: unsolved goals
+case cons_append
+b : Bool
+a : Letter
+L : List Letter
+z : Letter
+ih : mirror b L = L → ∃ U c, CenterOK b c ∧ assemble b U c = L
+h : mirror b (a :: (L ++ [z])) = a :: (L ++ [z])
+hh : twist b z :: (mirror b L ++ [twist b a]) = a :: (L ++ [z])
+hza : twist b z = a
+haz : twist b a = z
+hm : mirror b L = L
+U : List Letter
+c : Option Letter
+hc : CenterOK b c
+he : assemble b U c = L
+⊢ a :: (U ++ c.toList ++ (mirror b U ++ [z])) = a :: (assemble b U c ++ [z])
+error: Domino/Blocks/Palindromes.lean:76:35: don't know how to synthesize implicit argument `bs`
+  @List.append_cancel_right Letter c.toList ?m.171 d.toList
+    (List.append_cancel_left
+      (Eq.mpr
+        (id
+          (Eq.trans (List.append_cancel_left_eq ?m.174 (c.toList ++ ?m.171) (d.toList ++ ?m.171))
+            (List.append_cancel_right_eq c.toList ?m.171 d.toList)))
+        (Eq.mp
+          (Eq.trans
+            (Eq.trans
+              (congr (congrArg Eq (List.append_assoc U c.toList (mirror b U)))
+                (List.append_assoc U d.toList (mirror b U)))
+              (List.append_cancel_left_eq U (c.toList ++ mirror b U) (d.toList ++ mirror b U)))
+            (List.append_cancel_right_eq c.toList (mirror b U) d.toList))
+          h)))
+context:
+b : Bool
+U : List Letter
+c d : Option Letter
+hc : c.toList.length ≤ 1
+hd : d.toList.length ≤ 1
+h : (fun p => assemble b p.1 p.2) (U, c) = (fun p => assemble b p.1 p.2) (U, d)
+hl : U.length + c.toList.length + U.length = U.length + d.toList.length + U.length
+huv : U.length = U.length
+ht :
+  List.take U.length ((fun p => assemble b p.1 p.2) (U, c)) = List.take U.length ((fun p => assemble b p.1 p.2) (U, d))
+⊢ List Letter
+error: Domino/Blocks/Palindromes.lean:76:61: don't know how to synthesize implicit argument `cs`
+  @List.append_cancel_left Letter ?m.174 (c.toList ++ ?m.171) (d.toList ++ ?m.171)
+    (Eq.mpr
+      (id
+        (Eq.trans (List.append_cancel_left_eq ?m.174 (c.toList ++ ?m.171) (d.toList ++ ?m.171))
+          (List.append_cancel_right_eq c.toList ?m.171 d.toList)))
+      (Eq.mp
+        (Eq.trans
+          (Eq.trans
+            (congr (congrArg Eq (List.append_assoc U c.toList (mirror b U)))
+              (List.append_assoc U d.toList (mirror b U)))
+            (List.append_cancel_left_eq U (c.toList ++ mirror b U) (d.toList ++ mirror b U)))
+          (List.append_cancel_right_eq c.toList (mirror b U) d.toList))
+        h))
+context:
+b : Bool
+U : List Letter
+c d : Option Letter
+hc : c.toList.length ≤ 1
+hd : d.toList.length ≤ 1
+h : (fun p => assemble b p.1 p.2) (U, c) = (fun p => assemble b p.1 p.2) (U, d)
+hl : U.length + c.toList.length + U.length = U.length + d.toList.length + U.length
+huv : U.length = U.length
+ht :
+  List.take U.length ((fun p => assemble b p.1 p.2) (U, c)) = List.take U.length ((fun p => assemble b p.1 p.2) (U, d))
+⊢ List Letter
+error: Domino/Blocks/Palindromes.lean:76:61: don't know how to synthesize implicit argument `bs`
+  @List.append_cancel_left Letter ?m.174 (c.toList ++ ?m.171) (d.toList ++ ?m.171)
+    (Eq.mpr
+      (id
+        (Eq.trans (List.append_cancel_left_eq ?m.174 (c.toList ++ ?m.171) (d.toList ++ ?m.171))
+          (List.append_cancel_right_eq c.toList ?m.171 d.toList)))
+      (Eq.mp
+        (Eq.trans
+          (Eq.trans
+            (congr (congrArg Eq (List.append_assoc U c.toList (mirror b U)))
+              (List.append_assoc U d.toList (mirror b U)))
+            (List.append_cancel_left_eq U (c.toList ++ mirror b U) (d.toList ++ mirror b U)))
+          (List.append_cancel_right_eq c.toList (mirror b U) d.toList))
+        h))
+context:
+b : Bool
+U : List Letter
+c d : Option Letter
+hc : c.toList.length ≤ 1
+hd : d.toList.length ≤ 1
+h : (fun p => assemble b p.1 p.2) (U, c) = (fun p => assemble b p.1 p.2) (U, d)
+hl : U.length + c.toList.length + U.length = U.length + d.toList.length + U.length
+huv : U.length = U.length
+ht :
+  List.take U.length ((fun p => assemble b p.1 p.2) (U, c)) = List.take U.length ((fun p => assemble b p.1 p.2) (U, d))
+⊢ List Letter
+error: Domino/Blocks/Palindromes.lean:76:61: don't know how to synthesize implicit argument `as`
+  @List.append_cancel_left Letter ?m.174 (c.toList ++ ?m.171) (d.toList ++ ?m.171)
+    (Eq.mpr
+      (id
+        (Eq.trans (List.append_cancel_left_eq ?m.174 (c.toList ++ ?m.171) (d.toList ++ ?m.171))
+          (List.append_cancel_right_eq c.toList ?m.171 d.toList)))
+      (Eq.mp
+        (Eq.trans
+          (Eq.trans
+            (congr (congrArg Eq (List.append_assoc U c.toList (mirror b U)))
+              (List.append_assoc U d.toList (mirror b U)))
+            (List.append_cancel_left_eq U (c.toList ++ mirror b U) (d.toList ++ mirror b U)))
+          (List.append_cancel_right_eq c.toList (mirror b U) d.toList))
+        h))
+context:
+b : Bool
+U : List Letter
+c d : Option Letter
+hc : c.toList.length ≤ 1
+hd : d.toList.length ≤ 1
+h : (fun p => assemble b p.1 p.2) (U, c) = (fun p => assemble b p.1 p.2) (U, d)
+hl : U.length + c.toList.length + U.length = U.length + d.toList.length + U.length
+huv : U.length = U.length
+ht :
+  List.take U.length ((fun p => assemble b p.1 p.2) (U, c)) = List.take U.length ((fun p => assemble b p.1 p.2) (U, d))
+⊢ List Letter
+error: Domino/Blocks/Palindromes.lean:66:86: unsolved goals
+b : Bool
+U : List Letter
+c d : Option Letter
+hc : c.toList.length ≤ 1
+hd : d.toList.length ≤ 1
+h : (fun p => assemble b p.1 p.2) (U, c) = (fun p => assemble b p.1 p.2) (U, d)
+hl : U.length + c.toList.length + U.length = U.length + d.toList.length + U.length
+huv : U.length = U.length
+ht :
+  List.take U.length ((fun p => assemble b p.1 p.2) (U, c)) = List.take U.length ((fun p => assemble b p.1 p.2) (U, d))
+⊢ (U, c) = (U, d)
+error: Domino/Blocks/Palindromes.lean:97:36: Application type mismatch: The argument
+  congrArg (fun W => ↑↑W) h
+has type
+  ↑↑(assembleHalf p) = ↑↑(assembleHalf q)
+but is expected to have type
+  (fun p => assemble b p.1 p.2) ?m.15 = (fun p => assemble b p.1 p.2) ?m.16
+in the application
+  assemble_injective b (congrArg (fun W => ↑↑W) h)
+Some required targets logged failures:
+- Domino.Blocks.Palindromes
+error: build failed

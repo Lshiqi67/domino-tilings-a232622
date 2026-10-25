@@ -1,0 +1,174 @@
+@[reducible] def Domino.FiveRows.a5 : ℕ → ℕ :=
+fun n => Domino.orbitCount 5 n
+def Domino.FiveRows.orbitSeries : PowerSeries ℚ :=
+Domino.countSeries Domino.FiveRows.a5
+def Domino.FiveRows.evenClass : Fin 6 → Finset (Fin 32) :=
+![{0}, {3, 24}, {6, 12}, {9, 18}, {15, 30}, {27}]
+def Domino.FiveRows.oddClass : Fin 6 → Finset (Fin 32) :=
+![{1, 16}, {4}, {7, 28}, {13, 22}, {19, 25}, {31}]
+Domino.FiveRows.encoded_transfer_eq (m : ℕ) (p q : Fin (2 ^ m)) :
+  Domino.General.transfer (Domino.FiveRows.maskState m p) (Domino.FiveRows.maskState m q) =
+    Domino.FiveRows.encodedTransfer m q p
+Domino.FiveRows.encoded_transfer_reverse (m : ℕ) (p q : Domino.State m) :
+  Domino.General.transfer (Domino.reverseState p) (Domino.reverseState q) = Domino.General.transfer p q
+Domino.FiveRows.support_cards : Domino.FiveRows.evenSupport.card = 10 ∧ Domino.FiveRows.oddSupport.card = 10
+Domino.FiveRows.support_closed :
+  (∀ (p : Fin 32) (q : Fin (2 ^ 5)),
+      p ∈ Domino.FiveRows.evenSupport → Domino.FiveRows.encodedTransfer 5 q p ≠ 0 → q ∈ Domino.FiveRows.oddSupport) ∧
+    ∀ (p : Fin 32) (q : Fin (2 ^ 5)),
+      p ∈ Domino.FiveRows.oddSupport → Domino.FiveRows.encodedTransfer 5 q p ≠ 0 → q ∈ Domino.FiveRows.evenSupport
+Domino.FiveRows.even_reachable_iff (p : Fin 32) :
+  (∃ n, 0 < Domino.FiveRows.profile 5 (2 * n) p) ↔ p ∈ Domino.FiveRows.evenSupport
+Domino.FiveRows.odd_reachable_iff (p : Fin 32) :
+  (∃ n, 0 < Domino.FiveRows.profile 5 (2 * n + 1) p) ↔ p ∈ Domino.FiveRows.oddSupport
+Domino.FiveRows.classes_are_reverse_orbits :
+  (∀ (i : Fin 6) (p q : Fin 32),
+      p ∈ Domino.FiveRows.evenClass i →
+        q ∈ Domino.FiveRows.evenClass i →
+          Domino.FiveRows.maskState 5 q = Domino.FiveRows.maskState 5 p ∨
+            Domino.FiveRows.maskState 5 q = Domino.reverseState (Domino.FiveRows.maskState 5 p)) ∧
+    ∀ (i : Fin 6) (p q : Fin 32),
+      p ∈ Domino.FiveRows.oddClass i →
+        q ∈ Domino.FiveRows.oddClass i →
+          Domino.FiveRows.maskState 5 q = Domino.FiveRows.maskState 5 p ∨
+            Domino.FiveRows.maskState 5 q = Domino.reverseState (Domino.FiveRows.maskState 5 p)
+Domino.FiveRows.profile_reverse (n : ℕ) (p q : Fin 32)
+  (h : Domino.FiveRows.maskState 5 q = Domino.reverseState (Domino.FiveRows.maskState 5 p)) :
+  Domino.FiveRows.profile 5 n q = Domino.FiveRows.profile 5 n p
+Domino.FiveRows.compressed_is_single_state_count (n : ℕ) (i : Fin 6) (p : Fin 32)
+  (hp : p ∈ Domino.FiveRows.evenClass i) : Domino.FiveRows.profile 5 (2 * n) p = Domino.FiveRows.compressed n i
+Domino.FiveRows.compressed_odd_is_single_state_count (n : ℕ) (i : Fin 6) (p : Fin 32)
+  (hp : p ∈ Domino.FiveRows.oddClass i) :
+  Domino.FiveRows.profile 5 (2 * n + 1) p = Domino.FiveRows.matrixB.mulVec (Domino.FiveRows.compressed n) i
+Domino.FiveRows.matrix_CB : Domino.FiveRows.matrixC * Domino.FiveRows.matrixB = Domino.FiveRows.matrixM
+Domino.FiveRows.transfer_even_lift :
+  Domino.FiveRows.encodedTransfer 5 * Domino.FiveRows.evenLift = Domino.FiveRows.oddLift * Domino.FiveRows.matrixB
+Domino.FiveRows.transfer_odd_lift :
+  Domino.FiveRows.encodedTransfer 5 * Domino.FiveRows.oddLift = Domino.FiveRows.evenLift * Domino.FiveRows.matrixC
+Domino.FiveRows.terminal_weights :
+  Matrix.vecMul (fun x => 1) Domino.FiveRows.evenLift = Domino.FiveRows.weightVE ∧
+    Matrix.vecMul (Matrix.vecMul (fun x => 1) Domino.FiveRows.oddLift) Domino.FiveRows.matrixB =
+        Domino.FiveRows.weightVO ∧
+      Matrix.vecMul Domino.FiveRows.fixedWeight Domino.FiveRows.evenLift = Domino.FiveRows.weightRE ∧
+        Matrix.vecMul (Matrix.vecMul Domino.FiveRows.fixedWeight Domino.FiveRows.oddLift) Domino.FiveRows.matrixB =
+          Domino.FiveRows.weightRO
+Domino.FiveRows.ordinary_compressed (n : ℕ) : Domino.ordinaryCount 5 n = Domino.FiveRows.compressed n 0
+Domino.FiveRows.fixed_counts_compressed (n : ℕ) :
+  Domino.fixedCount 5 (2 * n) Domino.vertical = Domino.FiveRows.weightVE ⬝ᵥ Domino.FiveRows.compressed n ∧
+    Domino.fixedCount 5 (2 * n + 1) Domino.vertical = Domino.FiveRows.weightVO ⬝ᵥ Domino.FiveRows.compressed n ∧
+      Domino.fixedCount 5 (2 * n) Domino.halfTurn = Domino.FiveRows.weightRE ⬝ᵥ Domino.FiveRows.compressed n ∧
+        Domino.fixedCount 5 (2 * n + 1) Domino.halfTurn = Domino.FiveRows.weightRO ⬝ᵥ Domino.FiveRows.compressed n
+Domino.FiveRows.polynomial_certificate :
+  (1 - Polynomial.X • Domino.FiveRows.matrixM.map fun a => ↑a).mulVec (Domino.FiveRows.numeratorColumn Polynomial.X) =
+    Domino.FiveRows.denominatorP Polynomial.X • fun i => ↑(Domino.FiveRows.initial i)
+Domino.FiveRows.vector_series_certificate {d : ℕ} (M : Matrix (Fin d) (Fin d) ℕ) (u : ℕ → Fin d → ℕ)
+  (hu : ∀ (n : ℕ), u (n + 1) = M.mulVec (u n)) (P : PowerSeries ℚ) (N : Fin d → PowerSeries ℚ)
+  (hc :
+    (Domino.General.seriesPencil (Domino.FiveRows.rationalMatrix M)).mulVec N = P • fun i => PowerSeries.C ↑(u 0 i)) :
+  P • Domino.FiveRows.vectorSeries u = N
+Domino.FiveRows.compressed_series_identity (i : Fin 6) :
+  Domino.FiveRows.denominatorP PowerSeries.X * Domino.FiveRows.vectorSeries Domino.FiveRows.compressed i =
+    Domino.FiveRows.numeratorColumn PowerSeries.X i
+Domino.FiveRows.two_ordinary (n : ℕ) : Domino.ordinaryCount 2 n = Domino.FiveRows.twoCompressed n 0
+Domino.FiveRows.two_series_identity :
+  Domino.FiveRows.denominatorH PowerSeries.X * Domino.countSeries (Domino.ordinaryCount 2) = 1 - PowerSeries.X
+Domino.FiveRows.ordinary_series_identity :
+  Domino.FiveRows.denominatorP PowerSeries.X * Domino.FiveRows.ordinarySeries =
+    1 - 7 * PowerSeries.X + 7 * PowerSeries.X ^ 2 - PowerSeries.X ^ 3
+Domino.FiveRows.fixed_series_identities :
+  Domino.FiveRows.denominatorH PowerSeries.X * Domino.FiveRows.horizontalSeries = 1 - PowerSeries.X ∧
+    Domino.FiveRows.denominatorP (PowerSeries.X ^ 2) * Domino.FiveRows.verticalSeries =
+        Domino.FiveRows.numeratorV PowerSeries.X ∧
+      Domino.FiveRows.denominatorP (PowerSeries.X ^ 2) * Domino.FiveRows.halfTurnSeries =
+        Domino.FiveRows.numeratorR PowerSeries.X
+def Domino.FiveRows.denominatorQ.{u_1} : {R : Type u_1} → [Ring R] → R → R :=
+fun {R} [Ring R] t =>
+  Domino.FiveRows.denominatorH t * Domino.FiveRows.denominatorP t * Domino.FiveRows.denominatorP (t ^ 2)
+def Domino.FiveRows.numeratorA.{u_1} : {R : Type u_1} → [Ring R] → R → R :=
+fun {R} [Ring R] t =>
+  1 - 13 * t + 6 * t ^ 2 + 194 * t ^ 3 - 365 * t ^ 4 - 371 * t ^ 5 + 1304 * t ^ 6 - 594 * t ^ 7 - 703 * t ^ 8 +
+            717 * t ^ 9 -
+          154 * t ^ 10 -
+        36 * t ^ 11 +
+      15 * t ^ 12 -
+    t ^ 13
+Domino.FiveRows.denominator_expanded.{u_1} {R : Type u_1} [CommRing R] (t : R) :
+  Domino.FiveRows.denominatorQ t =
+    1 - 18 * t + 63 * t ^ 2 + 144 * t ^ 3 - 1060 * t ^ 4 + 1296 * t ^ 5 + 1312 * t ^ 6 - 3492 * t ^ 7 + 1312 * t ^ 8 +
+                1296 * t ^ 9 -
+              1060 * t ^ 10 +
+            144 * t ^ 11 +
+          63 * t ^ 12 -
+        18 * t ^ 13 +
+      t ^ 14
+Domino.FiveRows.denominator_isUnit : IsUnit (Domino.FiveRows.denominatorQ PowerSeries.X)
+Domino.FiveRows.burnside_series_identity :
+  4 * Domino.FiveRows.orbitSeries =
+    Domino.FiveRows.ordinarySeries + Domino.FiveRows.horizontalSeries + Domino.FiveRows.verticalSeries +
+      Domino.FiveRows.halfTurnSeries
+Domino.FiveRows.orbit_series_identity :
+  Domino.FiveRows.denominatorQ PowerSeries.X * Domino.FiveRows.orbitSeries = Domino.FiveRows.numeratorA PowerSeries.X
+Domino.FiveRows.orbit_series_rational :
+  Domino.FiveRows.orbitSeries =
+    Domino.FiveRows.numeratorA PowerSeries.X * (Domino.FiveRows.denominatorQ PowerSeries.X)⁻¹
+Domino.FiveRows.orbit_recurrence_fourteen (n : ℕ) :
+  ↑(Domino.FiveRows.a5 (n + 14)) =
+    18 * ↑(Domino.FiveRows.a5 (n + 13)) - 63 * ↑(Domino.FiveRows.a5 (n + 12)) - 144 * ↑(Domino.FiveRows.a5 (n + 11)) +
+                          1060 * ↑(Domino.FiveRows.a5 (n + 10)) -
+                        1296 * ↑(Domino.FiveRows.a5 (n + 9)) -
+                      1312 * ↑(Domino.FiveRows.a5 (n + 8)) +
+                    3492 * ↑(Domino.FiveRows.a5 (n + 7)) -
+                  1312 * ↑(Domino.FiveRows.a5 (n + 6)) -
+                1296 * ↑(Domino.FiveRows.a5 (n + 5)) +
+              1060 * ↑(Domino.FiveRows.a5 (n + 4)) -
+            144 * ↑(Domino.FiveRows.a5 (n + 3)) -
+          63 * ↑(Domino.FiveRows.a5 (n + 2)) +
+        18 * ↑(Domino.FiveRows.a5 (n + 1)) -
+      ↑(Domino.FiveRows.a5 n)
+Domino.FiveRows.orbit_initial_values :
+  Domino.FiveRows.a5 0 = 1 ∧
+    Domino.FiveRows.a5 1 = 5 ∧
+      Domino.FiveRows.a5 2 = 33 ∧
+        Domino.FiveRows.a5 3 = 329 ∧
+          Domino.FiveRows.a5 4 = 3818 ∧
+            Domino.FiveRows.a5 5 = 46878 ∧
+              Domino.FiveRows.a5 6 = 584386 ∧
+                Domino.FiveRows.a5 7 = 7318152 ∧
+                  Domino.FiveRows.a5 8 = 91752831 ∧
+                    Domino.FiveRows.a5 9 = 1150774799 ∧
+                      Domino.FiveRows.a5 10 = 14434490195 ∧
+                        Domino.FiveRows.a5 11 = 181060839597 ∧
+                          Domino.FiveRows.a5 12 = 2271175917429 ∧ Domino.FiveRows.a5 13 = 28489049801109
+Domino.FiveRows.orbit_recurrence_first : Domino.FiveRows.a5 14 = 357359559989069
+Domino.FiveRows.five_row_main_theorem :
+  Domino.FiveRows.denominatorQ PowerSeries.X * Domino.FiveRows.orbitSeries = Domino.FiveRows.numeratorA PowerSeries.X ∧
+    Domino.FiveRows.orbitSeries =
+        Domino.FiveRows.numeratorA PowerSeries.X * (Domino.FiveRows.denominatorQ PowerSeries.X)⁻¹ ∧
+      (∀ (n : ℕ),
+          ↑(Domino.FiveRows.a5 (n + 14)) =
+            18 * ↑(Domino.FiveRows.a5 (n + 13)) - 63 * ↑(Domino.FiveRows.a5 (n + 12)) -
+                                    144 * ↑(Domino.FiveRows.a5 (n + 11)) +
+                                  1060 * ↑(Domino.FiveRows.a5 (n + 10)) -
+                                1296 * ↑(Domino.FiveRows.a5 (n + 9)) -
+                              1312 * ↑(Domino.FiveRows.a5 (n + 8)) +
+                            3492 * ↑(Domino.FiveRows.a5 (n + 7)) -
+                          1312 * ↑(Domino.FiveRows.a5 (n + 6)) -
+                        1296 * ↑(Domino.FiveRows.a5 (n + 5)) +
+                      1060 * ↑(Domino.FiveRows.a5 (n + 4)) -
+                    144 * ↑(Domino.FiveRows.a5 (n + 3)) -
+                  63 * ↑(Domino.FiveRows.a5 (n + 2)) +
+                18 * ↑(Domino.FiveRows.a5 (n + 1)) -
+              ↑(Domino.FiveRows.a5 n)) ∧
+        Domino.FiveRows.a5 0 = 1 ∧
+          Domino.FiveRows.a5 1 = 5 ∧
+            Domino.FiveRows.a5 2 = 33 ∧
+              Domino.FiveRows.a5 3 = 329 ∧
+                Domino.FiveRows.a5 4 = 3818 ∧
+                  Domino.FiveRows.a5 5 = 46878 ∧
+                    Domino.FiveRows.a5 6 = 584386 ∧
+                      Domino.FiveRows.a5 7 = 7318152 ∧
+                        Domino.FiveRows.a5 8 = 91752831 ∧
+                          Domino.FiveRows.a5 9 = 1150774799 ∧
+                            Domino.FiveRows.a5 10 = 14434490195 ∧
+                              Domino.FiveRows.a5 11 = 181060839597 ∧
+                                Domino.FiveRows.a5 12 = 2271175917429 ∧ Domino.FiveRows.a5 13 = 28489049801109

@@ -1,0 +1,65 @@
+✔ [3214/3215] Built Domino.OddHeight.OrbitCounts (20s)
+✖ [3215/3215] Building Domino.OddHeight.MatrixSeries (20s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\MatrixSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\MatrixSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\MatrixSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\MatrixSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\MatrixSeries.setup.json --json
+error: Domino/OddHeight/MatrixSeries.lean:34:11: unsolved goals
+case succ
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+n : ℕ
+⊢ 0 = (coeff (n + 1)) (if i = j then 1 else 0)
+error: Domino/OddHeight/MatrixSeries.lean:48:11: unsolved goals
+case succ
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+n : ℕ
+⊢ 0 = (coeff (n + 1)) (if i = j then 1 else 0)
+error: Domino/OddHeight/MatrixSeries.lean:54:76: unsolved goals
+case pos
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+h : i = j
+⊢ C (M j j) * X = X * C (M j j)
+
+case neg
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+i j : ι
+h : ¬i = j
+⊢ C (M i j) * X = X * C (M i j)
+warning: Domino/OddHeight/MatrixSeries.lean:57:59: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [matrixPencil, seriesPencil, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/OddHeight/MatrixSeries.lean:59:0: automatically included section variable(s) unused in theorem `Domino.General.matrixPencil_eval_zero`:
+  [Fintype ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+error: Domino/OddHeight/MatrixSeries.lean:69:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (matrixPencil M).map ⇑(Polynomial.evalRingHom 0)
+in the target expression
+  ((Polynomial.evalRingHom 0).mapMatrix (matrixPencil M)).det = 1
+
+ι : Type u_1
+inst✝¹ : Fintype ι
+inst✝ : DecidableEq ι
+M : Matrix ι ι ℚ
+⊢ ((Polynomial.evalRingHom 0).mapMatrix (matrixPencil M)).det = 1
+Some required targets logged failures:
+- Domino.OddHeight.MatrixSeries
+error: build failed

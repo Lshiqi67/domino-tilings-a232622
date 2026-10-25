@@ -1,0 +1,13 @@
+⚠ [3219/3219] Building Domino.OddHeight.Boundary (18s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\Boundary.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Boundary.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Boundary.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Boundary.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Boundary.setup.json --json
+warning: Domino/OddHeight/Boundary.lean:31:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Some required targets logged failures:
+- Domino.OddHeight.Boundary

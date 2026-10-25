@@ -1,0 +1,95 @@
+✖ [3215/3215] Building Domino.Stabilizers.Classification (21s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Stabilizers\Classification.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Stabilizers\Classification.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Stabilizers\Classification.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Stabilizers\Classification.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Stabilizers\Classification.setup.json --json
+error: Domino/Stabilizers/Classification.lean:47:59: unsolved goals
+case neg
+n : ℕ
+T : Tiling 3 (2 * n)
+h : ¬horizontal • T = T
+v : vertical • T = T
+r : ¬halfTurn • T = T
+⊢ ¬horizontal = 1 ∧ ¬horizontal = vertical
+
+case pos
+n : ℕ
+T : Tiling 3 (2 * n)
+h : ¬horizontal • T = T
+v : ¬vertical • T = T
+r : halfTurn • T = T
+⊢ ¬horizontal = 1 ∧ ¬horizontal = halfTurn
+
+case neg
+n : ℕ
+T : Tiling 3 (2 * n)
+h : ¬horizontal • T = T
+v : ¬vertical • T = T
+r : ¬halfTurn • T = T
+⊢ ¬horizontal = 1
+
+case pos
+n : ℕ
+T : Tiling 3 (2 * n)
+h : ¬horizontal • T = T
+v : ¬vertical • T = T
+r : halfTurn • T = T
+⊢ ¬vertical = 1 ∧ ¬vertical = halfTurn
+
+case neg
+n : ℕ
+T : Tiling 3 (2 * n)
+h : ¬horizontal • T = T
+v : ¬vertical • T = T
+r : ¬halfTurn • T = T
+⊢ ¬vertical = 1
+
+case neg
+n : ℕ
+T : Tiling 3 (2 * n)
+h : ¬horizontal • T = T
+v : vertical • T = T
+r : ¬halfTurn • T = T
+⊢ ¬halfTurn = 1 ∧ ¬halfTurn = vertical
+
+case neg
+n : ℕ
+T : Tiling 3 (2 * n)
+h : ¬horizontal • T = T
+v : ¬vertical • T = T
+r : ¬halfTurn • T = T
+⊢ ¬halfTurn = 1
+error: Domino/Stabilizers/Classification.lean:99:2: Type mismatch
+  Eq.trans (Fintype.card_congr (Equiv.subtypeEquivRight (exact_stabilizer n t T)))
+    (Fintype.card_coe (stabilizerElements t))
+has type
+  @Fintype.card (↥(MulAction.stabilizer RectangleSymmetry ↑T))
+      (MulAction.stabilizer RectangleSymmetry ↑T).instFintypeSubtypeMemOfDecidablePred =
+    (stabilizerElements t).card
+but is expected to have type
+  @Fintype.card (↥(MulAction.stabilizer RectangleSymmetry ↑T))
+      (Subtype.fintype (Membership.mem (MulAction.stabilizer RectangleSymmetry ↑T))) =
+    (stabilizerElements t).card
+error: Domino/Stabilizers/Classification.lean:103:4: failed to synthesize instance of type class
+  Fintype ↑(MulAction.orbit RectangleSymmetry ↑T)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Domino/Stabilizers/Classification.lean:106:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fintype.card ↥(MulAction.stabilizer RectangleSymmetry ↑T)
+in the target expression
+  Fintype.card ↑(MulAction.orbit RectangleSymmetry ↑T) * Fintype.card ↥(MulAction.stabilizer RectangleSymmetry ↑T) =
+    Fintype.card RectangleSymmetry
+
+n : ℕ
+t : Fin 5
+T : SymmetryTilings n t
+h :
+  Fintype.card ↑(MulAction.orbit RectangleSymmetry ↑T) * Fintype.card ↥(MulAction.stabilizer RectangleSymmetry ↑T) =
+error: build failed
+    Fintype.card RectangleSymmetry
+⊢ sorry = symmetryOrbitSize t
+warning: Domino/Stabilizers/Classification.lean:112:11: Variable name `T` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _T
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Some required targets logged failures:
+- Domino.Stabilizers.Classification

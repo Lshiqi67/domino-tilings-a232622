@@ -1,0 +1,22 @@
+✔ [3207/3210] Built Domino.Blocks.Palindromes (18s)
+✖ [3208/3210] Building Domino.Blocks.FixedSeries (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\FixedSeries.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\FixedSeries.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\FixedSeries.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\FixedSeries.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\FixedSeries.setup.json --json
+error: Domino/Blocks/FixedSeries.lean:55:2: mod_cast has type
+  Fintype.card (Grade (fun c => centerMass ↑c) n) = Fintype.card (Grade (optionMass weight) n)
+but is expected to have type
+  (coeff n) (centerSeries false) = (coeff n) (gradedSeries (optionMass weight))
+error: Domino/Blocks/FixedSeries.lean:92:2: mod_cast has type
+  Fintype.card (Grade (fun c => centerMass ↑c) n) = (if 0 = n then 1 else 0) + if 1 = n then 1 else 0
+but is expected to have type
+  Fintype.card (Grade (fun c => centerMass ↑c) n) = (if n = 0 then 1 else 0) + if n = 1 then 1 else 0
+error: Domino/Blocks/FixedSeries.lean:100:18: failed to synthesize instance of type class
+  Fintype (HalfData b n)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Domino/Blocks/FixedSeries.lean:112:2: mod_cast has type
+  Fintype.card (PalWord b n) = Fintype.card ↑(MulAction.fixedBy (Tiling 3 (2 * n)) (axialSymmetry b))
+but is expected to have type
+  Fintype.card (PalWord b n) = fixedCount 3 n (axialSymmetry b)
+Some required targets logged failures:
+- Domino.Blocks.FixedSeries
+error: build failed

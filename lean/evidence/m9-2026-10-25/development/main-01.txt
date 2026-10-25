@@ -1,0 +1,12 @@
+✔ [3225/3228] Built Domino.FiveRows.TwoRows (22s)
+✖ [3226/3228] Building Domino.FiveRows.Certificate (22s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\FiveRows\Certificate.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Certificate.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Certificate.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Certificate.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Certificate.setup.json --json
+error: Domino/FiveRows/Certificate.lean:38:19: typeclass instance problem is stuck
+  Semiring ?m.31
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Semiring` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+Some required targets logged failures:
+- Domino.FiveRows.Certificate
+error: build failed

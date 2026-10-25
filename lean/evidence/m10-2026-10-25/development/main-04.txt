@@ -1,0 +1,10 @@
+✔ [3220/3223] Built Domino.Asymptotics.ParityLimits (18s)
+✖ [3221/3223] Building Domino.Asymptotics.OrbitLimits (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\OrbitLimits.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\OrbitLimits.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\OrbitLimits.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\OrbitLimits.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\OrbitLimits.setup.json --json
+error: Domino/Asymptotics/OrbitLimits.lean:13:81: unsolved goals
+h : Tendsto ((fun n => (growth ^ n)⁻¹) / fun n => d n / growth ^ n) atTop (𝓝 0)
+n : ℕ
+⊢ 1 = d n * ((fun n => 1 / growth ^ n) / fun n => d n / growth ^ n) n
+Some required targets logged failures:
+- Domino.Asymptotics.OrbitLimits
+error: build failed

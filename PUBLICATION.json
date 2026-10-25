@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "author": "Shiqi Liu",
-  "status": "Lean M1-M6 locally verified for the three-row main counting theorem; extensions, second proof and external review pending; no novelty claim.",
+  "status": "Lean M1-M11 locally verified within documented scope; external semantic review, higher-height asymptotics and minimal order pending; no priority claim.",
   "chinese_manuscript": "Version 2.1, 17 pages; E04 exposition and M1-M6 semantic review entry; v1.0 and v2.0 preserved byte for byte.",
   "selection": "Manuscripts, two draft proof routes, problem/source/lemma notes, final verification code, and sanitized numerical outputs. Personal information, full historical archives, machine logs and unrelated research are excluded.",
   "files": [
@@ -450,5 +450,18 @@
     "audited_declarations": 413,
     "external_review": "pending",
     "mathematical_Lean_sources_changed": false
+  },
+  "m7_m11_publication": {
+    "date": "2026-10-26",
+    "baseline_commit": "0ccefdab963f8821b7f74d71f0ddb150499e6c8f",
+    "added_math_modules": 51,
+    "math_modules": 83,
+    "declarations": 1078,
+    "theorems": 699,
+    "evidence": "lean/evidence/m11-rerun-20261025-232056/report.json",
+    "source_files_matched": 113,
+    "scope": "M7 stabilizers; M8 odd height; M9 five rows; M10 three-row asymptotics; M11 block proof",
+    "unchanged": "M1-M6 mathematical sources, toolchain locks, manuscripts and previous semantic review package",
+    "treatment": "Historical reports sanitized; original source hashes retained; not new full validation runs"
   }
 }

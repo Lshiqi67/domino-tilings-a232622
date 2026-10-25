@@ -1,0 +1,25 @@
+✔ [3222/3223] Built Domino.Asymptotics.ErrorBounds (18s)
+✖ [3223/3223] Building Domino.Asymptotics.Main (17s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\Main.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\Main.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\Main.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\Main.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\Main.setup.json --json
+error: Domino/Asymptotics/Main.lean:51:2: Type mismatch: After simplification, term
+  hN n hn
+ has type
+  tilingProbability n ≤ C * |growth ^ (-↑n / 2)|
+but is expected to have type
+  tilingProbability n ≤ C * growth ^ (-↑n / 2)
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instLE ↦ 2
+error: build failed
+error: Domino/Asymptotics/Main.lean:59:2: Type mismatch: After simplification, term
+  hN n hn
+ has type
+  |↑(a n) - ↑(ordinaryCount 3 n) / 4| ≤ C * |growth ^ (↑n / 2)|
+but is expected to have type
+  |↑(a n) - ↑(ordinaryCount 3 n) / 4| ≤ C * growth ^ (↑n / 2)
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instAdd ↦ 1
+  Real.instLE ↦ 2
+Some required targets logged failures:
+- Domino.Asymptotics.Main

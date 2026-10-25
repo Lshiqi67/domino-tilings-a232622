@@ -1,0 +1,29 @@
+✖ [3205/3205] Building Domino.Blocks.Boundary (18s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Boundary.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Boundary.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Boundary.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Boundary.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Boundary.setup.json --json
+error: Domino/Blocks/Boundary.lean:22:6: Type mismatch: After simplification, term
+  he
+ has type
+  L.getD k ∅ = ∅
+but is expected to have type
+  L[k] = ∅
+error: Domino/Blocks/Boundary.lean:25:34: Type mismatch: After simplification, term
+  hk
+ has type
+  k < L.length - 1
+but is expected to have type
+  k + 1 < L.length
+error: Domino/Blocks/Boundary.lean:27:4: Type mismatch: After simplification, term
+  he
+ has type
+  L[k] = ∅
+but is expected to have type
+  L.getD k ∅ = ∅
+warning: Domino/Blocks/Boundary.lean:77:4: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Some required targets logged failures:
+- Domino.Blocks.Boundary

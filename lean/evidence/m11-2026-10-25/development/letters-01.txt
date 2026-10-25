@@ -1,0 +1,85 @@
+✖ [3152/3152] Building Domino.Blocks.Letters (18s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Blocks\Letters.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Letters.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Blocks\Letters.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Letters.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Blocks\Letters.setup.json --json
+error: Domino/Blocks/Letters.lean:57:9: Tactic `rfl` failed: The left-hand side
+  (core Letter.c).length + 1
+is not definitionally equal to the right-hand side
+  2 * weight Letter.c
+
+case c
+⊢ (core Letter.c).length + 1 = 2 * weight Letter.c
+error: Domino/Blocks/Letters.lean:59:14: Tactic `rfl` failed: The left-hand side
+  (core (Letter.arm b 0)).length + 1
+is not definitionally equal to the right-hand side
+  2 * weight (Letter.arm b 0)
+
+case arm.zero
+b : Bool
+⊢ (core (Letter.arm b 0)).length + 1 = 2 * weight (Letter.arm b 0)
+error: Domino/Blocks/Letters.lean:74:9: Tactic `decide` failed to reduce
+  @decide (∅ ∉ core Letter.c) instDecidableNot
+to `true` or `false`.
+
+After unfolding the instances `decidable_of_decidable_of_iff`, `instDecidableEqBool`, `instDecidableNot`, `Bool.decEq`, and `List.instDecidableMemOfLawfulBEq`, reduction got stuck at
+  List.elem ∅ (core Letter.c)
+warning: Domino/Blocks/Letters.lean:92:54: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Blocks/Letters.lean:92:58: Unused tactic linter: `decide` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Blocks/Letters.lean:92:58: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+error: Domino/Blocks/Letters.lean:107:12: Tactic `rfl` failed: The left-hand side
+  core (Letter.arm b (0 + 1))
+is not definitionally equal to the right-hand side
+  core (Letter.arm b 0) ++ [paired b, single b]
+
+case zero
+b : Bool
+⊢ core (Letter.arm b (0 + 1)) = core (Letter.arm b 0) ++ [paired b, single b]
+error: Domino/Blocks/Letters.lean:112:9: Tactic `rfl` failed: The left-hand side
+  (core Letter.c).reverse
+is not definitionally equal to the right-hand side
+  core Letter.c
+
+case c
+⊢ (core Letter.c).reverse = core Letter.c
+error: Domino/Blocks/Letters.lean:115:14: Tactic `rfl` failed: The left-hand side
+  (core (Letter.arm b 0)).reverse
+is not definitionally equal to the right-hand side
+  core (Letter.arm b 0)
+
+case arm.zero
+b : Bool
+⊢ (core (Letter.arm b 0)).reverse = core (Letter.arm b 0)
+error: Domino/Blocks/Letters.lean:116:72: Type mismatch: After simplification, term
+  Eq.symm (core_arm_snoc b k)
+ has type
+  core (Letter.arm b k) ++ [paired b, single b] = core (Letter.arm b (k + 1))
+but is expected to have type
+  core (Letter.arm b k) ++ [paired b, single b] = single b :: paired b :: core (Letter.arm b k)
+error: Domino/Blocks/Letters.lean:120:9: Tactic `decide` failed to reduce
+  @decide (List.map reverseState (core Letter.c) = core (flip Letter.c))
+    (instDecidableEqList (List.map reverseState (core Letter.c)) (core (flip Letter.c)))
+to `true` or `false`.
+
+After unfolding the instance `instDecidableEqList`, reduction got stuck at
+  match List.map reverseState (core Letter.c) with
+  | [] =>
+    match core (flip Letter.c) with
+    | [] => isTrue ⋯
+    | head :: tail => isFalse ⋯
+  | a :: as =>
+    match core (flip Letter.c) with
+    | [] => isFalse ⋯
+    | b :: bs =>
+      match decEq a b with
+      | { decide := true, reflects_decide := hab } =>
+        match as.hasDecEq bs with
+        | { decide := true, reflects_decide := habs } => isTrue ⋯
+        | { decide := false, reflects_decide := nabs } => isFalse ⋯
+      | { decide := false, reflects_decide := nab } => isFalse ⋯
+Some required targets logged failures:
+- Domino.Blocks.Letters

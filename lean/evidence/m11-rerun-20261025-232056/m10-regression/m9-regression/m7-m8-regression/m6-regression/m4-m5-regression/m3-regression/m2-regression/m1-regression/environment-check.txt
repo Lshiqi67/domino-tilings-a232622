@@ -1,0 +1,23 @@
+运行 lean-version
+运行 lake-version
+运行 mathlib-revision
+运行 mathlib-status
+运行 plausible-revision
+运行 plausible-status
+运行 LeanSearchClient-revision
+运行 LeanSearchClient-status
+运行 importGraph-revision
+运行 importGraph-status
+运行 proofwidgets-revision
+运行 proofwidgets-status
+运行 aesop-revision
+运行 aesop-status
+运行 Qq-revision
+运行 Qq-status
+运行 batteries-revision
+运行 batteries-status
+运行 Cli-revision
+运行 Cli-status
+运行 lake-build
+运行 lean-entry
+environment_passed

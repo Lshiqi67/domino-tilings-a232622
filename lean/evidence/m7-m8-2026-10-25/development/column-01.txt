@@ -1,0 +1,7 @@
+✔ [3141/3142] Built Domino.OddHeight.Grid (23s)
+✖ [3142/3142] Building Domino.OddHeight.Column (33s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\Column.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Column.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\Column.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Column.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\Column.setup.json --json
+error: Domino/OddHeight/Column.lean:85:23: Unknown constant `Finset.disjoint_self.mp`
+Some required targets logged failures:
+- Domino.OddHeight.Column
+error: build failed

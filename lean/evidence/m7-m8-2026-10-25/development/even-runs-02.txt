@@ -1,0 +1,17 @@
+✖ [3143/3143] Building Domino.OddHeight.EvenRuns (18s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\OddHeight\EvenRuns.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\EvenRuns.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\OddHeight\EvenRuns.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\EvenRuns.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\OddHeight\EvenRuns.setup.json --json
+error: Domino/OddHeight/EvenRuns.lean:170:8: Type mismatch: After simplification, term
+  hf
+ has type
+  ∀ x ∈ H, ¬↑x = ↑r
+but is expected to have type
+  r ∉ H
+error: Domino/OddHeight/EvenRuns.lean:172:51: Type mismatch: After simplification, term
+  hf
+ has type
+  r ∉ H
+but is expected to have type
+  ∀ x ∈ H, ¬↑x = ↑r
+Some required targets logged failures:
+- Domino.OddHeight.EvenRuns

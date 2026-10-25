@@ -1,0 +1,656 @@
+✔ [3224/3226] Built Domino.FiveRows.Counts (21s)
+✖ [3225/3226] Building Domino.FiveRows.TwoRows (22s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\FiveRows\TwoRows.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\TwoRows.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\TwoRows.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\TwoRows.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\TwoRows.setup.json --json
+error: Domino/FiveRows/TwoRows.lean:37:54: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?L * (?M * ?N)
+in the target expression
+  (encodedTransfer 2 * encodedTransfer 2 * twoLift).mulVec (twoCompressed n) = twoLift.mulVec (twoCompressed (n + 1))
+
+case succ
+n : ℕ
+ih : profile 2 (2 * n) = twoLift.mulVec (twoCompressed n)
+⊢ (encodedTransfer 2 * encodedTransfer 2 * twoLift).mulVec (twoCompressed n) = twoLift.mulVec (twoCompressed (n + 1))
+info: Domino/FiveRows/TwoRows.lean:56:36: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Domino/FiveRows/TwoRows.lean:56:36: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+error: Domino/FiveRows/TwoRows.lean:51:56: unsolved goals
+case «0»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ 1 - t - t * Matrix.map ![![2, 1], ![1, 1]] (fun a => ↑a) 0 0 +
+        t ^ 2 * Matrix.map ![![2, 1], ![1, 1]] (fun a => ↑a) 0 0 -
+      t ^ 2 * Matrix.map ![![2, 1], ![1, 1]] (fun a => ↑a) 0 1 =
+    1 - t * 3 + t ^ 2
+
+case «1»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ t - t * Matrix.map ![![2, 1], ![1, 1]] (fun a => ↑a) 1 0 + t ^ 2 * Matrix.map ![![2, 1], ![1, 1]] (fun a => ↑a) 1 0 -
+      t ^ 2 * Matrix.map ![![2, 1], ![1, 1]] (fun a => ↑a) 1 1 =
+    0
+✖ [3226/3226] Building Domino.FiveRows.Certificate (25s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\FiveRows\Certificate.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Certificate.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\FiveRows\Certificate.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Certificate.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\FiveRows\Certificate.setup.json --json
+info: Domino/FiveRows/Certificate.lean:33:50: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Domino/FiveRows/Certificate.lean:33:50: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Domino/FiveRows/Certificate.lean:33:50: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Domino/FiveRows/Certificate.lean:33:50: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Domino/FiveRows/Certificate.lean:33:50: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Domino/FiveRows/Certificate.lean:33:50: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+error: Domino/FiveRows/Certificate.lean:28:53: unsolved goals
+case «0»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ 1 - t * 7 -
+                                        t *
+                                          Matrix.map
+                                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                              ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                            (fun a => ↑a) 0 0 +
+                                      t ^ 2 * 7 +
+                                    t ^ 2 *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 0 0 *
+                                      7 -
+                                  t ^ 2 *
+                                      Matrix.map
+                                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                          ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                        (fun a => ↑a) 0 1 *
+                                    3 -
+                                t ^ 2 *
+                                    Matrix.map
+                                      ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                        ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                      (fun a => ↑a) 0 2 *
+                                  2 -
+                              t ^ 2 *
+                                Matrix.map
+                                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                  (fun a => ↑a) 0 3 -
+                            t ^ 2 *
+                              Matrix.map
+                                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                (fun a => ↑a) 0 4 -
+                          t ^ 2 *
+                            Matrix.map
+                              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                              (fun a => ↑a) 0 5 -
+                        t ^ 3 -
+                      t ^ 3 *
+                          Matrix.map
+                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                              ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                            (fun a => ↑a) 0 0 *
+                        7 +
+                    t ^ 3 *
+                        Matrix.map
+                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                            ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                          (fun a => ↑a) 0 1 *
+                      4 +
+                  t ^ 3 *
+                      Matrix.map
+                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                          ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                        (fun a => ↑a) 0 2 *
+                    5 -
+                t ^ 3 *
+                  Matrix.map
+                    ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                      ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                    (fun a => ↑a) 0 3 +
+              t ^ 4 *
+                Matrix.map
+                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                  (fun a => ↑a) 0 0 -
+            t ^ 4 *
+              Matrix.map
+                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                (fun a => ↑a) 0 1 -
+          t ^ 4 *
+            Matrix.map
+              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+                ![1, 2, 0, 0, 0, 1]]
+              (fun a => ↑a) 0 2 +
+        t ^ 4 *
+          Matrix.map
+            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+              ![1, 2, 0, 0, 0, 1]]
+            (fun a => ↑a) 0 4 +
+      t ^ 4 *
+        Matrix.map
+          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+            ![1, 2, 0, 0, 0, 1]]
+          (fun a => ↑a) 0 5 =
+    1 - t * 15 + t ^ 2 * 32 - t ^ 3 * 15 + t ^ 4
+
+case «1»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ t * 3 -
+                                        t *
+                                          Matrix.map
+                                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                              ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                            (fun a => ↑a) 1 0 -
+                                      t ^ 2 * 4 +
+                                    t ^ 2 *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 1 0 *
+                                      7 -
+                                  t ^ 2 *
+                                      Matrix.map
+                                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                          ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                        (fun a => ↑a) 1 1 *
+                                    3 -
+                                t ^ 2 *
+                                    Matrix.map
+                                      ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                        ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                      (fun a => ↑a) 1 2 *
+                                  2 -
+                              t ^ 2 *
+                                Matrix.map
+                                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                  (fun a => ↑a) 1 3 -
+                            t ^ 2 *
+                              Matrix.map
+                                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                (fun a => ↑a) 1 4 -
+                          t ^ 2 *
+                            Matrix.map
+                              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                              (fun a => ↑a) 1 5 +
+                        t ^ 3 -
+                      t ^ 3 *
+                          Matrix.map
+                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                              ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                            (fun a => ↑a) 1 0 *
+                        7 +
+                    t ^ 3 *
+                        Matrix.map
+                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                            ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                          (fun a => ↑a) 1 1 *
+                      4 +
+                  t ^ 3 *
+                      Matrix.map
+                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                          ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                        (fun a => ↑a) 1 2 *
+                    5 -
+                t ^ 3 *
+                  Matrix.map
+                    ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                      ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                    (fun a => ↑a) 1 3 +
+              t ^ 4 *
+                Matrix.map
+                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                  (fun a => ↑a) 1 0 -
+            t ^ 4 *
+              Matrix.map
+                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                (fun a => ↑a) 1 1 -
+          t ^ 4 *
+            Matrix.map
+              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+                ![1, 2, 0, 0, 0, 1]]
+              (fun a => ↑a) 1 2 +
+        t ^ 4 *
+          Matrix.map
+            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+              ![1, 2, 0, 0, 0, 1]]
+            (fun a => ↑a) 1 4 +
+      t ^ 4 *
+        Matrix.map
+          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+            ![1, 2, 0, 0, 0, 1]]
+          (fun a => ↑a) 1 5 =
+    0
+
+case «2»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ t * 2 -
+                                        t *
+                                          Matrix.map
+                                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                              ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                            (fun a => ↑a) 2 0 -
+                                      t ^ 2 * 5 +
+                                    t ^ 2 *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 2 0 *
+                                      7 -
+                                  t ^ 2 *
+                                      Matrix.map
+                                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                          ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                        (fun a => ↑a) 2 1 *
+                                    3 -
+                                t ^ 2 *
+                                    Matrix.map
+                                      ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                        ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                      (fun a => ↑a) 2 2 *
+                                  2 -
+                              t ^ 2 *
+                                Matrix.map
+                                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                  (fun a => ↑a) 2 3 -
+                            t ^ 2 *
+                              Matrix.map
+                                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                (fun a => ↑a) 2 4 -
+                          t ^ 2 *
+                            Matrix.map
+                              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                              (fun a => ↑a) 2 5 +
+                        t ^ 3 -
+                      t ^ 3 *
+                          Matrix.map
+                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                              ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                            (fun a => ↑a) 2 0 *
+                        7 +
+                    t ^ 3 *
+                        Matrix.map
+                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                            ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                          (fun a => ↑a) 2 1 *
+                      4 +
+                  t ^ 3 *
+                      Matrix.map
+                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                          ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                        (fun a => ↑a) 2 2 *
+                    5 -
+                t ^ 3 *
+                  Matrix.map
+                    ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                      ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                    (fun a => ↑a) 2 3 +
+              t ^ 4 *
+                Matrix.map
+                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                  (fun a => ↑a) 2 0 -
+            t ^ 4 *
+              Matrix.map
+                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                (fun a => ↑a) 2 1 -
+          t ^ 4 *
+            Matrix.map
+              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+                ![1, 2, 0, 0, 0, 1]]
+              (fun a => ↑a) 2 2 +
+        t ^ 4 *
+          Matrix.map
+            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+              ![1, 2, 0, 0, 0, 1]]
+            (fun a => ↑a) 2 4 +
+      t ^ 4 *
+        Matrix.map
+          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+            ![1, 2, 0, 0, 0, 1]]
+          (fun a => ↑a) 2 5 =
+    0
+
+case «3»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ t -
+                                      t *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 3 0 +
+                                    t ^ 2 +
+                                  t ^ 2 *
+                                      Matrix.map
+                                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                          ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                        (fun a => ↑a) 3 0 *
+                                    7 -
+                                t ^ 2 *
+                                    Matrix.map
+                                      ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                        ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                      (fun a => ↑a) 3 1 *
+                                  3 -
+                              t ^ 2 *
+                                  Matrix.map
+                                    ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                      ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                    (fun a => ↑a) 3 2 *
+                                2 -
+                            t ^ 2 *
+                              Matrix.map
+                                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                (fun a => ↑a) 3 3 -
+                          t ^ 2 *
+                            Matrix.map
+                              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                              (fun a => ↑a) 3 4 -
+                        t ^ 2 *
+                          Matrix.map
+                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                              ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                            (fun a => ↑a) 3 5 -
+                      t ^ 3 *
+                          Matrix.map
+                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                              ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                            (fun a => ↑a) 3 0 *
+                        7 +
+                    t ^ 3 *
+                        Matrix.map
+                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                            ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                          (fun a => ↑a) 3 1 *
+                      4 +
+                  t ^ 3 *
+                      Matrix.map
+                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                          ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                        (fun a => ↑a) 3 2 *
+                    5 -
+                t ^ 3 *
+                  Matrix.map
+                    ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                      ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                    (fun a => ↑a) 3 3 +
+              t ^ 4 *
+                Matrix.map
+                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                  (fun a => ↑a) 3 0 -
+            t ^ 4 *
+              Matrix.map
+                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                (fun a => ↑a) 3 1 -
+          t ^ 4 *
+            Matrix.map
+              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+                ![1, 2, 0, 0, 0, 1]]
+              (fun a => ↑a) 3 2 +
+        t ^ 4 *
+          Matrix.map
+            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+              ![1, 2, 0, 0, 0, 1]]
+            (fun a => ↑a) 3 4 +
+      t ^ 4 *
+        Matrix.map
+          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+            ![1, 2, 0, 0, 0, 1]]
+          (fun a => ↑a) 3 5 =
+    0
+
+case «4»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ t -
+                                      t *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 4 0 +
+                                    t ^ 2 *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 4 0 *
+                                      7 -
+                                  t ^ 2 *
+                                      Matrix.map
+                                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                          ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                        (fun a => ↑a) 4 1 *
+                                    3 -
+                                t ^ 2 *
+                                    Matrix.map
+                                      ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                        ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                      (fun a => ↑a) 4 2 *
+                                  2 -
+                              t ^ 2 *
+                                Matrix.map
+                                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                  (fun a => ↑a) 4 3 -
+                            t ^ 2 *
+                              Matrix.map
+                                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                (fun a => ↑a) 4 4 -
+                          t ^ 2 *
+                            Matrix.map
+                              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                              (fun a => ↑a) 4 5 -
+                        t ^ 3 -
+                      t ^ 3 *
+                          Matrix.map
+                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                              ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                            (fun a => ↑a) 4 0 *
+                        7 +
+                    t ^ 3 *
+                        Matrix.map
+                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                            ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                          (fun a => ↑a) 4 1 *
+                      4 +
+                  t ^ 3 *
+                      Matrix.map
+                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                          ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                        (fun a => ↑a) 4 2 *
+                    5 -
+                t ^ 3 *
+                  Matrix.map
+                    ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                      ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                    (fun a => ↑a) 4 3 +
+              t ^ 4 *
+                Matrix.map
+                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                  (fun a => ↑a) 4 0 -
+            t ^ 4 *
+              Matrix.map
+                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                (fun a => ↑a) 4 1 -
+          t ^ 4 *
+            Matrix.map
+              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+                ![1, 2, 0, 0, 0, 1]]
+              (fun a => ↑a) 4 2 +
+        t ^ 4 *
+          Matrix.map
+            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+              ![1, 2, 0, 0, 0, 1]]
+            (fun a => ↑a) 4 4 +
+      t ^ 4 *
+        Matrix.map
+          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+            ![1, 2, 0, 0, 0, 1]]
+          (fun a => ↑a) 4 5 =
+    0
+
+case «5»
+R : Type u_1
+inst✝ : CommRing R
+t : R
+⊢ t -
+                                      t *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 5 0 +
+                                    t ^ 2 *
+                                        Matrix.map
+                                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                            ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                          (fun a => ↑a) 5 0 *
+                                      7 -
+                                  t ^ 2 *
+                                      Matrix.map
+                                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                          ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                        (fun a => ↑a) 5 1 *
+                                    3 -
+                                t ^ 2 *
+                                    Matrix.map
+                                      ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0],
+                                        ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                      (fun a => ↑a) 5 2 *
+                                  2 -
+                              t ^ 2 *
+                                Matrix.map
+                                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                  (fun a => ↑a) 5 3 -
+                            t ^ 2 *
+                              Matrix.map
+                                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                                (fun a => ↑a) 5 4 -
+                          t ^ 2 *
+                            Matrix.map
+                              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                                ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                              (fun a => ↑a) 5 5 -
+                        t ^ 3 -
+                      t ^ 3 *
+                          Matrix.map
+                            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                              ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                            (fun a => ↑a) 5 0 *
+                        7 +
+                    t ^ 3 *
+                        Matrix.map
+                          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                            ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                          (fun a => ↑a) 5 1 *
+                      4 +
+                  t ^ 3 *
+                      Matrix.map
+                        ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                          ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                        (fun a => ↑a) 5 2 *
+                    5 -
+                t ^ 3 *
+                  Matrix.map
+                    ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                      ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                    (fun a => ↑a) 5 3 +
+              t ^ 4 *
+                Matrix.map
+                  ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                    ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                  (fun a => ↑a) 5 0 -
+            t ^ 4 *
+              Matrix.map
+                ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0],
+                  ![1, 1, 1, 1, 1, 0], ![1, 2, 0, 0, 0, 1]]
+                (fun a => ↑a) 5 1 -
+          t ^ 4 *
+            Matrix.map
+              ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+                ![1, 2, 0, 0, 0, 1]]
+              (fun a => ↑a) 5 2 +
+        t ^ 4 *
+          Matrix.map
+            ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+              ![1, 2, 0, 0, 0, 1]]
+            (fun a => ↑a) 5 4 +
+      t ^ 4 *
+        Matrix.map
+          ![![8, 6, 4, 2, 2, 1], ![3, 4, 1, 1, 1, 1], ![2, 1, 2, 1, 1, 0], ![1, 1, 1, 2, 1, 0], ![1, 1, 1, 1, 1, 0],
+            ![1, 2, 0, 0, 0, 1]]
+          (fun a => ↑a) 5 5 =
+    0
+error: Domino/FiveRows/Certificate.lean:36:9: typeclass instance problem is stuck
+  Semiring ?m.16
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Semiring` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+Some required targets logged failures:
+- Domino.FiveRows.TwoRows
+- Domino.FiveRows.Certificate
+error: build failed

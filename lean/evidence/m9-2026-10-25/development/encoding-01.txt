@@ -1,0 +1,2 @@
+✔ [3221/3221] Built Domino.FiveRows.Encoding (19s)
+Build completed successfully (3221 jobs).

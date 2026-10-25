@@ -1,0 +1,6 @@
+运行 m4-m5-regression
+运行 axioms
+运行 main-statements
+运行 clean-lake-build
+运行 clean-axioms
+m6_passed

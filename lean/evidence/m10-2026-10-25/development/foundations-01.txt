@@ -1,0 +1,40 @@
+✖ [3218/3219] Building Domino.Asymptotics.ClosedForm (21s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\ClosedForm.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ClosedForm.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\ClosedForm.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ClosedForm.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\ClosedForm.setup.json --json
+error: Domino/Asymptotics/ClosedForm.lean:39:9: Unknown identifier `eq_inv_iff_mul_eq_one₀`
+error: Domino/Asymptotics/ClosedForm.lean:40:6: No goals to be solved
+error: Domino/Asymptotics/ClosedForm.lean:59:6: mod_cast has type
+  ordinaryCount 3 (n + 2) + ordinaryCount 3 n = 4 * ordinaryCount 3 (n + 1)
+but is expected to have type
+  d (n + 2) + d n = 4 * d (n + 1)
+error: Domino/Asymptotics/ClosedForm.lean:62:4: ring failed, ring expressions not equal
+n : ℕ
+ih0 : d n = leading * growth ^ n + trailing * decay ^ n
+ih1 : d (n + 1) = leading * growth ^ (n + 1) + trailing * decay ^ (n + 1)
+h :
+  d (n + 2) + (leading * growth ^ n + trailing * decay ^ n) =
+    4 * (leading * growth ^ (n + 1) + trailing * decay ^ (n + 1))
+⊢ leading * growth * growth ^ n * 8 - leading * growth ^ 2 * growth ^ n * 2 - leading * growth ^ n * 2 +
+          trailing * decay * decay ^ n * 8 -
+        trailing * decay ^ 2 * decay ^ n * 2 -
+      trailing * decay ^ n * 2 =
+    0
+error: Domino/Asymptotics/ClosedForm.lean:65:38: mod_cast has type
+  (0 : ℕ) < ordinaryCount 3 n
+but is expected to have type
+  (0 : ℝ) < d n
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  Real.instLT ↦ 2
+✖ [3219/3219] Building Domino.Asymptotics.Sampling (20s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {USER_HOME}\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe {LEAN_ROOT}\Domino\Asymptotics\Sampling.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\Sampling.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Asymptotics\Sampling.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\Sampling.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Asymptotics\Sampling.setup.json --json
+error: Domino/Asymptotics/Sampling.lean:32:2: Type mismatch
+  Fintype.card_subtype_compl fun T => symmetryKind T = 4
+has type
+  Fintype.card { x // ¬symmetryKind x = 4 } = Fintype.card (Tiling 3 (2 * n)) - Fintype.card { x // symmetryKind x = 4 }
+but is expected to have type
+  Fintype.card { x // symmetryKind x ≠ 4 } + symmetryTilingCount n 4 = ordinaryCount 3 n
+error: Domino/Asymptotics/Sampling.lean:57:4: failed to compile definition, consider marking it as 'noncomputable' because it depends on 'symmetricTilingsAction', which is 'noncomputable'
+Some required targets logged failures:
+- Domino.Asymptotics.ClosedForm
+- Domino.Asymptotics.Sampling
+error: build failed
