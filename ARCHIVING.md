@@ -28,11 +28,11 @@
 Get-FileHash -Algorithm SHA256 .\domino-tilings-en-v2.0.pdf
 Get-FileHash -Algorithm SHA256 .\domino-tilings-paper-en-v2.0-source.zip
 Get-FileHash -Algorithm SHA256 .\domino-tilings-paper-en-v2.0-history.bundle
-git clone .\domino-tilings-paper-en-v2.0-history.bundle restored-repository
+git clone -c core.longpaths=true .\domino-tilings-paper-en-v2.0-history.bundle restored-repository
 git -C restored-repository checkout --detach paper-en-v2.0
 git -C restored-repository fsck --full
 ```
 
-将三个输出摘要与 `SHA256SUMS.txt` 比较。`release-manifest.json` 给出实际发布提交及核验范围；仓库根目录 `MANIFEST-SHA256.json` 覆盖公开快照中除清单自身外的每个文件。ZIP 不包含 Git 历史；需要历史时使用 bundle。编译环境按 [Lean 运行说明](lean/README.md)重建。
+将三个输出摘要与 `SHA256SUMS.txt` 比较。Windows 上部分历史 Lean 日志路径较长，克隆时的 `core.longpaths=true` 仅设置新克隆仓库；解压 ZIP 也请选短目标路径或支持长路径的解压工具。`release-manifest.json` 给出实际发布提交及核验范围；仓库根目录 `MANIFEST-SHA256.json` 覆盖公开快照中除清单自身外的每个文件。ZIP 不包含 Git 历史；需要历史时使用 bundle。编译环境按 [Lean 运行说明](lean/README.md)重建。
 
 哈希用于判断内容一致性，不独立证明作者、完成时间、数学正确性或文献首次性。今后修订使用新提交和新版本，旧版及其范围继续保留。
