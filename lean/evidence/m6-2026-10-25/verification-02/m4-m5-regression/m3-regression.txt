@@ -1,0 +1,3 @@
+运行 m2-regression
+运行 axioms
+m3_passed

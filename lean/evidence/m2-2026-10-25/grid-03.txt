@@ -1,0 +1,16 @@
+✔ [3140/3142] Built Domino.Transfer.Bonds (19s)
+✔ [3141/3142] Built Domino.Transfer.ThreeRows (19s)
+✖ [3142/3142] Building Domino.Transfer.Grid (22s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Grid.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Grid.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Grid.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Grid.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Grid.setup.json --json
+error: Domino/Transfer/Grid.lean:99:30: Application type mismatch: The argument
+  he
+has type
+  gridCell b = gridCell c
+but is expected to have type
+  b = c
+in the application
+  congrArg Prod.fst he
+warning: Domino/Transfer/Grid.lean:105:8: declaration uses `sorry`
+Some required targets logged failures:
+- Domino.Transfer.Grid
+error: build failed

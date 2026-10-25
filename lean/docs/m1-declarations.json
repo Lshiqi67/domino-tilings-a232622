@@ -1,0 +1,680 @@
+{
+  "stage": "M1",
+  "scope": "六个 M1 模块中显式命名的类型、定义、定理和实例；依赖递归由 Lean 审计",
+  "modules": [
+    "Domino/Board/Basic.lean",
+    "Domino/Board/Tiling.lean",
+    "Domino/Board/Partial.lean",
+    "Domino/Board/Examples.lean",
+    "Domino/Symmetry/Action.lean",
+    "Domino/Symmetry/Counting.lean"
+  ],
+  "declarations": [
+    {
+      "name": "Domino.Cell",
+      "kind": "abbrev",
+      "file": "Domino/Board/Basic.lean",
+      "line": 14
+    },
+    {
+      "name": "Domino.Adjacent",
+      "kind": "def",
+      "file": "Domino/Board/Basic.lean",
+      "line": 16
+    },
+    {
+      "name": "Domino.adjacentDecidable",
+      "kind": "instance",
+      "file": "Domino/Board/Basic.lean",
+      "line": 20
+    },
+    {
+      "name": "Domino.adjacent_symm",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 23
+    },
+    {
+      "name": "Domino.adjacent_ne",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 29
+    },
+    {
+      "name": "Domino.reflectRows",
+      "kind": "def",
+      "file": "Domino/Board/Basic.lean",
+      "line": 33
+    },
+    {
+      "name": "Domino.reflectCols",
+      "kind": "def",
+      "file": "Domino/Board/Basic.lean",
+      "line": 34
+    },
+    {
+      "name": "Domino.reflectRows_twice",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 36
+    },
+    {
+      "name": "Domino.reflectCols_twice",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 39
+    },
+    {
+      "name": "Domino.reflections_commute",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 42
+    },
+    {
+      "name": "Domino.fin_rev_neighbor_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 45
+    },
+    {
+      "name": "Domino.adjacent_reflectRows_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 53
+    },
+    {
+      "name": "Domino.adjacent_reflectCols_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Basic.lean",
+      "line": 57
+    },
+    {
+      "name": "Domino.IsEdge",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 11
+    },
+    {
+      "name": "Domino.Edge",
+      "kind": "abbrev",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 14
+    },
+    {
+      "name": "Domino.edgeFintype",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 16
+    },
+    {
+      "name": "Domino.edgeOfAdjacent",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 20
+    },
+    {
+      "name": "Domino.edgeOfAdjacent_swap",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 23
+    },
+    {
+      "name": "Domino.edge_card_two",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 28
+    },
+    {
+      "name": "Domino.edge_nonempty",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 33
+    },
+    {
+      "name": "Domino.edgeWidthZeroIsEmpty",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 37
+    },
+    {
+      "name": "Domino.edgeHeightZeroIsEmpty",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 41
+    },
+    {
+      "name": "Domino.IsCover",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 46
+    },
+    {
+      "name": "Domino.Cover",
+      "kind": "abbrev",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 50
+    },
+    {
+      "name": "Domino.Tiling",
+      "kind": "abbrev",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 53
+    },
+    {
+      "name": "Domino.coverFintype",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 55
+    },
+    {
+      "name": "Domino.tiling_finite",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 58
+    },
+    {
+      "name": "Domino.cover_exactly_one",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 60
+    },
+    {
+      "name": "Domino.cover_avoids_holes",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 68
+    },
+    {
+      "name": "Domino.isCover_empty_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 74
+    },
+    {
+      "name": "Domino.emptyWidthTiling",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 92
+    },
+    {
+      "name": "Domino.emptyHeightTiling",
+      "kind": "def",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 99
+    },
+    {
+      "name": "Domino.tilingWidthZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 106
+    },
+    {
+      "name": "Domino.tilingHeightZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 113
+    },
+    {
+      "name": "Domino.empty_tiling_unique",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 120
+    },
+    {
+      "name": "Domino.tiling_card_width_zero",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 123
+    },
+    {
+      "name": "Domino.tiling_card_height_zero",
+      "kind": "theorem",
+      "file": "Domino/Board/Tiling.lean",
+      "line": 126
+    },
+    {
+      "name": "Domino.State",
+      "kind": "abbrev",
+      "file": "Domino/Board/Partial.lean",
+      "line": 11
+    },
+    {
+      "name": "Domino.reverseState",
+      "kind": "def",
+      "file": "Domino/Board/Partial.lean",
+      "line": 13
+    },
+    {
+      "name": "Domino.mem_reverseState",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 15
+    },
+    {
+      "name": "Domino.reverseState_twice",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 18
+    },
+    {
+      "name": "Domino.reverseState_empty",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 23
+    },
+    {
+      "name": "Domino.terminalHoles",
+      "kind": "def",
+      "file": "Domino/Board/Partial.lean",
+      "line": 25
+    },
+    {
+      "name": "Domino.mem_terminalHoles",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 28
+    },
+    {
+      "name": "Domino.terminalHoles_empty",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 32
+    },
+    {
+      "name": "Domino.terminalHoles_width_zero",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 36
+    },
+    {
+      "name": "Domino.PartialTiling",
+      "kind": "abbrev",
+      "file": "Domino/Board/Partial.lean",
+      "line": 42
+    },
+    {
+      "name": "Domino.partialTilingFintype",
+      "kind": "instance",
+      "file": "Domino/Board/Partial.lean",
+      "line": 45
+    },
+    {
+      "name": "Domino.partialTilingDecidableEq",
+      "kind": "instance",
+      "file": "Domino/Board/Partial.lean",
+      "line": 49
+    },
+    {
+      "name": "Domino.partialEmptyEquivTiling",
+      "kind": "def",
+      "file": "Domino/Board/Partial.lean",
+      "line": 52
+    },
+    {
+      "name": "Domino.partial_width_zero_state",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 58
+    },
+    {
+      "name": "Domino.partial_width_zero_nonempty_iff",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 61
+    },
+    {
+      "name": "Domino.partial_width_zero_isEmpty",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 69
+    },
+    {
+      "name": "Domino.partialWidthZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Board/Partial.lean",
+      "line": 72
+    },
+    {
+      "name": "Domino.partial_width_zero_card",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 77
+    },
+    {
+      "name": "Domino.partial_empty_card",
+      "kind": "theorem",
+      "file": "Domino/Board/Partial.lean",
+      "line": 86
+    },
+    {
+      "name": "Domino.singleEdgeTiling",
+      "kind": "def",
+      "file": "Domino/Board/Examples.lean",
+      "line": 11
+    },
+    {
+      "name": "Domino.horizontalUnitTiling",
+      "kind": "def",
+      "file": "Domino/Board/Examples.lean",
+      "line": 19
+    },
+    {
+      "name": "Domino.verticalUnitTiling",
+      "kind": "def",
+      "file": "Domino/Board/Examples.lean",
+      "line": 22
+    },
+    {
+      "name": "Domino.one_cell_not_tileable",
+      "kind": "theorem",
+      "file": "Domino/Board/Examples.lean",
+      "line": 25
+    },
+    {
+      "name": "Domino.diagonal_not_adjacent",
+      "kind": "theorem",
+      "file": "Domino/Board/Examples.lean",
+      "line": 31
+    },
+    {
+      "name": "Domino.RectangleSymmetry",
+      "kind": "structure",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 12
+    },
+    {
+      "name": "Domino.rectangle_group",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 17
+    },
+    {
+      "name": "Domino.symmetry_mul_def",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 27
+    },
+    {
+      "name": "Domino.symmetry_one_def",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 30
+    },
+    {
+      "name": "Domino.horizontal",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 32
+    },
+    {
+      "name": "Domino.vertical",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 33
+    },
+    {
+      "name": "Domino.halfTurn",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 34
+    },
+    {
+      "name": "Domino.symmetry_card_four",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 36
+    },
+    {
+      "name": "Domino.horizontal_mul_vertical",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 37
+    },
+    {
+      "name": "Domino.symmetry_exhaustive",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 39
+    },
+    {
+      "name": "Domino.cellAction",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 44
+    },
+    {
+      "name": "Domino.cellAction_one",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 47
+    },
+    {
+      "name": "Domino.cellAction_twice",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 50
+    },
+    {
+      "name": "Domino.cellAction_mul",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 55
+    },
+    {
+      "name": "Domino.cellAction_horizontal",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 62
+    },
+    {
+      "name": "Domino.cellAction_vertical",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 65
+    },
+    {
+      "name": "Domino.cellAction_halfTurn",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 68
+    },
+    {
+      "name": "Domino.cellAction_adjacent_iff",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 71
+    },
+    {
+      "name": "Domino.cellPerm",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 81
+    },
+    {
+      "name": "Domino.edgeAction",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 87
+    },
+    {
+      "name": "Domino.mem_edgeAction",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 93
+    },
+    {
+      "name": "Domino.edgeAction_twice",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 98
+    },
+    {
+      "name": "Domino.edgeAction_one",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 104
+    },
+    {
+      "name": "Domino.edgeAction_mul",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 109
+    },
+    {
+      "name": "Domino.edgePerm",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 116
+    },
+    {
+      "name": "Domino.mapEdges",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 122
+    },
+    {
+      "name": "Domino.mapHoles",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 125
+    },
+    {
+      "name": "Domino.mem_mapEdges",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 128
+    },
+    {
+      "name": "Domino.mem_mapHoles",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 132
+    },
+    {
+      "name": "Domino.mapEdges_one",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 136
+    },
+    {
+      "name": "Domino.mapEdges_mul",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 140
+    },
+    {
+      "name": "Domino.isCover_map",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 146
+    },
+    {
+      "name": "Domino.tilingAction",
+      "kind": "def",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 166
+    },
+    {
+      "name": "Domino.rectangle_action",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 169
+    },
+    {
+      "name": "Domino.smul_edges",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 174
+    },
+    {
+      "name": "Domino.empty_tiling_action",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Action.lean",
+      "line": 177
+    },
+    {
+      "name": "Domino.TilingOrbit",
+      "kind": "abbrev",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 12
+    },
+    {
+      "name": "Domino.tilingOrbitFintype",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 14
+    },
+    {
+      "name": "Domino.ordinaryCount",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 16
+    },
+    {
+      "name": "Domino.orbitCount",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 18
+    },
+    {
+      "name": "Domino.fixedCount",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 20
+    },
+    {
+      "name": "Domino.a",
+      "kind": "def",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 24
+    },
+    {
+      "name": "Domino.orbitRel_iff_four",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 26
+    },
+    {
+      "name": "Domino.odd_height_ne_even_width",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 43
+    },
+    {
+      "name": "Domino.three_ne_even_width",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 45
+    },
+    {
+      "name": "Domino.tilingOrbitWidthZeroUnique",
+      "kind": "instance",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 47
+    },
+    {
+      "name": "Domino.ordinaryCount_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 54
+    },
+    {
+      "name": "Domino.orbitCount_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 57
+    },
+    {
+      "name": "Domino.a_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 60
+    },
+    {
+      "name": "Domino.fixedCount_zero",
+      "kind": "theorem",
+      "file": "Domino/Symmetry/Counting.lean",
+      "line": 62
+    }
+  ]
+}

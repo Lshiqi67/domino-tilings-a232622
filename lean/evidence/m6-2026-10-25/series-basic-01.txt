@@ -1,0 +1,43 @@
+✖ [3184/3185] Building Domino.Series.Basic (22s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Series\Basic.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Series\Basic.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Series\Basic.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Series\Basic.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Series\Basic.setup.json --json
+info: Domino/Series/Basic.lean:31:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+error: Domino/Series/Basic.lean:30:2: unsolved goals
+case succ.zero
+f : ℕ → ℚ
+h : ∀ (n : ℕ), f (n + 2) + f n = 4 * f (n + 1)
+⊢ (coeff 1) (X ^ 2 * mk f) = 0
+error: Domino/Series/Basic.lean:41:18: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 0
+where
+ a := ↑n
+warning: Domino/Series/Basic.lean:30:57: This simp argument is unused:
+  coeff_X
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [add_mul, sub_mul, mul_assoc, coeff_succ_X_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Series/Basic.lean:36:67: This simp argument is unused:
+  coeff_mul_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [add_mul, sub_mul, one_mul, mul_assoc, map_add, map_sub, coeff_ofNat_mul, coeff_X_mul_at,
+    coeff_X_pow_mul', coeff_mk, coeff_C_mul, coeff_C, coeff_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Series/Basic.lean:39:37: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show 1 ≤ n + 2 by omega, show 2 ≤ n + 2 by omega, ite_true, hn0, hn1, ite_false, mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Series.Basic

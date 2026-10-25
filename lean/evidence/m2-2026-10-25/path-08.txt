@@ -1,0 +1,17 @@
+⚠ [3145/3145] Building Domino.Transfer.PathEquiv (20s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\PathEquiv.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\PathEquiv.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\PathEquiv.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\PathEquiv.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\PathEquiv.setup.json --json
+warning: Domino/Transfer/PathEquiv.lean:56:19: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/Transfer/PathEquiv.lean:58:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/Transfer/PathEquiv.lean:73:12: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Some required targets logged failures:
+- Domino.Transfer.PathEquiv

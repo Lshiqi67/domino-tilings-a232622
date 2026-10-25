@@ -1,0 +1,379 @@
+{
+  "date": "2026-10-25",
+  "scope": "三行主定理；书面论证审读，不是 Lean 认证",
+  "proof_files": {
+    "A001": "../../../docs/zh/blocks-proof.md",
+    "A002": "../../../docs/zh/half-board-proof.md"
+  },
+  "tex_directory": "../../../papers/en/sections",
+  "claims": [
+    {
+      "id": "C00",
+      "statement": "对象、群作用、空对象及形式幂级数约定",
+      "depends": [],
+      "proof": "A001",
+      "section": "## 1.",
+      "tex": "introduction",
+      "anchor": "sec:intro",
+      "checks": [
+        "boundary"
+      ]
+    },
+    {
+      "id": "C01",
+      "statement": "三行完整八状态局部覆盖规则",
+      "depends": [
+        "C00"
+      ],
+      "proof": "A001",
+      "section": "## 2.",
+      "tex": "blocks",
+      "anchor": "eq:local3",
+      "checks": [
+        "local"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "含非忠实作用的 Burnside 四项平均",
+      "depends": [
+        "C00"
+      ],
+      "proof": "A001",
+      "section": "## 7.",
+      "tex": "introduction",
+      "anchor": "lem:burnside",
+      "checks": [
+        "boundary"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "四项有理式通分的多项式恒等式",
+      "depends": [
+        "C00"
+      ],
+      "proof": "A001",
+      "section": "## 7.",
+      "tex": "blocks",
+      "anchor": "eq:average-rational",
+      "checks": [
+        "algebra"
+      ]
+    },
+    {
+      "id": "A01",
+      "statement": "完整铺法与起止为空的合法路径互逆",
+      "depends": [
+        "C01"
+      ],
+      "proof": "A001",
+      "section": "## 2.",
+      "tex": "blocks",
+      "anchor": "lem:path",
+      "checks": [
+        "paths"
+      ]
+    },
+    {
+      "id": "A02",
+      "statement": "首次回空路径穷尽且无重复地分类为 C、A_k、B_k",
+      "depends": [
+        "A01"
+      ],
+      "proof": "A001",
+      "section": "## 3.",
+      "tex": "blocks",
+      "anchor": "lem:blocks",
+      "checks": [
+        "blocks"
+      ]
+    },
+    {
+      "id": "A03",
+      "statement": "沿全部断口切开与基本块字拼接互逆",
+      "depends": [
+        "A02"
+      ],
+      "proof": "A001",
+      "section": "## 4.",
+      "tex": "blocks",
+      "anchor": "lem:word",
+      "checks": [
+        "words"
+      ]
+    },
+    {
+      "id": "A04",
+      "statement": "三种对称对应逐字母对合、倒序及复合",
+      "depends": [
+        "A03"
+      ],
+      "proof": "A001",
+      "section": "## 5.",
+      "tex": "blocks",
+      "anchor": "eq:word-action",
+      "checks": [
+        "actions"
+      ]
+    },
+    {
+      "id": "A05",
+      "statement": "按半宽加权的全部字生成函数 D",
+      "depends": [
+        "A03"
+      ],
+      "proof": "A001",
+      "section": "## 4.",
+      "tex": "blocks",
+      "anchor": "eq:DH",
+      "checks": [
+        "algebra",
+        "boundary"
+      ]
+    },
+    {
+      "id": "A06",
+      "statement": "h 固定字仅为 C 的幂，H=1/(1-x)",
+      "depends": [
+        "A04"
+      ],
+      "proof": "A001",
+      "section": "## 6.",
+      "tex": "blocks",
+      "anchor": "eq:DH",
+      "checks": [
+        "actions",
+        "boundary"
+      ]
+    },
+    {
+      "id": "A07",
+      "statement": "普通回文的两种互斥中心情形给出 V",
+      "depends": [
+        "A04",
+        "A05"
+      ],
+      "proof": "A001",
+      "section": "## 6.",
+      "tex": "blocks",
+      "anchor": "eq:V",
+      "checks": [
+        "actions",
+        "algebra"
+      ]
+    },
+    {
+      "id": "A08",
+      "statement": "带对合回文的中心只能为空或 C，给出 R",
+      "depends": [
+        "A04",
+        "A05"
+      ],
+      "proof": "A001",
+      "section": "## 6.",
+      "tex": "blocks",
+      "anchor": "eq:R",
+      "checks": [
+        "actions",
+        "algebra"
+      ]
+    },
+    {
+      "id": "B01",
+      "statement": "末列留空部分铺法与合法状态路径互逆",
+      "depends": [
+        "C01"
+      ],
+      "proof": "A002",
+      "section": "## 2.",
+      "tex": "half-board",
+      "anchor": "eq:profile",
+      "checks": [
+        "paths"
+      ]
+    },
+    {
+      "id": "B02",
+      "statement": "任意终端集合的左右反射补全与限制互逆",
+      "depends": [
+        "B01"
+      ],
+      "proof": "A002",
+      "section": "## 3.",
+      "tex": "half-board",
+      "anchor": "lem:half",
+      "checks": [
+        "half_v"
+      ]
+    },
+    {
+      "id": "B03",
+      "statement": "终端集合满足 J(S)=S 当且仅当半周补全成立",
+      "depends": [
+        "B01"
+      ],
+      "proof": "A002",
+      "section": "## 3.",
+      "tex": "half-board",
+      "anchor": "eq:half-fixed",
+      "checks": [
+        "half_r"
+      ]
+    },
+    {
+      "id": "B04",
+      "statement": "中央行重叠排除给出三行 h_n=1",
+      "depends": [
+        "C00"
+      ],
+      "proof": "A002",
+      "section": "## 4.",
+      "tex": "half-board",
+      "anchor": "lem:h-odd",
+      "checks": [
+        "boundary"
+      ]
+    },
+    {
+      "id": "B05",
+      "statement": "逐步归纳的支持集及二维转移矩阵 M",
+      "depends": [
+        "B01"
+      ],
+      "proof": "A002",
+      "section": "## 6.",
+      "tex": "half-board",
+      "anchor": "eq:two-dimensional",
+      "checks": [
+        "matrix"
+      ]
+    },
+    {
+      "id": "B06",
+      "statement": "M 的多项式恒等式推出全部普通计数二阶递推",
+      "depends": [
+        "B05"
+      ],
+      "proof": "A002",
+      "section": "## 6.",
+      "tex": "half-board",
+      "anchor": "eq:d-rec",
+      "checks": [
+        "matrix",
+        "algebra"
+      ]
+    },
+    {
+      "id": "B07",
+      "statement": "终端求和给出三个固定点数的奇偶公式",
+      "depends": [
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06"
+      ],
+      "proof": "A002",
+      "section": "## 6.",
+      "tex": "half-board",
+      "anchor": "eq:parity-fixed",
+      "checks": [
+        "boundary"
+      ]
+    },
+    {
+      "id": "B08",
+      "statement": "从奇偶公式重新求和得到 D,H,V,R",
+      "depends": [
+        "B07"
+      ],
+      "proof": "A002",
+      "section": "## 7.",
+      "tex": "half-board",
+      "anchor": "Second proof of Theorem",
+      "anchor_kind": "text",
+      "checks": [
+        "algebra"
+      ]
+    },
+    {
+      "id": "T01",
+      "statement": "路线 A 经 Burnside 与公共代数得到主生成函数",
+      "depends": [
+        "C02",
+        "C03",
+        "A05",
+        "A06",
+        "A07",
+        "A08"
+      ],
+      "proof": "A001",
+      "section": "## 7.",
+      "tex": "blocks",
+      "anchor": "First proof of Theorem",
+      "anchor_kind": "text",
+      "checks": [
+        "algebra",
+        "boundary"
+      ]
+    },
+    {
+      "id": "T02",
+      "statement": "路线 B 经 Burnside 与公共代数得到同一主生成函数",
+      "depends": [
+        "C02",
+        "C03",
+        "B08"
+      ],
+      "proof": "A002",
+      "section": "## 7.",
+      "tex": "half-board",
+      "anchor": "Second proof of Theorem",
+      "anchor_kind": "text",
+      "checks": [
+        "algebra",
+        "boundary"
+      ]
+    },
+    {
+      "id": "T03",
+      "statement": "主生成函数推出七阶递推和七个初值",
+      "depends": [
+        "T01"
+      ],
+      "alternative_depends": [
+        "T02"
+      ],
+      "proof": "A001",
+      "section": "## 8.",
+      "tex": "introduction",
+      "anchor": "eq:recurrence",
+      "checks": [
+        "algebra"
+      ]
+    },
+    {
+      "id": "T04",
+      "statement": "空棋盘、宽二基本块和小尺寸固定点交叉核对",
+      "depends": [
+        "C00",
+        "A02",
+        "B07",
+        "T01"
+      ],
+      "proof": "A001",
+      "section": "## 8.",
+      "tex": "introduction",
+      "anchor": "thm:main",
+      "checks": [
+        "boundary"
+      ]
+    }
+  ],
+  "source_proof_files": {
+    "A001": "attempts/A001-irreducible-blocks/proof.md",
+    "A002": "attempts/A002-half-board-transfer/proof.md"
+  },
+  "publication_note": "原书面证明链编号、陈述及依赖保留；阅读路径指向仓库公开草稿，当前 Lean 覆盖状态在 ../coverage.json。"
+}

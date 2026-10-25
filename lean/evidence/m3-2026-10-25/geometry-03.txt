@@ -1,0 +1,43 @@
+✔ [3150/3151] Built Domino.HalfBoard.PathCompletion (18s)
+✖ [3151/3151] Building Domino.HalfBoard.Geometry (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\HalfBoard\Geometry.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\Geometry.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\Geometry.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\Geometry.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\Geometry.setup.json --json
+error: Domino/HalfBoard/Geometry.lean:33:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?e ((Equiv.symm ?e) ?x)
+in the target expression
+  ((partialTilingEquivPath n ((tilingPath ↑T).state n))
+          ((partialTilingEquivPath n ((tilingPath ↑T).state n)).symm
+            ((halfPathEquivAxialPath b n).symm ((axialFixedEquivPath b n) T)).snd)).state
+      k =
+    (tilingPath ↑T).state k
+
+b : Bool
+n : ℕ
+T : AxialFixed b n
+k : ℕ
+hk : k ≤ n
+⊢ ((partialTilingEquivPath n ((tilingPath ↑T).state n))
+          ((partialTilingEquivPath n ((tilingPath ↑T).state n)).symm
+            ((halfPathEquivAxialPath b n).symm ((axialFixedEquivPath b n) T)).snd)).state
+      k =
+    (tilingPath ↑T).state k
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    ((halfPathEquivAxialPath b n).symm ((axialFixedEquivPath b n) T)).snd
+  has type
+    (fun S => StatePath n ↑S) ((halfPathEquivAxialPath b n).symm ((axialFixedEquivPath b n) T)).fst
+  but is expected to have type
+    StatePath n ((tilingPath ↑T).state n)
+  in the application
+    (partialTilingEquivPath n ((tilingPath ↑T).state n)).symm
+      ((halfPathEquivAxialPath b n).symm ((axialFixedEquivPath b n) T)).snd
+error: Domino/HalfBoard/Geometry.lean:54:2: Type mismatch: After simplification, term
+  h
+ has type
+  Iff ((a, c) ∈ coverBonds ↑P) ((leftCell a, leftCell c) ∈ coverBonds ↑U)
+but is expected to have type
+  Iff ((a, c) ∈ coverBonds ↑((axialFixedEquivPartial b n) T).snd) ((leftCell a, leftCell c) ∈ coverBonds ↑T)
+Some required targets logged failures:
+- Domino.HalfBoard.Geometry
+error: build failed

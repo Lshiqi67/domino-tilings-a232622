@@ -1,0 +1,9 @@
+✔ [3212/3214] Built Domino.ThreeRows.Series (19s)
+✖ [3213/3214] Building Domino.ThreeRows.Main (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\ThreeRows\Main.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Main.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Main.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Main.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Main.setup.json --json
+error: Domino/ThreeRows/Main.lean:29:26: unsolved goals
+h : 4 * (orbitDenom * orbitSeries) = 4 * orbitNumerator
+⊢ ¬4 = 0
+Some required targets logged failures:
+- Domino.ThreeRows.Main
+error: build failed

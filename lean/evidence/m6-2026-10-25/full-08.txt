@@ -1,0 +1,565 @@
+ℹ [1822/1881] Replayed Domino.Environment
+info: Domino/Environment.lean:15:0: Fintype.card.{u_3} (α : Type u_3) [Fintype α] : ℕ
+info: Domino/Environment.lean:16:0: Fintype.card_congr.{u_3, u_4} {α : Type u_3} {β : Type u_4} [Fintype α] [Fintype β] (f : α ≃ β) :
+  Fintype.card α = Fintype.card β
+info: Domino/Environment.lean:17:0: Equiv.{u_1, u_2} (α : Sort u_1) (β : Sort u_2) : Sort (max (max 1 u_1) u_2)
+info: Domino/Environment.lean:18:0: MulAction.orbitRel.{u_1, u_2} (G : Type u_1) (α : Type u_2) [Group G] [MulAction G α] : Setoid α
+info: Domino/Environment.lean:19:0: MulAction.sum_card_fixedBy_eq_card_orbits_mul_card_group.{u, v} (G : Type u) (X : Type v) [Group G] [MulAction G X]
+  [Fintype G] [(g : G) → Fintype ↑(MulAction.fixedBy X g)] [Fintype (Quotient (MulAction.orbitRel G X))] :
+  ∑ g, Fintype.card ↑(MulAction.fixedBy X g) = Fintype.card (Quotient (MulAction.orbitRel G X)) * Fintype.card G
+info: Domino/Environment.lean:20:0: Matrix.mul_apply.{v, u_1, u_2, u_3} {l : Type u_1} {m : Type u_2} {n : Type u_3} {α : Type v} [Fintype m] [Mul α]
+  [AddCommMonoid α] {M : Matrix l m α} {N : Matrix m n α} {i : l} {k : n} : (M * N) i k = ∑ j, M i j * N j k
+info: Domino/Environment.lean:21:0: PowerSeries.{u_1} (R : Type u_1) : Type u_1
+info: Domino/Environment.lean:22:0: PowerSeries.coeff.{u_1} {R : Type u_1} [Semiring R] (n : ℕ) : PowerSeries R →ₗ[R] R
+info: Domino/Environment.lean:23:0: PowerSeries.constantCoeff.{u_1} {R : Type u_1} [Semiring R] : PowerSeries R →+* R
+✖ [3216/3218] Building Domino.ThreeRows.Recurrence (23s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\ThreeRows\Recurrence.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Recurrence.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Recurrence.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Recurrence.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Recurrence.setup.json --json
+error: Domino/ThreeRows/Recurrence.lean:58:32: linarith failed to find a contradiction
+case h1
+h0 :
+  (((((((↑(a 0) - 5 * if False then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if True then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h1 :
+  (((((((↑(a 1) - 5 * if True then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if True then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h2 :
+  (((((((↑(a 2) - 5 * if True then ↑(a 1) else 0) + if True then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if True then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h3 :
+  (((((((↑(a 3) - 5 * if True then ↑(a 2) else 0) + if True then ↑(a 1) else 0) + 19 * if True then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if True then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h4 :
+  (((((((↑(a 4) - 5 * if True then ↑(a 3) else 0) + if True then ↑(a 2) else 0) + 19 * if True then ↑(a 1) else 0) -
+            19 * if True then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h5 :
+  (((((((↑(a 5) - 5 * if True then ↑(a 4) else 0) + if True then ↑(a 3) else 0) + 19 * if True then ↑(a 2) else 0) -
+            19 * if True then ↑(a 1) else 0) -
+          if True then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if True then 1 else 0) +
+      if False then 1 else 0
+h6 :
+  (((((((↑(a 6) - 5 * if True then ↑(a 5) else 0) + if True then ↑(a 4) else 0) + 19 * if True then ↑(a 3) else 0) -
+            19 * if True then ↑(a 2) else 0) -
+          if True then ↑(a 1) else 0) +
+        5 * if True then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if True then 1 else 0
+a✝ : ↑(a 0) < 1
+⊢ False
+failed
+error: Domino/ThreeRows/Recurrence.lean:59:32: linarith failed to find a contradiction
+case h1
+h0 :
+  (((((((↑(a 0) - 5 * if False then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if True then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h1 :
+  (((((((↑(a 1) - 5 * if True then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if True then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h2 :
+  (((((((↑(a 2) - 5 * if True then ↑(a 1) else 0) + if True then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if True then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h3 :
+  (((((((↑(a 3) - 5 * if True then ↑(a 2) else 0) + if True then ↑(a 1) else 0) + 19 * if True then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if True then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h4 :
+  (((((((↑(a 4) - 5 * if True then ↑(a 3) else 0) + if True then ↑(a 2) else 0) + 19 * if True then ↑(a 1) else 0) -
+            19 * if True then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h5 :
+  (((((((↑(a 5) - 5 * if True then ↑(a 4) else 0) + if True then ↑(a 3) else 0) + 19 * if True then ↑(a 2) else 0) -
+            19 * if True then ↑(a 1) else 0) -
+          if True then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if True then 1 else 0) +
+      if False then 1 else 0
+h6 :
+  (((((((↑(a 6) - 5 * if True then ↑(a 5) else 0) + if True then ↑(a 4) else 0) + 19 * if True then ↑(a 3) else 0) -
+            19 * if True then ↑(a 2) else 0) -
+          if True then ↑(a 1) else 0) +
+        5 * if True then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if True then 1 else 0
+e0 : ↑(a 0) = 1
+a✝ : ↑(a 1) < 2
+⊢ False
+failed
+error: Domino/ThreeRows/Recurrence.lean:60:32: linarith failed to find a contradiction
+case h1
+h0 :
+  (((((((↑(a 0) - 5 * if False then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if True then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h1 :
+  (((((((↑(a 1) - 5 * if True then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if True then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h2 :
+  (((((((↑(a 2) - 5 * if True then ↑(a 1) else 0) + if True then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if True then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h3 :
+  (((((((↑(a 3) - 5 * if True then ↑(a 2) else 0) + if True then ↑(a 1) else 0) + 19 * if True then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if True then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h4 :
+  (((((((↑(a 4) - 5 * if True then ↑(a 3) else 0) + if True then ↑(a 2) else 0) + 19 * if True then ↑(a 1) else 0) -
+            19 * if True then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h5 :
+  (((((((↑(a 5) - 5 * if True then ↑(a 4) else 0) + if True then ↑(a 3) else 0) + 19 * if True then ↑(a 2) else 0) -
+            19 * if True then ↑(a 1) else 0) -
+          if True then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if True then 1 else 0) +
+      if False then 1 else 0
+h6 :
+  (((((((↑(a 6) - 5 * if True then ↑(a 5) else 0) + if True then ↑(a 4) else 0) + 19 * if True then ↑(a 3) else 0) -
+            19 * if True then ↑(a 2) else 0) -
+          if True then ↑(a 1) else 0) +
+        5 * if True then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if True then 1 else 0
+e0 : ↑(a 0) = 1
+e1 : ↑(a 1) = 2
+a✝ : ↑(a 2) < 5
+⊢ False
+failed
+error: Domino/ThreeRows/Recurrence.lean:61:33: linarith failed to find a contradiction
+case h1
+h0 :
+  (((((((↑(a 0) - 5 * if False then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if True then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h1 :
+  (((((((↑(a 1) - 5 * if True then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if True then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h2 :
+  (((((((↑(a 2) - 5 * if True then ↑(a 1) else 0) + if True then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if True then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h3 :
+  (((((((↑(a 3) - 5 * if True then ↑(a 2) else 0) + if True then ↑(a 1) else 0) + 19 * if True then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if True then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h4 :
+  (((((((↑(a 4) - 5 * if True then ↑(a 3) else 0) + if True then ↑(a 2) else 0) + 19 * if True then ↑(a 1) else 0) -
+            19 * if True then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h5 :
+  (((((((↑(a 5) - 5 * if True then ↑(a 4) else 0) + if True then ↑(a 3) else 0) + 19 * if True then ↑(a 2) else 0) -
+            19 * if True then ↑(a 1) else 0) -
+          if True then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if True then 1 else 0) +
+      if False then 1 else 0
+h6 :
+  (((((((↑(a 6) - 5 * if True then ↑(a 5) else 0) + if True then ↑(a 4) else 0) + 19 * if True then ↑(a 3) else 0) -
+            19 * if True then ↑(a 2) else 0) -
+          if True then ↑(a 1) else 0) +
+        5 * if True then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if True then 1 else 0
+e0 : ↑(a 0) = 1
+e1 : ↑(a 1) = 2
+e2 : ↑(a 2) = 5
+a✝ : ↑(a 3) < 14
+⊢ False
+failed
+error: Domino/ThreeRows/Recurrence.lean:62:33: linarith failed to find a contradiction
+case h1
+h0 :
+  (((((((↑(a 0) - 5 * if False then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if True then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h1 :
+  (((((((↑(a 1) - 5 * if True then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if True then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h2 :
+  (((((((↑(a 2) - 5 * if True then ↑(a 1) else 0) + if True then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if True then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h3 :
+  (((((((↑(a 3) - 5 * if True then ↑(a 2) else 0) + if True then ↑(a 1) else 0) + 19 * if True then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if True then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h4 :
+  (((((((↑(a 4) - 5 * if True then ↑(a 3) else 0) + if True then ↑(a 2) else 0) + 19 * if True then ↑(a 1) else 0) -
+            19 * if True then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h5 :
+  (((((((↑(a 5) - 5 * if True then ↑(a 4) else 0) + if True then ↑(a 3) else 0) + 19 * if True then ↑(a 2) else 0) -
+            19 * if True then ↑(a 1) else 0) -
+          if True then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if True then 1 else 0) +
+      if False then 1 else 0
+h6 :
+  (((((((↑(a 6) - 5 * if True then ↑(a 5) else 0) + if True then ↑(a 4) else 0) + 19 * if True then ↑(a 3) else 0) -
+            19 * if True then ↑(a 2) else 0) -
+          if True then ↑(a 1) else 0) +
+        5 * if True then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if True then 1 else 0
+e0 : ↑(a 0) = 1
+e1 : ↑(a 1) = 2
+e2 : ↑(a 2) = 5
+e3 : ↑(a 3) = 14
+a✝ : ↑(a 4) < 46
+⊢ False
+failed
+error: Domino/ThreeRows/Recurrence.lean:63:34: linarith failed to find a contradiction
+case h1
+h0 :
+  (((((((↑(a 0) - 5 * if False then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if True then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h1 :
+  (((((((↑(a 1) - 5 * if True then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if True then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h2 :
+  (((((((↑(a 2) - 5 * if True then ↑(a 1) else 0) + if True then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if True then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h3 :
+  (((((((↑(a 3) - 5 * if True then ↑(a 2) else 0) + if True then ↑(a 1) else 0) + 19 * if True then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if True then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h4 :
+  (((((((↑(a 4) - 5 * if True then ↑(a 3) else 0) + if True then ↑(a 2) else 0) + 19 * if True then ↑(a 1) else 0) -
+            19 * if True then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h5 :
+  (((((((↑(a 5) - 5 * if True then ↑(a 4) else 0) + if True then ↑(a 3) else 0) + 19 * if True then ↑(a 2) else 0) -
+            19 * if True then ↑(a 1) else 0) -
+          if True then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if True then 1 else 0) +
+      if False then 1 else 0
+h6 :
+  (((((((↑(a 6) - 5 * if True then ↑(a 5) else 0) + if True then ↑(a 4) else 0) + 19 * if True then ↑(a 3) else 0) -
+            19 * if True then ↑(a 2) else 0) -
+          if True then ↑(a 1) else 0) +
+        5 * if True then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if True then 1 else 0
+e0 : ↑(a 0) = 1
+e1 : ↑(a 1) = 2
+e2 : ↑(a 2) = 5
+e3 : ↑(a 3) = 14
+e4 : ↑(a 4) = 46
+a✝ : ↑(a 5) < 156
+⊢ False
+failed
+error: Domino/ThreeRows/Recurrence.lean:64:34: linarith failed to find a contradiction
+case h1
+h0 :
+  (((((((↑(a 0) - 5 * if False then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if True then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h1 :
+  (((((((↑(a 1) - 5 * if True then ↑(a 0) else 0) + if False then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if True then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h2 :
+  (((((((↑(a 2) - 5 * if True then ↑(a 1) else 0) + if True then ↑(a 0) else 0) + 19 * if False then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if True then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h3 :
+  (((((((↑(a 3) - 5 * if True then ↑(a 2) else 0) + if True then ↑(a 1) else 0) + 19 * if True then ↑(a 0) else 0) -
+            19 * if False then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if True then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h4 :
+  (((((((↑(a 4) - 5 * if True then ↑(a 3) else 0) + if True then ↑(a 2) else 0) + 19 * if True then ↑(a 1) else 0) -
+            19 * if True then ↑(a 0) else 0) -
+          if False then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if False then 1 else 0
+h5 :
+  (((((((↑(a 5) - 5 * if True then ↑(a 4) else 0) + if True then ↑(a 3) else 0) + 19 * if True then ↑(a 2) else 0) -
+            19 * if True then ↑(a 1) else 0) -
+          if True then ↑(a 0) else 0) +
+        5 * if False then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if True then 1 else 0) +
+      if False then 1 else 0
+h6 :
+  (((((((↑(a 6) - 5 * if True then ↑(a 5) else 0) + if True then ↑(a 4) else 0) + 19 * if True then ↑(a 3) else 0) -
+            19 * if True then ↑(a 2) else 0) -
+          if True then ↑(a 1) else 0) +
+        5 * if True then ↑(a 0) else 0) -
+      if False then ↑(a 0) else 0) =
+    (((((if False then 1 else 0) - 3 * if False then 1 else 0) - 4 * if False then 1 else 0) +
+          10 * if False then 1 else 0) -
+        4 * if False then 1 else 0) +
+      if True then 1 else 0
+e0 : ↑(a 0) = 1
+e1 : ↑(a 1) = 2
+e2 : ↑(a 2) = 5
+e3 : ↑(a 3) = 14
+e4 : ↑(a 4) = 46
+e5 : ↑(a 5) = 156
+a✝ : ↑(a 6) < 561
+⊢ False
+failed
+Some required targets logged failures:
+- Domino.ThreeRows.Recurrence
+error: build failed

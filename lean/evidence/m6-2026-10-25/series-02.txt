@@ -1,0 +1,6 @@
+✖ [3207/3209] Building Domino.Series.Basic (20s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Series\Basic.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Series\Basic.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Series\Basic.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Series\Basic.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Series\Basic.setup.json --json
+error: Domino/Series/Basic.lean:31:4: No goals to be solved
+Some required targets logged failures:
+- Domino.Series.Basic
+error: build failed

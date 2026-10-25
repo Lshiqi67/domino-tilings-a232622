@@ -1,0 +1,181 @@
+⚠ [3149/3151] Building Domino.ThreeRows.ProfileRecurrence (20s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\ThreeRows\ProfileRecurrence.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\ProfileRecurrence.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\ProfileRecurrence.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\ProfileRecurrence.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\ProfileRecurrence.setup.json --json
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:34:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:35:25: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp (disch := decide) only [evenProfile, oddProfile, transfer3, if_pos, if_neg, mul_zero, mul_one, zero_add,
+    add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/ThreeRows/ProfileRecurrence.lean:35:35: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp (disch := decide) only [evenProfile, oddProfile, transfer3, if_pos, if_neg, mul_zero, mul_one, zero_mul,
+    add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/ThreeRows/ProfileRecurrence.lean:35:55: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/ThreeRows/ProfileRecurrence.lean:35:59: Unused tactic linter: `omega` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/ThreeRows/ProfileRecurrence.lean:35:59: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:69: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:41:77: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Domino/ThreeRows/ProfileRecurrence.lean:42:25: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp (disch := decide) only [evenProfile, oddProfile, transfer3, if_pos, if_neg, mul_zero, mul_one, zero_add,
+    add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/ThreeRows/ProfileRecurrence.lean:42:55: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/ThreeRows/ProfileRecurrence.lean:42:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [3150/3151] Building Domino.Symmetry.Burnside (21s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Symmetry\Burnside.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Symmetry\Burnside.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Symmetry\Burnside.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Symmetry\Burnside.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Symmetry\Burnside.setup.json --json
+error: Domino/Symmetry/Burnside.lean:28:2: 'change' tactic failed, pattern
+  ∑ g, fixedCount m n g = orbitCount m n * Fintype.card RectangleSymmetry
+is not definitionally equal to target
+  ∑ g, Fintype.card ↑(MulAction.fixedBy (Tiling m (2 * n)) g) =
+    Fintype.card (Quotient (MulAction.orbitRel RectangleSymmetry (Tiling m (2 * n)))) * Fintype.card RectangleSymmetry
+✔ [3151/3151] Built Domino.ThreeRows.Ordinary (18s)
+Some required targets logged failures:
+- Domino.ThreeRows.ProfileRecurrence
+- Domino.Symmetry.Burnside
+error: build failed

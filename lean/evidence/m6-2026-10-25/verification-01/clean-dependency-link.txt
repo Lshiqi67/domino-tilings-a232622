@@ -1,0 +1,7 @@
+New-Item : Access is denied
+At line:1 char:1
++ New-Item -ItemType Junction -Path '{WORKSPACE}\domino-tilings-a23 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: ({WORKSPACE}...\.lake\packages:String) [New-Item], Win32Exception
+    + FullyQualifiedErrorId : NewItemCreateIOError,Microsoft.PowerShell.Commands.NewItemCommand
+ 

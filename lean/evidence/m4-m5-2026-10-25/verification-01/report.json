@@ -1,0 +1,1919 @@
+{
+  "date": "2026-10-25T16:33:17.687247+08:00",
+  "stage": "M1-M5",
+  "scope": "全部自然数指标的三行支持与二维计数、普通二阶递推、固定点奇偶式、实际群作用 Burnside 与轨道奇偶式",
+  "random_seed": null,
+  "commands": [
+    {
+      "name": "m3-regression",
+      "argv": [
+        "python",
+        "-X",
+        "utf8",
+        "scripts/check_m3.py",
+        "--report-dir",
+        "{LEAN_ROOT}\\checks\\m4-m5-2026-10-25\\verification-01\\m3-regression"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "m3-regression.txt"
+    },
+    {
+      "name": "axioms",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Domino/Audit/M4M5.lean"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "axioms.txt"
+    }
+  ],
+  "checks": {
+    "audit_inventory_matches_sources": true,
+    "M1_M2_M3_sources_and_locks_unchanged": true,
+    "locked_environment_full_build_and_M1_M2_M3_regression": true,
+    "every_listed_declaration_audited": true
+  },
+  "source_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lakefile.toml": "85cf3282199be800377c2954df5380308db40536ca667a36af860613a4c6e9a9",
+    "lake-manifest.json": "da7a96248698f49cd4b1fa9166675e820a1dab03ec820aa973ed74b12b59f9ae",
+    "Domino.lean": "982c63bdcda43f5d3808e568d8e9242234385729b878d8effde644f903c10f81",
+    "docs/coverage.json": "f7a52912e99cbf0cf94f401c1391be511387937387652d2b7b1ce23d7dabcdf2",
+    "docs/formalization-plan.md": "f4d7d0d70afc447067670a2c2b6f388620f241a8a0e5c3abc4d26ba1d27eb94b",
+    "docs/m4-m5-counting.md": "5aab35aecdd0108f20e87a35e7a9d96d5206f8b7cce535ed7f08f9208229a2f1",
+    "docs/m4-m5-declarations.json": "fd7fcef93e8e2bf25e554b9e7505ee757a8ce6e11f84501a76574fea848bb739",
+    "scripts/check_project.py": "8f67c1997322b31cb19f761990daeafbf89e0feb1994b7f9f3b924ee59e465a6",
+    "scripts/check_m1.py": "2a76f7cb1b3542fdd33500afae092f1764e5369e86a01e85a7a5c8dac318c65c",
+    "scripts/check_m2.py": "3dc7660d0ebdde052aeb0ae963ad6ed5a7388420b5038bb1ec614ed7878657da",
+    "scripts/check_m3.py": "8207537b8e2fa7c8783af752618b01a29f2665f471f141759a2fbc1d7ba9b38b",
+    "scripts/check_m4_m5.py": "130ce73ca521c2e2cdb4f542d7df76e363fed47761fbaabd3bd6acc4a312dfbc",
+    "Domino/Audit/M1.lean": "77d0033f30a98556d967e994b59eb9c632754a1347adc34fe901d6c25c68eb6a",
+    "Domino/Audit/M2.lean": "fd48384712e18539408b9958cf6925390e59686683e80d47ff2c7181a904c2c4",
+    "Domino/Audit/M3.lean": "906035949900a40b053a568441cdf6ea38abc18d07e92662c48fdec0646c3413",
+    "Domino/Audit/M4M5.lean": "d272bc14d7c6360d5757e1433aa7f60526b8e42669dd617532bce2b0ad489353",
+    "Domino/Board/Basic.lean": "08c77bb6868f81c3a2616002c2551b715f4626c7454cf8db44ba68835681021c",
+    "Domino/Board/Examples.lean": "47d695fd918310c248841ebacaf797314f6fc5562a4de9412af1f4978bc14bab",
+    "Domino/Board/Partial.lean": "4393f4387bceb2becc8701f0fe9aa7e2959451a93fe3498ad0fb4463d9c7d8aa",
+    "Domino/Board/Tiling.lean": "92f8124973199476e6d19519cf04643a68d941748967cd8f961b41e879c40f7c",
+    "Domino/Environment.lean": "151ba6033dd24d2c4f9a686e693232b38ca15e07e5e984793ce63ae3537a07a8",
+    "Domino/HalfBoard/Examples.lean": "ebcb5ca8f83056bf61b5c7c50161d80ad54f8e33c510ce0854da887543835ba8",
+    "Domino/HalfBoard/Geometry.lean": "2b39bf1b20befc49632c0eef91ff158288f2ff682d273106b56df748323dd3f9",
+    "Domino/HalfBoard/HalfTurn.lean": "58cb81e5c91608bb1b50050c442c84655d4609378f1056e6e28b2aadfc2cc335",
+    "Domino/HalfBoard/Horizontal.lean": "ef6d989a1818de7a9d70598cc3ac5dcf0ffe51710e727071777b612baf6dafaf",
+    "Domino/HalfBoard/PathCompletion.lean": "611f94b6e8b79d7a6d9a88c61d6074ad9936ccf0c0a17b233b23d9be5de2f89a",
+    "Domino/HalfBoard/Reflection.lean": "ca8f476d0cbb5b68f03e330eeddab4bca6e1269cd2a392b2c5ea19b71da3165c",
+    "Domino/Symmetry/Action.lean": "9da3d750dbb2069a8ada9a99e8f4fa318001245e8bbf24101f10d8e9eeb0a654",
+    "Domino/Symmetry/Burnside.lean": "07623da62d2acab115805bcff160c00d5eff190c75ebc584ec1557acee2070dc",
+    "Domino/Symmetry/Counting.lean": "a265dcffe12a3355ba7f9050b97e8acd802ad25f546f2e88f6f6bf02f4478c39",
+    "Domino/Symmetry/PathAction.lean": "82f88673fcd7af74a61258fa0cd53a567692ca32141710d262315716bab48313",
+    "Domino/ThreeRows/Boundary.lean": "54e2a1d0fe5fe19d924fca6159120c0dbdba3e7ea1d7eb36bbe640b4a8b7bcbc",
+    "Domino/ThreeRows/FixedCounts.lean": "e18c1949bf3c2f7e15136201a688f8d51f2024f6c09a44a4da124d5860f19055",
+    "Domino/ThreeRows/OrbitCounts.lean": "f428e5fc9f163aa3aeba51a56d532324b1c24292aede0dd7e491e7e2ce6aba91",
+    "Domino/ThreeRows/Ordinary.lean": "41929c980bf4e92f00f8cf140143c86990131cf1c6d64188aba5e0d08cf56180",
+    "Domino/ThreeRows/ProfileRecurrence.lean": "e1b7e57dd02e6afccf2a4cd6165091800598a70eaa48e690b3f8a3697d5e03ad",
+    "Domino/Transfer/Bonds.lean": "e0b7cd01a66d4c1d322fc1a84259290c79c671514a805caff0ff17fce6ef5a91",
+    "Domino/Transfer/Count.lean": "5b8a8e3a5be0a272c529103cf8882f3016cc91d2421245fbe5b42a03825767f0",
+    "Domino/Transfer/Examples.lean": "c6aeab525aed20326b42098652439b55ca6e14384000d96e3c3684c66f254cf5",
+    "Domino/Transfer/Frame.lean": "6fd23cf6f228f9165d4f3fd26208e0163cea18ed698b96423ffb0e0f404f32b2",
+    "Domino/Transfer/Grid.lean": "a9d28d47bb8da17a9fed84ebef5dac72f483a9e70bbcdf9135e48170b8835d8b",
+    "Domino/Transfer/Links.lean": "98b32c8d4d6bcf722a6944ff6d96a212a108623f651a3d4750d312196f3740f8",
+    "Domino/Transfer/PathEquiv.lean": "30b9d4f81bb5e7616584278389f6b61e580cb50f6f0ae5745627ffb9bccaf4b1",
+    "Domino/Transfer/ThreeRows.lean": "21eb1f684c8f68f27271949cbe45c69f1ac7644448e541ea13683992a2f7eba1"
+  },
+  "paper_main_theorem_verified": false,
+  "not_verified": [
+    "三行主生成函数与七阶递推及完整七项初值",
+    "一般高度及全文扩展",
+    "基本块第二证明"
+  ],
+  "declaration_counts": {
+    "abbrev": 17,
+    "def": 92,
+    "instance": 19,
+    "theorem": 230,
+    "structure": 4
+  },
+  "new_M4_declaration_counts": {
+    "theorem": 38,
+    "def": 6
+  },
+  "new_M5_declaration_counts": {
+    "theorem": 21
+  },
+  "lean_version": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lake_version": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "dependencies": [
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "dfa4f38190d07c37e315953e08b90fe2d95b3c24",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "d6b4c7be5be75ec4917c873ac50c756dc1436372",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "df72b022e558978a1c50264cfc4d7fec86fa8e04",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4a174c490d8707121c4a9290800489f105d85e07",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "dce0ad79c486cb1fb504af04f953c3466b0c6db8",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "66e469188fe07963e5cf666c7d4433f45b8131c5",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "c24fe6078c630e89b489bffe59b3e20ac30d12c8",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.35.0",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    }
+  ],
+  "axiom_dependencies": {
+    "Domino.Cell": [],
+    "Domino.Adjacent": [],
+    "Domino.adjacentDecidable": [],
+    "Domino.adjacent_symm": [],
+    "Domino.adjacent_ne": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.reflectRows": [],
+    "Domino.reflectCols": [],
+    "Domino.reflectRows_twice": [
+      "propext"
+    ],
+    "Domino.reflectCols_twice": [
+      "propext"
+    ],
+    "Domino.reflections_commute": [],
+    "Domino.fin_rev_neighbor_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.adjacent_reflectRows_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.adjacent_reflectCols_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.IsEdge": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.Edge": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.edgeFintype": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgeOfAdjacent": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.edgeOfAdjacent_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edge_card_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edge_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgeWidthZeroIsEmpty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgeHeightZeroIsEmpty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.IsCover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.Cover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.Tiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.coverFintype": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tiling_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.cover_exactly_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.cover_avoids_holes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.isCover_empty_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.emptyWidthTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.emptyHeightTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingWidthZeroUnique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingHeightZeroUnique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.empty_tiling_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tiling_card_width_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tiling_card_height_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.State": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.reverseState": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.mem_reverseState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reverseState_twice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reverseState_empty": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.terminalHoles": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_terminalHoles": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.terminalHoles_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.terminalHoles_width_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.PartialTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialTilingFintype": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialTilingDecidableEq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialEmptyEquivTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partial_width_zero_state": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partial_width_zero_nonempty_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partial_width_zero_isEmpty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialWidthZeroUnique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partial_width_zero_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partial_empty_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.singleEdgeTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontalUnitTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.verticalUnitTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.one_cell_not_tileable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.diagonal_not_adjacent": [
+      "propext"
+    ],
+    "Domino.RectangleSymmetry": [],
+    "Domino.rectangle_group": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.symmetry_mul_def": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.symmetry_one_def": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal": [],
+    "Domino.vertical": [],
+    "Domino.halfTurn": [],
+    "Domino.symmetry_card_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal_mul_vertical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.symmetry_exhaustive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.cellAction": [],
+    "Domino.cellAction_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.cellAction_twice": [
+      "propext"
+    ],
+    "Domino.cellAction_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.cellAction_horizontal": [],
+    "Domino.cellAction_vertical": [],
+    "Domino.cellAction_halfTurn": [],
+    "Domino.cellAction_adjacent_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.cellPerm": [
+      "propext"
+    ],
+    "Domino.edgeAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_edgeAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgeAction_twice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgeAction_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgeAction_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgePerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mapEdges": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mapHoles": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.mem_mapEdges": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_mapHoles": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mapEdges_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mapEdges_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.isCover_map": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.rectangle_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.smul_edges": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.empty_tiling_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.TilingOrbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingOrbitFintype": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinaryCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbitCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.fixedCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbitRel_iff_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.odd_height_ne_even_width": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.three_ne_even_width": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.tilingOrbitWidthZeroUnique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinaryCount_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbitCount_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.a_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.fixedCount_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.Bonds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.BondValid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.BondCover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edge_pair_at": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pair_partner_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.coverBonds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_coverBonds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.coverBonds_valid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.bondEdges": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_bondEdges": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.bondEdges_at": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.bondEdges_valid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.coverEquivBonds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ColumnRule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.columnRuleDecidable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.Legal3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.legal3Decidable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ColumnCover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.legal3_iff_column_cover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.column_cover_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.columnCoverSubsingleton": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.fillColumn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.transfer3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.columnCover_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.GridCell": [],
+    "Domino.gridCell": [],
+    "Domino.GridAdjacent": [],
+    "Domino.GridLive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.GridMatching": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridMatching_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.grid_matching_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.grid_adjacent_iff": [
+      "propext"
+    ],
+    "Domino.gridOfPartial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridOfPartial_at": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.finiteBonds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_finiteBonds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialOfGrid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.coverBonds_partialOfGrid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialEquivGrid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.GridLink": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_adjacent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.nat_predecessor_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_row_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_row_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_row_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.unique_three_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.unique_four_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.columnRule_iff_unique_neighbors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_horizontal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_vertical_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridLink_vertical_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ColumnFrame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.columnFrame_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.frame_hbound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridOfFrame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_gridH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.mem_gridV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridH_start": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridH_finish": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridH_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridV_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.GridCompletion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.three_row_neighbors": [
+      "propext"
+    ],
+    "Domino.gridLink_extract_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridCompletion_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.frameOfGrid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.grid_frame_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.frame_horizontal_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.frame_vertical_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.frame_grid_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.gridEquivFrame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialEquivFrame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.StatePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.statePath_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathCode": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathCode_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.statePathFinite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.statePathFintype": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathOfFrame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.frameOfPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.frameEquivPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partialTilingEquivPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingEquivClosedPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partial_path_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.path_partial_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.partial_path_state": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathPrefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathAppend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.PathLast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathLastTo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathLastFrom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathLast_from_to": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathLastFrom_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathLast_to_from": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.pathSuccEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profileCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_count_path": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_count_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_count_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.transferMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_count_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_count_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tiling_count_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.legal3_transition_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profileEval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_count_eval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_width_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.three_row_small_tiling_counts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.edgeAction_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.coverBonds_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingPath_state": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingPath_cut": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingPath_horizontal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingPath_vertical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.tilingPath_halfTurn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal_fixed_iff_path": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.twistState": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.twistState_twice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.twistState_empty": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.axialSymmetry": [],
+    "Domino.axial_fixed_iff_path": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.legal3_twist_reverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.HalfPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.AxialPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfPath_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.doubledState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.doubledState_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.doubledState_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.doubledState_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.completeHalfPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.restrictAxialPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.restrict_complete_halfPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.complete_restrict_axialPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfPathEquivAxialPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.AxialFixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axialFixedEquivPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.HalfPartial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfPartialEquivPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axialFixedEquivPartial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.grid_left_agreement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axial_restrict_state": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axial_restrict_terminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.leftCell": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.axial_restrict_internal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axial_complete_internal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axial_complete_terminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axial_complete_crossing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.axial_complete_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.crossing_bond_same_row": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.unrestrictedHalfPartialEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflectionFixedEquivPartial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.completeReflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.restrictReflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.restrict_complete_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.complete_restrict_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflection_fixed_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.SymmetricTerminal": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.halfTurnFixedEquivPartial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.completeHalfTurn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.restrictHalfTurn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.restrict_complete_halfTurn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.complete_restrict_halfTurn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfTurn_terminal_necessary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfTurn_extension_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfTurn_fixed_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal_fixed_no_vertical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontalProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontalProfile_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontalProfile_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontalProfile_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontalProfile_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal_next_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontalProfile_reverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal_fixed_path_state": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.allHorizontalPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.allHorizontalTiling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.allHorizontalTiling_fixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal_fixed_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.horizontal_fixed_card_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfPartial_zero_terminal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.three_row_empty_fixed_counts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.three_row_width_two_fixed_counts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.state_three_cases": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.sum_states_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.evenProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.oddProfile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.even_profile_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.odd_profile_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profilePair": [],
+    "Domino.alpha": [],
+    "Domino.beta": [],
+    "Domino.alpha_zero": [],
+    "Domino.beta_zero": [],
+    "Domino.alpha_succ": [],
+    "Domino.beta_succ": [],
+    "Domino.profile_even_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_even_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_odd_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_eq_alpha": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.alpha_eq_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.beta_eq_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.alpha_recurrence_add": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_recurrence_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_recurrence_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_recurrence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_recurrence_int": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_initial_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_monotone_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.ordinary_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profileMatrix": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Domino.profile_matrix_recurrence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.profile_matrix_characteristic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.sum_symmetric_terminals": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflection_even_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflection_odd_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfTurn_even_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfTurn_odd_profile": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflection_even_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflection_even_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflection_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.reflection_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfTurn_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.halfTurn_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.fixed_counts_parity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.sum_rectangle_symmetries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.fixedCount_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.four_mul_orbitCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.fixed_sum_divisible_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbitCount_eq_average": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbitCount_average_rat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.four_mul_a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_even_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_odd_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_even_numerator_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_even_numerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_even_divisible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_odd_divisible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_even_rat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.orbit_odd_rat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.a_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.a_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.three_row_small_orbit_counts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Domino.width_two_counts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "checked_paper_nodes": [
+    "C01",
+    "A01",
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "C02"
+  ],
+  "status": "m4_m5_passed",
+  "publication_note": {
+    "kind": "sanitized historical evidence, not a new run",
+    "source": "checks/m4-m5-2026-10-25/verification-01/report.json",
+    "source_file_sha256": "dab03c2e986a318c2a1a98a49305e632c5e1715025da9036dbb3c36dfc245f1e",
+    "treatment": "Local paths redacted. Results, exit codes, dates, source hashes and axiom maps retained. Referenced clean-project copies are not published."
+  }
+}

@@ -1,0 +1,36 @@
+name: Lean M1 through M6
+
+on:
+  push:
+    paths: ['lean/**', '.github/workflows/lean.yml']
+  pull_request:
+    paths: ['lean/**', '.github/workflows/lean.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean and restore mathlib cache
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: lean
+          auto-config: 'false'
+          use-mathlib-cache: 'true'
+      - name: Build and audit M1 through M6
+        working-directory: lean
+        run: python3 -X utf8 scripts/check_m6.py --report-dir checks/ci-m6
+      - name: Save verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-m6-verification
+          path: |
+            lean/checks/ci-m6/
+            !lean/checks/ci-m6/clean-project/
+          if-no-files-found: warn

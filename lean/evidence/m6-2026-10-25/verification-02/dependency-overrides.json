@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.3.0",
+  "packages": [
+    {
+      "name": "mathlib",
+      "scope": "",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\mathlib",
+      "copy": false
+    },
+    {
+      "name": "plausible",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\plausible",
+      "copy": false
+    },
+    {
+      "name": "LeanSearchClient",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\LeanSearchClient",
+      "copy": false
+    },
+    {
+      "name": "importGraph",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\importGraph",
+      "copy": false
+    },
+    {
+      "name": "proofwidgets",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\proofwidgets",
+      "copy": false
+    },
+    {
+      "name": "aesop",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\aesop",
+      "copy": false
+    },
+    {
+      "name": "Qq",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\Qq",
+      "copy": false
+    },
+    {
+      "name": "batteries",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\batteries",
+      "copy": false
+    },
+    {
+      "name": "Cli",
+      "scope": "leanprover",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\Cli",
+      "copy": false
+    }
+  ],
+  "publication_note": {
+    "kind": "sanitized historical evidence, not a new run",
+    "source": "checks/m6-2026-10-25/verification-02/dependency-overrides.json",
+    "source_file_sha256": "88d7c39b336d9280b51977870717f5d3265d7530ebea77c6fca8b3b7025b9ddb",
+    "treatment": "Local paths redacted. Results, exit codes, dates, source hashes and axiom maps retained. Referenced clean-project copies are not published."
+  }
+}

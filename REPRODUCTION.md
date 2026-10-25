@@ -14,3 +14,7 @@ Date: 2026-10-25. These are new publication-preparation runs, separate from the 
 The exact reproduction commands and required order appear in [research/README.md](research/README.md). Detailed new outputs stay in the ignored temporary working copy because they contain local invocation metadata. The public historical reports were not overwritten. Formula transcription checks and the English PDF build also passed.
 
 本轮确实在公开材料的临时副本中重新运行了上述程序；不是把旧报告改日期。结果只支持所列范围，不替代一般证明、Lean 形式化或独立数学审阅。数学研究仍未完成，论文仍需修订。
+
+## Lean M1–M6 复现
+
+上表保留最初公开版的有限 Python 检查范围。后续新增 Lean 形式化，与那些数值实验分别记录。固定版本、克隆运行命令、逐声明公理审计和干净项目重建说明见 [Lean README](lean/README.md)，成果与待办见 [进度表](lean/docs/progress.md)。历史 Lean 报告见 [公开证据](lean/evidence/README.md)；本次发布的运行结果另行保存，不将旧报告改日期。

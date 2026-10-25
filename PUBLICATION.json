@@ -1,7 +1,7 @@
 {
   "date": "2026-10-25",
   "author": "Shiqi Liu",
-  "status": "Unfinished research; conjecture not claimed solved; Lean verification pending.",
+  "status": "Lean M1-M6 locally verified for the three-row main counting theorem; extensions, second proof and external review pending; no novelty claim.",
   "chinese_manuscript": "PDF and all TeX files preserved byte for byte.",
   "selection": "Manuscripts, two draft proof routes, problem/source/lemma notes, final verification code, and sanitized numerical outputs. Personal information, full historical archives, machine logs and unrelated research are excluded.",
   "files": [
@@ -323,5 +323,20 @@
       "source_sha256": "cf578bc25696bec0222b42a171b3a3668ead0c61e22aa5eb6812f35fc0c8a36e",
       "treatment": "unchanged; illustrated educational guide"
     }
-  ]
+  ],
+  "lean_publication": {
+    "date": "2026-10-25",
+    "author": "Shiqi Liu",
+    "account": "Lshiqi67",
+    "scope": "32 mathematical modules, 413 explicit declarations, 268 theorems; exact tiling orbit series, recurrence and initial values.",
+    "layout": {
+      "proofs": "lean/Domino",
+      "documentation": "lean/docs",
+      "evidence": "lean/evidence",
+      "validation": "lean/scripts"
+    },
+    "preserved": "Mathematical Lean sources, toolchain and dependency locks; manuscripts and previous published illustrated guides.",
+    "edited": "Public navigation, current status and historical report paths in validators.",
+    "evidence": "Historical logs sanitized only for local paths; original results, dates, hashes and axiom maps retained. Raw local records and build caches not uploaded."
+  }
 }

@@ -1,0 +1,10 @@
+.lake/
+lake-packages/
+*.olean
+*.ilean
+*.trace
+
+# Raw machine-specific runs remain local; curated historical evidence is in evidence/.
+/checks/
+__pycache__/
+*.py[cod]

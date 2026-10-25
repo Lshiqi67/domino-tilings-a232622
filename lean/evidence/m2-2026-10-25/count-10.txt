@@ -1,0 +1,9 @@
+⚠ [3148/3149] Building Domino.Transfer.Count (17s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Count.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Count.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Count.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Count.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Count.setup.json --json
+warning: Domino/Transfer/Count.lean:105:6: Unused tactic linter: `change profileCount (w + 1) S = (transferMatrix ^ (w + 1)) ∅ S` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [3149/3149] Built Domino.Transfer.Examples (17s)
+Some required targets logged failures:
+- Domino.Transfer.Count
+error: build failed

@@ -1,0 +1,694 @@
+{
+  "date": "2026-10-25",
+  "route": "A002-half-board-transfer",
+  "first_target": "三行主定理，对全部 n >= 0，包括生成函数、递推、初值",
+  "status_legend": {
+    "planned": "待实现",
+    "in_progress": "实现中",
+    "partial": "仅覆盖明确子命题",
+    "checked": "已构建且已完成对应公理及语义审计",
+    "deferred": "后续阶段，未验证"
+  },
+  "environment_note": "Environment.lean 只检查导入与 API，不完成下列任何数学节点。",
+  "milestones": [
+    {
+      "id": "M1",
+      "status": "checked",
+      "scope": "C00 的几何对象与四元群作用、带宽零守卫的部分铺法、实际轨道定义和零宽计数；不含形式幂级数实现或欧氏等距分类",
+      "report": "../evidence/m1-2026-10-25/verification-02/report.json",
+      "semantic_review": "m1-foundations.md",
+      "declarations": "m1-declarations.json"
+    },
+    {
+      "id": "M2",
+      "status": "checked",
+      "scope": "三行全部自然数宽度与任意终端：局部列覆盖、几何路径双射、计数递推和矩阵幂；不含反射/半周补全",
+      "report": "../evidence/m2-2026-10-25/verification-01/report.json",
+      "semantic_review": "m2-paths.md",
+      "declarations": "m2-declarations.json"
+    },
+    {
+      "id": "M3",
+      "status": "checked",
+      "scope": "三行所有自然数半宽：两种实际对称补全/限制互逆、左内部/右像/跨线砖证书、半周终端充要条件、上下反射唯一性与固定点求和；不含二维压缩和轨道平均",
+      "report": "../evidence/m3-2026-10-25/verification-01/report.json",
+      "semantic_review": "m3-completion.md",
+      "declarations": "m3-declarations.json"
+    },
+    {
+      "id": "M4",
+      "status": "checked",
+      "scope": "三行全部自然数指标的支持与二维计数、真实普通数二阶递推、固定点奇偶公式",
+      "report": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
+      "semantic_review": "m4-m5-counting.md",
+      "declarations": "m4-m5-declarations.json"
+    },
+    {
+      "id": "M5",
+      "status": "checked",
+      "scope": "真实四元群作用 Burnside、实际轨道奇偶公式、自然数整除与有理数表达、零及小棋盘边界",
+      "report": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
+      "semantic_review": "m4-m5-counting.md",
+      "declarations": "m4-m5-declarations.json",
+      "modules": [
+        "Symmetry/Burnside",
+        "ThreeRows/OrbitCounts",
+        "ThreeRows/Boundary"
+      ],
+      "exports": [
+        "four_mul_a",
+        "orbit_even_add",
+        "orbit_odd_mul",
+        "orbit_even_divisible",
+        "orbit_odd_divisible",
+        "orbit_even",
+        "orbit_odd",
+        "orbit_even_rat",
+        "orbit_odd_rat",
+        "three_row_small_orbit_counts",
+        "width_two_counts"
+      ]
+    },
+    {
+      "id": "M6",
+      "status": "checked",
+      "scope": "实际三行轨道的形式幂级数主有理式、全部自然数指标七阶递推、七项初值及 n=7 边界；项目源码独立干净重建",
+      "report": "../evidence/m6-2026-10-25/verification-02/report.json",
+      "semantic_review": "m6-main-theorem.md",
+      "declarations": "m6-declarations.json"
+    }
+  ],
+  "source_chain": "proof-chain/claims.json",
+  "nodes": [
+    {
+      "id": "C00",
+      "status": "checked",
+      "stage": "M1+M6",
+      "modules": [
+        "Board/Basic",
+        "Board/Tiling",
+        "Board/Partial",
+        "Symmetry/Action",
+        "Symmetry/Counting",
+        "Series/Basic",
+        "ThreeRows/Series"
+      ],
+      "exports": [
+        "tiling_finite",
+        "empty_tiling_unique",
+        "rectangle_action",
+        "orbitRel_iff_four",
+        "partial_width_zero_card",
+        "a_zero",
+        "countSeries",
+        "coeff_countSeries",
+        "orbitSeries",
+        "coeff_orbitSeries"
+      ],
+      "depends": [],
+      "checked_scope": "有限几何对象、群作用、实际基数及零宽约定；M6 增加按实际基数定义的有理系数形式幂级数",
+      "evidence": "../evidence/m1-2026-10-25/verification-02/report.json",
+      "m6_evidence": "../evidence/m6-2026-10-25/verification-02/report.json",
+      "note": "目标群为题面四种坐标对称；不包含欧氏全部等距变换的独立分类。"
+    },
+    {
+      "id": "C01",
+      "status": "checked",
+      "stage": "M2",
+      "modules": [
+        "Transfer/ThreeRows",
+        "Transfer/Links",
+        "Transfer/Frame",
+        "Transfer/Examples"
+      ],
+      "exports": [
+        "legal3_iff_column_cover",
+        "column_cover_unique",
+        "columnRule_iff_unique_neighbors",
+        "legal3_transition_card"
+      ],
+      "depends": [
+        "C00"
+      ],
+      "evidence": "../evidence/m2-2026-10-25/verification-01/report.json",
+      "semantic_review": "m2-paths.md",
+      "note": "全部 64 对状态与列填充的等价及唯一性；通过 Links/Frame 连接实际几何，依赖 C00 已完成的几何部分。"
+    },
+    {
+      "id": "C02",
+      "status": "checked",
+      "stage": "M5",
+      "modules": [
+        "Symmetry/Burnside"
+      ],
+      "exports": [
+        "four_mul_orbitCount",
+        "fixed_sum_divisible_four",
+        "orbitCount_eq_average",
+        "orbitCount_average_rat"
+      ],
+      "depends": [
+        "C00"
+      ],
+      "evidence": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
+      "semantic_review": "m4-m5-counting.md",
+      "note": "实际有限群作用与商集基数，允许不忠实作用和空棋盘；任意高度仅表示四种坐标对称，不表示正方形全部八种对称。"
+    },
+    {
+      "id": "C03",
+      "status": "checked",
+      "stage": "M6",
+      "modules": [
+        "ThreeRows/Algebra"
+      ],
+      "exports": [
+        "common_numerator_identity",
+        "orbitDenom_expanded",
+        "orbitDenom_constant",
+        "orbitDenom_isUnit"
+      ],
+      "depends": [],
+      "note": "纯环恒等式；从原 C00 的代数约定中独立出来，不依赖主定理。",
+      "evidence": "../evidence/m6-2026-10-25/verification-02/report.json",
+      "semantic_review": "m6-main-theorem.md"
+    },
+    {
+      "id": "A01",
+      "status": "checked",
+      "stage": "M2",
+      "modules": [
+        "Transfer/PathEquiv"
+      ],
+      "exports": [
+        "tilingEquivClosedPath"
+      ],
+      "depends": [
+        "B01"
+      ],
+      "note": "从已证明的部分铺法等价取空终端；适用任意宽度，不使用基本块分类。",
+      "evidence": "../evidence/m2-2026-10-25/verification-01/report.json",
+      "semantic_review": "m2-paths.md"
+    },
+    {
+      "id": "A02",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/Classification"
+      ],
+      "exports": [
+        "first_return_classification"
+      ],
+      "depends": [
+        "A01"
+      ]
+    },
+    {
+      "id": "A03",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/Decomposition"
+      ],
+      "exports": [
+        "tilingEquivWeightedWord"
+      ],
+      "depends": [
+        "A02"
+      ]
+    },
+    {
+      "id": "A04",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/Symmetry"
+      ],
+      "exports": [
+        "word_symmetry"
+      ],
+      "depends": [
+        "A03"
+      ]
+    },
+    {
+      "id": "A05",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/Series"
+      ],
+      "exports": [
+        "word_ordinary_series"
+      ],
+      "depends": [
+        "A03"
+      ]
+    },
+    {
+      "id": "A06",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/FixedWords"
+      ],
+      "exports": [
+        "word_horizontal_series"
+      ],
+      "depends": [
+        "A04"
+      ]
+    },
+    {
+      "id": "A07",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/FixedWords"
+      ],
+      "exports": [
+        "word_vertical_series"
+      ],
+      "depends": [
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "id": "A08",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/FixedWords"
+      ],
+      "exports": [
+        "word_half_turn_series"
+      ],
+      "depends": [
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "id": "B01",
+      "status": "checked",
+      "stage": "M2",
+      "modules": [
+        "Board/Partial",
+        "Transfer/Bonds",
+        "Transfer/Grid",
+        "Transfer/Links",
+        "Transfer/Frame",
+        "Transfer/PathEquiv",
+        "Transfer/Count"
+      ],
+      "exports": [
+        "partialTilingEquivPath",
+        "partial_path_roundtrip",
+        "path_partial_roundtrip",
+        "partial_path_state",
+        "profile_count_zero",
+        "profile_count_succ",
+        "profile_count_matrix"
+      ],
+      "depends": [
+        "C00",
+        "C01"
+      ],
+      "note": "对全部 w 与 S 建立真实部分铺法的双向等价及计数递推；仅依赖 C00 几何部分，不依赖未实现的形式幂级数或基本块。",
+      "evidence": "../evidence/m2-2026-10-25/verification-01/report.json",
+      "semantic_review": "m2-paths.md"
+    },
+    {
+      "id": "B02",
+      "status": "checked",
+      "stage": "M3",
+      "modules": [
+        "Symmetry/PathAction",
+        "HalfBoard/PathCompletion",
+        "HalfBoard/Geometry",
+        "HalfBoard/Reflection"
+      ],
+      "exports": [
+        "reflectionFixedEquivPartial",
+        "restrict_complete_reflection",
+        "complete_restrict_reflection",
+        "axial_complete_internal",
+        "axial_complete_crossing",
+        "axial_complete_right",
+        "reflection_fixed_count"
+      ],
+      "depends": [
+        "C00",
+        "B01"
+      ],
+      "evidence": "../evidence/m3-2026-10-25/verification-01/report.json",
+      "semantic_review": "m3-completion.md",
+      "checked_scope": "高度恰为 3、所有自然数半宽，包括 n=0；实际 M1 铺法及坐标群作用",
+      "note": "通过 M2 等价实现补全并另证内部砖、跨中线砖与右侧像；未以基数相等替代双向构造。"
+    },
+    {
+      "id": "B03",
+      "status": "checked",
+      "stage": "M3",
+      "modules": [
+        "Symmetry/PathAction",
+        "HalfBoard/PathCompletion",
+        "HalfBoard/Geometry",
+        "HalfBoard/HalfTurn"
+      ],
+      "exports": [
+        "halfTurnFixedEquivPartial",
+        "restrict_complete_halfTurn",
+        "complete_restrict_halfTurn",
+        "halfTurn_terminal_necessary",
+        "halfTurn_extension_iff",
+        "halfTurn_fixed_count"
+      ],
+      "depends": [
+        "C00",
+        "B01"
+      ],
+      "evidence": "../evidence/m3-2026-10-25/verification-01/report.json",
+      "semantic_review": "m3-completion.md",
+      "checked_scope": "高度恰为 3、所有自然数半宽，包括 n=0；实际 M1 铺法及坐标群作用",
+      "note": "通过 M2 等价实现补全并另证内部砖、跨中线砖与右侧像；未以基数相等替代双向构造。"
+    },
+    {
+      "id": "B04",
+      "status": "checked",
+      "stage": "M3",
+      "modules": [
+        "Symmetry/PathAction",
+        "HalfBoard/Horizontal"
+      ],
+      "exports": [
+        "horizontal_fixed_no_vertical",
+        "horizontal_fixed_unique",
+        "horizontal_fixed_card_three"
+      ],
+      "depends": [
+        "C00",
+        "C01",
+        "B01"
+      ],
+      "evidence": "../evidence/m3-2026-10-25/verification-01/report.json",
+      "semantic_review": "m3-completion.md",
+      "checked_scope": "高度恰为 3、所有自然数半宽，包括 n=0；实际 M1 铺法及坐标群作用",
+      "note": "竖砖排除直接由覆盖唯一性；唯一性以 M2 路径和局部规则归纳完成，故增加 C01/B01 的替代依赖。一般奇数高度不在本节点。"
+    },
+    {
+      "id": "B05",
+      "status": "checked",
+      "stage": "M4",
+      "modules": [
+        "ThreeRows/ProfileRecurrence"
+      ],
+      "exports": [
+        "profile_even",
+        "profile_odd",
+        "profile_even_odd",
+        "profile_even_support",
+        "profile_odd_support",
+        "alpha_succ",
+        "beta_succ"
+      ],
+      "depends": [
+        "B01"
+      ],
+      "evidence": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
+      "semantic_review": "m4-m5-counting.md",
+      "note": "在全部 j 上归纳；八状态穷尽只用于局部单步。支持为包含关系，beta 0=0。"
+    },
+    {
+      "id": "B06",
+      "status": "checked",
+      "stage": "M4",
+      "modules": [
+        "ThreeRows/Ordinary"
+      ],
+      "exports": [
+        "ordinary_eq_alpha",
+        "ordinary_recurrence",
+        "alpha_eq_profile",
+        "beta_eq_profile",
+        "ordinary_recurrence_add",
+        "ordinary_recurrence_bound",
+        "ordinary_recurrence_int",
+        "ordinary_initial_values",
+        "profile_matrix_recurrence",
+        "profile_matrix_characteristic"
+      ],
+      "depends": [
+        "B05",
+        "A01"
+      ],
+      "evidence": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
+      "semantic_review": "m4-m5-counting.md",
+      "note": "辅助数列已连接实际铺法基数，先证明自然数加法式，再取得安全减法版本；二维矩阵使用列向量。"
+    },
+    {
+      "id": "B07",
+      "status": "checked",
+      "stage": "M4",
+      "modules": [
+        "ThreeRows/FixedCounts"
+      ],
+      "exports": [
+        "fixed_counts_parity",
+        "reflection_even_add",
+        "reflection_even_bound",
+        "reflection_odd",
+        "halfTurn_even",
+        "halfTurn_odd",
+        "horizontal_fixed_card_three"
+      ],
+      "depends": [
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06"
+      ],
+      "evidence": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
+      "semantic_review": "m4-m5-counting.md",
+      "note": "复用 M3 的真实终端求和及 h_n=1；全部自然数 j，包括零宽。"
+    },
+    {
+      "id": "B08",
+      "status": "checked",
+      "stage": "M6",
+      "modules": [
+        "Series/Basic",
+        "ThreeRows/Series"
+      ],
+      "exports": [
+        "ordinary_series_identity",
+        "fixed_series_identities",
+        "ordinary_shift_identity",
+        "ordinary_shift_series_identity",
+        "even_shift_identity",
+        "horizontal_series_identity",
+        "vertical_series_identity",
+        "halfTurn_series_identity"
+      ],
+      "depends": [
+        "B06",
+        "B07"
+      ],
+      "evidence": "../evidence/m6-2026-10-25/verification-02/report.json",
+      "semantic_review": "m6-main-theorem.md",
+      "note": "按实际计数定义系数，证明移位、二倍插零、四个分母恒等式；X 与 X² 没有被当作可逆元。"
+    },
+    {
+      "id": "T01",
+      "status": "deferred",
+      "stage": "M11",
+      "modules": [
+        "Blocks/Main"
+      ],
+      "exports": [
+        "orbit_series_via_blocks"
+      ],
+      "depends": [
+        "C02",
+        "C03",
+        "A05",
+        "A06",
+        "A07",
+        "A08"
+      ]
+    },
+    {
+      "id": "T02",
+      "status": "checked",
+      "stage": "M6",
+      "modules": [
+        "ThreeRows/Main"
+      ],
+      "exports": [
+        "orbit_series_identity",
+        "orbit_series_rational",
+        "coeff_orbitSeries",
+        "burnside_series_identity",
+        "orbit_series_paper"
+      ],
+      "depends": [
+        "C02",
+        "C03",
+        "B08"
+      ],
+      "evidence": "../evidence/m6-2026-10-25/verification-02/report.json",
+      "semantic_review": "m6-main-theorem.md",
+      "note": "先证明常数项为 1 的分母乘法式，再取单位逆；另证明题面原符号分式。a 保持真实轨道定义，无额外数学假设。"
+    },
+    {
+      "id": "T03",
+      "status": "checked",
+      "stage": "M6",
+      "modules": [
+        "ThreeRows/Recurrence"
+      ],
+      "exports": [
+        "orbit_recurrence_seven",
+        "orbit_initial_values",
+        "orbit_coefficient_equation",
+        "orbit_recurrence_seven_rat",
+        "orbit_recurrence_seven_add",
+        "orbit_recurrence_first",
+        "three_row_main_theorem"
+      ],
+      "depends": [
+        "T02"
+      ],
+      "note": "直接取 T02 的 n+7 及 0..6 系数，得到全部 n 的整数递推、自然数加法版本及七项初值；另验起点 a(7)=2037，不依赖 T01。",
+      "evidence": "../evidence/m6-2026-10-25/verification-02/report.json",
+      "semantic_review": "m6-main-theorem.md"
+    },
+    {
+      "id": "T04",
+      "status": "partial",
+      "stage": "M1+M2+M3+M4+M5+M6+M11",
+      "modules": [
+        "Board/Partial",
+        "Symmetry/Counting",
+        "ThreeRows/Boundary",
+        "Blocks/Boundary",
+        "Transfer/Examples",
+        "HalfBoard/Examples"
+      ],
+      "exports": [
+        "fixedCount_zero",
+        "orbitCount_zero",
+        "partial_width_zero_card",
+        "width_two_counts",
+        "blocks_parameter_one"
+      ],
+      "depends": [
+        "C00",
+        "B07",
+        "T02",
+        "A02"
+      ],
+      "checked_exports": [
+        "fixedCount_zero",
+        "orbitCount_zero",
+        "partial_width_zero_card",
+        "profile_width_one",
+        "three_row_small_tiling_counts",
+        "halfPartial_zero_terminal",
+        "three_row_empty_fixed_counts",
+        "three_row_width_two_fixed_counts",
+        "a_one",
+        "a_two",
+        "three_row_small_orbit_counts",
+        "width_two_counts",
+        "orbit_recurrence_first"
+      ],
+      "note": "零宽、3×2 完整计数及小轨道边界已有证据；M6 完成七阶递推起点 a(7)=2037。原基本块 k=1 仍待 M11，整个节点保持 partial。",
+      "evidence": "../evidence/m1-2026-10-25/verification-02/report.json",
+      "additional_evidence": "../evidence/m2-2026-10-25/verification-01/report.json",
+      "m3_evidence": "../evidence/m3-2026-10-25/verification-01/report.json",
+      "checked_boundary_depends": [
+        "C00",
+        "C02",
+        "B07"
+      ],
+      "m4_m5_evidence": "../evidence/m4-m5-2026-10-25/verification-01/report.json",
+      "m6_evidence": "../evidence/m6-2026-10-25/verification-02/report.json"
+    }
+  ],
+  "extensions": [
+    {
+      "id": "EXT-STABILIZERS",
+      "paper": "Theorem 4.1",
+      "status": "deferred",
+      "stage": "M7",
+      "depends": [
+        "C00",
+        "C02",
+        "B04",
+        "B07"
+      ],
+      "exports": [
+        "exact_stabilizer_counts"
+      ]
+    },
+    {
+      "id": "EXT-ODD-HEIGHT",
+      "paper": "Section 5; L007/L008 general case; L011",
+      "status": "deferred",
+      "stage": "M8",
+      "depends": [
+        "C00",
+        "C02"
+      ],
+      "exports": [
+        "odd_height_orbit_count",
+        "odd_height_series_rational"
+      ],
+      "additional_obligations": [
+        "general_column_cover_unique",
+        "general_partial_path_equiv",
+        "general_reflection_equiv",
+        "general_half_turn_equiv",
+        "odd_height_horizontal_equiv",
+        "matrix_series_inverse"
+      ]
+    },
+    {
+      "id": "EXT-FIVE-ROWS",
+      "paper": "Section 6 and Appendix A",
+      "status": "deferred",
+      "stage": "M9",
+      "depends": [
+        "EXT-ODD-HEIGHT"
+      ],
+      "exports": [
+        "five_row_compression",
+        "five_row_certificate",
+        "five_row_series",
+        "five_row_recurrence",
+        "five_row_initial_values"
+      ]
+    },
+    {
+      "id": "EXT-ASYMPTOTICS",
+      "paper": "Theorem 4.2 and orbit-sampling paragraph",
+      "status": "deferred",
+      "stage": "M10",
+      "depends": [
+        "EXT-STABILIZERS",
+        "B06",
+        "B07",
+        "C02"
+      ],
+      "exports": [
+        "ordinary_closed_form",
+        "symmetric_tiling_probability_asymptotics",
+        "orbit_count_asymptotics",
+        "symmetric_orbit_probability_tendsto_zero"
+      ]
+    }
+  ]
+}

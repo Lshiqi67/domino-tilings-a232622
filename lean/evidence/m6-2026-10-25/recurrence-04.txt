@@ -1,0 +1,24 @@
+✔ [3211/3214] Built Domino.ThreeRows.Algebra (21s)
+✖ [3212/3214] Building Domino.ThreeRows.Series (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\ThreeRows\Series.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Series.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Series.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Series.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Series.setup.json --json
+error: Domino/ThreeRows/Series.lean:26:2: Type mismatch: After simplification, term
+  series_second_order (fun n => ↑(ordinaryCount 3 n)) h
+ has type
+  ((1 - 4 * X + X ^ 2) * mk fun n => ↑(profilePair n).1) = 1 + (C 3 - C 4) * X
+but is expected to have type
+  ((1 - 4 * X + X ^ 2) * mk fun n => ↑(profilePair n).1) = 1 - X
+error: Domino/ThreeRows/Series.lean:43:2: Type mismatch: After simplification, term
+  h
+ has type
+  (expand 2 doubleSeries._proof_1) ordinaryDenom * (expand 2 doubleSeries._proof_1) ordinarySeries = 1 - X ^ 2
+but is expected to have type
+  parityDenom * (expand 2 doubleSeries._proof_1) ordinarySeries = 1 - X ^ 2
+error: Domino/ThreeRows/Series.lean:47:2: Type mismatch: After simplification, term
+  h
+ has type
+  (expand 2 doubleSeries._proof_1) ordinaryDenom * (expand 2 doubleSeries._proof_1) ordinaryShiftSeries = 3 - X ^ 2
+but is expected to have type
+  parityDenom * (expand 2 doubleSeries._proof_1) ordinaryShiftSeries = 3 - X ^ 2
+Some required targets logged failures:
+- Domino.ThreeRows.Series
+error: build failed

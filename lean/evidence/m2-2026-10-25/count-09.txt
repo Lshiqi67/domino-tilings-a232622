@@ -1,0 +1,32 @@
+✔ [3147/3148] Built Domino.Transfer.PathEquiv (17s)
+✖ [3148/3148] Building Domino.Transfer.Count (17s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Count.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Count.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Count.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Count.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Count.setup.json --json
+error: Domino/Transfer/Count.lean:32:6: Type mismatch: After simplification, term
+  P.step k hkw
+ has type
+  Legal3 (P.state k) (P.state (k + 1))
+but is expected to have type
+  Legal3 (P.state k) (if k = w then q else P.state (k + 1))
+error: Domino/Transfer/Count.lean:104:14: unsolved goals
+case succ
+w : ℕ
+ih : ∀ (S : State 3), profileCount w S = (transferMatrix ^ w) ∅ S
+S : State 3
+⊢ ∑ x, (transfer3 ^ w) ∅ x * transfer3 x S = (transfer3 ^ (w + 1)) ∅ S
+warning: Domino/Transfer/Count.lean:105:37: This simp argument is unused:
+  pow_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [profile_count_succ, Matrix.mul_apply, ih, transferMatrix]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Transfer/Count.lean:105:47: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [profile_count_succ, pow_succ, ih, transferMatrix]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Transfer.Count
+error: build failed

@@ -1,0 +1,12 @@
+✔ [3149/3150] Built Domino.Symmetry.PathAction (18s)
+✖ [3150/3150] Building Domino.HalfBoard.PathCompletion (18s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\HalfBoard\PathCompletion.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\PathCompletion.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\PathCompletion.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\PathCompletion.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\PathCompletion.setup.json --json
+error: Domino/HalfBoard/PathCompletion.lean:127:6: Type mismatch: After simplification, term
+  P.property
+ has type
+  ∀ k ≤ 2 * n, (↑P).state k = twistState b ((↑P).state (2 * n - k))
+but is expected to have type
+  ∀ k ≤ 2 * n, (↑P).state k = twistState b ((tilingPath ((tilingEquivClosedPath (2 * n)).symm ↑P)).state (2 * n - k))
+Some required targets logged failures:
+- Domino.HalfBoard.PathCompletion
+error: build failed

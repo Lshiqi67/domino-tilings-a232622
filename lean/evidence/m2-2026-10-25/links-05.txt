@@ -1,0 +1,90 @@
+✖ [3143/3143] Building Domino.Transfer.Links (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Links.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Links.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Links.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Links.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Links.setup.json --json
+error: Domino/Transfer/Links.lean:45:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 0
+where
+ a := ↑j
+error: Domino/Transfer/Links.lean:54:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 0
+where
+ a := ↑j
+error: Domino/Transfer/Links.lean:63:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 0
+where
+ a := ↑j
+error: Domino/Transfer/Links.lean:99:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∃! a, GridLink H V (0, i) a
+in the target expression
+  (∃! b, GridLink H V ((fun i => i) ⟨0, ⋯⟩, i) b) ↔
+    ((((if (fun i => i) ⟨0, ⋯⟩ ∈ H i then 1 else 0) + if (fun i => i) ⟨0, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if ((fun i => i) ⟨0, ⋯⟩ = 0 ∨ (fun i => i) ⟨0, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if ((fun i => i) ⟨0, ⋯⟩ = 1 ∨ (fun i => i) ⟨0, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+
+case «0»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+h0 : H 0 = ∅
+i : ℕ
+hin : ∀ (r : Fin 3), 0 < i ∧ r ∈ H i ↔ r ∈ H i
+hne : ∀ (r : Fin 3), (r, i - 1) ≠ (r, i + 1)
+⊢ (∃! b, GridLink H V ((fun i => i) ⟨0, ⋯⟩, i) b) ↔
+    ((((if (fun i => i) ⟨0, ⋯⟩ ∈ H i then 1 else 0) + if (fun i => i) ⟨0, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if ((fun i => i) ⟨0, ⋯⟩ = 0 ∨ (fun i => i) ⟨0, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if ((fun i => i) ⟨0, ⋯⟩ = 1 ∨ (fun i => i) ⟨0, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+error: Domino/Transfer/Links.lean:102:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∃! a, GridLink H V (1, i) a
+in the target expression
+  (∃! b, GridLink H V ((fun i => i) ⟨1, ⋯⟩, i) b) ↔
+    ((((if (fun i => i) ⟨1, ⋯⟩ ∈ H i then 1 else 0) + if (fun i => i) ⟨1, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if ((fun i => i) ⟨1, ⋯⟩ = 0 ∨ (fun i => i) ⟨1, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if ((fun i => i) ⟨1, ⋯⟩ = 1 ∨ (fun i => i) ⟨1, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+
+case «1»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+h0 : H 0 = ∅
+i : ℕ
+hin : ∀ (r : Fin 3), 0 < i ∧ r ∈ H i ↔ r ∈ H i
+hne : ∀ (r : Fin 3), (r, i - 1) ≠ (r, i + 1)
+⊢ (∃! b, GridLink H V ((fun i => i) ⟨1, ⋯⟩, i) b) ↔
+    ((((if (fun i => i) ⟨1, ⋯⟩ ∈ H i then 1 else 0) + if (fun i => i) ⟨1, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if ((fun i => i) ⟨1, ⋯⟩ = 0 ∨ (fun i => i) ⟨1, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if ((fun i => i) ⟨1, ⋯⟩ = 1 ∨ (fun i => i) ⟨1, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+error: Domino/Transfer/Links.lean:106:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∃! a, GridLink H V (2, i) a
+in the target expression
+  (∃! b, GridLink H V ((fun i => i) ⟨2, ⋯⟩, i) b) ↔
+    ((((if (fun i => i) ⟨2, ⋯⟩ ∈ H i then 1 else 0) + if (fun i => i) ⟨2, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if ((fun i => i) ⟨2, ⋯⟩ = 0 ∨ (fun i => i) ⟨2, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if ((fun i => i) ⟨2, ⋯⟩ = 1 ∨ (fun i => i) ⟨2, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+
+case «2»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+h0 : H 0 = ∅
+i : ℕ
+hin : ∀ (r : Fin 3), 0 < i ∧ r ∈ H i ↔ r ∈ H i
+hne : ∀ (r : Fin 3), (r, i - 1) ≠ (r, i + 1)
+⊢ (∃! b, GridLink H V ((fun i => i) ⟨2, ⋯⟩, i) b) ↔
+    ((((if (fun i => i) ⟨2, ⋯⟩ ∈ H i then 1 else 0) + if (fun i => i) ⟨2, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if ((fun i => i) ⟨2, ⋯⟩ = 0 ∨ (fun i => i) ⟨2, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if ((fun i => i) ⟨2, ⋯⟩ = 1 ∨ (fun i => i) ⟨2, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+warning: Domino/Transfer/Links.lean:115:22: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [GridLink, h1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Transfer.Links
+error: build failed

@@ -1,0 +1,25 @@
+✔ [766/768] Built Domino.Board.Basic (11s)
+✖ [767/768] Building Domino.Board.Tiling (11s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Board\Tiling.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Board\Tiling.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Board\Tiling.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Board\Tiling.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Board\Tiling.setup.json --json
+error: Domino/Board/Tiling.lean:16:57: failed to synthesize instance of type class
+  Finite (Edge m w)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Domino/Board/Tiling.lean:82:13: Application type mismatch: The argument
+  e
+has type
+  Edge m w
+of sort `Type` but is expected to have type
+  (∃ e ∈ edges, c ∈ ↑e) → ¬False
+of sort `Prop` in the application
+  Iff.intro e
+warning: Domino/Board/Tiling.lean:80:38: This simp argument is unused:
+  iff_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.notMem_empty]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Board.Tiling
+error: build failed

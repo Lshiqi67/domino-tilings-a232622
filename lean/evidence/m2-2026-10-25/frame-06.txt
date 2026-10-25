@@ -1,0 +1,77 @@
+✖ [3143/3144] Building Domino.Transfer.Links (21s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Links.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Links.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Links.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Links.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Links.setup.json --json
+warning: Domino/Transfer/Links.lean:46:58: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Transfer/Links.lean:46:77: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Transfer/Links.lean:46:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Domino/Transfer/Links.lean:46:77: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Domino/Transfer/Links.lean:56:58: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Transfer/Links.lean:56:77: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Transfer/Links.lean:56:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Domino/Transfer/Links.lean:56:77: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Domino/Transfer/Links.lean:66:58: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Transfer/Links.lean:66:77: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Domino/Transfer/Links.lean:66:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Domino/Transfer/Links.lean:66:77: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+error: Domino/Transfer/Links.lean:102:65: Expected type must not contain free variables
+  (0, i - 1) ≠ (1, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:102:77: Expected type must not contain free variables
+  (0, i + 1) ≠ (1, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:106:20: Expected type must not contain free variables
+  (1, i - 1) ≠ (0, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:106:32: Expected type must not contain free variables
+  (1, i - 1) ≠ (2, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:106:44: Expected type must not contain free variables
+  (1, i + 1) ≠ (0, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:106:56: Expected type must not contain free variables
+  (1, i + 1) ≠ (2, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:106:68: Expected type must not contain free variables
+  (0, i) ≠ (2, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:109:65: Expected type must not contain free variables
+  (2, i - 1) ≠ (1, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+error: Domino/Transfer/Links.lean:109:77: Expected type must not contain free variables
+  (2, i + 1) ≠ (1, i)
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+Some required targets logged failures:
+- Domino.Transfer.Links
+error: build failed

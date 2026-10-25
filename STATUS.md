@@ -5,27 +5,24 @@ Author / 署名: **Shiqi Liu**
 
 ## Current position
 
-**This work is unfinished. This repository does not claim to have solved the conjecture recorded as OEIS A232622. The manuscripts need further refinement. The correctness of the proposed proofs still requires Lean formalization and verification, as well as mathematical review.**
+**The three-row main counting theorem is now locally verified in Lean under the stated tiling and four-coordinate-symmetry definitions. The project as a whole remains unfinished: extensions, the block-route second proof and external mathematical review are still pending. No novelty or priority claim is made.**
 
-No Lean formalization has been completed, no Lean build has verified these claims, and no theorem in this repository is presented as Lean-certified. There is no formalization project or placeholder theorem purporting to certify the result.
+Lean M1 through M6 have passed local builds and cumulative axiom audits. M6 proves the formal generating function with coefficients equal to actual orbit cardinalities, the original signed rational expression, the seventh-order recurrence for every natural index and all seven initial values. A fresh project directory rebuilds all project sources using the verified pinned dependency cache. See the [precise M6 scope](lean/docs/m6-main-theorem.md).
 
 The available material consists of two proposed derivations, refinements and extensions, finite exhaustive computations, and exact symbolic identities for specified models. These may be useful research evidence; they do not settle the validity of every definition, bijection and infinite-parameter inference.
 
 ## 当前立场
 
-**研究尚未完成。本仓库不宣称已经解决 OEIS A232622 猜想。论文仍需打磨，所提出证明的准确性还需要 Lean 形式化验证以及数学审阅。**
+**三行主计数定理现已按明确的铺法与四种坐标对称定义完成本地 Lean 验证。研究整体仍有全文扩展、基本块第二证明和外部数学审阅待办，不主张文献优先权。**
 
-目前未完成 Lean 形式化，未有 Lean 构建验证这些主张，也没有把占位形式化文件当作证明。两个推导草稿、有限枚举和精确代数恒等式均按实际覆盖范围展示。
+目前已完成 Lean M1–M6：累计 32 数学模块、413 项显式声明公理审计及干净项目重建。M6 新增四类固定点生成函数、主分母恒等式与单位逆、题面原式、全部自然数指标七阶递推及七项初值 1,2,5,14,46,156,561；递推起点 a(7)=2037。C00/B08/C03/T02/T03 已完成，全文其他部分不自动升级。
 
 中文论文是保持原样的历史草稿。英文公开稿增加了当前未完成声明。草稿中的“定理”“证明”“完整推导”等文字均不改变本页的研究状态。
 
 ## What remains / 尚待完成
 
-1. Check the exact counting objects, all boundary cases and group action against the original problem.
-2. Formalize the tiling/state correspondence, block classification and unique decomposition in Lean.
-3. Formalize the two directions of each half-rectangle completion map, including crossing dominoes.
-4. Verify the fixed-point counting, Burnside averaging and rational-function coefficient arguments.
-5. Separately verify stabilizers, asymptotics, odd-height scope and the five-row compression/certificate.
-6. Refine the exposition and compare related literature systematically; no priority or global-open-status claim is established.
+1. Formalize exact stabilizers and the corresponding orbit counts (M7).
+2. Formalize arbitrary odd heights, five-row certificates, asymptotics and the block-route second proof (M8–M11).
+3. Refine the exposition and compare related literature systematically; priority and global open status are not established.
 
-下一项可执行工作是先确定 Lean 与 mathlib 版本，精确定义有限棋盘铺法及对称作用，再逐步实现并检查核心双射。只有实际构建通过且记录了覆盖范围、依赖和剩余未形式化部分，才能报告相应的验证结果。Lean 中形式化的命题也必须与原始题意相符。
+Lean 4.35.0、mathlib 精确提交和原 M1–M5 的 27 数学源文件保持不变。方案与覆盖表见 [Lean 项目](lean/README.md)，实际证据见 [M6 记录](lean/evidence/m6-2026-10-25/README.md)。下一项 M7；T04 的基本块 k=1 未完成。未另行形式化欧氏全部等距变换分类；非空三行偶宽棋盘按题面四种坐标映射取商。代码、固定版本配置、阶段说明、公开验证证据及 CI 工作流现一并提供。远端验收状态以 [GitHub Actions](https://github.com/Lshiqi67/domino-tilings-a232622/actions/workflows/lean.yml) 对应提交为准。阶段顺序见[成果及后续工作](lean/docs/progress.md)。

@@ -1,0 +1,42 @@
+✖ [3149/3149] Building Domino.Symmetry.PathAction (19s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Symmetry\PathAction.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Symmetry\PathAction.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Symmetry\PathAction.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Symmetry\PathAction.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Symmetry\PathAction.setup.json --json
+warning: Domino/Symmetry/PathAction.lean:19:21: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [hc]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Domino/Symmetry/PathAction.lean:20:21: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [hc]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: Domino/Symmetry/PathAction.lean:144:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (tilingPath ?m.136).state k
+in the target expression
+  ((tilingEquivClosedPath w) (axialSymmetry b • T)).state k = ((tilingEquivClosedPath w) T).state k
+
+case neg
+w : ℕ
+b : Bool
+T : Tiling 3 w
+compat : ∀ k ≤ w, (tilingPath (axialSymmetry b • T)).state k = twistState b ((tilingPath T).state (w - k))
+h : ∀ k ≤ w, (tilingPath T).state k = twistState b ((tilingPath T).state (w - k))
+k : ℕ
+hk : ¬k ≤ w
+⊢ ((tilingEquivClosedPath w) (axialSymmetry b • T)).state k = ((tilingEquivClosedPath w) T).state k
+error: Domino/Symmetry/PathAction.lean:144:39: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+  c - e ≤ 0
+where
+ c := ↑k
+ d := ↑w
+ e := ↑?m.137
+Some required targets logged failures:
+- Domino.Symmetry.PathAction

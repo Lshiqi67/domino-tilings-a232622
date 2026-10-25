@@ -1,0 +1,462 @@
+{
+  "date": "2026-10-25T13:05:25.858821+08:00",
+  "scope": "E0 固定版本与环境模块；无论文定理验证",
+  "random_seed": null,
+  "commands": [
+    {
+      "name": "lean-version",
+      "argv": [
+        "lean",
+        "--version"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "lean-version.txt"
+    },
+    {
+      "name": "lake-version",
+      "argv": [
+        "lake",
+        "--version"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "lake-version.txt"
+    },
+    {
+      "name": "mathlib-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "mathlib-revision.txt"
+    },
+    {
+      "name": "mathlib-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\mathlib",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "mathlib-status.txt"
+    },
+    {
+      "name": "plausible-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\plausible",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "plausible-revision.txt"
+    },
+    {
+      "name": "plausible-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\plausible",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "plausible-status.txt"
+    },
+    {
+      "name": "LeanSearchClient-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\LeanSearchClient",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "LeanSearchClient-revision.txt"
+    },
+    {
+      "name": "LeanSearchClient-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\LeanSearchClient",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "LeanSearchClient-status.txt"
+    },
+    {
+      "name": "importGraph-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\importGraph",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "importGraph-revision.txt"
+    },
+    {
+      "name": "importGraph-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\importGraph",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "importGraph-status.txt"
+    },
+    {
+      "name": "proofwidgets-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\proofwidgets",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "proofwidgets-revision.txt"
+    },
+    {
+      "name": "proofwidgets-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\proofwidgets",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "proofwidgets-status.txt"
+    },
+    {
+      "name": "aesop-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\aesop",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "aesop-revision.txt"
+    },
+    {
+      "name": "aesop-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\aesop",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "aesop-status.txt"
+    },
+    {
+      "name": "Qq-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\Qq",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "Qq-revision.txt"
+    },
+    {
+      "name": "Qq-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\Qq",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "Qq-status.txt"
+    },
+    {
+      "name": "batteries-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\batteries",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "batteries-revision.txt"
+    },
+    {
+      "name": "batteries-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\batteries",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "batteries-status.txt"
+    },
+    {
+      "name": "Cli-revision",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\Cli",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "Cli-revision.txt"
+    },
+    {
+      "name": "Cli-status",
+      "argv": [
+        "git",
+        "-C",
+        "{LEAN_ROOT}\\.lake\\packages\\Cli",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "Cli-status.txt"
+    },
+    {
+      "name": "lake-build",
+      "argv": [
+        "lake",
+        "--wfail",
+        "build"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "lake-build.txt"
+    },
+    {
+      "name": "lean-entry",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Domino.lean"
+      ],
+      "cwd": "{LEAN_ROOT}",
+      "exit_code": 0,
+      "output": "lean-entry.txt"
+    }
+  ],
+  "checks": {
+    "lean_version": true,
+    "locked_dependencies": true,
+    "original_chain_ids": true,
+    "coverage_dag": true,
+    "source_screen": true,
+    "environment_build": true
+  },
+  "source_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lakefile.toml": "85cf3282199be800377c2954df5380308db40536ca667a36af860613a4c6e9a9",
+    "lake-manifest.json": "da7a96248698f49cd4b1fa9166675e820a1dab03ec820aa973ed74b12b59f9ae",
+    "Domino.lean": "55f5058c555989d62db2283673b8e10d19995b4a153e14a61b5d066c3bcd8b6a",
+    "docs/coverage.json": "bcbb1e287386c64b1947f28ecc21f05f06930f2ced65170a8d40bdecdba25a49",
+    "docs/formalization-plan.md": "92c59e045eab15230ed9138525fb7b98f602b3c115a4f7d59c3aa01c9e0e5b46",
+    "scripts/check_project.py": "8f67c1997322b31cb19f761990daeafbf89e0feb1994b7f9f3b924ee59e465a6",
+    "Domino/Environment.lean": "151ba6033dd24d2c4f9a686e693232b38ca15e07e5e984793ce63ae3537a07a8"
+  },
+  "paper_theorems_verified": [],
+  "lean_version": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lake_version": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "dependencies": [
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "dfa4f38190d07c37e315953e08b90fe2d95b3c24",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "d6b4c7be5be75ec4917c873ac50c756dc1436372",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "df72b022e558978a1c50264cfc4d7fec86fa8e04",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4a174c490d8707121c4a9290800489f105d85e07",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "dce0ad79c486cb1fb504af04f953c3466b0c6db8",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "66e469188fe07963e5cf666c7d4433f45b8131c5",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "c24fe6078c630e89b489bffe59b3e20ac30d12c8",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.35.0",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    }
+  ],
+  "coverage_statuses": {
+    "C00": "planned",
+    "C01": "planned",
+    "C02": "planned",
+    "C03": "planned",
+    "A01": "planned",
+    "A02": "deferred",
+    "A03": "deferred",
+    "A04": "deferred",
+    "A05": "deferred",
+    "A06": "deferred",
+    "A07": "deferred",
+    "A08": "deferred",
+    "B01": "planned",
+    "B02": "planned",
+    "B03": "planned",
+    "B04": "planned",
+    "B05": "planned",
+    "B06": "planned",
+    "B07": "planned",
+    "B08": "planned",
+    "T01": "deferred",
+    "T02": "planned",
+    "T03": "planned",
+    "T04": "planned",
+    "EXT-STABILIZERS": "deferred",
+    "EXT-ODD-HEIGHT": "deferred",
+    "EXT-FIVE-ROWS": "deferred",
+    "EXT-ASYMPTOTICS": "deferred"
+  },
+  "status": "environment_passed",
+  "publication_note": {
+    "kind": "sanitized historical evidence, not a new run",
+    "source": "checks/environment-2026-10-25/verification-02/report.json",
+    "source_file_sha256": "e92824b66a65c17c8479f356486ee02ec4df9d2baf7f39a2c9ab59a16064fa28",
+    "treatment": "Local paths redacted. Results, exit codes, dates, source hashes and axiom maps retained. Referenced clean-project copies are not published."
+  }
+}

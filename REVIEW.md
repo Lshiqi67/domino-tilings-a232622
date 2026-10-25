@@ -1,6 +1,6 @@
 # Review guide / 审阅说明
 
-Treat every proposed proof as an unverified research argument. **The work is unfinished; no solved-conjecture or Lean-verification claim is made.**
+The three-row half-board route now has Lean M1–M6 evidence under explicit tiling and coordinate-symmetry definitions; see the [verified scope](lean/docs/m6-main-theorem.md). Historical manuscript arguments and unformalized extensions still require review. **The whole paper, the block-route second proof and novelty claims are not certified.**
 
 Review the original three-row problem before its extensions. Check the exact unlabelled tiling model, the four-element group, empty and small boards, exhaustive block classification, decomposition uniqueness, actions on blocks of unequal width, and possible central blocks. For half-rectangle constructions, check necessity, sufficiency, injectivity and surjectivity, including dominoes crossing the symmetry axis.
 

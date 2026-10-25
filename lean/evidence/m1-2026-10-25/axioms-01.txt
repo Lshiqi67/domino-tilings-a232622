@@ -1,0 +1,1 @@
+Domino/Audit/M1.lean:1:0: error: object file '{LEAN_ROOT}\.lake\build\lib\lean\Domino.olean' of module Domino does not exist

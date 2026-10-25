@@ -1,0 +1,35 @@
+✔ [949/953] Built Domino.Board.Basic (12s)
+✔ [950/953] Built Domino.Board.Tiling (15s)
+✖ [951/953] Building Domino.Board.Partial (12s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Board\Partial.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Board\Partial.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Board\Partial.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Board\Partial.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Board\Partial.setup.json --json
+warning: Domino/Board/Partial.lean:31:3: Variable name `T` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _T
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: Domino/Board/Partial.lean:34:2: failed to synthesize instance of type class
+  Finite (PartialTiling m w S)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Domino/Board/Partial.lean:37:2: failed to synthesize
+  DecidableEq { T // w = 0 → S = ∅ }
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+warning: Domino/Board/Partial.lean:61:7: Variable name `P` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _P
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Domino/Board/Partial.lean:69:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Some required targets logged failures:
+- Domino.Board.Partial
+error: build failed

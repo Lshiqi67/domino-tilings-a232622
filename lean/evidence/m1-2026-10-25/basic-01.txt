@@ -1,0 +1,31 @@
+✖ [3137/3137] Building Domino.Board.Basic (78s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Board\Basic.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Board\Basic.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Board\Basic.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Board\Basic.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Board\Basic.setup.json --json
+error: Domino/Board/Basic.lean:53:63: unsolved goals
+m w : ℕ
+a b : Cell m w
+⊢ a.1 = b.1 ∧ (↑a.2 + 1 = ↑b.2 ∨ ↑b.2 + 1 = ↑a.2) ∨
+      a.2 = b.2 ∧ (m - (↑a.1 + 1) + 1 = m - (↑b.1 + 1) ∨ m - (↑b.1 + 1) + 1 = m - (↑a.1 + 1)) ↔
+    a.1 = b.1 ∧ (↑a.2 + 1 = ↑b.2 ∨ ↑b.2 + 1 = ↑a.2) ∨ a.2 = b.2 ∧ (↑a.1 + 1 = ↑b.1 ∨ ↑b.1 + 1 = ↑a.1)
+warning: Domino/Board/Basic.lean:54:44: This simp argument is unused:
+  fin_rev_neighbor_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Adjacent, reflectRows, Fin.rev_inj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Board/Basic.lean:57:63: unsolved goals
+m w : ℕ
+a b : Cell m w
+⊢ a.1 = b.1 ∧ (w - (↑a.2 + 1) + 1 = w - (↑b.2 + 1) ∨ w - (↑b.2 + 1) + 1 = w - (↑a.2 + 1)) ∨
+      a.2 = b.2 ∧ (↑a.1 + 1 = ↑b.1 ∨ ↑b.1 + 1 = ↑a.1) ↔
+    a.1 = b.1 ∧ (↑a.2 + 1 = ↑b.2 ∨ ↑b.2 + 1 = ↑a.2) ∨ a.2 = b.2 ∧ (↑a.1 + 1 = ↑b.1 ∨ ↑b.1 + 1 = ↑a.1)
+warning: Domino/Board/Basic.lean:58:44: This simp argument is unused:
+  fin_rev_neighbor_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Adjacent, reflectCols, Fin.rev_inj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Board.Basic
+error: build failed

@@ -1,0 +1,13 @@
+✔ [3151/3153] Built Domino.HalfBoard.Geometry (23s)
+✖ [3152/3153] Building Domino.HalfBoard.Reflection (18s)
+error: build failed
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\HalfBoard\Reflection.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\Reflection.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\Reflection.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\Reflection.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\Reflection.setup.json --json
+error: Domino/HalfBoard/Reflection.lean:37:68: Function expected at
+  Fintype.card_sigma
+but this term has type
+  Fintype.card (Sigma ?m.23) = ∑ i, Fintype.card (?m.23 i)
+
+Note: Expected a function because this term is being applied to the argument
+  _
+Some required targets logged failures:
+- Domino.HalfBoard.Reflection

@@ -1,0 +1,4 @@
+✔ [951/953] Built Domino.Board.Partial (12s)
+✔ [952/953] Built Domino.Symmetry.Action (12s)
+✔ [953/953] Built Domino.Symmetry.Counting (13s)
+Build completed successfully (953 jobs).

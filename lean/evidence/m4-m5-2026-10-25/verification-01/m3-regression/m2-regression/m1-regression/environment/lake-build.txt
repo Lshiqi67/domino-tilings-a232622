@@ -1,0 +1,15 @@
+ℹ [1836/1974] Replayed Domino.Environment
+info: Domino/Environment.lean:15:0: Fintype.card.{u_3} (α : Type u_3) [Fintype α] : ℕ
+info: Domino/Environment.lean:16:0: Fintype.card_congr.{u_3, u_4} {α : Type u_3} {β : Type u_4} [Fintype α] [Fintype β] (f : α ≃ β) :
+  Fintype.card α = Fintype.card β
+info: Domino/Environment.lean:17:0: Equiv.{u_1, u_2} (α : Sort u_1) (β : Sort u_2) : Sort (max (max 1 u_1) u_2)
+info: Domino/Environment.lean:18:0: MulAction.orbitRel.{u_1, u_2} (G : Type u_1) (α : Type u_2) [Group G] [MulAction G α] : Setoid α
+info: Domino/Environment.lean:19:0: MulAction.sum_card_fixedBy_eq_card_orbits_mul_card_group.{u, v} (G : Type u) (X : Type v) [Group G] [MulAction G X]
+  [Fintype G] [(g : G) → Fintype ↑(MulAction.fixedBy X g)] [Fintype (Quotient (MulAction.orbitRel G X))] :
+  ∑ g, Fintype.card ↑(MulAction.fixedBy X g) = Fintype.card (Quotient (MulAction.orbitRel G X)) * Fintype.card G
+info: Domino/Environment.lean:20:0: Matrix.mul_apply.{v, u_1, u_2, u_3} {l : Type u_1} {m : Type u_2} {n : Type u_3} {α : Type v} [Fintype m] [Mul α]
+  [AddCommMonoid α] {M : Matrix l m α} {N : Matrix m n α} {i : l} {k : n} : (M * N) i k = ∑ j, M i j * N j k
+info: Domino/Environment.lean:21:0: PowerSeries.{u_1} (R : Type u_1) : Type u_1
+info: Domino/Environment.lean:22:0: PowerSeries.coeff.{u_1} {R : Type u_1} [Semiring R] (n : ℕ) : PowerSeries R →ₗ[R] R
+info: Domino/Environment.lean:23:0: PowerSeries.constantCoeff.{u_1} {R : Type u_1} [Semiring R] : PowerSeries R →+* R
+Build completed successfully (3177 jobs).

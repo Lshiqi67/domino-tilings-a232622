@@ -1,0 +1,467 @@
+✔ [3142/3143] Built Domino.Transfer.Grid (18s)
+✖ [3143/3143] Building Domino.Transfer.Links (25s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Links.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Links.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Links.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Links.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Links.setup.json --json
+error: Domino/Transfer/Links.lean:21:35: Application type mismatch: The argument
+  hc
+has type
+  b.2 + 1 = a.2
+but is expected to have type
+  a.2 = b.2 + 1
+in the application
+  And.intro hc
+error: Domino/Transfer/Links.lean:45:83: Tactic `tauto` failed
+
+case «0»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+i j : ℕ
+⊢ i = j + 1 ∧ 0 ∈ H i ∨ j = i + 1 ∧ 0 ∈ H (i + 1) ↔ j = i - 1 ∧ 0 < i ∧ 0 ∈ H i ∨ j = i + 1 ∧ 0 ∈ H (i + 1)
+warning: Domino/Transfer/Links.lean:45:34: This simp argument is unused:
+  nat_predecessor_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [GridLink, Prod.mk.injEq, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Transfer/Links.lean:54:83: Tactic `tauto` failed
+
+case «1»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+i j : ℕ
+⊢ i = j + 1 ∧ 1 ∈ H i ∨ j = i + 1 ∧ 1 ∈ H (i + 1) ↔ j = i - 1 ∧ 0 < i ∧ 1 ∈ H i ∨ j = i + 1 ∧ 1 ∈ H (i + 1)
+warning: Domino/Transfer/Links.lean:54:34: This simp argument is unused:
+  nat_predecessor_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [GridLink, Prod.mk.injEq, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Transfer/Links.lean:63:83: Tactic `tauto` failed
+
+case «2»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+i j : ℕ
+⊢ i = j + 1 ∧ 2 ∈ H i ∨ j = i + 1 ∧ 2 ∈ H (i + 1) ↔ j = i - 1 ∧ 0 < i ∧ 2 ∈ H i ∨ j = i + 1 ∧ 2 ∈ H (i + 1)
+warning: Domino/Transfer/Links.lean:63:34: This simp argument is unused:
+  nat_predecessor_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [GridLink, Prod.mk.injEq, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Transfer/Links.lean:71:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:71:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:71:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:71:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+error: Domino/Transfer/Links.lean:69:86: unsolved goals
+α : Type u_1
+a b c : α
+P Q R : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+hab : ¬a = b
+hac : ¬a = c
+hbc : ¬b = c
+hp : P
+hq : Q
+hr : R
+a_1 : ∃! x, x = a ∨ x = b ∨ x = c
+⊢ False
+
+α : Type u_1
+a b c : α
+P Q R : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+hab : ¬a = b
+hac : ¬a = c
+hbc : ¬b = c
+hp : P
+hq : Q
+hr : ¬R
+a_1 : ∃! x, x = a ∨ x = b
+⊢ False
+
+α : Type u_1
+a b c : α
+P Q R : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+hab : ¬a = b
+hac : ¬a = c
+hbc : ¬b = c
+hp : P
+hq : ¬Q
+hr : R
+a_1 : ∃! x, x = a ∨ x = c
+⊢ False
+
+α : Type u_1
+a b c : α
+P Q R : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+hab : ¬a = b
+hac : ¬a = c
+hbc : ¬b = c
+hp : ¬P
+hq : Q
+hr : R
+a_1 : ∃! x, x = b ∨ x = c
+⊢ False
+warning: Domino/Transfer/Links.lean:71:14: This simp argument is unused:
+  existsUnique_iff_exists
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+warning: Domino/Transfer/Links.lean:80:43: aesop: maximum number of rule applications (200) reached. Set the 'maxRuleApplications' option to increase the limit.
+error: Domino/Transfer/Links.lean:78:42: unsolved goals
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : P
+hq : Q
+hr : R
+hs : S
+a_1 : ∃! x, x = a ∨ x = b ∨ x = c ∨ x = d
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : P
+hq : Q
+hr : R
+hs : ¬S
+a_1 : ∃! x, x = a ∨ x = b ∨ x = c
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : P
+hq : Q
+hr : ¬R
+hs : S
+a_1 : ∃! x, x = a ∨ x = b ∨ x = d
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : P
+hq : Q
+hr : ¬R
+hs : ¬S
+a_1 : ∃! x, x = a ∨ x = b
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : P
+hq : ¬Q
+hr : R
+hs : S
+a_1 : ∃! x, x = a ∨ x = c ∨ x = d
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : P
+hq : ¬Q
+hr : R
+hs : ¬S
+a_1 : ∃! x, x = a ∨ x = c
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : P
+hq : ¬Q
+hr : ¬R
+hs : S
+a_1 : ∃! x, x = a ∨ x = d
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : ¬P
+hq : Q
+hr : R
+hs : S
+a_1 : ∃! x, x = b ∨ x = c ∨ x = d
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : ¬P
+hq : Q
+hr : R
+hs : ¬S
+a_1 : ∃! x, x = b ∨ x = c
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : ¬P
+hq : Q
+hr : ¬R
+hs : S
+a_1 : ∃! x, x = b ∨ x = d
+⊢ False
+
+α : Type u_1
+a b c d : α
+P Q R S : Prop
+inst : Decidable P
+inst_1 : Decidable Q
+inst_2 : Decidable R
+inst_3 : Decidable S
+hab : ¬a = b
+hac : ¬a = c
+had : ¬a = d
+hbc : ¬b = c
+hbd : ¬b = d
+hcd : ¬c = d
+hp : ¬P
+hq : ¬Q
+hr : R
+hs : S
+a_1 : ∃! x, x = c ∨ x = d
+⊢ False
+warning: Domino/Transfer/Links.lean:80:14: This simp argument is unused:
+  existsUnique_iff_exists
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Domino/Transfer/Links.lean:100:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∃! x, x = (0, i - 1) ∧ ?P ∨ x = (0, i + 1) ∧ ?Q ∨ x = ?m.534 ∧ ?R
+in the target expression
+  (∃! b, GridLink H V (⟨0, ⋯⟩, i) b) ↔
+    ((((if ⟨0, ⋯⟩ ∈ H i then 1 else 0) + if ⟨0, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if (⟨0, ⋯⟩ = 0 ∨ ⟨0, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if (⟨0, ⋯⟩ = 1 ∨ ⟨0, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+
+case «0»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+h0 : H 0 = ∅
+i : ℕ
+hin : ∀ (r : Fin 3), 0 < i ∧ r ∈ H i ↔ r ∈ H i
+hne : ∀ (r : Fin 3), (r, i - 1) ≠ (r, i + 1)
+⊢ (∃! b, GridLink H V (⟨0, ⋯⟩, i) b) ↔
+    ((((if ⟨0, ⋯⟩ ∈ H i then 1 else 0) + if ⟨0, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if (⟨0, ⋯⟩ = 0 ∨ ⟨0, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if (⟨0, ⋯⟩ = 1 ∨ ⟨0, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+error: Domino/Transfer/Links.lean:103:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∃! x, x = (1, i - 1) ∧ ?P ∨ x = (1, i + 1) ∧ ?Q ∨ x = ?m.549 ∧ ?R ∨ x = ?m.550 ∧ ?S
+in the target expression
+  (∃! b, GridLink H V (⟨1, ⋯⟩, i) b) ↔
+    ((((if ⟨1, ⋯⟩ ∈ H i then 1 else 0) + if ⟨1, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if (⟨1, ⋯⟩ = 0 ∨ ⟨1, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if (⟨1, ⋯⟩ = 1 ∨ ⟨1, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+
+case «1»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+h0 : H 0 = ∅
+i : ℕ
+hin : ∀ (r : Fin 3), 0 < i ∧ r ∈ H i ↔ r ∈ H i
+hne : ∀ (r : Fin 3), (r, i - 1) ≠ (r, i + 1)
+⊢ (∃! b, GridLink H V (⟨1, ⋯⟩, i) b) ↔
+    ((((if ⟨1, ⋯⟩ ∈ H i then 1 else 0) + if ⟨1, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if (⟨1, ⋯⟩ = 0 ∨ ⟨1, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if (⟨1, ⋯⟩ = 1 ∨ ⟨1, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+error: Domino/Transfer/Links.lean:106:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∃! x, x = (2, i - 1) ∧ ?P ∨ x = (2, i + 1) ∧ ?Q ∨ x = ?m.570 ∧ ?R
+in the target expression
+  (∃! b, GridLink H V (⟨2, ⋯⟩, i) b) ↔
+    ((((if ⟨2, ⋯⟩ ∈ H i then 1 else 0) + if ⟨2, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if (⟨2, ⋯⟩ = 0 ∨ ⟨2, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if (⟨2, ⋯⟩ = 1 ∨ ⟨2, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+
+case «2»
+H : ℕ → State 3
+V : ℕ → Finset (Fin 2)
+h0 : H 0 = ∅
+i : ℕ
+hin : ∀ (r : Fin 3), 0 < i ∧ r ∈ H i ↔ r ∈ H i
+hne : ∀ (r : Fin 3), (r, i - 1) ≠ (r, i + 1)
+⊢ (∃! b, GridLink H V (⟨2, ⋯⟩, i) b) ↔
+    ((((if ⟨2, ⋯⟩ ∈ H i then 1 else 0) + if ⟨2, ⋯⟩ ∈ H (i + 1) then 1 else 0) +
+          if (⟨2, ⋯⟩ = 0 ∨ ⟨2, ⋯⟩ = 1) ∧ 0 ∈ V i then 1 else 0) +
+        if (⟨2, ⋯⟩ = 1 ∨ ⟨2, ⋯⟩ = 2) ∧ 1 ∈ V i then 1 else 0) =
+      1
+error: Domino/Transfer/Links.lean:100:45: Expected type must not contain metavariables
+  (0, i - 1) ≠ ?m.534
+error: Domino/Transfer/Links.lean:100:57: Expected type must not contain metavariables
+  (0, i + 1) ≠ ?m.534
+error: Domino/Transfer/Links.lean:103:46: Expected type must not contain metavariables
+  (1, i - 1) ≠ ?m.549
+error: Domino/Transfer/Links.lean:103:58: Expected type must not contain metavariables
+  (1, i - 1) ≠ ?m.550
+error: Domino/Transfer/Links.lean:103:70: Expected type must not contain metavariables
+  (1, i + 1) ≠ ?m.549
+error: Domino/Transfer/Links.lean:103:82: Expected type must not contain metavariables
+  (1, i + 1) ≠ ?m.550
+error: Domino/Transfer/Links.lean:103:94: Expected type must not contain metavariables
+  ?m.549 ≠ ?m.550
+error: Domino/Transfer/Links.lean:106:45: Expected type must not contain metavariables
+  (2, i - 1) ≠ ?m.570
+error: Domino/Transfer/Links.lean:106:57: Expected type must not contain metavariables
+  (2, i + 1) ≠ ?m.570
+warning: Domino/Transfer/Links.lean:99:17: This simp argument is unused:
+  gridLink_row_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Transfer/Links.lean:102:17: This simp argument is unused:
+  gridLink_row_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Domino/Transfer/Links.lean:105:17: This simp argument is unused:
+  gridLink_row_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.Transfer.Links
+error: build failed

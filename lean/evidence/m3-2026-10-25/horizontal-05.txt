@@ -1,0 +1,39 @@
+✔ [3152/3154] Built Domino.HalfBoard.Reflection (20s)
+✔ [3153/3154] Built Domino.HalfBoard.HalfTurn (20s)
+✖ [3154/3154] Building Domino.HalfBoard.Horizontal (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\HalfBoard\Horizontal.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\Horizontal.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\HalfBoard\Horizontal.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\Horizontal.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\HalfBoard\Horizontal.setup.json --json
+error: Domino/HalfBoard/Horizontal.lean:31:52: Application type mismatch: The argument
+  h
+has type
+  ∃ (x : IsEdge {(0, i), (1, i)}), ⟨{(0, i), (1, i)}, ⋯⟩ ∈ ↑T
+but is expected to have type
+  (?m.1622, ?m.1623) ∈ coverBonds T
+in the application
+  (coverBonds_valid T).right.right.right ?m.1622 ?m.1623 ?m.1624 h
+error: Domino/HalfBoard/Horizontal.lean:31:52: Application type mismatch: The argument
+  h
+has type
+  ∃ (x : IsEdge {(1, i), (0, i)}), ⟨{(1, i), (0, i)}, ⋯⟩ ∈ ↑T
+but is expected to have type
+  (?m.1622, ?m.1623) ∈ coverBonds T
+in the application
+  (coverBonds_valid T).right.right.right ?m.1622 ?m.1623 ?m.1624 h
+error: Domino/HalfBoard/Horizontal.lean:31:52: Application type mismatch: The argument
+  h
+has type
+  ∃ (x : IsEdge {(1, i), (2, i)}), ⟨{(1, i), (2, i)}, ⋯⟩ ∈ ↑T
+but is expected to have type
+  (?m.1622, ?m.1623) ∈ coverBonds T
+in the application
+  (coverBonds_valid T).right.right.right ?m.1622 ?m.1623 ?m.1624 h
+error: Domino/HalfBoard/Horizontal.lean:31:52: Application type mismatch: The argument
+  h
+has type
+  ∃ (x : IsEdge {(2, i), (1, i)}), ⟨{(2, i), (1, i)}, ⋯⟩ ∈ ↑T
+but is expected to have type
+  (?m.1622, ?m.1623) ∈ coverBonds T
+in the application
+  (coverBonds_valid T).right.right.right ?m.1622 ?m.1623 ?m.1624 h
+Some required targets logged failures:
+- Domino.HalfBoard.Horizontal
+error: build failed

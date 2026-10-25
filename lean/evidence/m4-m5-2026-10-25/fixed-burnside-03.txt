@@ -1,0 +1,4 @@
+✔ [3155/3158] Built Domino.Symmetry.Burnside (21s)
+✔ [3156/3158] Built Domino.ThreeRows.ProfileRecurrence (22s)
+✔ [3158/3158] Built Domino.ThreeRows.FixedCounts (17s)
+Build completed successfully (3158 jobs).

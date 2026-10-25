@@ -1,0 +1,25 @@
+✖ [3140/3141] Building Domino.Transfer.Bonds (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Bonds.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Bonds.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Bonds.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Bonds.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Bonds.setup.json --json
+error: Domino/Transfer/Bonds.lean:29:62: Unknown identifier `y`
+error: Domino/Transfer/Bonds.lean:106:31: Unknown identifier `y`
+error: Domino/Transfer/Bonds.lean:106:68: Unknown identifier `y`
+✖ [3141/3141] Building Domino.Transfer.ThreeRows (20s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\ThreeRows.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\ThreeRows.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\ThreeRows.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\ThreeRows.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\ThreeRows.setup.json --json
+warning: Domino/Transfer/ThreeRows.lean:19:66: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: Domino/Transfer/ThreeRows.lean:55:41: Application type mismatch: The argument
+  fillColumn p q h
+has type
+  ColumnCover p q
+but is expected to have type
+  Inhabited (ColumnCover p q)
+in the application
+  Unique.mk (fillColumn p q h)
+Some required targets logged failures:
+- Domino.Transfer.Bonds
+- Domino.Transfer.ThreeRows
+error: build failed

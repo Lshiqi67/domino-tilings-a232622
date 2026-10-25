@@ -1,0 +1,47 @@
+✖ [3140/3140] Building Domino.Transfer.Bonds (24s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\Transfer\Bonds.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Bonds.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\Transfer\Bonds.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Bonds.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\Transfer\Bonds.setup.json --json
+error: Domino/Transfer/Bonds.lean:26:10: Unknown constant `Finset.mem_pair`
+error: Domino/Transfer/Bonds.lean:24:42: unsolved goals
+m w : ℕ
+e : Edge m w
+a x y : Cell m w
+ha : a ∈ {x, y}
+hxy : Adjacent x y
+he : ↑e = {x, y}
+⊢ ∃ b, Adjacent a b ∧ ↑e = {a, b}
+warning: Domino/Transfer/Bonds.lean:32:19: Variable name `hac` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hac
+
+error: build failed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: Domino/Transfer/Bonds.lean:103:11: Unknown constant `Finset.mem_pair`
+error: Domino/Transfer/Bonds.lean:101:44: unsolved goals
+m w : ℕ
+H : Finset (Cell m w)
+R : BondCover m w H
+e : Edge m w
+he : e ∈ bondEdges R
+a x y : Cell m w
+ha : a ∈ {x, y}
+hxy : (x, y) ∈ ↑R
+heq : ↑e = {x, y}
+⊢ ∃ b, (a, b) ∈ ↑R ∧ ↑e = {a, b}
+warning: Domino/Transfer/Bonds.lean:125:4: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [heq, hfq, hbc]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: Domino/Transfer/Bonds.lean:149:50: unsolved goals
+m w : ℕ
+H : Finset (Cell m w)
+R : BondCover m w H
+a b : Cell m w
+e : Edge m w
+he : e ∈ bondEdges R
+heq : ↑e = {a, b}
+⊢ ?m.183 = a ∨ ?m.183 = b
+Some required targets logged failures:
+- Domino.Transfer.Bonds

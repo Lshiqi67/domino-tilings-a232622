@@ -1,0 +1,48 @@
+✔ [3184/3218] Built Domino.Board.Basic (15s)
+ℹ [3185/3218] Built Domino.Environment (17s)
+info: Domino/Environment.lean:15:0: Fintype.card.{u_3} (α : Type u_3) [Fintype α] : ℕ
+info: Domino/Environment.lean:16:0: Fintype.card_congr.{u_3, u_4} {α : Type u_3} {β : Type u_4} [Fintype α] [Fintype β] (f : α ≃ β) :
+  Fintype.card α = Fintype.card β
+info: Domino/Environment.lean:17:0: Equiv.{u_1, u_2} (α : Sort u_1) (β : Sort u_2) : Sort (max (max 1 u_1) u_2)
+info: Domino/Environment.lean:18:0: MulAction.orbitRel.{u_1, u_2} (G : Type u_1) (α : Type u_2) [Group G] [MulAction G α] : Setoid α
+info: Domino/Environment.lean:19:0: MulAction.sum_card_fixedBy_eq_card_orbits_mul_card_group.{u, v} (G : Type u) (X : Type v) [Group G] [MulAction G X]
+  [Fintype G] [(g : G) → Fintype ↑(MulAction.fixedBy X g)] [Fintype (Quotient (MulAction.orbitRel G X))] :
+  ∑ g, Fintype.card ↑(MulAction.fixedBy X g) = Fintype.card (Quotient (MulAction.orbitRel G X)) * Fintype.card G
+info: Domino/Environment.lean:20:0: Matrix.mul_apply.{v, u_1, u_2, u_3} {l : Type u_1} {m : Type u_2} {n : Type u_3} {α : Type v} [Fintype m] [Mul α]
+  [AddCommMonoid α] {M : Matrix l m α} {N : Matrix m n α} {i : l} {k : n} : (M * N) i k = ∑ j, M i j * N j k
+info: Domino/Environment.lean:21:0: PowerSeries.{u_1} (R : Type u_1) : Type u_1
+info: Domino/Environment.lean:22:0: PowerSeries.coeff.{u_1} {R : Type u_1} [Semiring R] (n : ℕ) : PowerSeries R →ₗ[R] R
+info: Domino/Environment.lean:23:0: PowerSeries.constantCoeff.{u_1} {R : Type u_1} [Semiring R] : PowerSeries R →+* R
+✔ [3186/3218] Built Domino.Series.Basic (21s)
+✔ [3187/3218] Built Domino.Board.Tiling (12s)
+✔ [3188/3218] Built Domino.Board.Partial (12s)
+✔ [3189/3218] Built Domino.ThreeRows.Algebra (18s)
+✔ [3190/3218] Built Domino.Board.Examples (15s)
+✔ [3191/3218] Built Domino.Symmetry.Action (15s)
+✔ [3192/3218] Built Domino.Transfer.Bonds (21s)
+✔ [3193/3218] Built Domino.Transfer.ThreeRows (21s)
+✔ [3194/3218] Built Domino.Symmetry.Counting (12s)
+✔ [3195/3218] Built Domino.Transfer.Grid (18s)
+✔ [3196/3218] Built Domino.Symmetry.Burnside (18s)
+✔ [3197/3218] Built Domino.Transfer.Links (20s)
+✔ [3198/3218] Built Domino.Transfer.Frame (35s)
+✔ [3199/3218] Built Domino.Transfer.PathEquiv (23s)
+✔ [3200/3218] Built Domino.Transfer.Count (17s)
+✔ [3201/3218] Built Domino.Symmetry.PathAction (21s)
+✔ [3202/3218] Built Domino.Transfer.Examples (21s)
+✔ [3203/3218] Built Domino.ThreeRows.ProfileRecurrence (22s)
+✔ [3204/3218] Built Domino.HalfBoard.PathCompletion (21s)
+✔ [3205/3218] Built Domino.ThreeRows.Ordinary (21s)
+✔ [3206/3218] Built Domino.HalfBoard.Geometry (20s)
+✔ [3207/3218] Built Domino.HalfBoard.Reflection (20s)
+✔ [3208/3218] Built Domino.HalfBoard.HalfTurn (19s)
+✔ [3209/3218] Built Domino.HalfBoard.Horizontal (20s)
+✔ [3210/3218] Built Domino.ThreeRows.FixedCounts (20s)
+✔ [3211/3218] Built Domino.HalfBoard.Examples (20s)
+✔ [3212/3218] Built Domino.ThreeRows.OrbitCounts (18s)
+✔ [3213/3218] Built Domino.ThreeRows.Boundary (19s)
+✔ [3214/3218] Built Domino.ThreeRows.Series (19s)
+✔ [3215/3218] Built Domino.ThreeRows.Main (19s)
+✔ [3216/3218] Built Domino.ThreeRows.Recurrence (20s)
+✔ [3217/3218] Built Domino (17s)
+Build completed successfully (3218 jobs).

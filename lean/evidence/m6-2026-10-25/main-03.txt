@@ -1,0 +1,15 @@
+✔ [3207/3210] Built Domino.Series.Basic (19s)
+✖ [3208/3210] Building Domino.ThreeRows.Algebra (19s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\ThreeRows\Algebra.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Algebra.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\Algebra.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Algebra.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\Algebra.setup.json --json
+error: Domino/ThreeRows/Algebra.lean:19:75: unsolved goals
+⊢ 1 - (expand 2 doubleSeries._proof_1) 4 * X ^ 2 + (X ^ 2) ^ 2 = 1 - 4 * X ^ 2 + X ^ 4
+warning: Domino/ThreeRows/Algebra.lean:20:86: This simp argument is unused:
+  pow_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [doubleSeries, ordinaryDenom, parityDenom, map_sub, map_add, map_mul, map_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- Domino.ThreeRows.Algebra
+error: build failed

@@ -1,0 +1,258 @@
+✖ [3149/3149] Building Domino.ThreeRows.ProfileRecurrence (21s)
+trace: .> LEAN_PATH={LEAN_ROOT}\.lake\packages\Cli\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\batteries\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\Qq\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\aesop\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\proofwidgets\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\importGraph\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\LeanSearchClient\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\plausible\.lake\build\lib\lean;{LEAN_ROOT}\.lake\packages\mathlib\.lake\build\lib\lean;{LEAN_ROOT}\.lake\build\lib\lean {LOCAL_PATH} {LEAN_ROOT}\Domino\ThreeRows\ProfileRecurrence.lean -o {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\ProfileRecurrence.olean -i {LEAN_ROOT}\.lake\build\lib\lean\Domino\ThreeRows\ProfileRecurrence.ilean -c {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\ProfileRecurrence.c --setup {LEAN_ROOT}\.lake\build\ir\Domino\ThreeRows\ProfileRecurrence.setup.json --json
+error: Domino/ThreeRows/ProfileRecurrence.lean:21:35: Expected type must not contain metavariables
+  ?m.175 ∉ ?m.174
+error: Domino/ThreeRows/ProfileRecurrence.lean:21:2: `simp` made no progress
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  j ≥ 0
+  i ≥ 0
+  h ≥ 0
+  g ≥ 0
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e - f - g - h - i - j - k ≥ 1
+where
+ c := ↑(if ∅ = Finset.univ then a else 0)
+ d := ↑(if Finset.univ = ∅ ∨ Finset.univ = {0, 1} ∨ Finset.univ = {1, 2} then a else 0)
+ e := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {0}) ∨ Finset.univ \ {0} = {0, 1} ∨ Finset.univ \ {0} = {1, 2} then
+    if {0} = {0, 1} ∨ {0} = {1, 2} then b else 0
+  else 0)
+ f := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {1}) ∨ Finset.univ \ {1} = {0, 1} ∨ Finset.univ \ {1} = {1, 2} then
+    if {1} = {0, 1} ∨ {1} = {1, 2} then b else 0
+  else 0)
+ g := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {2}) ∨ Finset.univ \ {2} = {0, 1} ∨ Finset.univ \ {2} = {1, 2} then
+    if {2} = {0, 1} ∨ {2} = {1, 2} then b else 0
+  else 0)
+ h := ↑(if {0, 1} = Finset.univ ∨ Finset.univ \ {0, 1} = {1, 2} then b else 0)
+ i := ↑(if {0, 2} = Finset.univ ∨ Finset.univ \ {0, 2} = {0, 1} ∨ Finset.univ \ {0, 2} = {1, 2} then
+    if {0, 2} = {0, 1} ∨ {0, 2} = {1, 2} then b else 0
+  else 0)
+ j := ↑(if {1, 2} = Finset.univ ∨ Finset.univ \ {1, 2} = {0, 1} then b else 0)
+ k := ↑(if Finset.univ = ∅ then a else if Finset.univ = {0, 1} ∨ Finset.univ = {1, 2} then b else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  g ≥ 0
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d - e - f - g - h ≥ 1
+where
+ c := ↑a
+ d := ↑b
+ e := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {0}) ∨ Finset.univ \ {0} = {0, 1} ∨ Finset.univ \ {0} = {1, 2} then a
+  else 0)
+ f := ↑(if {1, 0} = Finset.univ ∨ Finset.univ \ {1, 0} = {0, 1} ∨ Finset.univ \ {1, 0} = {1, 2} then
+    if {1} = {0, 1} ∨ {1} = {1, 2} then b else 0
+  else 0)
+ g := ↑(if {2, 0} = Finset.univ ∨ Finset.univ \ {2, 0} = {0, 1} ∨ Finset.univ \ {2, 0} = {1, 2} then
+    if {2} = {0, 1} ∨ {2} = {1, 2} then b else 0
+  else 0)
+ h := ↑(if {1, 2, 0} = Finset.univ ∨ Finset.univ \ {1, 2, 0} = {0, 1} ∨ Finset.univ \ {1, 2, 0} = {1, 2} then b else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 1
+where
+ c := ↑a
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  g ≥ 0
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d - e - f - g - h ≥ 1
+where
+ c := ↑a
+ d := ↑b
+ e := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {2}) ∨ Finset.univ \ {2} = {0, 1} ∨ Finset.univ \ {2} = {1, 2} then a
+  else 0)
+ f := ↑(if {0, 2} = Finset.univ ∨ Finset.univ \ {0, 2} = {0, 1} ∨ Finset.univ \ {0, 2} = {1, 2} then
+    if {0} = {0, 1} ∨ {0} = {1, 2} then b else 0
+  else 0)
+ g := ↑(if {1, 2} = Finset.univ ∨ Finset.univ \ {1, 2} = {0, 1} then if {1} = {0, 1} ∨ {1} = {1, 2} then b else 0
+  else 0)
+ h := ↑(if {0, 1, 2} = Finset.univ ∨ Finset.univ \ {0, 1, 2} = {0, 1} ∨ Finset.univ \ {0, 1, 2} = {1, 2} then b else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e ≥ 1
+where
+ c := ↑(if {0, 1} = {0} ∨ {0, 1} = {2} then a + b else if {0, 1} = Finset.univ then a else 0)
+ d := ↑(if {0, 1} = Finset.univ ∨ Finset.univ \ {0, 1} = {1, 2} then a else 0)
+ e := ↑(if {0, 2, 1} = Finset.univ ∨ Finset.univ \ {0, 2, 1} = {0, 1} ∨ Finset.univ \ {0, 2, 1} = {1, 2} then
+    if {2} = {0, 1} ∨ {2} = {1, 2} then b else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e ≥ 1
+where
+ c := ↑(if {0, 2} = {0} then a + b else if {0, 2} = Finset.univ then a else 0)
+ d := ↑(if {0, 2} = Finset.univ ∨ Finset.univ \ {0, 2} = {0, 1} ∨ Finset.univ \ {0, 2} = {1, 2} then a else 0)
+ e := ↑(if {0, 1, 2} = Finset.univ ∨ Finset.univ \ {0, 1, 2} = {0, 1} ∨ Finset.univ \ {0, 1, 2} = {1, 2} then
+    if {1} = {0, 1} ∨ {1} = {1, 2} then b else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e ≥ 1
+where
+ c := ↑(if {1, 2} = {0} then a + b else if {1, 2} = Finset.univ then a else 0)
+ d := ↑(if {1, 2} = Finset.univ ∨ Finset.univ \ {1, 2} = {0, 1} then a else 0)
+ e := ↑(if {1, 0, 2} = Finset.univ ∨ Finset.univ \ {1, 0, 2} = {0, 1} ∨ Finset.univ \ {1, 0, 2} = {1, 2} then
+    if {0} = {0, 1} ∨ {0} = {1, 2} then b else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:34:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e ≥ 1
+where
+ c := ↑(if Finset.univ = {0} ∨ Finset.univ = {2} then a + b else a)
+ d := ↑a
+ e := ↑(if Finset.univ = ∅ then
+    if Finset.univ = ∅ then a else if Finset.univ = {0, 1} ∨ Finset.univ = {1, 2} then b else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  j ≥ 0
+  i ≥ 0
+  h ≥ 0
+  g ≥ 0
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  3*c + 2*d - e - f - g - h - i - j - k ≥ 1
+where
+ c := ↑a
+ d := ↑b
+ e := ↑(if Finset.univ = ∅ ∨ Finset.univ = {0, 1} ∨ Finset.univ = {1, 2} then if ∅ = Finset.univ then a else 0 else 0)
+ f := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {0}) ∨ Finset.univ \ {0} = {0, 1} ∨ Finset.univ \ {0} = {1, 2} then a + b
+  else 0)
+ g := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {2}) ∨ Finset.univ \ {2} = {0, 1} ∨ Finset.univ \ {2} = {1, 2} then a + b
+  else 0)
+ h := ↑(if {0, 1} = Finset.univ ∨ Finset.univ \ {0, 1} = {1, 2} then
+    if {0, 1} = {0} ∨ {0, 1} = {2} then a + b else if {0, 1} = Finset.univ then a else 0
+  else 0)
+ i := ↑(if {0, 2} = Finset.univ ∨ Finset.univ \ {0, 2} = {0, 1} ∨ Finset.univ \ {0, 2} = {1, 2} then
+    if {0, 2} = {0} then a + b else if {0, 2} = Finset.univ then a else 0
+  else 0)
+ j := ↑(if {1, 2} = Finset.univ ∨ Finset.univ \ {1, 2} = {0, 1} then
+    if {1, 2} = {0} then a + b else if {1, 2} = Finset.univ then a else 0
+  else 0)
+ k := ↑(if Finset.univ = {0} ∨ Finset.univ = {2} then a + b else a)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e - f ≥ 1
+where
+ c := ↑(if {0} = {0, 1} ∨ {0} = {1, 2} then a + b else 0)
+ d := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {0}) ∨ Finset.univ \ {0} = {0, 1} ∨ Finset.univ \ {0} = {1, 2} then
+    if ∅ = Finset.univ then a else 0
+  else 0)
+ e := ↑(if {2, 0} = Finset.univ ∨ Finset.univ \ {2, 0} = {0, 1} ∨ Finset.univ \ {2, 0} = {1, 2} then a + b else 0)
+ f := ↑(if {1, 2, 0} = Finset.univ ∨ Finset.univ \ {1, 2, 0} = {0, 1} ∨ Finset.univ \ {1, 2, 0} = {1, 2} then
+    if {1, 2} = {0} then a + b else if {1, 2} = Finset.univ then a else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e - f - g ≥ 1
+where
+ c := ↑(if {1} = {0, 1} ∨ {1} = {1, 2} then a + b else 0)
+ d := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {1}) ∨ Finset.univ \ {1} = {0, 1} ∨ Finset.univ \ {1} = {1, 2} then
+    if ∅ = Finset.univ then a else 0
+  else 0)
+ e := ↑(if {0, 1} = Finset.univ ∨ Finset.univ \ {0, 1} = {1, 2} then a + b else 0)
+ f := ↑(if {2, 1} = Finset.univ ∨ Finset.univ \ {2, 1} = {0, 1} ∨ Finset.univ \ {2, 1} = {1, 2} then a + b else 0)
+ g := ↑(if {0, 2, 1} = Finset.univ ∨ Finset.univ \ {0, 2, 1} = {0, 1} ∨ Finset.univ \ {0, 2, 1} = {1, 2} then
+    if {0, 2} = {0} then a + b else if {0, 2} = Finset.univ then a else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e - f ≥ 1
+where
+ c := ↑(if {2} = {0, 1} ∨ {2} = {1, 2} then a + b else 0)
+ d := ↑(if (Finset.univ = ∅ ∨ Finset.univ = {2}) ∨ Finset.univ \ {2} = {0, 1} ∨ Finset.univ \ {2} = {1, 2} then
+    if ∅ = Finset.univ then a else 0
+  else 0)
+ e := ↑(if {0, 2} = Finset.univ ∨ Finset.univ \ {0, 2} = {0, 1} ∨ Finset.univ \ {0, 2} = {1, 2} then a + b else 0)
+ f := ↑(if {0, 1, 2} = Finset.univ ∨ Finset.univ \ {0, 1, 2} = {0, 1} ∨ Finset.univ \ {0, 1, 2} = {1, 2} then
+    if {0, 1} = {0} ∨ {0, 1} = {2} then a + b else if {0, 1} = Finset.univ then a else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d - e - f ≥ 1
+where
+ c := ↑a
+ d := ↑b
+ e := ↑(if {0, 1} = Finset.univ ∨ Finset.univ \ {0, 1} = {1, 2} then if ∅ = Finset.univ then a else 0 else 0)
+ f := ↑(if {0, 2, 1} = Finset.univ ∨ Finset.univ \ {0, 2, 1} = {0, 1} ∨ Finset.univ \ {0, 2, 1} = {1, 2} then a + b
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+where
+ c := ↑(if {0, 2} = {0, 1} ∨ {0, 2} = {1, 2} then a + b else 0)
+ d := ↑(if {0, 2} = Finset.univ ∨ Finset.univ \ {0, 2} = {0, 1} ∨ Finset.univ \ {0, 2} = {1, 2} then
+    if ∅ = Finset.univ then a else 0
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c + d - e - f ≥ 1
+where
+ c := ↑a
+ d := ↑b
+ e := ↑(if {1, 2} = Finset.univ ∨ Finset.univ \ {1, 2} = {0, 1} then if ∅ = Finset.univ then a else 0 else 0)
+ f := ↑(if {1, 0, 2} = Finset.univ ∨ Finset.univ \ {1, 0, 2} = {0, 1} ∨ Finset.univ \ {1, 0, 2} = {1, 2} then a + b
+  else 0)
+error: Domino/ThreeRows/ProfileRecurrence.lean:40:62: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e ≥ 1
+where
+ c := ↑(if Finset.univ = ∅ then 3 * a + 2 * b else if Finset.univ = {0, 1} ∨ Finset.univ = {1, 2} then a + b else 0)
+ d := ↑(if ∅ = Finset.univ then a else 0)
+ e := ↑(if Finset.univ = ∅ then if Finset.univ = {0} ∨ Finset.univ = {2} then a + b else a else 0)
+Some required targets logged failures:
+- Domino.ThreeRows.ProfileRecurrence
+error: build failed
