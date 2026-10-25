@@ -41,8 +41,6 @@ The Chinese manuscript and its TeX sources are preserved unchanged. They retain 
 
 The mathematical drafts and verification programs were developed with substantial AI assistance. Numerical and algebraic checks have limited scopes and do not substitute for formal verification or independent mathematical review. The bibliographic novelty of the specific arguments and formulas is not established.
 
-本仓库只记录英文署名 **Shiqi Liu**。不包含作者单位、学生身份、联系信息、私人账号凭证、本机绝对路径或整包历史聊天备份。参考文献中的其他研究者姓名属于必要的学术引用。
-
 Public visibility gives visitors read and fork access. It does not grant write access to this repository. No collaborator write permissions are intended; proposed corrections must be reviewed before the owner incorporates them.
 
 Keywords: domino tilings, A232622, three-row rectangle, incongruent tilings, symmetry classes, Burnside lemma, generating functions, transfer matrices, odd height, Lean verification pending.
