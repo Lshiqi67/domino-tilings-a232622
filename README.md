@@ -19,6 +19,7 @@ The repository contains proposed arguments, finite computations and exact algebr
 | Material | English | 中文 |
 | --- | --- | --- |
 | Manuscript PDF | [Working draft](papers/en/domino-tilings-en.pdf) | [原中文论文，未修改](papers/zh/domino-tilings-zh.pdf) |
+| Illustrated block-proof guide (10 pages) | [English PDF](guides/block-proof/domino-block-proof-guide-en.pdf) | [中文图解讲义](guides/block-proof/domino-block-proof-guide-zh.pdf) |
 | Source and edition notes | [LaTeX and build](papers/en/README.md) | [源码与版本说明](papers/zh/README.md) |
 | Exact problem | [Statement](docs/en/statement.md) | [题面](docs/zh/statement.md) |
 | Approaches | [Routes](docs/en/approaches.md) | [思路](docs/zh/approaches.md) |

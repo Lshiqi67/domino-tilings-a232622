@@ -310,6 +310,18 @@
       "source": "02_problems/P002-domino-orbit-counting/english/paper/checks/prepare_and_audit.py",
       "source_sha256": "90e3ffcfa1b1c5969df4939f74919f61ff7322e35bc5949efbcc816cd7830603",
       "treatment": "repository-relative paths adapted"
+    },
+    {
+      "file": "guides/block-proof/domino-block-proof-guide-en.pdf",
+      "source": "02_problems/P002-domino-orbit-counting/notes/block-proof-guide/output/pdf/domino-block-proof-guide-en.pdf",
+      "source_sha256": "8e151a2f78e78d1036ddf58f3be44e0b85a7a685cd600c11a1c938879cf0a7ed",
+      "treatment": "unchanged; illustrated educational guide"
+    },
+    {
+      "file": "guides/block-proof/domino-block-proof-guide-zh.pdf",
+      "source": "02_problems/P002-domino-orbit-counting/notes/block-proof-guide/output/pdf/domino-block-proof-guide-zh.pdf",
+      "source_sha256": "cf578bc25696bec0222b42a171b3a3668ead0c61e22aa5eb6812f35fc0c8a36e",
+      "treatment": "unchanged; illustrated educational guide"
     }
   ]
 }
