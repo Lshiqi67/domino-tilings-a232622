@@ -20,6 +20,10 @@ No licence has been selected for this snapshot. Repository write permissions and
 
 See [STATUS.md](STATUS.md) for the current scientific claims and limitations.
 
+## 英文论文版本归档（2026-10-26）
+
+新增论文引用信息、归档恢复说明和 `paper-en-v2.0` Release。英文 PDF/TeX、中文稿、既有数学源码与历史报告原字节保留；此次仅检查发布文件完整性和恢复能力，不新增数学验证。完整研究原始资料在本地独立目录备份，公开 Release 提供筛选公开材料快照及完整可达公开 Git 历史。论文和仓库的验证范围分别记录，详见 [版本说明](releases/paper-en-v2.0.md)和 [归档说明](ARCHIVING.md)。
+
 ## Lean 发布补充（2026-10-25）
 
 32 个数学模块、审计入口、版本锁、验收脚本、完整阶段方案和证明链公开副本一起发布。源码按主题分组，进展按 M1–M6 登记；下一步 M7–M11 见 [计划](lean/docs/progress.md)。Lean 数学源文件与版本锁保持原样，脚本仅调整历史报告路径，文档更新公开导航和现状。

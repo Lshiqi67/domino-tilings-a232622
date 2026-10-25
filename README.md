@@ -4,6 +4,8 @@
 
 **Shiqi Liu**
 
+**英文论文固定版本：**[v2.0 Release](https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.0) · [推荐引用](CITATION.cff) · [BibTeX](CITATION.bib) · [归档与恢复](ARCHIVING.md)。本次固定 15 页英文稿原字节；论文报告 M1–M6，配套仓库含 M1–M11。文稿日期与 Release 日期分别记录。
+
 > Lean M1–M11 verify the three-row orbit generating function and recurrence, exact stabilizer counts, general odd-height counting and rationality, the explicit five-row formula and recurrence, three-row asymptotics and sampling probabilities, and a second block-based proof. Local cumulative audits and a clean rebuild of project sources passed. External semantic review, asymptotics beyond three rows and minimal recurrence order remain pending. No priority claim is made.
 >
 > M7 精确稳定子、M8 奇数高度通用公式与有理性、M9 五行主式与十四阶递推、M10 三行渐近与两种概率、M11 基本块第二证明均已形式化。当前结论以明确的铺法及四种坐标对称定义为准；外部语义审阅及其余推广仍待完成。
