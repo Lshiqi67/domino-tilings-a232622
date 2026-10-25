@@ -2,92 +2,120 @@
   "date": "2026-10-25",
   "author": "Shiqi Liu",
   "status": "Lean M1-M6 locally verified for the three-row main counting theorem; extensions, second proof and external review pending; no novelty claim.",
-  "chinese_manuscript": "PDF and all TeX files preserved byte for byte.",
+  "chinese_manuscript": "Version 2.0, signed Shiqi Liu, incorporates existing M1-M6 scope; original v1.0 PDF and TeX archived byte for byte.",
   "selection": "Manuscripts, two draft proof routes, problem/source/lemma notes, final verification code, and sanitized numerical outputs. Personal information, full historical archives, machine logs and unrelated research are excluded.",
   "files": [
     {
       "file": "papers/zh/figures/blocks.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/figures/blocks.tex",
       "source_sha256": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848",
-      "treatment": "unchanged"
+      "treatment": "unchanged; also retained in v1.0 archive",
+      "legacy_file": "papers/zh/archive/v1.0/figures/blocks.tex",
+      "current_sha256": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848"
     },
     {
       "file": "papers/zh/generated/five-table.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/generated/five-table.tex",
       "source_sha256": "4621a61acb84cfff4ed30d8ad87bf3eeea524e0ab731188e6904993c4668d4dd",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/generated/five-table.tex",
+      "current_sha256": "f9c018a420bbd7254ae9daf09752606252917494f9c5f6d854740e665ffcba9f"
     },
     {
       "file": "papers/zh/main.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/main.tex",
       "source_sha256": "8b0689ad7efd8004356b9aef8c4cdcf1aa15121c2f3adcb75f1856af797eb370",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/main.tex",
+      "current_sha256": "c1284774e79077f2158ad55ed7570b8abba15f9531cb2d11869686b4122beee2"
     },
     {
       "file": "papers/zh/references.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/references.tex",
       "source_sha256": "c6168dc9090281d39fced01dfe105152903bc816db36f38b5ab1ebd47bea8d92",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/references.tex",
+      "current_sha256": "cb31e57f2b38d152bcf6c0390b521171a84220aef733b381edf8986fd92071ac"
     },
     {
       "file": "papers/zh/sections/blocks.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/blocks.tex",
       "source_sha256": "5afaa4b6f9cce2fc0d6493c10391c875c6178b73bd5004303f0ca2a919495a2b",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/blocks.tex",
+      "current_sha256": "9cc69946e25d13697c6396ffd29f1b0ac6895a2555f1b3b5e35e0002a3b5307d"
     },
     {
       "file": "papers/zh/sections/certificate.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/certificate.tex",
       "source_sha256": "736ae737fb2174246cc50826a412fcada4c4d903818fc64d0b3204d8f829fd5f",
-      "treatment": "unchanged"
+      "treatment": "unchanged; also retained in v1.0 archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/certificate.tex",
+      "current_sha256": "736ae737fb2174246cc50826a412fcada4c4d903818fc64d0b3204d8f829fd5f"
     },
     {
       "file": "papers/zh/sections/computation.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/computation.tex",
       "source_sha256": "a85a1e26b4c5e77502ac4946f83f968e4880fc6bcaf89659ea06a1891b9165dd",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/computation.tex",
+      "current_sha256": "49733054992c87408af866b5810f86d21317a782de085db287788ca385ce3d92"
     },
     {
       "file": "papers/zh/sections/five-row.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/five-row.tex",
       "source_sha256": "037b3d44abc808ad023fd310b80f23ac7d2e7eaa6ddefc2cd83fb18f9e334d88",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/five-row.tex",
+      "current_sha256": "d298edea5d5d8a7e3479f1518fa6143dad2bc6b63b3329279af95a2708a0db93"
     },
     {
       "file": "papers/zh/sections/half-board.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/half-board.tex",
       "source_sha256": "b8d0a67e52c75b83fa617ddb5b1a6c79e5a04e5af597fe364fdc5e305f41d1d9",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/half-board.tex",
+      "current_sha256": "3ed6b4903492a5f0f1481cf94186780b8134a006da48be28838c0b2c9a473811"
     },
     {
       "file": "papers/zh/sections/introduction.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/introduction.tex",
       "source_sha256": "ff91758bf2357a22cd10fcb083b7d49fd84dd21e4a845034b40b625712a943e0",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/introduction.tex",
+      "current_sha256": "6f7b3391e78f517762fa9a227ba256c36d347efa5edbe0dd7a56855e2f48201b"
     },
     {
       "file": "papers/zh/sections/odd-height.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/odd-height.tex",
       "source_sha256": "b8a92943a1d3f66954fc0e7c3623ac7b51ea0e61cc74ab2573a1efcd7b1a3ef8",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/odd-height.tex",
+      "current_sha256": "105ddee3fd17c93152c37ac9a21250b3f39da6c70b2ad1ec909839b43150ca1d"
     },
     {
       "file": "papers/zh/sections/reproducibility.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/reproducibility.tex",
       "source_sha256": "09ed0e0861027f6ffc686768d9583291822edff5bf20d684ace20d406edd0fba",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/reproducibility.tex",
+      "current_sha256": "b915136dffdd1aaefa5d16df31b3aa8113df6cc9ca33d276e11268c7612a5564"
     },
     {
       "file": "papers/zh/sections/symmetry-types.tex",
       "source": "02_problems/P002-domino-orbit-counting/paper/sections/symmetry-types.tex",
       "source_sha256": "eb037f2955bccd46edc3d20cab0c46cd092413b6754b6e1db4f9a1a6391dbab4",
-      "treatment": "unchanged"
+      "treatment": "unchanged; also retained in v1.0 archive",
+      "legacy_file": "papers/zh/archive/v1.0/sections/symmetry-types.tex",
+      "current_sha256": "eb037f2955bccd46edc3d20cab0c46cd092413b6754b6e1db4f9a1a6391dbab4"
     },
     {
       "file": "papers/zh/domino-tilings-zh.pdf",
       "source": "02_problems/P002-domino-orbit-counting/paper/output/pdf/domino-symmetry-paper.pdf",
       "source_sha256": "8f97dc34482bb11c61d30bad63cbffa2120a641c4aab4af820bb7331876ff87e",
-      "treatment": "unchanged"
+      "treatment": "v2.0 editorial revision; unchanged v1.0 source preserved in archive",
+      "legacy_file": "papers/zh/archive/v1.0/domino-tilings-zh.pdf",
+      "current_sha256": "13b86dccf51294e35e1efdddeb28c21b406783661abdf6f0716f36d1fb09b0c2"
     },
     {
       "file": "papers/en/figures/blocks.tex",
@@ -338,5 +366,11 @@
     "preserved": "Mathematical Lean sources, toolchain and dependency locks; manuscripts and previous published illustrated guides.",
     "edited": "Public navigation, current status and historical report paths in validators.",
     "evidence": "Historical logs sanitized only for local paths; original results, dates, hashes and axiom maps retained. Raw local records and build caches not uploaded."
+  },
+  "chinese_v2_revision": {
+    "date": "2026-10-25",
+    "scope": "Chinese manuscript and necessary edition metadata only; no Lean code or English paper changes.",
+    "checks": "papers/zh/checks/README.md",
+    "archive": "papers/zh/archive/v1.0/SHA256.json"
   }
 }

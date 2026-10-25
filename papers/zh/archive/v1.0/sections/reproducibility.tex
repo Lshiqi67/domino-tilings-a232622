@@ -1,0 +1,50 @@
+\section{本地材料与复现入口}\label{app:repro}
+
+本稿与原研究记录共同保存在
+\path{02_problems/P002-domino-orbit-counting/} 中。
+下列路径相对于该题目目录。论文位于 \path{paper/}，
+主源码为 \path{paper/main.tex}，各节源码位于 \path{paper/sections/}。
+论文整理保留原尝试及其历史版本，不将旧运行记录重写为本轮新实验。
+
+\begin{description}[style=nextline,leftmargin=2em]
+\item[基本块证明与几何核验]
+\path{attempts/A001-irreducible-blocks/proof.md}。\par
+代码与输出分别为该目录的 \path{checks/verify_blocks.py}
+和 \path{checks/report.json}。
+\item[半棋盘证明与整数转移模型]
+\path{attempts/A002-half-board-transfer/proof.md}；
+其 \path{checks/transfer_core.py} 定义局部矩阵与各固定点计数。
+\item[完整矩阵的精确表达式]
+A002 的 \path{checks/derive_functions.py} 与
+\path{checks/symbolic-report.json}。
+\item[新的格点枚举与半棋盘重建]
+A002 的 \path{checks/verify_geometry.py} 与
+\path{checks/geometry-report.json}。
+\item[六维代数证书]
+A002 的 \path{checks/five_row_certificate.py} 与
+\path{checks/five-row-certificate.json}。
+\end{description}
+
+从题目目录运行如下命令，可重现相应脚本的计算；
+这些原脚本会更新各自报告，若要保留历史输出，应先在备份副本内运行：
+\begin{quote}\small\ttfamily
+python attempts/A001-irreducible-blocks/checks/verify\_blocks.py\\
+python attempts/A002-half-board-transfer/checks/derive\_functions.py\\
+python attempts/A002-half-board-transfer/checks/verify\_geometry.py\\
+python attempts/A002-half-board-transfer/checks/five\_row\_certificate.py
+\end{quote}
+基本块脚本还读取工作区原有
+\path{01_topics/checks/a232622-screening/} 中的历史枚举器；
+完整备份保留这一相对目录关系。
+更详细的范围、运行环境及源码哈希见各尝试的 \path{checks/README.md} 和 JSON 报告。
+
+论文专用的 \path{paper/checks/prepare_and_audit.py}
+从已有报告生成五行系数及初值表，并重新核对论文中的五行矩阵、
+终端向量、证书和有理式。该整理检查另存报告，
+不覆盖原研究实验。构建说明和文件导航见 \path{paper/README.md}。
+
+\paragraph{材料和工具说明。}
+本文正文的推导、验证代码和排版由同一研究助手完成；
+已有工具和文献的贡献按引用列出。尚未经过外部同行评议，
+也未运行 Lean 等形式化验证。论文源文件、计算材料、原始报告及本地备份
+均用于后续独立检查，不构成对新颖性或发表状态的认证。

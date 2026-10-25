@@ -1,0 +1,24 @@
+{
+  "source_commit": "b51f522597fbc8d9c881e6b89fab9f71e41426aa",
+  "scope": "列出的 15 个原始文件与来源提交逐字节一致；本目录 README.md 是新增归档导航，不属于原稿。",
+  "sha256": {
+    "domino-tilings-zh.pdf": "8f97dc34482bb11c61d30bad63cbffa2120a641c4aab4af820bb7331876ff87e",
+    "main.tex": "8b0689ad7efd8004356b9aef8c4cdcf1aa15121c2f3adcb75f1856af797eb370",
+    "references.tex": "c6168dc9090281d39fced01dfe105152903bc816db36f38b5ab1ebd47bea8d92",
+    "figures/blocks.tex": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848",
+    "generated/five-table.tex": "4621a61acb84cfff4ed30d8ad87bf3eeea524e0ab731188e6904993c4668d4dd",
+    "sections/blocks.tex": "5afaa4b6f9cce2fc0d6493c10391c875c6178b73bd5004303f0ca2a919495a2b",
+    "sections/certificate.tex": "736ae737fb2174246cc50826a412fcada4c4d903818fc64d0b3204d8f829fd5f",
+    "sections/computation.tex": "a85a1e26b4c5e77502ac4946f83f968e4880fc6bcaf89659ea06a1891b9165dd",
+    "sections/five-row.tex": "037b3d44abc808ad023fd310b80f23ac7d2e7eaa6ddefc2cd83fb18f9e334d88",
+    "sections/half-board.tex": "b8d0a67e52c75b83fa617ddb5b1a6c79e5a04e5af597fe364fdc5e305f41d1d9",
+    "sections/introduction.tex": "ff91758bf2357a22cd10fcb083b7d49fd84dd21e4a845034b40b625712a943e0",
+    "sections/odd-height.tex": "b8a92943a1d3f66954fc0e7c3623ac7b51ea0e61cc74ab2573a1efcd7b1a3ef8",
+    "sections/reproducibility.tex": "09ed0e0861027f6ffc686768d9583291822edff5bf20d684ace20d406edd0fba",
+    "sections/symmetry-types.tex": "eb037f2955bccd46edc3d20cab0c46cd092413b6754b6e1db4f9a1a6391dbab4",
+    "README-original.md": "cd8baf1915b1df58c7f9a1a742c6f23a025f76bc1ea4be5155c6a3a3eaa5d23b"
+  },
+  "source_path_overrides": {
+    "README-original.md": "README.md"
+  }
+}

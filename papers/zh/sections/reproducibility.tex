@@ -1,50 +1,46 @@
-\section{本地材料与复现入口}\label{app:repro}
+\section{源码、计算材料与复现}\label{app:repro}
 
-本稿与原研究记录共同保存在
-\path{02_problems/P002-domino-orbit-counting/} 中。
-下列路径相对于该题目目录。论文位于 \path{paper/}，
-主源码为 \path{paper/main.tex}，各节源码位于 \path{paper/sections/}。
-论文整理保留原尝试及其历史版本，不将旧运行记录重写为本轮新实验。
+本文的 LaTeX 源码、PDF、验证程序和形式化项目公开于
+\begin{center}
+\url{https://github.com/Lshiqi67/domino-tilings-a232622}.
+\end{center}
+以下路径均相对于该仓库根目录，适用于独立克隆的公开副本。
+论文当前版本位于 \path{papers/zh/}，版本 1.0 的 PDF 与 TeX
+保存在 \path{papers/zh/archive/v1.0/}。
+版本说明和本轮核查记录位于 \path{papers/zh/README.md}
+及 \path{papers/zh/checks/}。
 
 \begin{description}[style=nextline,leftmargin=2em]
-\item[基本块证明与几何核验]
-\path{attempts/A001-irreducible-blocks/proof.md}。\par
-代码与输出分别为该目录的 \path{checks/verify_blocks.py}
-和 \path{checks/report.json}。
-\item[半棋盘证明与整数转移模型]
-\path{attempts/A002-half-board-transfer/proof.md}；
-其 \path{checks/transfer_core.py} 定义局部矩阵与各固定点计数。
-\item[完整矩阵的精确表达式]
-A002 的 \path{checks/derive_functions.py} 与
-\path{checks/symbolic-report.json}。
-\item[新的格点枚举与半棋盘重建]
-A002 的 \path{checks/verify_geometry.py} 与
-\path{checks/geometry-report.json}。
-\item[六维代数证书]
-A002 的 \path{checks/five_row_certificate.py} 与
-\path{checks/five-row-certificate.json}。
+\item[论文构建]
+在 \path{papers/zh/} 中运行 \texttt{./build.ps1}。
+脚本先执行 \path{checks/prepare_and_audit.py}，
+核对公式、矩阵和五行系数表，再运行两遍 XeLaTeX。
+构建需要 Python、SymPy、XeLaTeX、ctex、Fandol 字体及 TikZ。
+\item[基本块和半棋盘程序]
+\path{research/README.md} 列出原脚本、实际检查范围及命令。
+程序按来源放在 \path{research/01_topics/} 和
+\path{research/02_problems/} 中，保留依赖所需的相对目录关系。
+\item[形式化源码与证据]
+\path{lean/Domino/} 包含对象定义和证明代码，
+\path{lean/docs/m6-main-theorem.md} 说明主定理的语义及依赖，
+\path{lean/evidence/} 保存经路径脱敏的既有验收证据。
+公开证据保留数学结果、退出码、源码摘要和公理依赖；
+目录调整及脱敏不作为一次新的验证运行。
 \end{description}
 
-从题目目录运行如下命令，可重现相应脚本的计算；
-这些原脚本会更新各自报告，若要保留历史输出，应先在备份副本内运行：
+从 \path{lean/} 目录运行下列命令，可在固定工具链及依赖版本下复核：
 \begin{quote}\small\ttfamily
-python attempts/A001-irreducible-blocks/checks/verify\_blocks.py\\
-python attempts/A002-half-board-transfer/checks/derive\_functions.py\\
-python attempts/A002-half-board-transfer/checks/verify\_geometry.py\\
-python attempts/A002-half-board-transfer/checks/five\_row\_certificate.py
+lake exe cache get\\
+lake --wfail build\\
+python -X utf8 scripts/check\_m6.py --report-dir checks/reproduce-m6
 \end{quote}
-基本块脚本还读取工作区原有
-\path{01_topics/checks/a232622-screening/} 中的历史枚举器；
-完整备份保留这一相对目录关系。
-更详细的范围、运行环境及源码哈希见各尝试的 \path{checks/README.md} 和 JSON 报告。
+最后一条命令要求输出目录尚不存在，以免覆盖历史证据。
+其验收包括旧阶段回归、累计公理审计以及项目源码的独立重建。
+具体依赖版本由 \path{lean/lean-toolchain} 和
+\path{lean/lake-manifest.json} 固定。
 
-论文专用的 \path{paper/checks/prepare_and_audit.py}
-从已有报告生成五行系数及初值表，并重新核对论文中的五行矩阵、
-终端向量、证书和有理式。该整理检查另存报告，
-不覆盖原研究实验。构建说明和文件导航见 \path{paper/README.md}。
-
-\paragraph{材料和工具说明。}
-本文正文的推导、验证代码和排版由同一研究助手完成；
-已有工具和文献的贡献按引用列出。尚未经过外部同行评议，
-也未运行 Lean 等形式化验证。论文源文件、计算材料、原始报告及本地备份
-均用于后续独立检查，不构成对新颖性或发表状态的认证。
+原枚举程序可能覆盖自己的输出文件，故应依照
+\path{research/README.md} 在临时副本中运行。
+论文整理核查、原始有限枚举及 Lean 验收分别记录，
+不能由其中某项通过推断其余检查也已执行。
+各次运行的输入范围、环境、命令、结果与局限见相应报告。

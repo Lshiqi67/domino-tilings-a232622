@@ -3,9 +3,10 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,graphicx}
 \usepackage{enumitem,fancyhdr,xcolor,hyperref}
 \usepackage{tikz}
-\hypersetup{colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black,
+\hypersetup{unicode=true,colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black,
 pdftitle={三行矩形多米诺铺法的对称计数及奇数高度推广},
-pdfauthor={本地研究稿，AI 辅助整理}}
+pdfauthor={Shiqi Liu},pdfsubject={多米诺铺法的对称轨道计数},
+pdfkeywords={domino tilings, A232622, Burnside, generating functions, Lean}}
 \newtheorem{theorem}{定理}[section]
 \newtheorem{lemma}[theorem]{引理}
 \newtheorem{proposition}[theorem]{命题}
@@ -28,31 +29,26 @@ pdfauthor={本地研究稿，AI 辅助整理}}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small 三行矩形多米诺铺法的对称计数}
-\fancyhead[R]{\small 研究稿 v1.0}
+\fancyhead[R]{\small Shiqi Liu}
 \fancyfoot[C]{\thepage}
 \title{\bfseries 三行矩形多米诺铺法的对称计数\\[4pt]
 \large 基本块、半棋盘与奇数高度推广}
-\author{本地研究稿}
-\date{2026 年 10 月 25 日\quad 版本 1.0}
+\author{Shiqi Liu}
+\date{2026 年 10 月 25 日\quad 版本 2.0}
 \begin{document}
 \maketitle
 \begin{abstract}
 本文研究无标号多米诺对三行、偶数列矩形的全部铺法在旋转和反射下的轨道计数。
 首先利用完整的列切口转移规则，将铺法唯一分解为不可竖切基本块，并把对称作用转化为字母对合和字的倒序。
-由此给出 OEIS A232622 所列生成函数及七阶递推的完整推导。
+由此证明 Mathar 提出的、收录于 OEIS A232622 的生成函数公式，并导出七阶递推及其全部初值。
 其次建立半棋盘与对称固定铺法之间的双射，以两维递推重新得到三行公式，
 并确定各精确稳定子类型及其渐近比例。
 同一半棋盘方法给出任意固定奇数高度的轨道生成函数矩阵表达式及有理性；
 五行情形进一步得到显式有理式、十四阶递推和六维多项式证书。
-文中将一般证明、有限枚举与符号计算的作用分开，附可复现材料说明。
+三行主计数定理另沿半棋盘路线在 Lean 中完成形式化验证，其系数直接定义为实际铺法轨道的基数。
+文中明确区分形式化覆盖范围、一般演绎证明与有限计算检查，并提供源码及复现材料。
 \end{abstract}
 \noindent\textbf{关键词：} 多米诺铺法；Burnside 引理；生成函数；转移矩阵；对称轨道
-
-\medskip
-\noindent\textbf{稿件说明。}
-本稿由本地 P002 研究记录整理，推导、代码及文字使用 Codex 辅助完成。
-当前已作同一助手的书面自查与本地计算交叉核验，尚无独立外部审阅或形式化验证。
-本文给出可逐步检查的证明，不作首次证明或文献优先权声明；作者署名由后续正式投稿时确定。
 
 \input{sections/introduction}
 \input{sections/blocks}
@@ -60,9 +56,16 @@ pdfauthor={本地研究稿，AI 辅助整理}}
 \input{sections/symmetry-types}
 \input{sections/odd-height}
 \input{sections/five-row}
+\input{sections/formalization}
 \input{sections/computation}
+\section*{研究材料与工具使用说明}
+本文的推导、程序、形式化代码和文字整理使用了 OpenAI Codex 辅助。
+两条组合证明的交叉核对及计算检查不等同于独立同行评议。
+本文尚未经外部数学审阅，不作首次证明或文献优先权声明。
+可复现材料见附录 \ref{app:repro}；形式化验证的范围见第 \ref{sec:formalization} 节。
 \appendix
 \input{sections/certificate}
 \input{sections/reproducibility}
+\clearpage
 \input{references}
 \end{document}

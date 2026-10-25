@@ -1,16 +1,40 @@
-# 中文论文原稿
+# 中文论文 · 版本 2.0
 
-本目录保存原中文论文及 LaTeX 源码，**论文内容未修改**。
+署名：**Shiqi Liu**。日期：2026-10-25。正文 16 页。
 
-**本研究尚未完成，不宣称已经解决 A232622 猜想。论文还需打磨，证明准确性还需要 Lean 形式化验证及数学审阅；尚未完成 Lean 验证。** 本页说明是公开版的状态提示，不是对旧论文正文的改写。
+[阅读 PDF](domino-tilings-zh.pdf) · [LaTeX 主文件](main.tex) · [修订与核查记录](checks/README.md)
 
-- [阅读中文论文](domino-tilings-zh.pdf)
-- [LaTeX 主文件](main.tex)
-- [当前状态与待办](../../STATUS.md)
-- [中文研究材料](../../docs/zh/statement.md)
+本文研究三行矩形多米诺铺法的对称轨道计数，包含基本块和半棋盘两条证明、精确稳定子与渐近、任意固定奇数高度公式及五行显式证书。新版纳入 Lean M1–M6 对三行主生成函数、七阶递推及全部初值的既有验证成果，并逐项说明机器验证的覆盖边界。
 
-原稿中的“完整推导”“定理”“证明”等是历史草稿的写作措辞，不能作为猜想已解决或形式化验证通过的声明。原稿亦保留其旧署名占位说明；本公开仓库的作者英文署名为 **Shiqi Liu**。
+## 本版修订
 
-PDF 与 TeX 文件的原始 SHA-256 对照记录在根目录 PUBLICATION.json。中文编译可使用 XeLaTeX / TeX Live 2024：在本目录运行 xelatex main.tex 两遍。为保持历史 PDF 字节不变，请在临时目录编译，不覆盖所附原 PDF。
+- 以 Shiqi Liu 替换署名占位，更新 PDF 元数据、摘要、引言和结论。
+- 补引 DeFord 的一般对称递推框架，区分已有理论背景与本文的显式推导。
+- 修正换元段指代和五行记号冲突，说明形式幂级数除以变量仅表示系数移位。
+- 新增第 7 节：数学对象、主定理与 Lean 声明的对应，固定环境、公理审计及验证范围。
+- 将附录改为独立克隆可用的公开仓库路径，提供公式转录核查和构建脚本。
 
-This is the unchanged historical Chinese manuscript. The repository's current unfinished status applies; it is not a solved-conjecture announcement or a Lean certificate.
+数学公式未作实质改变；本轮没有提出新的数学定理。三行半棋盘主计数定理已有 Lean 证据；基本块证明、稳定子、渐近、一般高度和五行扩展尚未完成形式化。外部数学审阅及具体结果的文献优先权核查仍待完成。
+
+## 构建
+
+在本目录运行：
+
+```powershell
+./build.ps1
+python -X utf8 checks/check_edition.py
+```
+
+构建依赖 Python、SymPy、XeLaTeX（含 ctex、Fandol、TikZ）。本次使用 Python 3.13.0、SymPy 1.13.1、TeX Live 2024。`build.ps1` 先核对三行主式、五行矩阵、证书和系数表，再编译两遍，遇到缺字、溢出或未定义引用时报错。`check_edition.py` 还核对归档、引用和所引用的 Lean 数学源码与历史证据的一致性；它不执行 Lean 编译。版面检查另见核查记录。
+
+## 历史版本
+
+[版本 1.0](archive/v1.0/domino-tilings-zh.pdf) 及其 TeX 已按原字节保存在 [archive/v1.0](archive/v1.0/)。[摘要清单](archive/v1.0/SHA256.json) 记载来源提交及 SHA-256。归档 README 中的旧状态只反映当时情况，其相对链接保留历史写法；当前导航以本页为准。原本地研究稿及旧 ZIP 也继续保留。
+
+## 复核入口
+
+- [形式化主定理与证据](../../lean/docs/m6-main-theorem.md)
+- [计算程序和有限检查范围](../../research/README.md)
+- [研究状态](../../STATUS.md)
+
+下一项可执行工作：对照新版第 7 节审阅几何定义与最终 Lean 定理的对应，并继续审阅五行状态压缩及文献定位。

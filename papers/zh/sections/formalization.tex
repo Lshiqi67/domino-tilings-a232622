@@ -1,0 +1,76 @@
+\section{三行主计数定理的形式化验证}\label{sec:formalization}
+
+\subsection{数学对象与定理的对应}
+本节说明定理 \ref{thm:main} 的机器验证范围。
+形式化沿第 \ref{sec:half} 节的半棋盘路线进行，
+不依赖第 \ref{sec:blocks} 节的基本块分类。
+代码中的棋盘格组成有限类型，砖是两个共边相邻格的无序集合，
+铺法要求每格恰由一块砖覆盖。
+四元群通过行反转、列反转及其复合在这些铺法上作用。
+记号 \texttt{a n} 定义为 $3\times2n$ 铺法的该作用轨道数；
+\texttt{orbitSeries} 的第 $n$ 项系数为 $(a(n):\mathbb Q)$，
+并非由目标递推或预设有理式定义的辅助数列。
+
+设
+\[
+ B(x)=(1-x)(1-4x+x^2)(1-4x^2+x^4),\qquad
+ N(x)=1-3x-4x^2+10x^3-4x^5+x^6.
+\]
+形式化首先证明 $B(x)A(x)=N(x)$，再由 $B(0)=1$ 证明 $B$ 是
+$\mathbb Q[[x]]$ 中的单位，从而得到 $A=NB^{-1}$。
+随后比较 $n+7$ 次系数，在整数中证明对每个 $n\ge0$ 有
+\[
+\begin{split}
+ a(n+7)={}&5a(n+6)-a(n+5)-19a(n+4)+19a(n+3)\\
+          &+a(n+2)-5a(n+1)+a(n).
+\end{split}
+\]
+比较 $0,\ldots,6$ 次系数得到定理 \ref{thm:main} 的全部初值，
+并进一步验证递推起点 $a(7)=2037$。
+含负项的等式在整数或有理数中解释，另给出自然数中的移项版本，
+因而没有使用自然数截断减法代替整数减法。
+
+\begin{table}[htbp]
+\centering
+\caption{正文结论与主要 Lean 声明的对应。}\label{tab:lean}
+\small
+\begin{tabular}{ll}
+\toprule
+正文结论 & \texttt{Domino} 命名空间中的声明\\
+\midrule
+四类固定点生成函数 & \texttt{fixed\_series\_identities}\\
+主分母恒等式 $BA=N$ & \texttt{orbit\_series\_identity}\\
+式 \eqref{eq:main} 的分式版本 & \texttt{orbit\_series\_rational}\\
+原题的符号排列 & \texttt{orbit\_series\_paper}\\
+全部指标七阶递推 & \texttt{orbit\_recurrence\_seven}\\
+七项初值 & \texttt{orbit\_initial\_values}\\
+递推起点 $a(7)=2037$ & \texttt{orbit\_recurrence\_first}\\
+主定理汇总 & \texttt{three\_row\_main\_theorem}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+证明链依次建立真实铺法与状态路径的双射、两种中线补全及限制的互逆关系、
+三行上下反射固定铺法的唯一性、任意步数的状态计数递推、
+真实轨道的 Burnside 公式，以及系数级数恒等式。
+几何双射、全参数归纳和系数比较均由证明项承担；
+有限状态判定只用于局部规则等有限命题。
+
+\subsection{验证环境与覆盖边界}
+本项目固定 Lean 4.35.0 和 mathlib 提交
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}。
+2026 年 10 月 25 日完成的 M1--M6 验收包含完整项目构建、
+32 个数学模块中 413 项显式声明的累计公理审计，
+以及项目源码在无自身旧编译产物目录中的重新构建。
+审计只出现 \texttt{propext}、\texttt{Classical.choice} 和 \texttt{Quot.sound}
+三个标准逻辑公理，未使用占位证明或自行加入的公理。
+413 项声明包含辅助定义和实例，不等于论文定理的数量。
+重新构建复用了已核对版本的第三方依赖缓存，
+不表示对全部 mathlib 进行了无缓存编译。
+
+上述验证覆盖定理 \ref{thm:main} 及其三行半棋盘计数依赖。
+精确稳定子分类、渐近结论、一般奇数高度公式、五行证书和基本块路线
+具有本文所给的书面证明，但尚未纳入这一形式化验收。
+代码明确使用四种坐标对称，没有另行形式化欧氏平面全部等距变换的分类。
+零宽采用抽象四元群对唯一空铺法的平凡作用。
+机器验证不判定文献首次性；原题与形式化定义的对应仍应接受数学审阅。

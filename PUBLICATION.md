@@ -6,7 +6,7 @@ Included: Chinese and English manuscripts, selected research notes, both propose
 
 Excluded: institutional information, complete private archives, conversation dumps, unredacted machine logs, local absolute paths, credentials, build caches and unrelated projects. Git commits use the author and committer identity explicitly provided by the repository owner.
 
-The Chinese manuscript PDF and all its TeX files are byte-identical to the retained source edition. The English public edition updates its abstract, status statements and reproduction notes to describe unfinished research, the then-pending Lean verification and the curated public materials. Mathematical formulas are retained for review; retaining a formula is not certifying it.
+Chinese manuscript v2.0 replaces the author placeholder, improves mathematical exposition and references, and documents the existing M1–M6 verification scope. Its original v1.0 PDF and TeX files remain byte-identical in `papers/zh/archive/v1.0/`. The English public edition retains its earlier text; its statements about then-pending verification must be read with STATUS.md. The Chinese revision does not alter Lean code or broaden the verified scope.
 
 Historical JSON reports have invocation, working-directory and platform fields removed. Their numerical fields are unchanged. Their source hashes identify the unchanged historical programs, not the modified JSON bytes. Each sanitized report is labelled explicitly. They are not represented as newly run experiments.
 
@@ -14,7 +14,7 @@ Historical JSON reports have invocation, working-directory and platform fields r
 
 [MANIFEST-SHA256.json](MANIFEST-SHA256.json) records the SHA-256 digest of every published file except the manifest itself, for checking this snapshot's integrity.
 
-本公开版只包含适合复核的研究材料。中文论文 PDF 与 TeX 源码保持原样；英文论文增加未完成状态说明。数值报告去除本机调用信息和路径后公开，数学数据未改写。原始私人工作区中的所有版本仍在本地保留，筛选公开材料不等于删除历史记录。
+本公开版只包含适合复核的研究材料。中文论文当前为 v2.0，旧 v1.0 原字节归档；英文论文保留此前版本。数值报告去除本机调用信息和路径后公开，数学数据未改写。原始工作区中的所有版本仍在本地保留。
 
 No licence has been selected for this snapshot. Repository write permissions and the ability to read or fork a public repository are separate matters. The repository has no intended collaborator write access.
 

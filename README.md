@@ -18,7 +18,7 @@ The repository contains proposed arguments, finite computations, exact algebraic
 
 | Material | English | 中文 |
 | --- | --- | --- |
-| Manuscript PDF | [Working draft](papers/en/domino-tilings-en.pdf) | [原中文论文，未修改](papers/zh/domino-tilings-zh.pdf) |
+| Manuscript PDF | [Working draft](papers/en/domino-tilings-en.pdf) | [中文论文 v2.0（16 页）](papers/zh/domino-tilings-zh.pdf) |
 | Illustrated block-proof guide (10 pages) | [English PDF](guides/block-proof/domino-block-proof-guide-en.pdf) | [中文图解讲义](guides/block-proof/domino-block-proof-guide-zh.pdf) |
 | Source and edition notes | [LaTeX and build](papers/en/README.md) | [源码与版本说明](papers/zh/README.md) |
 | Exact problem | [Statement](docs/en/statement.md) | [题面](docs/zh/statement.md) |
@@ -28,9 +28,9 @@ The repository contains proposed arguments, finite computations, exact algebraic
 | Block route | [Draft argument](docs/en/blocks-proof.md) | [基本块草稿](docs/zh/blocks-proof.md) |
 | Half-rectangle route | [Draft argument](docs/en/half-board-proof.md) | [半棋盘草稿](docs/zh/half-board-proof.md) |
 
-The Chinese manuscript and its TeX sources are preserved unchanged. They retain the wording of their earlier draft. **The current research status is the unfinished status stated above and in [STATUS.md](STATUS.md); historical wording must be read alongside the explicitly verified scope.**
+The Chinese manuscript v2.0 incorporates the verified scope of Lean M1–M6, improves notation and bibliographic context, and supplies reproducible build instructions. The unchanged v1.0 PDF and TeX sources remain in [the archive](papers/zh/archive/v1.0/). See [edition notes](papers/zh/README.md).
 
-中文论文保留原文件内容，不回写历史版本。其“完整推导”等措辞应理解为待审草稿中的论证主张，不能视为研究完成、猜想已解决或形式化验证通过。
+中文论文 v2.0 署名 Shiqi Liu，纳入三行主定理的形式化成果，补充相关前作并修订数学表述。旧版原字节归档。全文扩展的形式化、外部数学审阅及文献优先权核查仍待完成。
 
 ## Reproduce and review / 复现与审阅
 
