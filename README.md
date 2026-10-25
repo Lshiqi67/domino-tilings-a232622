@@ -12,7 +12,7 @@ Domino tilings, symmetry classes, generating functions, and Lean formalization, 
 
 This repository contains manuscripts, two combinatorial proof routes, reproducible computations, and Lean proofs for counting domino tilings modulo rectangle symmetries.
 
-The starting problem counts tilings of a $3\times 2n$ rectangle up to horizontal reflection, vertical reflection, and a half-turn. The project also studies exact symmetry types, asymptotic behavior, arbitrary fixed positive odd heights, and an explicit five-row case.
+The starting problem counts tilings of a $`3\times 2n`$ rectangle up to horizontal reflection, vertical reflection, and a half-turn. The project also studies exact symmetry types, asymptotic behavior, arbitrary fixed positive odd heights, and an explicit five-row case.
 
 **Current status — October 26, 2026:** Lean milestones **M1–M11** have passed the recorded local cumulative verification, including declaration audits and a clean rebuild of the project sources. The repository contains **83 mathematical modules and 1,078 audited declarations**, including 699 theorems and auxiliary lemmas.
 
@@ -20,43 +20,40 @@ The English manuscript is **v2.0**, and the Chinese manuscript is **v2.1**. Thei
 
 ## Mathematical problem and main result
 
-Let $a(n)$ denote the number of equivalence classes of domino tilings of a $3\times 2n$ rectangle under the four coordinate symmetries
+Let $`a(n)`$ denote the number of equivalence classes of domino tilings of a $`3\times 2n`$ rectangle under the four coordinate symmetries
 
-$$
+```math
 G=\{e,h,v,hv\}\cong C_2\times C_2,
-$$
+```
 
-where $h$ reverses the rows and $v$ reverses the columns.
+where $`h`$ reverses the rows and $`v`$ reverses the columns.
 
-Dominoes are unlabelled, both orientations are allowed, and every cell is covered exactly once. There is no tatami restriction. The empty board contributes $a(0)=1$.
+Dominoes are unlabelled, both orientations are allowed, and every cell is covered exactly once. There is no tatami restriction. The empty board contributes $`a(0)=1`$.
 
 The three-row generating function is
 
-$$
+```math
 \sum_{n\ge 0}a(n)x^n
 =
 \frac{1-3x-4x^2+10x^3-4x^5+x^6}
 {(1-x)(1-4x+x^2)(1-4x^2+x^4)}.
-$$
+```
 
-Here $n$ is the **half-width** of the board, and the identity is interpreted in the formal power-series ring $\mathbb{Q}[[x]]$.
+Here $`n`$ is the **half-width** of the board, and the identity is interpreted in the formal power-series ring $`\mathbb{Q}[[x]]`$.
 
-Equivalently, for every $n\ge 0$,
+Equivalently, for every $`n\ge 0`$,
 
-$$
-\begin{aligned}
-a(n+7)={}&5a(n+6)-a(n+5)-19a(n+4)\\
-&+19a(n+3)+a(n+2)-5a(n+1)+a(n),
-\end{aligned}
-$$
+```math
+\begin{aligned} a(n+7)={}&5a(n+6)-a(n+5)-19a(n+4)\\ &+19a(n+3)+a(n+2)-5a(n+1)+a(n), \end{aligned}
+```
 
 with initial values
 
-$$
+```math
 a(0),\ldots,a(6)=1,\ 2,\ 5,\ 14,\ 46,\ 156,\ 561.
-$$
+```
 
-The next value is $a(7)=2037$. These statements are derived in Lean from the defined tiling and orbit counts.
+The next value is $`a(7)=2037`$. These statements are derived in Lean from the defined tiling and orbit counts.
 
 ### Two proof routes
 
@@ -183,7 +180,7 @@ The [archived release `paper-en-v2.0`](https://github.com/Lshiqi67/domino-tiling
 
 本仓库提供论文、两条组合证明路线、可复现计算程序和 Lean 证明，用于研究矩形多米诺铺法在对称作用下的轨道计数。
 
-起点是 $3\times 2n$ 矩形：将上下反射、左右反射及半周旋转所得铺法视为等价。研究进一步涉及精确对称类型、渐近行为、任意固定正奇数高度，以及五行情形的显式公式。
+起点是 $`3\times 2n`$ 矩形：将上下反射、左右反射及半周旋转所得铺法视为等价。研究进一步涉及精确对称类型、渐近行为、任意固定正奇数高度，以及五行情形的显式公式。
 
 **当前状态——2026 年 10 月 26 日：** Lean **M1–M11** 已通过已记录的本地累计验收，包括声明公理审计和项目源码干净重建。仓库包含 **83 个数学模块、1078 项受审计声明**，其中有 699 个定理及辅助引理。
 
@@ -191,43 +188,40 @@ The [archived release `paper-en-v2.0`](https://github.com/Lshiqi67/domino-tiling
 
 ## 数学问题与主要结果
 
-记 $a(n)$ 为 $3\times 2n$ 矩形的多米诺铺法在以下四种坐标对称下的等价类数：
+记 $`a(n)`$ 为 $`3\times 2n`$ 矩形的多米诺铺法在以下四种坐标对称下的等价类数：
 
-$$
+```math
 G=\{e,h,v,hv\}\cong C_2\times C_2,
-$$
+```
 
-其中 $h$ 表示上下反射，$v$ 表示左右反射。
+其中 $`h`$ 表示上下反射，$`v`$ 表示左右反射。
 
-多米诺不带标签，允许横放和竖放，每个格子恰好被覆盖一次，不施加 tatami 限制。空棋盘约定为 $a(0)=1$。
+多米诺不带标签，允许横放和竖放，每个格子恰好被覆盖一次，不施加 tatami 限制。空棋盘约定为 $`a(0)=1`$。
 
 三行轨道数的生成函数为
 
-$$
+```math
 \sum_{n\ge 0}a(n)x^n
 =
 \frac{1-3x-4x^2+10x^3-4x^5+x^6}
 {(1-x)(1-4x+x^2)(1-4x^2+x^4)}.
-$$
+```
 
-这里 $n$ 表示棋盘的**半宽**；等式在形式幂级数环 $\mathbb{Q}[[x]]$ 中解释。
+这里 $`n`$ 表示棋盘的**半宽**；等式在形式幂级数环 $`\mathbb{Q}[[x]]`$ 中解释。
 
-等价地，对所有 $n\ge 0$，
+等价地，对所有 $`n\ge 0`$，
 
-$$
-\begin{aligned}
-a(n+7)={}&5a(n+6)-a(n+5)-19a(n+4)\\
-&+19a(n+3)+a(n+2)-5a(n+1)+a(n),
-\end{aligned}
-$$
+```math
+\begin{aligned} a(n+7)={}&5a(n+6)-a(n+5)-19a(n+4)\\ &+19a(n+3)+a(n+2)-5a(n+1)+a(n), \end{aligned}
+```
 
 初值为
 
-$$
+```math
 a(0),\ldots,a(6)=1,\ 2,\ 5,\ 14,\ 46,\ 156,\ 561.
-$$
+```
 
-下一项为 $a(7)=2037$。这些结论在 Lean 中从所定义的实际铺法及轨道计数推导得到。
+下一项为 $`a(7)=2037`$。这些结论在 Lean 中从所定义的实际铺法及轨道计数推导得到。
 
 ### 两条证明路线
 
