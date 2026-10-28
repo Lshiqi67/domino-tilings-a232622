@@ -1,75 +1,118 @@
-\section{Formal evidence for the three-row theorem}\label{sec:formalization}
+\section{Lean formalization and verification scope}\label{sec:formalization}
 
-The M1--M6 development follows Section \ref{sec:half}, without using
-the block classification. A cell has zero-based coordinates in
-\texttt{Fin m} $\times$ \texttt{Fin w}. A domino is an unordered
-two-element set of adjacent cells, and a tiling is an exact cover.
-The definition \texttt{Domino.a n} is the cardinality of the quotient
-of actual $3\times2n$ tilings by the four coordinate symmetries.
-The coefficient of $X^n$ in \texttt{orbitSeries} is $(a(n):\mathbb Q)$;
-neither the target recurrence nor the rational expression defines it.
+The public Lean 4 development~\cite{repository} covers stages M1--M11,
+including both three-row proofs and the principal extensions in this paper.
+Its counts are defined from geometric tilings, rather than from the target
+recurrences. A cell has zero-based coordinates in
+\texttt{Fin m} $\times$ \texttt{Fin w}; a domino is an unordered pair of
+adjacent cells, and a tiling is an exact cover. The definition
+\texttt{Domino.a n} is the cardinality of the quotient of actual
+$3\times2n$ tilings by the four coordinate symmetries.
+The coefficient of $X^n$ in \texttt{orbitSeries} is $(a(n):\mathbb Q)$.
 
+\subsection{Correspondence with the mathematical results}
+Stages M1--M3 construct the board, coordinate action, terminal-hole
+objects, tiling--path equivalences, and reflection and half-turn
+completion maps with their inverse identities. Stages M4--M6 prove
+the support and counting induction in Section~\ref{sec:half}, apply
+Burnside to the actual quotient, and derive Theorem~\ref{thm:main}.
+For $B=(1-X)(1-4X+X^2)(1-4X^2+X^4)$ and
+$N=1-3X-4X^2+10X^3-4X^5+X^6$, they first prove $BA=N$.
+Since $B(0)=1$, this gives $A=NB^{-1}$ in $\mathbb Q[[X]]$;
+coefficient comparison gives the seventh-order recurrence and all seven
+initial values. The main endpoint is
+\path{Domino.three_row_main_theorem}.
+
+The later stages extend this coverage as follows.
 \begin{center}
 \small
-\begin{tabular}{cp{0.78\linewidth}}
+\begin{tabular}{cp{0.80\linewidth}}
 \toprule
-Stage & Mathematical interface to examine\\
+Stage & Correspondence with this paper\\
 \midrule
-M1 & Unordered dominoes, exact coverage, terminal holes, the width-zero
-guard, coordinate action, fixed sets, and the orbit quotient.\\
-M2 & An equivalence between actual partial tilings and state paths,
-with two inverse identities, followed by the counting recurrence.\\
-M3 & Reflection and half-turn completion/restriction, including actual
-internal and crossing dominoes; uniqueness of the $h$-fixed tiling.\\
-M4 & Simultaneous induction of support and counts for all widths;
-identification of the auxiliary pair with actual cardinalities.\\
-M5 & Burnside applied to that action, divisibility, and the empty and
-small-board cases; no faithfulness assumption.\\
-M6 & Series defined from those counts, denominator identity and
-invertibility, the recurrence, and all seven initial values.\\
+M7 & Theorem~\ref{thm:stabilizers}: exact stabilizer classes of actual
+tilings, restricted orbit quotients, orbit sizes, and divisibility.\\
+M8 & Theorem~\ref{thm:odd}: general-height local coverings and paths,
+the symmetry completion bijections, the odd-height horizontal-reflection
+term, matrix generating functions, rationality, and an eventual recurrence.\\
+M9 & Theorem~\ref{thm:five} and Appendix~\ref{app:certificate}: the five-row
+reachable states, six-dimensional compression, terminal vectors,
+polynomial certificate, rational functions, fourteenth-order recurrence,
+and fourteen initial values.\\
+M10 & Theorem~\ref{thm:asym}: the three-row closed form, the two uniform
+sampling spaces, parity asymptotics, exponential error bounds, and
+vanishing proportions of symmetric tilings and orbits.\\
+M11 & Section~\ref{sec:blocks}: the full block classification, unique
+decomposition at all empty cuts, geometric word equivalence, coordinate
+symmetries, palindrome centers, and a second proof of the main series.\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Write $B=(1-X)(1-4X+X^2)(1-4X^2+X^4)$ and
-$N=1-3X-4X^2+10X^3-4X^5+X^6$.
-The development first proves $B A=N$, then uses $B(0)=1$ to obtain
-$A=NB^{-1}$ in $\mathbb Q[[X]]$. Coefficient comparison at $n+7$
-gives the recurrence for every $n\in\mathbb N$, interpreted in
-$\mathbb Z$; a separate natural-number version moves all negative
-terms to the other side. Coefficients zero through six give the
-initial values, and the first recurrence step gives $a(7)=2037$.
-The main endpoints, in namespace \texttt{Domino}, are
-\texttt{orbit\_series\_paper}, \texttt{orbit\_recurrence\_seven},
-\texttt{orbit\_initial\_values}, and \texttt{three\_row\_main\_theorem}.
+Representative endpoints are listed below in stage order:
+\begin{quote}\small
+\path{Domino.three_row_stabilizer_counting}\\
+\path{Domino.General.odd_height_main}\\
+\path{Domino.FiveRows.five_row_main_theorem}\\
+\path{Domino.Asymptotic.three_row_asymptotic_main}\\
+\path{Domino.Blocks.three_row_block_main}.
+\end{quote}
+In the namespace \path{Domino.Asymptotic}, the parity limits are
+also recorded as \path{probability_even_asymptotic} and
+\path{probability_odd_asymptotic}.
+Stage-specific declaration lists and statement probes in
+\path{lean/docs/} and \path{lean/Domino/Audit/} expose the exact types
+and their dependencies.
 
-The recorded October 25, 2026 acceptance uses Lean 4.35.0 and
-the following mathlib commit:
+The block development proves
+\path{Domino.Blocks.orbit_series_via_blocks} without importing the
+half-rectangle counting modules. It shares the definitions, local
+tiling--path correspondence, Burnside's lemma, and pure algebra with the
+other route. This is independence of the global combinatorial arguments,
+not independence of authorship or of all foundations.
+The formal block parameter starts at zero: \texttt{arm false k} and
+\texttt{arm true k} represent $A_{k+1}$ and $B_{k+1}$.
+Empty boards, the one-row case, and the $k=1$ block boundary are covered.
+
+\subsection{Pinned environment and audit}
+We use the public source release \texttt{paper-en-v2.0}, at commit
+\begin{center}
+\small\texttt{a5c32a4b81cce150dbd0dd2398fdd9e90664a353}.
+\end{center}
+The release name refers to its archived manuscript; its Lean sources
+already include M1--M11. The fixed environment is Lean 4.35.0 and
+mathlib commit
 \begin{center}
 \small\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
 \end{center}
-It covers 32 mathematical modules and audits 413 explicit declarations,
-including auxiliary definitions and instances. The allowed axioms
-are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
-Project sources were rebuilt in a directory without prior project
-build products, reusing the checked third-party dependency cache;
-this was not a cache-free rebuild of all of mathlib.
+The cumulative inventory has 83 mathematical modules and 1078 explicit
+declarations, including 699 theorem declarations and auxiliary
+definitions and instances. These are source-inventory counts, not 1078
+separate results of the paper. The recorded cumulative acceptance
+audits transitive axiom dependencies and permits only
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+The audited sources must contain no placeholder proofs or extra
+mathematical axioms; \texttt{native\_decide} is also excluded.
 
-This edition deliberately fixes its review scope at M1--M6.
-The general-height statements, stabilizers, asymptotics, five-row
-certificate, and block-based second proof are not certified by that
-six-stage evidence. Later local stages are separate work.
-The four coordinate transformations are explicit; a classification
-of all Euclidean isometries is not formalized. At zero width the
-abstract group acts trivially on the unique empty tiling.
-Kernel checking does not decide whether these definitions express
-the intended question, or establish bibliographic priority.
+The acceptance also reruns the earlier stages and rebuilds project
+sources in a separate directory without prior project build products,
+sharing the checked, pinned third-party dependency cache.
+It compares the resulting source hashes, theorem types, and cumulative
+axiom output. This is a fresh build of the project, not a cache-free
+rebuild of all of mathlib. The public records include successful local
+acceptance and a successful GitHub Actions run for the pinned release.
+Commands for reproducing the checks are in Appendix~\ref{app:repro}.
 
-The accompanying \path{review/m1-m6/} directory provides a source-pinned
-semantic map, a dependency guide, executable declaration probes,
-and an unfilled external review form. It distinguishes the compiler
-checks from the human judgments still requested. In particular,
-the pair in \eqref{eq:two-dimensional} is defined recursively in Lean
-and only then proved equal to the geometric counts by
-\texttt{profile\_even\_odd}; the existence of its recursion equations
-alone would not establish the tiling count.
+\subsection{Limits of the formal claim}
+The formal action is given by the four explicit coordinate
+transformations; a classification of all Euclidean isometries preserving
+a rectangle is not formalized. At zero width the abstract group acts
+trivially on the unique empty tiling. No claim is made about minimal
+recurrence order, general-height asymptotics, even-height extensions,
+or square-board symmetries beyond the statements proved here.
+Kernel verification checks the formal statements and their proofs;
+external mathematical and semantic review, including whether the formal
+definitions capture every intended convention, remains outstanding.
+It also does not establish bibliographic priority. The older
+\path{review/m1-m6/} package retains its original, narrower review scope;
+it is not an external review of M7--M11.

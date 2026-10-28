@@ -1,21 +1,23 @@
 cff-version: 1.2.0
-message: "引用本研究时请优先引用下列英文论文；复现代码请同时注明使用的提交或版本。"
+message: "请引用当前英文论文；复现代码请同时注明使用的标签或提交。"
 title: "Domino tilings of odd-height rectangles up to symmetry: research materials"
 type: software
 authors:
   - family-names: Liu
     given-names: Shiqi
+    affiliation: "Dalian University of Technology"
 repository-code: "https://github.com/Lshiqi67/domino-tilings-a232622"
-url: "https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.0"
-version: "paper-en-v2.0"
-date-released: "2026-10-26"
+url: "https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.1"
+version: "paper-en-v2.1"
+date-released: "2026-10-29"
 preferred-citation:
   type: unpublished
   title: "Domino tilings of odd-height rectangles up to symmetry"
   authors:
     - family-names: Liu
       given-names: Shiqi
+      affiliation: "Dalian University of Technology"
   year: 2026
-  version: "2.0"
-  url: "https://github.com/Lshiqi67/domino-tilings-a232622/releases/download/paper-en-v2.0/domino-tilings-en-v2.0.pdf"
-  notes: "Preprint; manuscript dated October 25, 2026; GitHub release dated October 26, 2026. The manuscript reports Lean M1-M6 only; external mathematical and semantic review remains pending."
+  version: "2.1"
+  url: "https://github.com/Lshiqi67/domino-tilings-a232622/releases/download/paper-en-v2.1/domino-tilings-en-v2.1.pdf"
+  notes: "16-page preprint dated October 28, 2026; repository release October 29, 2026. Reports M1-M11 formal coverage. Not yet submitted to arXiv; external mathematical and semantic review remains pending."

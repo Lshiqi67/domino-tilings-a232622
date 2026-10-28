@@ -1,10 +1,12 @@
 # Domino Tilings of Odd-Height Rectangles up to Symmetry
 
-**Shiqi Liu** · [GitHub](https://github.com/Lshiqi67)
+**许可（2026-10-28）：**作者有权许可的代码采用 MIT；复现说明和审核报告采用 CC BY 4.0；论文选用 arXiv 永久非独占许可。适用范围和第三方排除项见 [分项许可](LICENSE.md)。
+
+**Shiqi Liu — Dalian University of Technology** · [GitHub](https://github.com/Lshiqi67)
 
 Domino tilings, symmetry classes, generating functions, and Lean formalization, starting from the three-row counting problem associated with **[OEIS A232622](https://oeis.org/A232622)**.
 
-[English manuscript](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/en/domino-tilings-en.pdf) · [Archived release](https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.0) · [Lean project](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean) · [Citation](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/CITATION.cff)
+[English manuscript](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/en/domino-tilings-en.pdf) · [Current release](https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.1) · [Lean project](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean) · [Citation](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/CITATION.cff)
 
 **English** · [完整中文版](#中文版)
 
@@ -14,9 +16,11 @@ This repository contains manuscripts, two combinatorial proof routes, reproducib
 
 The starting problem counts tilings of a $`3\times 2n`$ rectangle up to horizontal reflection, vertical reflection, and a half-turn. The project also studies exact symmetry types, asymptotic behavior, arbitrary fixed positive odd heights, and an explicit five-row case.
 
-**Current status — October 26, 2026:** Lean milestones **M1–M11** have passed the recorded local cumulative verification, including declaration audits and a clean rebuild of the project sources. The repository contains **83 mathematical modules and 1,078 audited declarations**, including 699 theorems and auxiliary lemmas.
+**Current status — October 29, 2026:** Lean milestones **M1–M11** have passed the recorded local cumulative verification, including declaration audits and a clean rebuild of the project sources. The repository contains **83 mathematical modules and 1,078 audited declarations**, including 699 theorems and auxiliary lemmas.
 
-The English manuscript is **v2.0**, and the Chinese manuscript is **v2.1**. Their formalization summaries cover **M1–M6**; the repository includes the subsequent **M7–M11** developments.
+The current English manuscript is **v2.1 (16 pages)** and reports **M1–M11**. It is the arXiv submission candidate, with its exact PDF and TeX sources provided here. The Chinese v2.1 manuscript remains an earlier companion edition with an M1–M6 summary; it is not a translation of the current English revision.
+
+The October 28–29 cumulative acceptance passed. See the [paper-to-code map and verification records](review/arxiv-v2.1/README.md) and [submission files](submission/README.md). No arXiv identifier or submission is claimed.
 
 ## Mathematical problem and main result
 
@@ -79,11 +83,11 @@ See the [progress summary](https://github.com/Lshiqi67/domino-tilings-a232622/bl
 
 | Resource | English | Chinese |
 | --- | --- | --- |
-| Manuscript | [v2.0 · 15 pages](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/en/domino-tilings-en.pdf) | [v2.1 · 17 pages](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/zh/domino-tilings-zh.pdf) |
+| Manuscript | [v2.1 · 16 pages](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/en/domino-tilings-en.pdf) | [v2.1 · 17 pages](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/zh/domino-tilings-zh.pdf) |
 | LaTeX sources and build instructions | [English edition](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/papers/en) | [Chinese edition](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/papers/zh) |
 | Illustrated block-proof guide | [English PDF](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/guides/block-proof/domino-block-proof-guide-en.pdf) | [Chinese PDF](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/guides/block-proof/domino-block-proof-guide-zh.pdf) |
 
-For an introduction, start with the manuscript or illustrated guide. For verification, continue with the [Lean project](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean), its milestone documentation, and the [M1–M6 manuscript-to-code review package](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/review/m1-m6).
+For an introduction, start with the manuscript or illustrated guide. For the current manuscript-to-code correspondence, use [the v2.1 review map](review/arxiv-v2.1/README.md). For verification, continue with the [Lean project](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean), its milestone documentation, and the [M1–M6 manuscript-to-code review package](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/review/m1-m6).
 
 Earlier manuscripts and research notes retain their historical scope statements. For the current formalization status, use [STATUS.md](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/STATUS.md) and the Lean progress summary.
 
@@ -138,7 +142,7 @@ MANIFEST-SHA256.json      Published file checksums
 
 ## Review and remaining work
 
-The next priorities are external human review of the correspondence between the manuscripts and formal definitions, and an update of the manuscripts’ formalization summaries.
+The current English manuscript now includes the M1–M11 correspondence. External mathematical and semantic review remains the next priority; use the current review map alongside the historical M1–M6 packet.
 
 Further work includes asymptotics beyond three rows and minimal recurrence orders; the five-row fourteenth-order recurrence is provided without a minimality claim. The formal model uses the specified coordinate symmetries and does not separately formalize a classification of all Euclidean isometries.
 
@@ -148,21 +152,21 @@ Corrections are welcome through [GitHub Issues](https://github.com/Lshiqi67/domi
 
 ## Citation and versioned archive
 
-To cite the English manuscript, use **Shiqi Liu, _Domino tilings of odd-height rectangles up to symmetry_, version 2.0, 2026**.
+To cite the English manuscript, use **Shiqi Liu, _Domino tilings of odd-height rectangles up to symmetry_, version 2.1, 2026**.
 
 ```bibtex
 @unpublished{liu2026domino,
   author = {Liu, Shiqi},
   title = {Domino tilings of odd-height rectangles up to symmetry},
   year = {2026},
-  version = {2.0},
-  note = {Preprint, manuscript dated October 25, 2026;
-          GitHub release dated October 26, 2026},
-  url = {https://github.com/Lshiqi67/domino-tilings-a232622/releases/download/paper-en-v2.0/domino-tilings-en-v2.0.pdf}
+  version = {2.1},
+  note = {Preprint, manuscript dated October 28, 2026;
+          GitHub release dated October 29, 2026},
+  url = {https://github.com/Lshiqi67/domino-tilings-a232622/releases/download/paper-en-v2.1/domino-tilings-en-v2.1.pdf}
 }
 ```
 
-The [archived release `paper-en-v2.0`](https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.0) includes the English PDF, a public source snapshot, a Git history bundle, and checksums. When referring to formalization results, also identify the relevant repository tag or commit.
+The previous [archived release `paper-en-v2.0`](https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.0) includes the English PDF, a public source snapshot, a Git history bundle, and checksums. When referring to formalization results, also identify the relevant repository tag or commit.
 
 ---
 
@@ -170,11 +174,11 @@ The [archived release `paper-en-v2.0`](https://github.com/Lshiqi67/domino-tiling
 
 ## 奇数高度矩形的多米诺铺法：对称计数与形式化证明
 
-**Shiqi Liu** · [GitHub](https://github.com/Lshiqi67)
+**Shiqi Liu — Dalian University of Technology** · [GitHub](https://github.com/Lshiqi67)
 
 本项目从 **[OEIS A232622](https://oeis.org/A232622)** 对应的三行矩形计数问题出发，研究多米诺铺法的对称分类、生成函数及 Lean 形式化证明。
 
-[中文论文](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/zh/domino-tilings-zh.pdf) · [英文论文归档](https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.0) · [Lean 项目](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean) · [引用信息](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/CITATION.cff)
+[中文论文](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/zh/domino-tilings-zh.pdf) · [新版英文论文](https://github.com/Lshiqi67/domino-tilings-a232622/releases/tag/paper-en-v2.1) · [Lean 项目](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean) · [引用信息](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/CITATION.cff)
 
 ## 项目概述
 
@@ -182,9 +186,11 @@ The [archived release `paper-en-v2.0`](https://github.com/Lshiqi67/domino-tiling
 
 起点是 $`3\times 2n`$ 矩形：将上下反射、左右反射及半周旋转所得铺法视为等价。研究进一步涉及精确对称类型、渐近行为、任意固定正奇数高度，以及五行情形的显式公式。
 
-**当前状态——2026 年 10 月 26 日：** Lean **M1–M11** 已通过已记录的本地累计验收，包括声明公理审计和项目源码干净重建。仓库包含 **83 个数学模块、1078 项受审计声明**，其中有 699 个定理及辅助引理。
+**当前状态——2026 年 10 月 29 日：** Lean **M1–M11** 已通过已记录的本地累计验收，包括声明公理审计和项目源码干净重建。仓库包含 **83 个数学模块、1078 项受审计声明**，其中有 699 个定理及辅助引理。
 
-当前英文论文为 **v2.0**，中文论文为 **v2.1**。这两个版本中的形式化说明覆盖 **M1–M6**；仓库另已收录后续 **M7–M11** 的成果。
+当前英文论文为 **v2.1（16 页）**，覆盖说明已更新至 **M1–M11**，与 arXiv 投稿候选稿一致。中文 v2.1 是较早的参考版本，仍只介绍 M1–M6，不是新版英文稿的同步译本。
+
+10 月 28–29 日的完整累计验收已通过，见 [论文—代码对应与本轮证据](review/arxiv-v2.1/README.md)和[投稿文件](submission/README.md)。尚未向 arXiv 提交或取得文章编号。
 
 ## 数学问题与主要结果
 
@@ -247,11 +253,11 @@ a(0),\ldots,a(6)=1,\ 2,\ 5,\ 14,\ 46,\ 156,\ 561.
 
 | 材料 | 英文版 | 中文版 |
 | --- | --- | --- |
-| 论文 | [v2.0 · 15 页](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/en/domino-tilings-en.pdf) | [v2.1 · 17 页](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/zh/domino-tilings-zh.pdf) |
+| 论文 | [v2.1 · 16 页](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/en/domino-tilings-en.pdf) | [v2.1 · 17 页](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/papers/zh/domino-tilings-zh.pdf) |
 | LaTeX 源码及构建说明 | [英文目录](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/papers/en) | [中文目录](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/papers/zh) |
 | 基本块证明图解 | [英文 PDF](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/guides/block-proof/domino-block-proof-guide-en.pdf) | [中文 PDF](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/guides/block-proof/domino-block-proof-guide-zh.pdf) |
 
-初次阅读可从论文或图解讲义开始。希望核验结果的读者，可继续阅读 [Lean 项目](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean)、各阶段说明及 [M1–M6 论文—代码语义审阅包](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/review/m1-m6)。
+初次阅读可从论文或图解讲义开始。当前论文的对应关系见 [v2.1 审阅入口](review/arxiv-v2.1/README.md)。希望核验结果的读者，可继续阅读 [Lean 项目](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/lean)、各阶段说明及 [M1–M6 论文—代码语义审阅包](https://github.com/Lshiqi67/domino-tilings-a232622/tree/main/review/m1-m6)。
 
 旧论文与研究笔记保留其形成时的状态说明。当前形式化进展以 [STATUS.md](https://github.com/Lshiqi67/domino-tilings-a232622/blob/main/STATUS.md) 和 Lean 阶段成果汇总为准。
 
@@ -306,7 +312,7 @@ MANIFEST-SHA256.json      公开文件校验清单
 
 ## 审阅与后续工作
 
-下一步重点是取得外部人工语义审阅，核对论文陈述与形式化定义的对应关系，并更新论文中的形式化覆盖说明。
+英文论文已补齐 M1–M11 覆盖说明。下一步重点是取得外部人工语义审阅，逐项核对论文陈述、对象范围和形式化定义。
 
 后续研究包括三行以外的渐近行为和最小递推阶数；目前提供五行十四阶递推，不主张其阶数最小。形式化模型采用指定的坐标对称，尚未另行形式化全部欧氏等距变换的分类。
 
@@ -318,17 +324,17 @@ MANIFEST-SHA256.json      公开文件校验清单
 
 引用英文论文时，请使用：
 
-**Shiqi Liu. _Domino tilings of odd-height rectangles up to symmetry_. Version 2.0, 2026.**
+**Shiqi Liu. _Domino tilings of odd-height rectangles up to symmetry_. Version 2.1, 2026.**
 
 ```bibtex
 @unpublished{liu2026domino,
   author = {Liu, Shiqi},
   title = {Domino tilings of odd-height rectangles up to symmetry},
   year = {2026},
-  version = {2.0},
-  note = {Preprint, manuscript dated October 25, 2026;
-          GitHub release dated October 26, 2026},
-  url = {https://github.com/Lshiqi67/domino-tilings-a232622/releases/download/paper-en-v2.0/domino-tilings-en-v2.0.pdf}
+  version = {2.1},
+  note = {Preprint, manuscript dated October 28, 2026;
+          GitHub release dated October 29, 2026},
+  url = {https://github.com/Lshiqi67/domino-tilings-a232622/releases/download/paper-en-v2.1/domino-tilings-en-v2.1.pdf}
 }
 ```
 

@@ -1,6 +1,8 @@
 \section{Reproducibility and supplementary materials}\label{app:repro}
 
-The accompanying public repository includes selected problem,
+The public repository~\cite{repository} includes the full M1--M11 Lean
+source, pinned dependency versions, acceptance scripts, and verification
+records, as well as selected problem,
 approach, lemma, proof, and source notes in Chinese and English,
 together with verification instructions.
 Its \path{research/02_problems/P002-domino-orbit-counting/}
@@ -45,5 +47,25 @@ recorded numerator and denominator, and its coefficients are
 compared with integer matrix iteration.
 This audit is documented separately from the historical
 exhaustive enumerations.
-The LaTeX source, build script, and file-hash manifest are
-included for independent examination.
+The archived English v2.0 manuscript and its build and audit scripts
+remain in the repository. The present arXiv revision updates the formal
+coverage and references; its LaTeX source is supplied with this submission.
+
+To reproduce the complete formal acceptance at the pinned release,
+run the following commands from a working directory with Git, Python,
+and elan (Lean's toolchain manager) installed:
+\begin{verbatim}
+git clone https://github.com/Lshiqi67/domino-tilings-a232622.git
+cd domino-tilings-a232622
+git checkout a5c32a4b81cce150dbd0dd2398fdd9e90664a353
+cd lean
+lake exe cache get
+python -X utf8 scripts/check_m11.py --report-dir checks/reproduction
+\end{verbatim}
+The report directory must not already exist. A successful run exits with
+code zero and records \texttt{m11\_passed} in \path{report.json}.
+The script runs the earlier-stage regressions, checks the source inventory
+and locked dependencies, audits the declarations, and rebuilds project
+sources in a separate directory. Downloading the dependency cache alone
+does not perform these checks. The repository's GitHub Actions workflow
+runs the same cumulative acceptance script.

@@ -174,7 +174,7 @@ def main():
         },
         "a5_initial_14": values[:14],
         "source_sha256": {str(p.relative_to(PAPER)).replace("\\", "/"): sha(p)
-                          for p in sorted(PAPER.rglob("*.tex"))},
+                          for p in sorted(PAPER.rglob("*.tex")) if not any(v in ("archive", "build") for v in p.relative_to(PAPER).parts)},
         "script_sha256": sha(Path(__file__)),
         "limits": "Checks manuscript transcription and exact algebra, not exhaustive tiling enumeration, independent review, or bibliographic priority.",
     }

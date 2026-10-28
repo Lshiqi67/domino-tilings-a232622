@@ -1,0 +1,97 @@
+{
+  "date_beijing": "2026-10-28T23:44:17.619410+08:00",
+  "status": "passed",
+  "command": "python -X utf8 checks/package_and_verify.py",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "random_seed": null,
+  "latex_version": "pdfTeX 3.141592653-2.6-1.40.26 (TeX Live 2024)",
+  "pinned_public_commit": "a5c32a4b81cce150dbd0dd2398fdd9e90664a353",
+  "lean_and_workflow_match_pinned_release": true,
+  "inventory": {
+    "math_modules": 83,
+    "explicit_declarations": 1078,
+    "theorems": 699
+  },
+  "old_manuscript_unchanged": true,
+  "changed_tex_files": [
+    "main.tex",
+    "references.tex",
+    "sections/computation.tex",
+    "sections/formalization.tex",
+    "sections/introduction.tex",
+    "sections/reproducibility.tex"
+  ],
+  "tex_files": [
+    "figures/blocks.tex",
+    "generated/five-table.tex",
+    "main.tex",
+    "references.tex",
+    "sections/blocks.tex",
+    "sections/certificate.tex",
+    "sections/computation.tex",
+    "sections/five-row.tex",
+    "sections/formalization.tex",
+    "sections/half-board.tex",
+    "sections/introduction.tex",
+    "sections/odd-height.tex",
+    "sections/reproducibility.tex",
+    "sections/symmetry-types.tex"
+  ],
+  "source_sha256": {
+    "figures/blocks.tex": "a69c82812ab6b5312d7713d19077ecfba42833ba10b81dd265dd12be5b85f848",
+    "generated/five-table.tex": "31d321b76d2633d7c494c4165438916e08f3f5a2ae29f36c02641e43c28bc083",
+    "main.tex": "259763542705fc8dc3e7f1bea93d1ef0884647f296d288fc67df4b31c48c0754",
+    "references.tex": "a97ebfaed0d0971b5393bf2cca3dbacb7d5d335d6e12805d48f33e79cfffc9de",
+    "sections/blocks.tex": "8f93a4c879e35531ca76165c014377afa1c1ae763f81a43eaf07a3ca6663e74f",
+    "sections/certificate.tex": "c6496640afa2e0c1e5bd0754c305215f41a503c050268a08a2619e96e751e038",
+    "sections/computation.tex": "dfcb2b5fc8e9fed6a01a0f270ad0c419b4653c58c3af0b519361172baf1d7024",
+    "sections/five-row.tex": "37cb0dc4aa4e68499ba90eeb0797fce10db2474dd5d0122122f64cd8891a6e2c",
+    "sections/formalization.tex": "293582ecf8218bc57119948462dd01b23dc159c7e1a5ed1f54fba4b6914c1052",
+    "sections/half-board.tex": "79bc1c42b325e8408438d13654d10ea931bb9918ba128ae81d3f8d28c7dbeb8d",
+    "sections/introduction.tex": "26089e3dcb5a5c735ad5175ad20d50d6bb34927be328ee0bd78d10e8d59bf414",
+    "sections/odd-height.tex": "bb4ef2f99af8788f94f33a217de2993aa13bbbd812f68a0597f92313dae8e683",
+    "sections/reproducibility.tex": "8fbc293d7b5742d22d1052c72170840419c7876c34ecf109717d89af94589a2a",
+    "sections/symmetry-types.tex": "8063f2cd68e94160e0f63c9b98023fd0376e567993f50a28c957fa36b5b70207"
+  },
+  "abstract_characters": 942,
+  "compile_commands": [
+    {
+      "argv": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-output-directory=build",
+        "main.tex"
+      ],
+      "cwd": "{WORKSPACE}\\02_problems\\P002-domino-orbit-counting\\paper\\versions\\20261028-arxiv-preparation\\checks\\upload-rehearsal",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-output-directory=build",
+        "main.tex"
+      ],
+      "cwd": "{WORKSPACE}\\02_problems\\P002-domino-orbit-counting\\paper\\versions\\20261028-arxiv-preparation\\checks\\upload-rehearsal",
+      "exit_code": 0
+    }
+  ],
+  "clean_unpack_compile_passed": true,
+  "warnings": [],
+  "pdf_pages": 16,
+  "final_pdf_sha256": "d3733238923620f4cd72db3a786667d326c39d0250a61bb61ee46257aa3939e8",
+  "source_zip_sha256": "9f5f682b3de38b55d1379adc5b16fc5e14c8dc30ad86c8b97bf5b9340158998e",
+  "limitations": [
+    "TeX Live 2024 本地解包编译；不是 arXiv 服务器编译",
+    "本脚本仅核对形式化声明位置和源码快照；完整 Lean 验收报告另存",
+    "没有重跑历史铺法穷举",
+    "没有完成外部语义审阅或文献优先权调查"
+  ]
+}

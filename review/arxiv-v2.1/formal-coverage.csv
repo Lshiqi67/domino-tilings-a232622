@@ -1,0 +1,13 @@
+﻿paper_section,stage,declaration,source,line,pinned_url
+1.1 / 3,M1-M6,Domino.three_row_main_theorem,Domino/ThreeRows/Recurrence.lean,76,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/ThreeRows/Recurrence.lean#L76
+2,M11,Domino.Blocks.three_row_block_main,Domino/Blocks/Main.lean,82,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/Blocks/Main.lean#L82
+2,M11,Domino.Blocks.orbit_series_via_blocks,Domino/Blocks/Main.lean,61,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/Blocks/Main.lean#L61
+4.1,M7,Domino.three_row_stabilizer_counting,Domino/Stabilizers/Examples.lean,52,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/Stabilizers/Examples.lean#L52
+5.1,M8,Domino.General.odd_height_main,Domino/OddHeight/Boundary.lean,45,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/OddHeight/Boundary.lean#L45
+5.1,M8,Domino.General.orbit_matrix_series,Domino/OddHeight/Series.lean,25,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/OddHeight/Series.lean#L25
+5.1,M8,Domino.General.odd_height_eventual_recurrence,Domino/OddHeight/Series.lean,54,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/OddHeight/Series.lean#L54
+6.1 / Appendix A,M9,Domino.FiveRows.five_row_main_theorem,Domino/FiveRows/Recurrence.lean,89,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/FiveRows/Recurrence.lean#L89
+6.1 / Appendix A,M9,Domino.FiveRows.polynomial_certificate,Domino/FiveRows/Certificate.lean,35,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/FiveRows/Certificate.lean#L35
+4.2,M10,Domino.Asymptotic.three_row_asymptotic_main,Domino/Asymptotics/Main.lean,80,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/Asymptotics/Main.lean#L80
+4.2,M10,Domino.Asymptotic.probability_even_asymptotic,Domino/Asymptotics/Main.lean,31,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/Asymptotics/Main.lean#L31
+4.2,M10,Domino.Asymptotic.probability_odd_asymptotic,Domino/Asymptotics/Main.lean,35,https://github.com/Lshiqi67/domino-tilings-a232622/blob/a5c32a4b81cce150dbd0dd2398fdd9e90664a353/lean/Domino/Asymptotics/Main.lean#L35

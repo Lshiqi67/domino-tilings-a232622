@@ -1,19 +1,19 @@
-# 英文论文 · v2.0
+# 英文论文 v2.1 · arXiv 投稿候选稿
 
-署名：**Shiqi Liu**。修订日期：2026-10-25。正文 15 页。
+Shiqi Liu · Dalian University of Technology。稿件日期 2026-10-28，公开仓库更新 2026-10-29，16 页。
 
-[阅读新版 PDF](domino-tilings-en.pdf) · [LaTeX 主文件](main.tex) · [本轮修订与检查](checks/readability-revision.md) · [M1–M6 语义审阅包](../../review/m1-m6/README.md)
+[PDF](domino-tilings-en.pdf) · [LaTeX](main.tex) · [论文—形式化对应](../../review/arxiv-v2.1/README.md) · [投稿文件说明](../../submission/README.md)
 
-本版重点落实 E04：展开 §3.3 的零宽基例、状态支持和计数同步归纳、两次转移的来源求和，以及二维矩阵四个系数的解释。明确 β 计数一个状态，增加 (3,1) 到 (11,4) 的说明实例；补充半宽、实际宽度和行/列向量的阅读约定。E01—E03 已有修订继续保留。
+本版与已核验的 arXiv 候选稿逐字节一致。摘要、第 7 节及复现附录报告 M1–M11：两条三行证明、精确稳定子、奇数高度计数与有理性、五行证书和十四阶递推、三行渐近。列出实际声明、固定源码版本和复现命令；机构显示在 AMS 稿件文末。
 
-形式化说明固定为 M1–M6：真实三行轨道的主生成函数、七阶递推和完整初值。更晚本地阶段单独记录，不属于本版语义审阅包。外部语义审阅和文献优先权核查仍未完成；本次没有修改 Lean 数学源码或增加数学定理。
+外部数学/语义审阅及文献优先权仍待完成；没有把全部欧氏等距分类、最小阶、一般高度渐近或偶数高度/正方形推广列为已证。尚未向 arXiv 提交或取得文章号。
 
-## 原版保留
+## 构建
 
-[旧 v1.0 PDF](archive/v1.0/domino-tilings-en.pdf) 及其全部源码、构建脚本和原检查报告原字节保存在 [archive/v1.0/](archive/v1.0/)。[SHA256 清单](archive/v1.0/SHA256.json) 记录原提交及各文件摘要。归档内旧 README 和旧相对链接保持原样；请通过本页导航。更早的中文 v1.0 继续保留。
+本目录运行 `./build.ps1`，需要 Python、SymPy 和 pdfLaTeX。构建先执行精确转录核查，再编译两遍；本地成功不能替代 arXiv 服务器编译。复现会更新本地审核报告和 PDF，原发布字节可从固定标签恢复。
 
-## 构建与核对
+## 历史版本
 
-在本目录运行 `./build.ps1`。需要 Python、SymPy 和 pdfLaTeX，以及现有 LaTeX 包。先运行精确公式转录检查，再编译两遍并拒绝溢出、缺字与未定义引用。
-
-在仓库根目录运行 `python -X utf8 review/m1-m6/check_delivery.py` 可核对新版引用、归档摘要、源码记录和 PDF 摘要；这不执行 Lean，也不替代视觉检查。
+- [v2.0：15 页，M1–M6 说明](archive/v2.0/README.md)，[冻结摘要](archive/v2.0/SHA256.json)；旧相对链接按原字节保留，历史上下文以旧 Release 为准。
+- [v1.0](archive/v1.0/README.md) 继续保留。
+- `checks/readability-revision.md` 是 2026-10-25 的历史 E04 记录，新检查见 [v2.1 记录](../../review/arxiv-v2.1/README.md)。

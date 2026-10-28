@@ -1,0 +1,6 @@
+运行 m9-regression
+运行 axioms
+运行 main-statements
+运行 clean-axioms
+运行 clean-main-statements
+m10_passed

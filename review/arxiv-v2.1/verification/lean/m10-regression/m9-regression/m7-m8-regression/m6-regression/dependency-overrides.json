@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.3.0",
+  "packages": [
+    {
+      "name": "mathlib",
+      "scope": "",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\mathlib",
+      "copy": false
+    },
+    {
+      "name": "plausible",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\plausible",
+      "copy": false
+    },
+    {
+      "name": "LeanSearchClient",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\LeanSearchClient",
+      "copy": false
+    },
+    {
+      "name": "importGraph",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\importGraph",
+      "copy": false
+    },
+    {
+      "name": "proofwidgets",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\proofwidgets",
+      "copy": false
+    },
+    {
+      "name": "aesop",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\aesop",
+      "copy": false
+    },
+    {
+      "name": "Qq",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\Qq",
+      "copy": false
+    },
+    {
+      "name": "batteries",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\batteries",
+      "copy": false
+    },
+    {
+      "name": "Cli",
+      "scope": "leanprover",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json",
+      "type": "path",
+      "dir": "{LEAN_ROOT}\\.lake\\packages\\Cli",
+      "copy": false
+    }
+  ],
+  "publication_note": "2026-10-28–29 实际运行的公开副本：本机路径替换；日期、结果、退出码、源哈希及公理映射保留。发布整理不是再运行。"
+}

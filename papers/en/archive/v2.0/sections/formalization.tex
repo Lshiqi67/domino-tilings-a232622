@@ -1,0 +1,75 @@
+\section{Formal evidence for the three-row theorem}\label{sec:formalization}
+
+The M1--M6 development follows Section \ref{sec:half}, without using
+the block classification. A cell has zero-based coordinates in
+\texttt{Fin m} $\times$ \texttt{Fin w}. A domino is an unordered
+two-element set of adjacent cells, and a tiling is an exact cover.
+The definition \texttt{Domino.a n} is the cardinality of the quotient
+of actual $3\times2n$ tilings by the four coordinate symmetries.
+The coefficient of $X^n$ in \texttt{orbitSeries} is $(a(n):\mathbb Q)$;
+neither the target recurrence nor the rational expression defines it.
+
+\begin{center}
+\small
+\begin{tabular}{cp{0.78\linewidth}}
+\toprule
+Stage & Mathematical interface to examine\\
+\midrule
+M1 & Unordered dominoes, exact coverage, terminal holes, the width-zero
+guard, coordinate action, fixed sets, and the orbit quotient.\\
+M2 & An equivalence between actual partial tilings and state paths,
+with two inverse identities, followed by the counting recurrence.\\
+M3 & Reflection and half-turn completion/restriction, including actual
+internal and crossing dominoes; uniqueness of the $h$-fixed tiling.\\
+M4 & Simultaneous induction of support and counts for all widths;
+identification of the auxiliary pair with actual cardinalities.\\
+M5 & Burnside applied to that action, divisibility, and the empty and
+small-board cases; no faithfulness assumption.\\
+M6 & Series defined from those counts, denominator identity and
+invertibility, the recurrence, and all seven initial values.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Write $B=(1-X)(1-4X+X^2)(1-4X^2+X^4)$ and
+$N=1-3X-4X^2+10X^3-4X^5+X^6$.
+The development first proves $B A=N$, then uses $B(0)=1$ to obtain
+$A=NB^{-1}$ in $\mathbb Q[[X]]$. Coefficient comparison at $n+7$
+gives the recurrence for every $n\in\mathbb N$, interpreted in
+$\mathbb Z$; a separate natural-number version moves all negative
+terms to the other side. Coefficients zero through six give the
+initial values, and the first recurrence step gives $a(7)=2037$.
+The main endpoints, in namespace \texttt{Domino}, are
+\texttt{orbit\_series\_paper}, \texttt{orbit\_recurrence\_seven},
+\texttt{orbit\_initial\_values}, and \texttt{three\_row\_main\_theorem}.
+
+The recorded October 25, 2026 acceptance uses Lean 4.35.0 and
+the following mathlib commit:
+\begin{center}
+\small\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\end{center}
+It covers 32 mathematical modules and audits 413 explicit declarations,
+including auxiliary definitions and instances. The allowed axioms
+are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+Project sources were rebuilt in a directory without prior project
+build products, reusing the checked third-party dependency cache;
+this was not a cache-free rebuild of all of mathlib.
+
+This edition deliberately fixes its review scope at M1--M6.
+The general-height statements, stabilizers, asymptotics, five-row
+certificate, and block-based second proof are not certified by that
+six-stage evidence. Later local stages are separate work.
+The four coordinate transformations are explicit; a classification
+of all Euclidean isometries is not formalized. At zero width the
+abstract group acts trivially on the unique empty tiling.
+Kernel checking does not decide whether these definitions express
+the intended question, or establish bibliographic priority.
+
+The accompanying \path{review/m1-m6/} directory provides a source-pinned
+semantic map, a dependency guide, executable declaration probes,
+and an unfilled external review form. It distinguishes the compiler
+checks from the human judgments still requested. In particular,
+the pair in \eqref{eq:two-dimensional} is defined recursively in Lean
+and only then proved equal to the geometric counts by
+\texttt{profile\_even\_odd}; the existence of its recursion equations
+alone would not establish the tiling count.

@@ -1,0 +1,118 @@
+\section{Introduction}\label{sec:intro}
+
+Let $\mathcal T_n$ be the set of domino tilings of a $3\times 2n$
+rectangle, where $n\ge1$. A domino covers two unit cells sharing an
+edge. Both orientations are allowed, the dominoes are unlabelled,
+and no tatami restriction is imposed. Thus a tiling is a set of
+unordered pairs of adjacent cells.
+Number rows from top to bottom and columns from left to right.
+The maps
+\[
+ h(r,c)=(4-r,c),\qquad v(r,c)=(r,2n+1-c),\qquad \rho=hv
+\]
+are reflection in the horizontal axis, reflection in the vertical
+axis, and rotation through $180^\circ$, respectively.
+Since $3\ne2n$, the full symmetry group of the rectangle is
+$G=\{e,h,v,\rho\}\cong C_2\times C_2$.
+Write $a(n)=|\mathcal T_n/G|$. We set $\mathcal T_0$ to consist of a
+single empty tiling, fixed by all four abstract group elements, so
+that $a(0)=1$.
+
+Mathar \cite[Table 10, Conjecture 6]{mathar2013} proposed a generating
+function for these symmetry classes. The equivalent formula in
+OEIS A232622 \cite{oeis} is accompanied by a conjectured recurrence
+of order seven. We give two derivations, with the M1--M6 formal evidence following the half-rectangle route.
+The first uses a complete classification of vertically
+indecomposable blocks and the action of $G$ on words in these blocks.
+The second counts symmetric tilings directly from partial tilings
+of a half-rectangle.
+The latter construction also yields a uniform formula for any fixed
+odd height.
+
+Transfer matrices and indecomposable tilings are established tools
+in fixed-width enumeration. In particular, Mathar
+\cite[Sections 2.1--2.3]{mathar2014} gives the ordinary three-row
+generating function and the corresponding indecomposable-block
+generating function. We rederive the required block classification
+and determine the symmetry action explicitly.
+DeFord \cite[Theorem 6.1]{deford} establishes a general recurrence
+framework for rectangular tilings counted up to symmetry and
+illustrates it for two-row domino tilings in Section 6.2.1.
+Thus rationality at fixed height is established background;
+our odd-height formula specifies the boundary conditions and
+gives an explicit five-row evaluation.
+None of our
+combinatorial arguments assumes the target recurrence or a finite
+list of coefficients.
+The source entry was checked on October 25, 2026; its conjecture
+label does not establish that no equivalent proof appears elsewhere.
+No claim of bibliographic priority is made here.
+
+\paragraph{Reading the widths and counts.}
+The exponent $n$ always records half the full width $2n$.
+In Section \ref{sec:half}, $q_w(S)$ counts a partial rectangle of
+actual width $w$, while the induction index $j$ groups widths $2j$
+and $2j+1$. Thus $\alpha_j=q_{2j}(\varnothing)=d_j$, whereas
+$\beta_j=q_{2j}(\{1,2\})$ counts one terminal state.
+The full transfer uses row vectors; its two-coordinate compression
+in \eqref{eq:two-dimensional} uses column vectors.
+
+\subsection{Main result}
+Let
+\[
+ d_n=|\mathcal T_n|,\qquad h_n=|\Fix(h)|,\qquad
+ v_n=|\Fix(v)|,\qquad r_n=|\Fix(\rho)|.
+\]
+Their ordinary generating functions, with $x$ marking the
+half-width $n$, are denoted by $D,H,V,R$.
+All generating-function identities are interpreted in
+$\mathbb Q[[x]]$.
+
+\begin{theorem}\label{thm:main}
+The number of domino tilings of a $3\times2n$ rectangle up to
+rectangle symmetries has generating function
+\begin{equation}\label{eq:main}
+ A(x):=\sum_{n\ge0}a(n)x^n
+ =\frac{1-3x-4x^2+10x^3-4x^5+x^6}
+ {(1-x)(1-4x+x^2)(1-4x^2+x^4)}.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:recurrence}
+\begin{split}
+a(n)={}&5a(n-1)-a(n-2)-19a(n-3)+19a(n-4)\\
+       &+a(n-5)-5a(n-6)+a(n-7),\qquad n\ge7,
+\end{split}
+\end{equation}
+with initial values
+\[
+ (a(0),\ldots,a(6))=(1,2,5,14,46,156,561).
+\]
+\end{theorem}
+
+Multiplying the numerator and denominator in \eqref{eq:main} by
+$-1$ gives the form displayed in A232622.
+Sections \ref{sec:blocks} and \ref{sec:half} give the two proofs.
+Section \ref{sec:types} determines the exact stabilizers and the
+asymptotic proportion of symmetric tilings.
+Sections \ref{sec:odd} and \ref{sec:five} treat arbitrary odd height
+and the explicit five-row case.
+
+\begin{lemma}[Burnside's formula]\label{lem:burnside}
+For every $n\ge0$,
+\begin{equation}\label{eq:burnside}
+ a(n)=\frac{d_n+h_n+v_n+r_n}{4}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Count the pairs $(g,T)\in G\times\mathcal T_n$ with $gT=T$:
+\[
+ \sum_{g\in G}|\Fix(g)|
+ =\sum_{T\in\mathcal T_n}|\Stab(T)|.
+\]
+By the orbit--stabilizer formula, each orbit $O$ contributes
+$|O|\cdot4/|O|=4$ to the right-hand side.
+Division by four proves the assertion.
+This is the usual orbit-counting lemma; see
+\cite[Chapter 7, Lemma 7.2]{stanley}.
+The argument does not require a faithful action and includes $n=0$.
+\end{proof}

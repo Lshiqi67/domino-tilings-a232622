@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "文件对应、摘要、历史归档、Lean验收输入/公理、声明定位、公开链接与隐私扫描；不启动Lean",
+  "tex_files": 14,
+  "pdf_pages_as_verified_in_candidate": 16,
+  "abstract_characters": 942,
+  "archived_files": {
+    "papers/en/archive/v1.0": 18,
+    "papers/en/archive/v2.0": 20,
+    "papers/zh/archive/v1.0": 15,
+    "papers/zh/archive/v2.0": 22
+  },
+  "lean_input_files": 113,
+  "formal_endpoints": 12,
+  "relative_links_checked": 525,
+  "manifest_checked": false,
+  "date_beijing": "2026-10-29T00:35:10.223606+08:00",
+  "command": "python -X utf8 scripts/check_release.py",
+  "protected_original_files_unchanged": 579,
+  "current_mathematical_Lean_source_changed": false,
+  "publication_is_new_Lean_run": false,
+  "candidate_pdf_sha256": "d3733238923620f4cd72db3a786667d326c39d0250a61bb61ee46257aa3939e8",
+  "candidate_source_zip_sha256": "9f5f682b3de38b55d1379adc5b16fc5e14c8dc30ad86c8b97bf5b9340158998e",
+  "external_review": "pending"
+}

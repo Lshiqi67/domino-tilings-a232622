@@ -17,10 +17,15 @@ def sha(p):
 def main():
     manifest = json.loads((PACK / 'paper-manifest.json').read_text(encoding='utf-8'))
     for rel, expected in manifest['sha256'].items():
-        assert sha(ROOT / rel) == expected, rel
+        target = ROOT / rel
+        if rel.startswith("papers/en/"):
+            target = ROOT / "papers/en/archive/v2.0" / rel.removeprefix("papers/en/")
+        assert sha(target) == expected, rel
     editions = {}
     for lang in ['en', 'zh']:
         paper = ROOT / 'papers' / lang
+        if lang == 'en':
+            paper = paper / 'archive/v2.0'
         files = [p for p in paper.rglob('*.tex') if not any(x in ('archive', 'build') for x in p.relative_to(paper).parts)]
         source = '\n'.join(p.read_text(encoding='utf-8-sig') for p in files)
         labels = re.findall(r'\\label\{([^}]+)\}', source)
@@ -33,9 +38,10 @@ def main():
         assert 'No Lean verification has been completed' not in source
         audit = json.loads((paper / 'checks/manuscript-audit.json').read_text(encoding='utf-8'))
         for rel, expected in audit['source_sha256'].items():
-            assert sha(paper / rel) == expected, (lang, rel)
+            target = ROOT / 'papers' / lang / rel if rel.startswith('archive/') else paper / rel
+            assert sha(target) == expected, (lang, rel)
         archives = {}
-        for archive in sorted((paper / 'archive').glob('*/SHA256.json')):
+        for archive in sorted((ROOT / 'papers' / lang / 'archive').glob('*/SHA256.json')):
             data = json.loads(archive.read_text(encoding='utf-8'))
             for rel, expected in data['sha256'].items():
                 assert sha(archive.parent / rel) == expected, str(archive.parent / rel)
@@ -60,7 +66,7 @@ def main():
     links = 0
     md_files = list(PACK.rglob('*.md'))
     md_files += [ROOT / f'papers/{lang}/README.md' for lang in ['en', 'zh']]
-    md_files += [ROOT / f'papers/{lang}/checks/readability-revision.md' for lang in ['en', 'zh']]
+    md_files += [ROOT / 'papers/zh/checks/readability-revision.md']
     for p in md_files:
         for target in re.findall(r'\]\(([^)]+)\)', p.read_text(encoding='utf-8')):
             if '://' in target or target.startswith('#'):
@@ -78,7 +84,8 @@ def main():
               'E04_two_step_matrix': matrix, 'source_manifest_sha256': sha(PACK / 'source-manifest.json'),
               'paper_manifest_sha256': sha(PACK / 'paper-manifest.json'),
               'limits': '摘要、引用、归档和三行单列/两列局部规则检查；不替代全宽度归纳、Lean 构建、外部人类审阅或 PDF 视觉检查。'}
-    (PACK / 'checks/delivery-report.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (ROOT / 'tmp').mkdir(exist_ok=True)
+    (ROOT / 'tmp/m1-m6-delivery-report.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(result, ensure_ascii=False))
 
 

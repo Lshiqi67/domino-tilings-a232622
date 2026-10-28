@@ -1,0 +1,31 @@
+{
+  "date_beijing": "2026-10-28",
+  "pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "method": "Poppler pdftoppm -scale-to 1300 -png; reviewed four 2x2 contact sheets covering every page",
+  "findings": {
+    "clipping": false,
+    "overlap": false,
+    "missing_glyphs": false,
+    "unresolved_references": false
+  },
+  "focus": "数学公式、三行块图、五行系数表、M1-M11覆盖表、源码出口和复现命令、参考文献、文末机构",
+  "final_delivery_render_matches_inspected_render_all_16_pages": true,
+  "limitations": "视觉版面检查不等于数学审稿；此为本地编译PDF，不是arXiv服务器PDF"
+}

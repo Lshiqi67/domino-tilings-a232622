@@ -1,0 +1,128 @@
+\section{An explicit formula for height five}\label{sec:five}
+
+At height five the transfer calculation reduces to a
+six-dimensional polynomial certificate.
+We give the reduced matrix and boundary vectors explicitly;
+Appendix \ref{app:certificate} supplies the single-column
+matrices from which they are obtained.
+
+Represent a row subset by a five-bit mask, with the least
+significant bit corresponding to the top row.
+The row-reversal orbits of reachable even-column states,
+in the chosen order, are
+\begin{equation}\label{eq:even-orbits}
+ \{0\},\ \{3,24\},\ \{6,12\},\ \{9,18\},\
+ \{15,30\},\ \{27\}.
+\end{equation}
+Row-reversed states have equal counts.
+Let each component of $u_j$ record the count of \emph{one
+individual state} in the corresponding orbit after $2j$
+columns, rather than the sum over that orbit.
+Then $u_0=\evec$ and $u_{j+1}=Mu_j$, where
+\begin{equation}\label{eq:M5}
+ M=\begin{pmatrix}
+8&6&4&2&2&1\\
+3&4&1&1&1&1\\
+2&1&2&1&1&0\\
+1&1&1&2&1&0\\
+1&1&1&1&1&0\\
+1&2&0&0&0&1
+\end{pmatrix}.
+\end{equation}
+Define
+\begin{equation}\label{eq:PN}
+ P(t)=1-15t+32t^2-15t^3+t^4,\qquad
+ N(t)=\begin{pmatrix}
+1-7t+7t^2-t^3\\
+3t-4t^2+t^3\\
+2t-5t^2+t^3\\
+t+t^2\\
+t-t^3\\
+t-t^3
+\end{pmatrix}.
+\end{equation}
+Polynomial multiplication gives the exact identity
+\begin{equation}\label{eq:certificate}
+ (I-tM)N(t)=P(t)\evec.
+\end{equation}
+Since $P(0)=1$, it follows that
+\[
+ f(t):=\sum_{j\ge0}u_jt^j=\frac{N(t)}{P(t)}.
+\]
+Appendix \ref{app:certificate} also records all four nonconstant
+coefficient-vector identities underlying
+\eqref{eq:certificate}.
+
+The terminal row vectors for vertical-axis reflection are
+\[
+ w_{v,e}=(1,2,2,2,2,1),\qquad
+ w_{v,o}=(8,6,4,4,2,1),
+\]
+and those for the half-turn are
+\[
+ w_{r,e}=(1,0,0,0,0,1),\qquad
+ w_{r,o}=(2,2,0,0,0,1).
+\]
+The even vectors sum all states or only row-reversal-fixed
+states. The odd vectors first apply one column transition
+and then take the appropriate sum.
+Lemma \ref{lem:half} gives
+\begin{equation}\label{eq:terminal5}
+\begin{split}
+ V_5(x)&=(w_{v,e}+xw_{v,o})f(x^2),\\
+ R_5(x)&=(w_{r,e}+xw_{r,o})f(x^2).
+\end{split}
+\end{equation}
+
+\begin{theorem}\label{thm:five}
+The four fixed-point generating functions at height five are
+\begin{align}
+ D_5(x)&=\frac{1-7x+7x^2-x^3}{P(x)},&
+ H_5(x)&=\frac{1-x}{1-3x+x^2},\label{eq:five-DH}\\
+ V_5(x)&=\frac{1+8x+8x^2-23x^3-9x^4+16x^5-x^7}{P(x^2)},\label{eq:five-V}\\
+ R_5(x)&=\frac{1+2x-6x^2-7x^3+7x^4+6x^5-2x^6-x^7}{P(x^2)}.\label{eq:five-R}
+\end{align}
+The orbit generating function is
+\begin{equation}\label{eq:five-A}
+ A_5(x)=\frac{D_5(x)+H_5(x)+V_5(x)+R_5(x)}4.
+\end{equation}
+\end{theorem}
+\begin{proof}
+A complete tiling has empty terminal state, so $D_5=f_0$,
+giving the first formula.
+Substitution of \eqref{eq:PN} into \eqref{eq:terminal5} gives
+the two formulas for $V_5,R_5$.
+
+By Lemma \ref{lem:h-odd}, $h_{5,n}=t_2(2n)$.
+A two-row tiling either starts with one vertical domino or
+with two horizontal dominoes covering its first two columns.
+Thus $t_2(j)=t_2(j-1)+t_2(j-2)$ for $j\ge2$, with initial
+values $t_2(0)=t_2(1)=1$.
+The two-step recurrence matrix is
+$L=\left(\begin{smallmatrix}2&1\\1&1\end{smallmatrix}\right)$,
+which satisfies $L^2-3L+I=0$.
+Hence $c_n=t_2(2n)$ satisfies $c_{n+2}=3c_{n+1}-c_n$,
+with $c_0=1,c_1=2$, proving the formula for $H_5$.
+Finally, Burnside's formula proves \eqref{eq:five-A}.
+\end{proof}
+
+Write
+\[
+ Q(x)=(1-3x+x^2)P(x)P(x^2)=\sum_{j=0}^{14}q_jx^j,\qquad
+ U(x)=\sum_{j=0}^{13}b_jx^j,
+\]
+where $A_5(x)=U(x)/Q(x)$.
+Table \ref{tab:five-coeff} lists all coefficients and the
+fourteen initial values needed for
+\begin{equation}\label{eq:rec5}
+ a_5(n)=-\sum_{j=1}^{14}q_j a_5(n-j),\qquad n\ge14.
+\end{equation}
+No minimality assertion about the recurrence order is needed.
+
+\input{generated/five-table}
+
+The values $a_5(1),\ldots,a_5(5)=5,33,329,3818,46878$
+agree with the entries for widths $2,4,6,8,10$ in
+\cite[Table 12]{mathar2013}.
+This is a comparison made after the derivation; those values
+were not used to fit a matrix or a generating function.

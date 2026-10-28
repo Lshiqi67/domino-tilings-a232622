@@ -1,0 +1,22 @@
+{
+  "title": "Domino tilings of odd-height rectangles up to symmetry",
+  "authors": "Shiqi Liu (Dalian University of Technology)",
+  "category": "math.CO",
+  "cross_list": [],
+  "comments": "16 pages, 1 figure. Includes a public Lean 4 formalization; source and verification records at https://github.com/Lshiqi67/domino-tilings-a232622",
+  "msc_class": "05A15 (Primary); 05B45, 05A16 (Secondary)",
+  "abstract": "We count unlabelled domino tilings of odd-height rectangles of even width up to rectangle symmetries. For three rows, an indecomposable-block decomposition and a half-rectangle construction give two proofs of the generating function recorded in OEIS A232622, together with its seventh-order recurrence and initial values. We determine the exact stabilizer classes and the asymptotic proportion of symmetric tilings. For arbitrary fixed odd height, we give a transfer-matrix expression with explicit symmetry boundary conditions; at height five, a six-dimensional polynomial certificate yields an explicit rational generating function and a fourteenth-order recurrence. A public Lean 4 formalization covers both three-row proofs, the stabilizer formulas, the odd-height counting and rationality results, the five-row certificate and recurrence, and the three-row asymptotics. The formal counts are defined from actual tilings and their orbits.",
+  "paper_license": "arXiv.org perpetual, non-exclusive license 1.0",
+  "code_license": "MIT (author-owned rights only)",
+  "documentation_audit_license": "CC-BY-4.0 (author-owned rights only)",
+  "journal_ref": null,
+  "doi": null,
+  "arxiv_id": null,
+  "arxiv_draft_created": false,
+  "uploaded": false,
+  "server_compiled": false,
+  "submitted": false,
+  "source_zip": "domino-arxiv-source-20261028.zip",
+  "main_file": "main.tex",
+  "processor": "pdflatex"
+}

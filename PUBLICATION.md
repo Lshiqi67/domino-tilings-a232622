@@ -1,46 +1,21 @@
-# Public edition / 公开版说明
+# 公开版范围与来源
 
-This is a curated research snapshot, not the complete private workspace.
+更新：2026-10-29。当前公开版对应英文 v2.1 arXiv 投稿候选稿，作者 Shiqi Liu，机构 Dalian University of Technology。论文已明确 M1–M11 形式化范围及 AI 辅助。尚无 arXiv 文章号，不声明已经投稿或接受。
 
-Included: Chinese and English manuscripts, selected research notes, both proposed proof routes, illustrated block-proof guides, six historical computational programs, and the complete Lean M1–M11 project with pinned dependencies, scripts, stage documentation and sanitized evidence.
+包括：当前英文 PDF 与 14 个 TeX 源文件、最小投稿 ZIP、旧中英文稿及历史版本、两条证明路线、精选研究程序、完整 M1–M11 Lean 源码与固定依赖锁、运行说明、论文—代码对应表和清理机器路径后的实际审核记录。
 
-Excluded: institutional information, complete private archives, conversation dumps, unredacted machine logs, local absolute paths, credentials, build caches and unrelated projects. Git commits use the author and committer identity explicitly provided by the repository owner.
+不包括：账号登录资料、背书邮件/代码、私人研究备份、聊天全文、无关题目、原始机器路径、依赖或编译缓存。公开机构信息由作者确认；不添加邮箱、职称或 ORCID。
 
-Chinese v2.1 and English v2.0 expand the state-support induction and the four coefficients of the compressed recurrence. Both document only M1–M6 in this review edition. The preceding Chinese v2.0 and English v1.0 PDFs, TeX sources, scripts and reports are preserved byte for byte under each paper's archive directory; Chinese v1.0 also remains. The new `review/m1-m6/` package pins 32 mathematical modules and provides a 25-item semantic map, executable probes and an unfilled external review form. No mathematical Lean source is changed by this revision.
+## 历史与当前
 
-Historical JSON reports have invocation, working-directory and platform fields removed. Their numerical fields are unchanged. Their source hashes identify the unchanged historical programs, not the modified JSON bytes. Each sanitized report is labelled explicitly. They are not represented as newly run experiments.
+英文 v2.0 原 PDF/TeX/脚本/报告按字节归档到 papers/en/archive/v2.0，旧 Release 与 Git 历史保留。中文 v2.1 仍为 17 页、介绍 M1–M6 的较早版本；本轮仅增加入口说明，不改写其论文正文。历史研究草稿保留原论证与当时状态，在阅读入口注明时间范围。
 
-[PUBLICATION.json](PUBLICATION.json) records source-relative provenance, hashes and editorial treatments. It contains no absolute workstation path. The six historical computational programs remain unchanged; commands should be run in a temporary working copy because some historical programs write metadata and reports.
+旧 M1–M6 语义审阅清单与其源哈希不改写；交付检查器改为读取已归档英文 v2.0，输出置于 tmp。新增 review/arxiv-v2.1 对应当前英文稿及 M1–M11，不将准备者的源码核对表示为外部审稿。
 
-[MANIFEST-SHA256.json](MANIFEST-SHA256.json) records the SHA-256 digest of every published file except the manifest itself, for checking this snapshot's integrity.
+10 月 28–29 日累计 Lean 运行的报告及日志公开副本位于 review/arxiv-v2.1/verification/lean。只替换本机路径，并为 JSON 添加 publication_note；原日期、状态、退出码、数学源码哈希和公理映射保留。报告整理不是再次运行。旧数值实验报告及失败记录继续保留。
 
-本公开版只包含适合复核的研究材料。中文论文当前为 v2.1、英文为 v2.0；各自旧版 PDF、源码和原检查记录原字节归档。数值报告去除本机调用信息和路径后公开，数学数据未改写。原始工作区中的所有版本仍在本地保留。
+[PUBLICATION.json](PUBLICATION.json)记录来源与处理；[MANIFEST-SHA256.json](MANIFEST-SHA256.json)覆盖当前公开文件（清单自身除外）。文件完整性检查不证明数学正确性、首次公开时间或文献优先权。
 
-No licence has been selected for this snapshot. Repository write permissions and the ability to read or fork a public repository are separate matters. The repository has no intended collaborator write access.
+许可已按作者选择划分：[论文 arXiv 永久非独占、作者有权许可的代码 MIT、复现说明/审核报告 CC BY 4.0](LICENSE.md)。第三方材料保留原许可。论文的 arXiv 授权在实际提交时完成，本地选择不表示已提交。
 
-See [STATUS.md](STATUS.md) for the current scientific claims and limitations.
-
-## 英文论文版本归档（2026-10-26）
-
-新增论文引用信息、归档恢复说明和 `paper-en-v2.0` Release。英文 PDF/TeX、中文稿、既有数学源码与历史报告原字节保留；此次仅检查发布文件完整性和恢复能力，不新增数学验证。完整研究原始资料在本地独立目录备份，公开 Release 提供筛选公开材料快照及完整可达公开 Git 历史。论文和仓库的验证范围分别记录，详见 [版本说明](releases/paper-en-v2.0.md)和 [归档说明](ARCHIVING.md)。
-
-## Lean 发布补充（2026-10-25）
-
-32 个数学模块、审计入口、版本锁、验收脚本、完整阶段方案和证明链公开副本一起发布。源码按主题分组，进展按 M1–M6 登记；下一步 M7–M11 见 [计划](lean/docs/progress.md)。Lean 数学源文件与版本锁保持原样，脚本仅调整历史报告路径，文档更新公开导航和现状。
-
-`lean/evidence/` 来自实际历史运行，只隐去本机绝对路径，保留结果、退出码、日期、公理映射与原始源码哈希。文本日志的处理规则统一见其 README，JSON 另有 publication_note。历史哈希不因文档改版重写。`lean/checks/` 的原始完整记录及用户复跑结果继续留在本地；`.lake/`、clean-project 编译副本不提交。当前发布文件的 SHA-256 在根目录清单中重新登记。
-
-旧论文及阶段记录中的“未形式化”描述各自形成时的状态。当前仅三行主计数按明确语义完成形式化；全文扩展、基本块第二证明、欧氏等距分类、外部人工审阅及新颖性仍需分别处理。
-
-
-## 可读性与语义审阅包发布（2026-10-25）
-
-新增中英文 E04 展开与 M1–M6 审阅包。此次新检查的模块构建、声明类型、公理输出见 `review/m1-m6/checks/verification-01/`；它是新的实际运行，不冒称新的独立干净重建。外部语义审阅表仍空白。原 M1–M6 数学源码、版本锁和历史证据保持原样；更晚本地阶段不纳入本次提交。
-
-## M7–M11 增量发布（2026-10-26）
-
-本次追加 51 个数学模块，使总数达到 83；累计声明 1078 项、其中 699 个定理（含辅助引理）。沿用 `lean/Domino/` 的主题目录，阶段说明和覆盖表置于 `lean/docs/`，验收程序在 `lean/scripts/`，公开证据在 `lean/evidence/`。原 M1–M6 数学源文件、版本锁、论文及既有审阅包不变；旧阶段历史叙述保持其当时范围，当前状态见 STATUS.md。
-
-新增报告来自 2026-10-25 的实际阶段验收及用户复跑。只替换机器路径并添加来源说明；保留原始源码哈希、公理映射、命令结构、退出码和开发失败记录。本次核对用户复跑报告的 113 个输入文件与发布源码一致。没有把报告复制称为新验收，没有重跑旧铺法枚举。原始检查、依赖缓存、clean-project 副本与无关工作区文件不上传。
-
-根目录 MANIFEST-SHA256.json 更新为本次提交文件的完整性清单；此前版本仍可从 Git 历史取得。Git 只传输新增对象和变化，已存在且未变化的论文与源码不重复提交。作者和提交者均使用用户指定的 Shiqi Liu <1456010547@qq.com>，账号关联由 GitHub 提交 API 核对。
+旧发布记录见 [v2.0](releases/paper-en-v2.0.md)；本次变更与验证见 [v2.1](releases/paper-en-v2.1.md)。

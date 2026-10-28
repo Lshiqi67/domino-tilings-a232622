@@ -20,3 +20,6 @@ __pycache__/
 .vscode/
 *.pem
 *.key
+
+# Deliberately published, minimal arXiv source package
+!submission/domino-arxiv-source-20261028.zip

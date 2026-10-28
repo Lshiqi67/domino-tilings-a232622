@@ -1,9 +1,9 @@
 {
-  "date": "2026-10-26",
+  "date": "2026-10-29",
   "author": "Shiqi Liu",
-  "status": "Lean M1-M11 locally verified within documented scope; external semantic review, higher-height asymptotics and minimal order pending; no priority claim.",
-  "chinese_manuscript": "Version 2.1, 17 pages; E04 exposition and M1-M6 semantic review entry; v1.0 and v2.0 preserved byte for byte.",
-  "selection": "Manuscripts, two draft proof routes, problem/source/lemma notes, final verification code, and sanitized numerical outputs. Personal information, full historical archives, machine logs and unrelated research are excluded.",
+  "status": "English v2.1 aligned with M1-M11; cumulative acceptance passed October 28-29; external review and priority unresolved; arXiv not submitted.",
+  "chinese_manuscript": "v2.1, 17 pages, historical companion with M1-M6 summary; PDF/TeX unchanged.",
+  "selection": "Current English manuscript and arXiv source package, historical editions, full M1-M11 code, reproducibility and review materials. Approved affiliation included; account, endorsement and private machine data excluded.",
   "files": [
     {
       "file": "papers/zh/figures/blocks.tex",
@@ -141,16 +141,18 @@
       "file": "papers/en/main.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/main.tex",
       "source_sha256": "3b8e20f01b7201c43de511988d00d120b6434e0e401fa2130577eb2ff3af0588",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
-      "current_sha256": "226cee95d56c56093ed375c4c316330215d584b0e4de992e95b480387240f585"
+      "current_sha256": "259763542705fc8dc3e7f1bea93d1ef0884647f296d288fc67df4b31c48c0754",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "papers/en/references.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/references.tex",
       "source_sha256": "b0e2bf843149d0a4cc456ee23d1fabf24fc7ca48111d7536a9cfe63cd1bc8aa4",
-      "treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
-      "current_sha256": "b0e2bf843149d0a4cc456ee23d1fabf24fc7ca48111d7536a9cfe63cd1bc8aa4"
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
+      "current_sha256": "a97ebfaed0d0971b5393bf2cca3dbacb7d5d335d6e12805d48f33e79cfffc9de",
+      "treatment_previous": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained"
     },
     {
       "file": "papers/en/sections/blocks.tex",
@@ -170,9 +172,10 @@
       "file": "papers/en/sections/computation.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/computation.tex",
       "source_sha256": "3da609e2fd1fc9e577a52e596fc681498b62d827e0557365f19c5a37f52d3f53",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
-      "current_sha256": "596b4beeb3fe6f9a97635cb621ea64b4b402d06c85de93d5b7200fd06ee532ed"
+      "current_sha256": "dfcb2b5fc8e9fed6a01a0f270ad0c419b4653c58c3af0b519361172baf1d7024",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "papers/en/sections/five-row.tex",
@@ -193,9 +196,10 @@
       "file": "papers/en/sections/introduction.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/introduction.tex",
       "source_sha256": "9109958ae1a9a301b74cc97b59e6d073166e459032b88e7f3258bc831de593c3",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
-      "current_sha256": "806ddad7137d9eb15cc9aed81486c4bf15c3d95c0a46428ba708f9ede45af7a7"
+      "current_sha256": "26089e3dcb5a5c735ad5175ad20d50d6bb34927be328ee0bd78d10e8d59bf414",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "papers/en/sections/odd-height.tex",
@@ -208,9 +212,10 @@
       "file": "papers/en/sections/reproducibility.tex",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/sections/reproducibility.tex",
       "source_sha256": "b2cf6f8de71659bde560bd7140accc0e3eafbc9cf6ed8a8125ba0a6f51e1bdfe",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "public draft: status/front-matter/reproduction wording revised where needed; mathematical formulas retained",
-      "current_sha256": "853b3ad3f22a455995b578ee0a1eda1b7ab490ae7ecdf8a9aa1f9b7646a52385"
+      "current_sha256": "8fbc293d7b5742d22d1052c72170840419c7876c34ecf109717d89af94589a2a",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "papers/en/sections/symmetry-types.tex",
@@ -305,105 +310,118 @@
       "file": "docs/zh/statement.md",
       "source": "02_problems/P002-domino-orbit-counting/statement.md",
       "source_sha256": "4a79bbb4c0a98d1d33b4730279d2d960a04fdd8ff0d849dcc1ca70a3c45aff36",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "387d140ffe131f9085092635ce54844ab27b940c12b72972c7e767a3e66fd316"
+      "current_sha256": "0ecdbd2903bd7a33aaaeea1ea4689ee0e5c979c741fc1d50165e86a10563a195",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/zh/approaches.md",
       "source": "02_problems/P002-domino-orbit-counting/approaches.md",
       "source_sha256": "374890fbd60b280c82b1f0317243e526bc1f9f9980377f8b154a4855898d3573",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "6fea24f97c890cb5aaa7794c8f7185be3d44e4f2b0b19a12ccf988c0ae4ae19a"
+      "current_sha256": "617c8b777fe65546cfb1c5e47eb71f2a3b505aa419097305606e587e23846048",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/zh/references.md",
       "source": "02_problems/P002-domino-orbit-counting/references.md",
       "source_sha256": "1aef36decc09742665d0f963c260c8b3fb744ac22cc016d51d08ebe2453913c2",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "c7f07368a18d976ac20ab23cab80834a45b965c9b99f889aedfb9229a2b40698"
+      "current_sha256": "d2d7bef106777849e317114e41f75ff27dc6a14f575c8c0abeef2a1496d45646",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/zh/lemmas.md",
       "source": "02_problems/P002-domino-orbit-counting/lemmas.md",
       "source_sha256": "84c294641c09fe2d71a7ee72d2d74c0536e6ba91a1ed7b2171f50f941868499d",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "b5d28dbac85f17f2367c5f37e33002933a90a5b1c05718e47447054df8bd4a95"
+      "current_sha256": "34d49097d8d204fae39e67f8ade5d4517cd37bdeeb641e8a8f9ecdafb2d6333a",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/zh/blocks-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/proof.md",
       "source_sha256": "3cf01db0e9ffd4356f0fa7a1cb4a458a014a6cf395128e85611179d940b18832",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "b70a4ea3eda9fa10989d03953db67a4d41eabb7e0b645a697445e9051df4611e"
+      "current_sha256": "8055f03183a0fcc630226cad084e0784de1dc6388e7746d5516c2dd988de7797",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/zh/half-board-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/proof.md",
       "source_sha256": "69bd16b0d78481e9fbdc0c7616730bdd2bd4c2081ad403f2c7d3f55c73429a17",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "e5449e6a344f16b0e5d17cc4993153a3552aec6f2de0a4cb9ce4476d4a5e162b"
+      "current_sha256": "574de1dc108f048635ca5143b8839402ea6b9ac8277a0e1fd21947f490337c33",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/en/statement.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/statement.md",
       "source_sha256": "676f3c02a9a90ebfb8dbb746566deda338c135c11355c169a009dc2dd2eccbed",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "910d8d090aaca5b269fb0d5f5ab6c29fc0b161bfaf7286977945c7ef526c22a6"
+      "current_sha256": "31f69d181f6ea76024c21c097d90d6431d7fa8f3c3a226c9d11a5362a3c57dbc",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/en/approaches.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/approaches.md",
       "source_sha256": "57a67fd2b4cb87aa89bae9acd2ae35e8dfb523056a18c76193ff4663f313a61a",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "7ad7c4e78c30c3ad64bd832b328a9398be058ae8506d862a88d3b6827e184d9f"
+      "current_sha256": "48af0c7b36ae20f4bb6275ef8689bec85fef8f12bd453bee93f504cd05179d95",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/en/references.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/references.md",
       "source_sha256": "affb50d5bde93d4598d22e6e87a229b80f1a238500e9d52adc561e71df3268b1",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "217fdfa677c0a97f5269699dbe5503e6d745f689e3141ddc4d8764e8e94634f9"
+      "current_sha256": "0d190ae2a82964e3d9a59e69af8b6161bcd3f926cdd99d26babec48dbba014b7",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/en/lemmas.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/lemmas.md",
       "source_sha256": "4e9e7d710df9b46961e5d9a343f23e7ad3dbb7962330656d336923652d5b888a",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "596e4f47fb30e7e25d440026c84afd91c950966346c77868bc660e37b64ee374"
+      "current_sha256": "50506869b7b96da9f8de29c9149e2adcf2b8e5e697dbc27e2570eca0b2e8925b",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/en/blocks-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/attempts/A001-irreducible-blocks/proof.md",
       "source_sha256": "b52f377fa716940e138547b47c095d08927617f273c0c5eb1dcd1425d762584f",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "3a94db72340f67f8cc14466cf80f2cace9740febc68152354ea1362e1505e101"
+      "current_sha256": "0ca6adf107591f01856f68438425362d90705da57f38a94d21943dbc82d167f2",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "docs/en/half-board-proof.md",
       "source": "02_problems/P002-domino-orbit-counting/english/research/02_problems/P002-domino-orbit-counting/attempts/A002-half-board-transfer/proof.md",
       "source_sha256": "97e0e315245d93c5cc82be1a1be5e65e7608b6dc343083b0ac03887a7ee8ba28",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "selected draft; status notice and portable links added",
-      "current_sha256": "8a0a5af6a10ca8359ca7eafd31bc9229a965f5509d91997ec81b7a23d1dc0cfb"
+      "current_sha256": "0cc3c33fdd811549ad4b2b916ceccdc516d3be521c29f14be17c2374d8a72e11",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "papers/en/checks/prepare_and_audit.py",
       "source": "02_problems/P002-domino-orbit-counting/english/paper/checks/prepare_and_audit.py",
       "source_sha256": "90e3ffcfa1b1c5969df4939f74919f61ff7322e35bc5949efbcc816cd7830603",
-      "treatment": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived.",
+      "treatment": "2026-10-29 current guide or v2.1 manuscript update; original source provenance retained; old editions and Git history preserved.",
       "previous_treatment": "repository-relative paths adapted",
-      "current_sha256": "dc76315ab04e6436fc57d451b0a2b0bca76b42504f495e6dc8770158830a68aa"
+      "current_sha256": "e50ba9fec578b52a2fe1931f344e1e8e2eb50197f4a5abcecb3031d99bbb3a4d",
+      "treatment_previous": "2026-10-25 readability edition / review metadata update; earlier provenance retained, old paper editions archived."
     },
     {
       "file": "guides/block-proof/domino-block-proof-guide-en.pdf",
@@ -441,7 +459,7 @@
     "checks": "papers/zh/checks/README.md",
     "archive": "papers/zh/archive/v1.0/SHA256.json"
   },
-  "english_manuscript": "Version 2.0, 15 pages; E04 exposition and explicit M1-M6 scope; v1.0 preserved byte for byte.",
+  "english_manuscript": "v2.1, 16 pages, dated 2026-10-28; Shiqi Liu, Dalian University of Technology; original v2.0 archived unchanged.",
   "semantic_review_package": {
     "path": "review/m1-m6",
     "scope": "M1-M6",
@@ -463,5 +481,119 @@
     "scope": "M7 stabilizers; M8 odd height; M9 five rows; M10 three-row asymptotics; M11 block proof",
     "unchanged": "M1-M6 mathematical sources, toolchain locks, manuscripts and previous semantic review package",
     "treatment": "Historical reports sanitized; original source hashes retained; not new full validation runs"
+  },
+  "arxiv_v2_1_update": {
+    "date": "2026-10-29",
+    "manuscript_date": "2026-10-28",
+    "source_pin": "a5c32a4b81cce150dbd0dd2398fdd9e90664a353",
+    "verification": "review/arxiv-v2.1/verification/lean/report.json",
+    "source_package": "submission/domino-arxiv-source-20261028.zip",
+    "licenses": "LICENSE.md",
+    "added_files": [
+      "LICENSE-CODE-MIT.txt",
+      "LICENSE-DOCS-CC-BY-4.0.md",
+      "LICENSE.md",
+      "papers/en/archive/v2.0/README.md",
+      "papers/en/archive/v2.0/SHA256.json",
+      "papers/en/archive/v2.0/build.ps1",
+      "papers/en/archive/v2.0/checks/manuscript-audit.json",
+      "papers/en/archive/v2.0/checks/prepare_and_audit.py",
+      "papers/en/archive/v2.0/checks/readability-revision.md",
+      "papers/en/archive/v2.0/domino-tilings-en.pdf",
+      "papers/en/archive/v2.0/figures/blocks.tex",
+      "papers/en/archive/v2.0/generated/five-table.tex",
+      "papers/en/archive/v2.0/main.tex",
+      "papers/en/archive/v2.0/references.tex",
+      "papers/en/archive/v2.0/sections/blocks.tex",
+      "papers/en/archive/v2.0/sections/certificate.tex",
+      "papers/en/archive/v2.0/sections/computation.tex",
+      "papers/en/archive/v2.0/sections/five-row.tex",
+      "papers/en/archive/v2.0/sections/formalization.tex",
+      "papers/en/archive/v2.0/sections/half-board.tex",
+      "papers/en/archive/v2.0/sections/introduction.tex",
+      "papers/en/archive/v2.0/sections/odd-height.tex",
+      "papers/en/archive/v2.0/sections/reproducibility.tex",
+      "papers/en/archive/v2.0/sections/symmetry-types.tex",
+      "releases/paper-en-v2.1.md",
+      "review/arxiv-v2.1/README.md",
+      "review/arxiv-v2.1/candidate-manuscript-audit.json",
+      "review/arxiv-v2.1/candidate-package-report.json",
+      "review/arxiv-v2.1/formal-coverage.csv",
+      "review/arxiv-v2.1/github-ci.json",
+      "review/arxiv-v2.1/verification/lean/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/clean-axioms.txt",
+      "review/arxiv-v2.1/verification/lean/clean-main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/clean-axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/clean-main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/clean-axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/clean-main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/clean-axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/clean-main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/clean-axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/clean-lake-build.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/dependency-overrides.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/axioms.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment-check.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/Cli-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/Cli-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/LeanSearchClient-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/LeanSearchClient-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/Qq-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/Qq-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/aesop-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/aesop-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/batteries-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/batteries-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/importGraph-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/importGraph-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/lake-build.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/lake-version.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/lean-entry.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/lean-version.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/mathlib-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/mathlib-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/plausible-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/plausible-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/proofwidgets-revision.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/proofwidgets-status.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/environment/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/m1-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/m2-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/m3-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/m4-m5-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/m6-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/m7-m8-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/m9-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/m10-regression/main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/m10-regression/report.json",
+      "review/arxiv-v2.1/verification/lean/main-statements.txt",
+      "review/arxiv-v2.1/verification/lean/report.json",
+      "review/arxiv-v2.1/visual-review.json",
+      "scripts/check_release.py",
+      "submission/README.md",
+      "submission/SHA256SUMS.txt",
+      "submission/abstract.txt",
+      "submission/domino-arxiv-source-20261028.zip",
+      "submission/metadata.json"
+    ],
+    "note": "Verification output is a redacted copy of the actual October 28-29 run, not a new run on publication. Mathematical Lean sources, locked dependencies and historical numeric code unchanged."
   }
 }

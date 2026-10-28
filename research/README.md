@@ -1,6 +1,6 @@
 # Computation and reproduction / 计算与复现
 
-**Research unfinished; conjecture not claimed solved; Lean verification pending.**
+**Historical computation records. The current English v2.1 manuscript has M1–M11 formal evidence; see [STATUS](../STATUS.md). The finite computations below retain their original scope.**
 
 The original relative layout is retained so the historical programs can locate their dependencies. The six selected Python sources are unchanged. Numerical reports are sanitized historical copies, not new runs. Working-directory, invocation and platform fields were removed; numerical values and original source hashes were preserved.
 
@@ -49,4 +49,4 @@ Use a fresh tmp/repro directory for each independent rerun. The symbolic script 
 
 这些程序及输出是辅助检查，不是 Lean 证明。有限枚举只能支持明确列出的尺寸；符号恒等式只能验证输入模型的代数关系。原始代码中的中文注释说明了这一范围。公开 JSON 明确标注隐私字段清理，未把旧运行伪装成新实验。
 
-复现时务必使用临时副本，避免覆盖公开的历史报告。若另行上传新结果，应再次检查其中的本机路径与身份信息。当前所有一般性证明仍为待进一步验证的草稿。
+复现时务必使用临时副本，避免覆盖公开的历史报告。若另行上传新结果，应再次检查其中的本机路径与身份信息。当前一般性证明的 Lean 覆盖见 [状态页](../STATUS.md)；本页的历史数值检查不扩大该覆盖。

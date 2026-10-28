@@ -1,4 +1,4 @@
-> **Unfinished research draft. The arguments remain subject to review; no solution of the conjecture is claimed. The manuscript needs refinement and correctness still requires Lean formalization and verification. No Lean verification has been completed. See [current status](../../STATUS.md).**
+> **Historical research notes (October 25, 2026). Statements below about pending formalization describe that stage. The current English v2.1 paper and M1–M11 verification are linked from [STATUS](../../STATUS.md); external review and bibliographic priority remain unresolved.**
 
 # A002: Complete half-rectangle proof and extensions
 

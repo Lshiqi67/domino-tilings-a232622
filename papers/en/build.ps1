@@ -15,6 +15,6 @@ try {
         throw "Resolve the layout or reference warning before publishing."
     }
     Copy-Item -LiteralPath build/main.pdf -Destination domino-tilings-en.pdf -Force
-    Write-Output "Built domino-tilings-en.pdf. M1-M6 scope documented; external semantic review pending."
+    Write-Output "Built domino-tilings-en.pdf. M1-M11 scope documented; external semantic review pending."
 }
 finally { Pop-Location }

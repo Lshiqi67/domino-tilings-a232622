@@ -1,0 +1,98 @@
+def Domino.Asymptotic.growth : ℝ :=
+2 + √3
+def Domino.Asymptotic.decay : ℝ :=
+2 - √3
+def Domino.Asymptotic.leading : ℝ :=
+(3 + √3) / 6
+def Domino.Asymptotic.trailing : ℝ :=
+(3 - √3) / 6
+def Domino.Asymptotic.HasSymmetry : {n : ℕ} → Domino.Tiling 3 (2 * n) → Prop :=
+fun {n} T => ∃ g, g ≠ 1 ∧ g • T = T
+@[reducible] def Domino.Asymptotic.SymmetricTilings : ℕ → Type :=
+fun n => { T // Domino.Asymptotic.HasSymmetry T }
+@[reducible] def Domino.Asymptotic.SymmetricOrbits : ℕ → Type :=
+fun n => Quotient (MulAction.orbitRel Domino.RectangleSymmetry (Domino.Asymptotic.SymmetricTilings n))
+def Domino.Asymptotic.tilingProbability : ℕ → ℝ :=
+fun n => ↑(Domino.Asymptotic.symmetricCount n) / ↑(Domino.ordinaryCount 3 n)
+def Domino.Asymptotic.orbitProbability : ℕ → ℝ :=
+fun n => ↑(Domino.Asymptotic.symmetricOrbitCount n) / ↑(Domino.a n)
+def Domino.Asymptotic.halfGrowth : ℕ → ℝ :=
+fun n => Domino.Asymptotic.growth ^ (↑n / 2)
+def Domino.Asymptotic.halfDecay : ℕ → ℝ :=
+fun n => (Domino.Asymptotic.halfGrowth n)⁻¹
+Domino.Asymptotic.growth_gt_one : 1 < Domino.Asymptotic.growth
+Domino.Asymptotic.decay_eq_inv : Domino.Asymptotic.decay = Domino.Asymptotic.growth⁻¹
+Domino.Asymptotic.ordinary_closed_form_paper (n : ℕ) :
+  ↑(Domino.ordinaryCount 3 n) =
+    Domino.Asymptotic.leading * Domino.Asymptotic.growth ^ n +
+      Domino.Asymptotic.trailing * (Domino.Asymptotic.growth ^ n)⁻¹
+Domino.Asymptotic.d_pos (n : ℕ) : 0 < Domino.Asymptotic.d n
+Domino.Asymptotic.orbit_positive (n : ℕ) : 0 < Domino.a n
+Domino.Asymptotic.symmetricOrbitInclusion_injective (n : ℕ) :
+  Function.Injective (Domino.Asymptotic.symmetricOrbitInclusion n)
+Domino.Asymptotic.symmetricOrbitInclusion_image (n : ℕ) (O : Domino.TilingOrbit 3 (2 * n)) :
+  (∃ S, Domino.Asymptotic.symmetricOrbitInclusion n S = O) ↔ ∃ T, Domino.Asymptotic.HasSymmetry T ∧ ⟦T⟧ = O
+Domino.Asymptotic.symmetric_count_add_one (n : ℕ) :
+  Domino.Asymptotic.symmetricCount n + 1 = Domino.fixedCount 3 n Domino.vertical + Domino.fixedCount 3 n Domino.halfTurn
+Domino.Asymptotic.twice_symmetric_orbit_count (n : ℕ) :
+  2 * Domino.Asymptotic.symmetricOrbitCount n =
+    Domino.fixedCount 3 n Domino.vertical + Domino.fixedCount 3 n Domino.halfTurn
+Domino.Asymptotic.tiling_probability_formula (n : ℕ) :
+  Domino.Asymptotic.tilingProbability n =
+    (↑(Domino.fixedCount 3 n Domino.vertical) + ↑(Domino.fixedCount 3 n Domino.halfTurn) - 1) /
+      ↑(Domino.ordinaryCount 3 n)
+Domino.Asymptotic.orbit_probability_formula (n : ℕ) :
+  Domino.Asymptotic.orbitProbability n =
+    (↑(Domino.fixedCount 3 n Domino.vertical) + ↑(Domino.fixedCount 3 n Domino.halfTurn)) / (2 * ↑(Domino.a n))
+Domino.Asymptotic.probabilities_mem_unit_interval (n : ℕ) :
+  0 ≤ Domino.Asymptotic.tilingProbability n ∧
+    Domino.Asymptotic.tilingProbability n ≤ 1 ∧
+      0 ≤ Domino.Asymptotic.orbitProbability n ∧ Domino.Asymptotic.orbitProbability n ≤ 1
+Domino.Asymptotic.probabilities_zero :
+  Domino.Asymptotic.tilingProbability 0 = 1 ∧ Domino.Asymptotic.orbitProbability 0 = 1
+Domino.Asymptotic.probabilities_two :
+  Domino.Asymptotic.tilingProbability 2 = 7 / 11 ∧ Domino.Asymptotic.orbitProbability 2 = 4 / 5
+Domino.Asymptotic.probability_even_asymptotic_ratio :
+  Filter.Tendsto
+    (fun j =>
+      Domino.Asymptotic.tilingProbability (2 * j) / ((Domino.Asymptotic.growth - 1) * Domino.Asymptotic.decay ^ j))
+    Filter.atTop (nhds 1)
+Domino.Asymptotic.probability_odd_asymptotic_ratio :
+  Filter.Tendsto
+    (fun j =>
+      Domino.Asymptotic.tilingProbability (2 * j + 1) /
+        ((Domino.Asymptotic.growth + 1) / Domino.Asymptotic.growth * Domino.Asymptotic.decay ^ j))
+    Filter.atTop (nhds 1)
+Domino.Asymptotic.halfDecay_rpow (n : ℕ) : Domino.Asymptotic.halfDecay n = Domino.Asymptotic.growth ^ (-↑n / 2)
+Domino.Asymptotic.probability_exponential_bound :
+  ∃ C, 0 < C ∧ ∃ N, ∀ n ≥ N, Domino.Asymptotic.tilingProbability n ≤ C * Domino.Asymptotic.growth ^ (-↑n / 2)
+Domino.Asymptotic.orbit_exponential_error_bound :
+  ∃ C, 0 < C ∧ ∃ N, ∀ n ≥ N, |↑(Domino.a n) - ↑(Domino.ordinaryCount 3 n) / 4| ≤ C * Domino.Asymptotic.growth ^ (↑n / 2)
+Domino.Asymptotic.symmetric_tiling_probability_asymptotics :
+  (Asymptotics.IsEquivalent Filter.atTop (fun j => Domino.Asymptotic.tilingProbability (2 * j)) fun j =>
+      (Domino.Asymptotic.growth - 1) * Domino.Asymptotic.decay ^ j) ∧
+    (Asymptotics.IsEquivalent Filter.atTop (fun j => Domino.Asymptotic.tilingProbability (2 * j + 1)) fun j =>
+        (Domino.Asymptotic.growth + 1) / Domino.Asymptotic.growth * Domino.Asymptotic.decay ^ j) ∧
+      Domino.Asymptotic.tilingProbability =O[Filter.atTop] Domino.Asymptotic.halfDecay ∧
+        Filter.Tendsto Domino.Asymptotic.tilingProbability Filter.atTop (nhds 0)
+Domino.Asymptotic.orbit_count_asymptotics :
+  Domino.Asymptotic.orbitError =O[Filter.atTop] Domino.Asymptotic.halfGrowth ∧
+    Asymptotics.IsEquivalent Filter.atTop (fun n => ↑(Domino.a n)) fun n =>
+      Domino.Asymptotic.leading / 4 * Domino.Asymptotic.growth ^ n
+Domino.Asymptotic.symmetric_orbit_probability_tendsto_zero :
+  Filter.Tendsto Domino.Asymptotic.orbitProbability Filter.atTop (nhds 0)
+Domino.Asymptotic.three_row_asymptotic_main :
+  (∀ (n : ℕ),
+      ↑(Domino.ordinaryCount 3 n) =
+        Domino.Asymptotic.leading * Domino.Asymptotic.growth ^ n +
+          Domino.Asymptotic.trailing * (Domino.Asymptotic.growth ^ n)⁻¹) ∧
+    (∀ (n : ℕ),
+        0 ≤ Domino.Asymptotic.tilingProbability n ∧
+          Domino.Asymptotic.tilingProbability n ≤ 1 ∧
+            0 ≤ Domino.Asymptotic.orbitProbability n ∧ Domino.Asymptotic.orbitProbability n ≤ 1) ∧
+      Domino.Asymptotic.tilingProbability =O[Filter.atTop] Domino.Asymptotic.halfDecay ∧
+        Domino.Asymptotic.orbitError =O[Filter.atTop] Domino.Asymptotic.halfGrowth ∧
+          (Asymptotics.IsEquivalent Filter.atTop (fun n => ↑(Domino.a n)) fun n =>
+              Domino.Asymptotic.leading / 4 * Domino.Asymptotic.growth ^ n) ∧
+            Filter.Tendsto Domino.Asymptotic.tilingProbability Filter.atTop (nhds 0) ∧
+              Filter.Tendsto Domino.Asymptotic.orbitProbability Filter.atTop (nhds 0)

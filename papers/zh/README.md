@@ -1,5 +1,7 @@
 # 中文论文 · v2.1
 
+**版本说明（2026-10-29）：**本中文 v2.1 保留原稿，形式化说明为 M1–M6；当前 arXiv 候选是 [英文 v2.1，16 页](../en/README.md)，其说明已覆盖 M1–M11。两种语言版本号并不表示内容同步。
+
 署名：**Shiqi Liu**。修订日期：2026-10-25。正文 17 页。
 
 [阅读新版 PDF](domino-tilings-zh.pdf) · [LaTeX 主文件](main.tex) · [本轮修订与检查](checks/readability-revision.md) · [M1–M6 语义审阅包](../../review/m1-m6/README.md)

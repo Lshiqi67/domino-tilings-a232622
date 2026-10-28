@@ -25,22 +25,15 @@
 \allowdisplaybreaks[2]
 \title[Domino tilings up to symmetry]{Domino tilings of odd-height rectangles up to symmetry}
 \author{Shiqi Liu}
-\date{Version 2.0, October 25, 2026}
+\address{Dalian University of Technology}
+\date{October 28, 2026}
 \subjclass[2020]{Primary 05A15; Secondary 05B45, 05A16}
 \keywords{Domino tiling, Burnside's lemma, generating function, transfer matrix, symmetry class}
 \begin{document}
 \begin{abstract}
-We count unlabelled domino tilings of odd-height rectangles of even width up to rectangle symmetries. For three rows, a block decomposition and a half-rectangle construction give the generating function recorded in OEIS A232622, its seventh-order recurrence, and all initial values. We also give stabilizer and asymptotic formulas, an odd-height transfer expression, and an explicit five-row polynomial certificate. The three-row main counting theorem has Lean M1--M6 evidence based on actual tiling-orbit cardinalities. This edition explains the state induction and the four coefficients of the compressed recurrence in detail. The formal coverage reported here is limited to M1--M6; external semantic review and bibliographic priority remain unresolved.
+We count unlabelled domino tilings of odd-height rectangles of even width up to rectangle symmetries. For three rows, an indecomposable-block decomposition and a half-rectangle construction give two proofs of the generating function recorded in OEIS A232622, together with its seventh-order recurrence and initial values. We determine the exact stabilizer classes and the asymptotic proportion of symmetric tilings. For arbitrary fixed odd height, we give a transfer-matrix expression with explicit symmetry boundary conditions; at height five, a six-dimensional polynomial certificate yields an explicit rational generating function and a fourteenth-order recurrence. A public Lean 4 formalization covers both three-row proofs, the stabilizer formulas, the odd-height counting and rationality results, the five-row certificate and recurrence, and the three-row asymptotics. The formal counts are defined from actual tilings and their orbits.
 \end{abstract}
 \maketitle
-\noindent\textbf{Scope of this edition.}
-Theorem \ref{thm:main} and its three-row half-rectangle dependencies
-have the M1--M6 formal evidence described in Section \ref{sec:formalization}.
-This edition reports that fixed scope, rather than a certification of
-all results in the manuscript. Independent mathematical and semantic
-review remain outstanding, and no bibliographic priority is claimed.
-\medskip
-
 \input{sections/introduction}
 \input{sections/blocks}
 \input{sections/half-board}
@@ -53,6 +46,14 @@ review remain outstanding, and no bibliographic priority is claimed.
 \input{sections/certificate}
 \input{sections/reproducibility}
 \section*{Use of AI tools}
-OpenAI Codex was used on October 24--25, 2026, to assist with the mathematical derivations, source searches, verification programs, diagram code, drafting, and English translation. The two proof routes and their computational checks were developed within the same AI-assisted workflow; their agreement does not constitute independent review. No claim of completed independent refereeing is made. Machine verification is reported only for the M1--M6 scope in Section~\ref{sec:formalization}. The accompanying research records specify the checks actually performed and their scope.
+OpenAI Codex assisted with the mathematical derivations, source searches,
+verification programs, diagram code, drafting, English translation,
+and the preparation and review of this revision in October 2026.
+The two proof routes, their computational checks, and the Lean development
+were produced within the same AI-assisted workflow; their agreement does
+not constitute independent review. The formal verification scope and its
+limitations are specified in Section~\ref{sec:formalization}.
+The accompanying records distinguish kernel checking, finite computational
+checks, and external mathematical review, which remains outstanding.
 \input{references}
 \end{document}

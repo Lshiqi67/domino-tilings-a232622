@@ -1,5 +1,7 @@
 # Lean verification pending / Lean 验证待完成
 
+> 本文保留所标日期的阶段记录与当时待办；当前 M1–M11 已完成，英文 v2.1 已对应这些结果，见 [当前进度](progress.md)。
+
 > 本文保留该阶段形成时的范围与后续计划；当前 M1–M6 均已完成本地验收，发布说明见 [进度表](progress.md)。
 
 **No Lean formalization or successful verification is supplied.** This directory is a plan, not a proof certificate. The work and manuscripts remain unfinished, and the repository does not claim that the conjecture is solved.
